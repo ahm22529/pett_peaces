@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfi
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/header.dart';
 
 class BodySingUp extends StatefulWidget {
-  const BodySingUp({super.key});
+  const BodySingUp({Key? key}) : super(key: key);
 
   @override
   State<BodySingUp> createState() => _BodySingUpState();
@@ -21,9 +21,9 @@ class _BodySingUpState extends State<BodySingUp> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * .2,
           ),
@@ -31,67 +31,92 @@ class _BodySingUpState extends State<BodySingUp> {
           const SizedBox(
             height: 20,
           ),
-          Form(
-            key: globalKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("    الأسم بالكامل      ",
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Form(
+              key: globalKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "    الأسم بالكامل      ",
                     style: AppStyles.styleMedium16(context).copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black)),
-                const SizedBox(
-                  height: 16,
-                ),
-                const TextFieldWithShadow(),
-                const SizedBox(
-                  height: 16,
-                ),
-                Text("    البريد الإلكتروني      ",
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const TextFieldWithShadow(),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    "    البريد الإلكتروني      ",
                     style: AppStyles.styleMedium16(context).copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black)),
-                const SizedBox(
-                  height: 16,
-                ),
-                const TextFieldWithShadow(),
-                const SizedBox(
-                  height: 16,
-                ),
-                Text("    الهاتف       ",
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const TextFieldWithShadow(),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    "    الهاتف       ",
                     style: AppStyles.styleMedium16(context).copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black)),
-                const SizedBox(
-                  height: 16,
-                ),
-                const ContinerTextFiled(),
-                const SizedBox(
-                  height: 16,
-                ),
-                Text("    كلمة المرور      ",
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const ContinerTextFiled(),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Text(
+                    "    كلمة المرور      ",
                     style: AppStyles.styleMedium16(context).copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black)),
-                const SizedBox(
-                  height: 16,
-                ),
-                const PasswordFiled(),
-                const SizedBox(
-                  height: 8,
-                ),
-                Text("   تاكيد كلمة المرور      ",
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const PasswordFiled(),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    "   تاكيد كلمة المرور      ",
                     style: AppStyles.styleMedium16(context).copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black)),
-                const SizedBox(
-                  height: 16,
-                ),
-                const PasswordFiled(),
-                const SizedBox(
-                  height: 8,
-                ),
-              ],
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const PasswordFiled(),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                ],
+              ),
             ),
           ),
           const AcceptsReuls(),
-          ButtomSingup(globalKey: globalKey)
-        ]),
+          const SizedBox(height: 20),
+          ButtomSingup(globalKey: globalKey),
+          const SizedBox(height: 20),
+        ],
       ),
     );
   }
