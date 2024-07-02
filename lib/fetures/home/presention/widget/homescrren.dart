@@ -70,6 +70,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             padding: EdgeInsets.symmetric(horizontal: 10.0),
                             child: IteamStore(),
                           ))),
+              Image.asset("Asset/image/Frame 1000004499.png"),
               const Headersection(
                 titel1: 'كورسات تعليمية',
                 titel2: 'عرض المزيد',
