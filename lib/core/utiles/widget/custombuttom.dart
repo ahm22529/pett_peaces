@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 class Custombuttom extends StatelessWidget {
   const Custombuttom({super.key, required this.titel, required this.onPressed});
@@ -10,13 +11,17 @@ class Custombuttom extends StatelessWidget {
     return Expanded(
       child: TextButton(
         onPressed: onPressed,
-        child: Text("أبدا الآن"),
         style: TextButton.styleFrom(
-          backgroundColor: Color(0xffF78E32),
+          backgroundColor: const Color(0xffF78E32),
           shape: RoundedRectangleBorder(
             borderRadius:
                 BorderRadius.circular(12), // Adjust the radius as needed
           ),
+        ),
+        child: Text(
+          "أبدا الآن",
+          style: AppStyles.stylesemi20(context)
+              .copyWith(color: const Color(0xffFFFFFF)),
         ),
       ),
     );

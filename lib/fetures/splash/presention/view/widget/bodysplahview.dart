@@ -28,7 +28,7 @@ class BodySplahView extends StatelessWidget {
           ),
           Text(
             "  اكتشف عالماً من العناية الكاملة بحيواناتكم\n الأليفة من خدمات طبية إلى سكن مريح وآمن.",
-            style: AppStyles.styleRegular16(context),
+            style: AppStyles.styleMedium16(context),
           ),
           const SizedBox(
             height: 36,

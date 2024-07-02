@@ -9,10 +9,17 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle styleRegular16(context) {
+  static TextStyle styleMedium16(context) {
     return TextStyle(
       color: const Color(0xFF8A8A8A),
       fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle styleMedium18(context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeight.w500,
     );
   }
@@ -22,6 +29,29 @@ abstract class AppStyles {
       color: Color.fromARGB(255, 253, 253, 253),
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle stylesmedium32(context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle styleRegular16(context) {
+    return TextStyle(
+      color: const Color(0xFF8A8A8A),
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleRegular14(context) {
+    return TextStyle(
+      color: const Color(0xFF8A8A8A),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeight.w400,
     );
   }
 }

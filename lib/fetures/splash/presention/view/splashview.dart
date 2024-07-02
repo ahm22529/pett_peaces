@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/custombackground.dart';
+import 'package:pett_peaces/core/utiles/widget/custombackground.dart';
 import 'package:pett_peaces/fetures/splash/presention/view/widget/bodysplahview.dart';
 
 class Splashview extends StatelessWidget {

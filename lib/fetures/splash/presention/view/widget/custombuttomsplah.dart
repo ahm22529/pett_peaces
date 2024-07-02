@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/login.dart';
 
 class CustombuttomSplash extends StatelessWidget {
   const CustombuttomSplash({super.key});
@@ -12,7 +13,10 @@ class CustombuttomSplash extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * .15),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (builder) => LoginView()));
+          },
           style: TextButton.styleFrom(
             backgroundColor: const Color(0xffF78E32),
             shape: RoundedRectangleBorder(
