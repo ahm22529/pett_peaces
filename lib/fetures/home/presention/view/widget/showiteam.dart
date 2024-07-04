@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/home/presention/widget/activeiteam.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/activeiteam.dart';
 
 class showIteam extends StatelessWidget {
   final bool active;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/home/presention/widget/infoanmiles.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 
 class Anmmalesme extends StatelessWidget {
   const Anmmalesme({super.key});

@@ -17,6 +17,22 @@ abstract class AppStyles {
     );
   }
 
+  static TextStyle styleMedium12(context) {
+    return TextStyle(
+      color: const Color(0xFF8A8A8A),
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle styleMedium10(context) {
+    return TextStyle(
+      color: const Color(0xFFB5B5B5),
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle styleMedium18(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 18),

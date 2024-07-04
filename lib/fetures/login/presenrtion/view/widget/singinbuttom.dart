@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/home/presention/widget/homescrren.dart';
+import 'package:pett_peaces/fetures/home/presention/view/homescrren.dart';
 
 class singinbutto extends StatelessWidget {
   const singinbutto({

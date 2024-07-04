@@ -19,7 +19,7 @@ class Custombuttom extends StatelessWidget {
           ),
         ),
         child: Text(
-          "أبدا الآن",
+          titel,
           style: AppStyles.stylesemi20(context)
               .copyWith(color: const Color(0xffFFFFFF)),
         ),
