@@ -13,12 +13,9 @@ class _CustomlistviewState extends State<Customlistview> {
   List list = [
     "أدوية",
     "طعام",
-    "إكسسوارات",
-    "مستحضراتتجميل",
     "أغذية",
     "أدوية",
     "طعام",
-    "إكسسوارات",
   ];
 // ignore: camel_case_types
   @override

@@ -4,8 +4,9 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/customtextfiledst
 class continertextfiled extends StatelessWidget {
   const continertextfiled({
     super.key,
+    required this.name,
   });
-
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,8 +25,10 @@ class continertextfiled extends StatelessWidget {
               height: 20,
             ),
             const SizedBox(width: 8),
-            const Expanded(
-              child: customtextfiledstore(),
+            Expanded(
+              child: customtextfiledstore(
+                name: name,
+              ),
             ),
           ],
         ),

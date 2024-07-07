@@ -9,12 +9,12 @@ class BodyStore extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(flex: 2, child: Customlistview()),
+        Expanded(flex: 28, child: Customlistview()),
         SizedBox(
           width: 10,
         ),
         Expanded(
-            flex: 4,
+            flex: 72,
             child: Padding(
               padding: EdgeInsets.only(left: 5.0, top: 20),
               child: CustomGridViewstore(),

@@ -25,11 +25,17 @@ class PasswordFiled extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class textfiledinput extends StatelessWidget {
+class textfiledinput extends StatefulWidget {
   const textfiledinput({
     super.key,
   });
 
+  @override
+  State<textfiledinput> createState() => _textfiledinputState();
+}
+
+class _textfiledinputState extends State<textfiledinput> {
+  bool show = false;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -38,8 +44,16 @@ class textfiledinput extends StatelessWidget {
           return "هذا الحقل مطلوب";
         }
       },
-      obscureText: true,
+      obscureText: show,
       decoration: InputDecoration(
+        suffixIcon: GestureDetector(
+            onTap: () => setState(() {
+                  show = true;
+                }),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SvgPicture.asset("Asset/image/eye disable.svg"),
+            )),
         fillColor: const Color(0xffFFFFFF),
         filled: true,
         enabledBorder: OutlineInputBorder(

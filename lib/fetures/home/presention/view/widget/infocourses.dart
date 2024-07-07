@@ -37,26 +37,43 @@ class Courses extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
-        child: Column(
-          children: [
-            Container(
+      child: bodycontinercourses(),
+    );
+  }
+}
+
+class bodycontinercourses extends StatelessWidget {
+  const bodycontinercourses({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+      child: Column(
+        children: [
+          Expanded(
+            child: Container(
               color: const Color(0xffFFFFFF).withOpacity(.3),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40.0, vertical: 7),
-                child: Text(
-                  "كورس تعليم الكلاب ",
-                  style: AppStyles.styleMedium16(context)
-                      .copyWith(color: Colors.white),
+                child: FittedBox(
+                  child: Text(
+                    "كورس تعليم الكلاب ",
+                    style: AppStyles.styleMedium16(context)
+                        .copyWith(color: Colors.white),
+                  ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 60,
-            ),
-            const Row(
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          Expanded(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 infocourses(),
@@ -69,9 +86,9 @@ class Courses extends StatelessWidget {
                 ),
                 infocourses(),
               ],
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

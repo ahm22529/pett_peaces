@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/account/presention/view/account.dart';
 
 import 'package:pett_peaces/fetures/home/presention/view/widget/homeviewbody.dart';
 
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const HomeViewBody(),
           const Services(),
           const Store(),
-          Container(),
+          Acountff(),
         ],
       ),
     );

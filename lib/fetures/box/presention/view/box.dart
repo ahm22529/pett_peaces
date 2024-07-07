@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/core/utiles/function/buildrow.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 
 import '../../../check/data/model/iteammodel.dart';
 
@@ -45,17 +47,17 @@ class listiteamorder extends StatefulWidget {
 
 class _listiteamorderState extends State<listiteamorder> {
   List iteam = [
-    iteamcheckmodel(
+    iteamchecmmmmkmodel(
         titel: 'طعام يوناني الأصل',
         image: 'Asset/image/Frame 1000004378 (1).png',
         price: '299\$',
         volum: '1200g'),
-    iteamcheckmodel(
+    iteamchecmmmmkmodel(
         titel: 'طعام يوناني الأصل',
         image: 'Asset/image/Frame 1000004378 (1).png',
         price: '299\$',
         volum: '1200g'),
-    iteamcheckmodel(
+    iteamchecmmmmkmodel(
         titel: 'طعام يوناني الأصل',
         image: 'Asset/image/Frame 1000004378 (1).png',
         price: '299\$',
@@ -65,7 +67,29 @@ class _listiteamorderState extends State<listiteamorder> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: _buildItemsWithDividers(),
+      children: [
+        Column(
+          children: _buildItemsWithDividers(),
+        ),
+        buildRow("3", "عدد المنتجات", FontWeight.w600, Color(0xff545454),
+            Colors.black),
+        SizedBox(
+          height: 16,
+        ),
+        buildRow("3", "عدد المنتجات", FontWeight.w600, Color(0xff545454),
+            Colors.black),
+        SizedBox(
+          height: 16,
+        ),
+        buildRow("3", "عدد المنتجات", FontWeight.w600, Color(0xff545454),
+            Colors.black),
+        SizedBox(
+          height: 16,
+        ),
+        Row(
+          children: [Custombuttom(titel: "إدفع", onPressed: () {})],
+        )
+      ],
     );
   }
 
@@ -83,6 +107,14 @@ class _listiteamorderState extends State<listiteamorder> {
       }
     }
     return itemsWithDividers;
+  }
+}
+
+class info extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }
 
@@ -131,7 +163,7 @@ class IteamBox extends StatelessWidget {
                     ),
                     AddMiuns()
                   ],
-                )
+                ),
               ],
             ),
           )

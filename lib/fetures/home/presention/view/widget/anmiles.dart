@@ -19,7 +19,7 @@ class Anmmalesme extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(
-              height: 125,
+              height: 110,
               child: Image.asset(
                   "Asset/image/adorable-cat-relaxing-indoors-removebg-preview 1.png"),
             ),

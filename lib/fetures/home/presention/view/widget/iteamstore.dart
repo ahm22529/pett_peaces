@@ -11,7 +11,7 @@ class IteamStore extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.black12, width: 1),
         ),
-        child: bodyiteamstore(),
+        child: const bodyiteamstore(),
       ),
     );
   }
@@ -29,13 +29,13 @@ class bodyiteamstore extends StatelessWidget {
       padding: const EdgeInsets.all(9.0),
       child: Column(
         children: [
-          Text(
+          const Text(
             "طعام يوناني الأصل مستورد",
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Image.asset("Asset/image/20802-removebg-preview 1.png"),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             padding: const EdgeInsets.all(8.0),
             width: MediaQuery.of(context).size.width * .5,
@@ -43,7 +43,7 @@ class bodyiteamstore extends StatelessWidget {
               color: const Color(0xffF78E32).withOpacity(.3),
               borderRadius: BorderRadius.circular(9),
             ),
-            child: infoiteamstore(),
+            child: const infoiteamstore(),
           ),
         ],
       ),
@@ -63,14 +63,14 @@ class infoiteamstore extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "299\$",
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
-                  color: const Color(0xffF78E32),
+                  color: Color(0xffF78E32),
                   fontSize: 18,
                 ),
               ),

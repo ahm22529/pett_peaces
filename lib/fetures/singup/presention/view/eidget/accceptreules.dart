@@ -8,11 +8,8 @@ class AcceptsReuls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Checkbox(value: false, onChanged: (onChanged) {}),
-        const Rules()
-      ],
-    );
+    return ListTile(
+        leading: Checkbox(value: false, onChanged: (onChanged) {}),
+        title: const Rules());
   }
 }

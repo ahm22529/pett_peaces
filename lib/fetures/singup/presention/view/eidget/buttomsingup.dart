@@ -11,15 +11,18 @@ class ButtomSingup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Custombuttom(
-            titel: "تسجيل الدخول ",
-            onPressed: () {
-              if (globalKey.currentState!.validate()) {
-              } else {}
-            }),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Row(
+        children: [
+          Custombuttom(
+              titel: "تسجيل الدخول ",
+              onPressed: () {
+                if (globalKey.currentState!.validate()) {
+                } else {}
+              }),
+        ],
+      ),
     );
   }
 }

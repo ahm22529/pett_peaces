@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
+import 'package:pett_peaces/fetures/doctor/presention/view/doctor.dart';
+import 'package:pett_peaces/fetures/hotels/presention/view/hotel.dart';
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/widget/catagrorybuttom.dart';
+
+import '../../../../bayandseller/presention/view/sellerandbuy.dart';
 
 class CustomGridViewServ extends StatelessWidget {
   const CustomGridViewServ({
@@ -66,10 +71,14 @@ class CustomGridViewServ extends StatelessWidget {
           },
         ];
 
-        return CategoryButton(
-          backgroundColor: services[index]['backgroundColor'] as Color,
-          text: services[index]['text'] as String,
-          imagePath: services[index]['imagePath'] as String,
+        return GestureDetector(
+          onTap: () => Navigator.push(
+              context, MaterialPageRoute(builder: (builder) => Hotel())),
+          child: CategoryButton(
+            backgroundColor: services[index]['backgroundColor'] as Color,
+            text: services[index]['text'] as String,
+            imagePath: services[index]['imagePath'] as String,
+          ),
         );
       },
     );

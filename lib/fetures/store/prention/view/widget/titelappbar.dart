@@ -6,14 +6,17 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/continertextfiled
 class Titelappbar extends StatelessWidget {
   const Titelappbar({
     super.key,
+    required this.name,
   });
-
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
-          child: continertextfiled(),
+        Expanded(
+          child: continertextfiled(
+            name: name,
+          ),
         ),
         IconButton(
           icon: Image.asset('Asset/image/filter.png'),

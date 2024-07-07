@@ -25,7 +25,7 @@ class _BodySingUpState extends State<BodySingUp> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height * .2,
+            height: MediaQuery.of(context).size.height * .25,
           ),
           const Header(),
           const SizedBox(

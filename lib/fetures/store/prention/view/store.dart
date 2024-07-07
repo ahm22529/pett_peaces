@@ -16,7 +16,9 @@ class Store extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading:
             false, // hides the default leading widget on the AppBar
-        title: Titelappbar(),
+        title: Titelappbar(
+          name: 'ابحث عن المنتجات',
+        ),
       ),
       body: const BodyStore(),
     );

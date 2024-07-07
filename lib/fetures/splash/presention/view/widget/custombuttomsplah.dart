@@ -14,8 +14,8 @@ class CustombuttomSplash extends StatelessWidget {
         padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * .15),
         child: TextButton(
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (builder) => LoginView()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (builder) => const LoginView()));
           },
           style: TextButton.styleFrom(
             backgroundColor: const Color(0xffF78E32),

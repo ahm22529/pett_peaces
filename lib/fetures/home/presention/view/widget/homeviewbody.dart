@@ -4,6 +4,7 @@ import 'package:pett_peaces/fetures/home/presention/view/widget/gridviewstore.da
 import 'package:pett_peaces/fetures/home/presention/view/widget/grisviewservices.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/headersection.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/listviewstore.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/silder.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/userinfo.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -29,7 +30,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               const SizedBox(
                 height: 24,
               ),
-              Image.asset("Asset/image/1 1 (1).png"),
+              ImageSlider(),
               const SizedBox(
                 height: 40,
               ),
