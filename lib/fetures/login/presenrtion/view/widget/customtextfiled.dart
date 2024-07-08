@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TextFieldWithShadow extends StatelessWidget {
-  const TextFieldWithShadow({super.key});
-
+  const TextFieldWithShadow({super.key, this.maxl});
+  final int? maxl;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +17,9 @@ class TextFieldWithShadow extends StatelessWidget {
           ),
         ],
       ),
-      child: const Textformfiledemail(),
+      child: const Textformfiledemail(
+        maxline: 1,
+      ),
     );
   }
 }
@@ -25,11 +27,13 @@ class TextFieldWithShadow extends StatelessWidget {
 class Textformfiledemail extends StatelessWidget {
   const Textformfiledemail({
     super.key,
+    this.maxline,
   });
-
+  final int? maxline;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxline,
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";
