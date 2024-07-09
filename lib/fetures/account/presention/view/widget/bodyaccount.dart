@@ -11,28 +11,38 @@ class BodyAccount extends StatefulWidget {
 class _BodyAccountState extends State<BodyAccount> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            textcontiner(),
-            iteamconter(),
-          ],
-        ),
-        Positioned(
-          top: MediaQuery.of(context).size.height * .2,
-          left: 0,
-          right: 0,
-          child: Cardd(),
-        ),
-        Positioned(
-            top: MediaQuery.of(context).size.height * .14,
-            left: 0,
-            right: 0,
-            child: const CircleAvatar(
-              radius: 35,
-            ))
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  textcontiner(),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Iteamconter(),
+                ],
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * .15,
+                left: 0,
+                right: 0,
+                child: Cardd(),
+              ),
+              Positioned(
+                  top: MediaQuery.of(context).size.height * .07,
+                  left: 0,
+                  right: 0,
+                  child: const CircleAvatar(
+                    radius: 35,
+                  ))
+            ],
+          ),
+        )
       ],
     );
   }

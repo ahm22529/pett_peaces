@@ -11,9 +11,14 @@ class iconscustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 25,
       color: const Color(0xffFDDCBF),
-      child: Image.asset(imaeg),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Image.asset(
+          imaeg,
+          height: 20,
+        ),
+      ),
     );
   }
 }

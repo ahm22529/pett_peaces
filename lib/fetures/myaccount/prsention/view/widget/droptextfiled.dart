@@ -45,20 +45,6 @@ class _DropdownFieldState extends State<DropdownField> {
             });
           },
         ),
-        SizedBox(height: 16),
-        TextFormField(
-          controller: widget.controller,
-          maxLines: 1,
-          decoration: InputDecoration(
-            fillColor: const Color(0xffFFFFFF),
-            filled: true,
-            border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-            ),
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-          ),
-        ),
       ],
     );
   }

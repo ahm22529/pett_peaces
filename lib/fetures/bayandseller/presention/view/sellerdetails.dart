@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/continerbuttom.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 
@@ -7,7 +8,106 @@ class Sellerdetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BodeySellerrDetails(),
+      body: Bodysellerandbuyerdetails(),
+    );
+  }
+}
+
+class Bodysellerandbuyerdetails extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              const Continerimage(),
+              Positioned(
+                left: 0,
+                right: 0,
+                top: MediaQuery.of(context).size.height * .32,
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 15,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "الوصف",
+                          style: AppStyles.styleMedium18(context),
+                        ),
+                        Text(
+                          "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، تولد مثل هذا النص أو العديد من النصوص ",
+                          style: AppStyles.styleRegular14(context)
+                              .copyWith(color: Color(0xff333333)),
+                        ),
+                        Text(
+                          "سبب البيع",
+                          style: AppStyles.styleMedium18(context),
+                        ),
+                        Text(
+                          "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، تولد مثل هذا النص أو العديد من النصوص ",
+                          style: AppStyles.styleRegular14(context)
+                              .copyWith(color: Color(0xff333333)),
+                        ),
+                        Text("صور إضافية (24)"),
+                        show(),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 5,
+                top: MediaQuery.of(context).size.height * .01,
+                child: Image.asset("Asset/image/Back.png"),
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * .07,
+                child: infoa(),
+              ),
+            ],
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 20,
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class Continerimage extends StatelessWidget {
+  const Continerimage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * .45,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+              "Asset/image/seller.png"), // Replace with your image asset
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 }
@@ -36,7 +136,7 @@ class infoa extends StatelessWidget {
           Text(
             "روز",
             style: AppStyles.styleRegular24(context)
-                .copyWith(fontWeight: FontWeight.w500),
+                .copyWith(fontWeight: FontWeight.w500, color: Colors.white),
           ),
           Text(
             "الأسم",
@@ -45,11 +145,16 @@ class infoa extends StatelessWidget {
           Text(
             "روز",
             style: AppStyles.styleRegular24(context)
-                .copyWith(fontWeight: FontWeight.w500),
+                .copyWith(fontWeight: FontWeight.w500, color: Colors.white),
           ),
           Text(
             "الأسم",
             style: AppStyles.styleRegular14(context),
+          ),
+          Text(
+            "روز",
+            style: AppStyles.styleRegular24(context)
+                .copyWith(fontWeight: FontWeight.w500, color: Colors.white),
           ),
         ],
       ),
@@ -114,7 +219,9 @@ class Customdetailes extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               padding: EdgeInsets.symmetric(
-                  horizontal: width * 0.05, vertical: height * 0.02),
+                horizontal: width * 0.05,
+                vertical: height * 0.02,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -144,7 +251,9 @@ class Customdetailes extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: width * 0.05, vertical: height * 0.02),
+              horizontal: width * 0.05,
+              vertical: height * 0.02,
+            ),
             child: continerbuttom(),
           ),
         ],

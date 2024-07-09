@@ -17,16 +17,16 @@ import 'package:pett_peaces/fetures/poilce/presention/view/poilcy.dart';
 import 'package:pett_peaces/fetures/resonbuy/presention/view/resonbuy.dart';
 import 'package:pett_peaces/fetures/subscribtion/presention/view/subsurbtion.dart';
 
-class iteamconter extends StatefulWidget {
-  const iteamconter({Key? key}) : super(key: key);
+class Iteamconter extends StatefulWidget {
+  const Iteamconter({Key? key}) : super(key: key);
 
   @override
-  State<iteamconter> createState() => _iteamconterState();
+  State<Iteamconter> createState() => _IteamconterState();
 }
 
-class _iteamconterState extends State<iteamconter> {
-  List lis = [
-    ModelActino(image: "حيواناتي", text: "Asset/image/pawprint 8.png"),
+class _IteamconterState extends State<Iteamconter> {
+  List<ModelActino> lis = [
+    ModelActino(image: "Asset/image/fffkkk.png", text: "حيواناتي"),
     ModelActino(image: "Asset/image/digital health.png", text: "التزاوج"),
     ModelActino(image: "Asset/image/package.png", text: "طلباتي"),
     ModelActino(image: "Asset/image/deposit.png", text: "حجوزاتي"),
@@ -41,7 +41,7 @@ class _iteamconterState extends State<iteamconter> {
     ModelActino(image: "Asset/image/login 01.png", text: "تسجيل خروج"),
   ];
 
-  List nav = [
+  List<Widget> nav = [
     Myanmiles(),
     Mating(),
     Order(),
@@ -58,16 +58,14 @@ class _iteamconterState extends State<iteamconter> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 3,
-      child: Container(
-        decoration: BoxDecoration(color: Colors.white),
-        child: SafeArea(
-          child: ListView.builder(
-            padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
-            itemCount: lis.length,
-            itemBuilder: (context, index) => GestureDetector(
+    return Container(
+      child: SafeArea(
+        child: Column(
+          children: lis.asMap().entries.map((entry) {
+            int index = entry.key;
+            ModelActino modelAction = entry.value;
+
+            return GestureDetector(
               onTap: () {
                 if (index < nav.length) {
                   Navigator.push(
@@ -76,9 +74,13 @@ class _iteamconterState extends State<iteamconter> {
                   );
                 }
               },
-              child: spaceadHeader(modelActino: lis[index]),
-            ),
-          ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+                child: spaceadHeader(modelActino: modelAction),
+              ),
+            );
+          }).toList(),
         ),
       ),
     );

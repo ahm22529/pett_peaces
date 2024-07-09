@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/continerbuttom.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/location.dart';
+import 'package:pett_peaces/fetures/hotels/presention/view/widget/comfrimbook.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/headerhotel.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/tabbar.dart';
 
@@ -21,10 +22,14 @@ class BodyHotel extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   tabbarviewincolum(),
-                  Text(
-                    "فندق ستار بلازا",
-                    style: AppStyles.stylesemi20(context)
-                        .copyWith(color: Colors.black),
+                  GestureDetector(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => comfrimbook())),
+                    child: Text(
+                      "فندق ستار بلازا",
+                      style: AppStyles.stylesemi20(context)
+                          .copyWith(color: Colors.black),
+                    ),
                   ),
                   const location(),
                   const SizedBox(height: 500, child: ThreeTabBarExample()),
