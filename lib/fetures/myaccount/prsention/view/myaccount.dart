@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/imagePicker.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/accountappbar.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/addphote.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/droptextfiled.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/fristcontiner.dart';
 
 import 'dart:io';
-
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/fristcontiner.dart';
 
 class Myaccount extends StatefulWidget {
   @override
@@ -17,6 +17,8 @@ class Myaccount extends StatefulWidget {
 class _MyaccountState extends State<Myaccount> {
   final ImagePickerService _imagePickerService = ImagePickerService();
   List<File> _selectedImages = [];
+  bool isacu = false;
+  bool showDotContainer = true;
 
   Future<void> _pickImage() async {
     final selectedImage = await _imagePickerService.pickImages();
@@ -34,13 +36,32 @@ class _MyaccountState extends State<Myaccount> {
     });
   }
 
+  void toggleEditingMode() {
+    setState(() {
+      isacu = true;
+      // Set showDotContainer based on isacu value
+      showDotContainer = isacu;
+    });
+  }
+
+  void toggleEdcancitingMode() {
+    setState(() {
+      isacu = false;
+      // Set showDotContainer based on isacu value
+      showDotContainer = isacu;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const fristcontiner(),
+            fristcontiner(
+              toggleEditingMode: toggleEditingMode,
+              togglecacelingMode: toggleEdcancitingMode,
+            ),
             Container(
               color: Colors.white,
               child: Padding(
@@ -53,18 +74,20 @@ class _MyaccountState extends State<Myaccount> {
                       style: AppStyles.styleMedium16(context),
                     ),
                     const SizedBox(height: 16),
-                    const Textformfieldresoncon(
+                    Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: '',
+                      initialValue: 'روز',
+                      enabel: isacu,
                     ),
                     Text(
                       "النوع",
                       style: AppStyles.styleMedium16(context),
                     ),
                     const SizedBox(height: 16),
-                    const Textformfieldresoncon(
+                    Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: '',
+                      initialValue: 'قط شراز',
+                      enabel: isacu,
                     ),
                     Text(
                       "الجنس",
@@ -80,32 +103,35 @@ class _MyaccountState extends State<Myaccount> {
                       style: AppStyles.styleMedium16(context),
                     ),
                     const SizedBox(height: 16),
-                    const Textformfieldresoncon(
+                    Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: '',
+                      initialValue: '8',
+                      enabel: isacu,
                     ),
                     Text(
                       "الوصف",
                       style: AppStyles.styleMedium16(context),
                     ),
                     const SizedBox(height: 16),
-                    const Textformfieldresoncon(
+                    Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: '',
+                      initialValue: 'تم',
+                      enabel: isacu,
                     ),
                     Text(
                       "وصف النوع",
                       style: AppStyles.styleMedium16(context),
                     ),
                     const SizedBox(height: 16),
-                    const Textformfieldresoncon(
+                    Textformfieldresoncon(
                       maxline: 3,
-                      initialValue: '',
+                      initialValue: 'ققق',
+                      enabel: isacu,
                     ),
                     const SizedBox(height: 16),
                     GestureDetector(
                       onTap: _pickImage,
-                      child: const addphot(),
+                      child: Visibility(visible: isacu, child: const addphot()),
                     ),
                     const SizedBox(height: 30),
                     _selectedImages.isNotEmpty
@@ -151,11 +177,70 @@ class _MyaccountState extends State<Myaccount> {
                             ),
                           )
                         : Container(),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: buttomtext(
+                            color: Colors.orange,
+                            text: isacu ? "حفظ التعديل" : 'عرض للبيع',
+                            colortext: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: buttomtext(
+                            color: Colors.transparent,
+                            text: isacu ? " إلغاء" : ' عرض للتزاوج',
+                            colortext: Colors.orange,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    )
                   ],
                 ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class buttomtext extends StatelessWidget {
+  final Color color, colortext;
+  final String text;
+
+  const buttomtext({
+    Key? key,
+    required this.color,
+    required this.text,
+    required this.colortext,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.orange),
+        color: color,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 9),
+        child: Center(
+          child: Text(
+            text,
+            style: AppStyles.stylesemi20(context).copyWith(
+              color: colortext,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
       ),
     );

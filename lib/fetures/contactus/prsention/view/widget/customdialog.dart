@@ -18,10 +18,10 @@ class CustomDialog extends StatelessWidget {
             style:
                 AppStyles.styleMedium18(context).copyWith(color: Colors.black),
           ),
-          SizedBox(
+          const SizedBox(
             height: 32,
           ),
-          twobuttom(),
+          const twobuttom(),
         ],
       ),
     );
@@ -35,7 +35,7 @@ class twobuttom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         iteamsend(),
@@ -60,7 +60,7 @@ class buttomcancel extends StatelessWidget {
             backgroundColor: Colors.transparent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side: BorderSide(color: Colors.orange),
+              side: const BorderSide(color: Colors.orange),
             ),
             padding: const EdgeInsets.symmetric(vertical: 16),
           ),

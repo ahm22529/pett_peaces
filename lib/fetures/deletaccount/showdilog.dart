@@ -14,7 +14,7 @@ class CustomDialog extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "هل أنت متاكد من الإرسال",
+            "هل أنت متاكد من حذف حسابك",
             style:
                 AppStyles.styleMedium18(context).copyWith(color: Colors.black),
           ),
@@ -89,7 +89,7 @@ class iteamsend extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: TextButton(
           style: TextButton.styleFrom(
-            backgroundColor: Colors.orange,
+            backgroundColor: Colors.red,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -98,7 +98,8 @@ class iteamsend extends StatelessWidget {
           onPressed: () {},
           child: Text(
             "حذف",
-            style: AppStyles.styleMedium18(context).copyWith(color: Colors.red),
+            style:
+                AppStyles.styleMedium18(context).copyWith(color: Colors.white),
           ),
         ),
       ),

@@ -4,8 +4,10 @@ import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/bodyfristcon
 class fristcontiner extends StatelessWidget {
   const fristcontiner({
     super.key,
+    required this.toggleEditingMode,
+    required this.togglecacelingMode,
   });
-
+  final VoidCallback toggleEditingMode, togglecacelingMode;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,9 +18,12 @@ class fristcontiner extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: const Padding(
+      child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 35),
-        child: bodyfristcontiner(),
+        child: bodyfristcontiner(
+          toggleEditingMode: toggleEditingMode,
+          togglecacelingMode: togglecacelingMode,
+        ),
       ),
     );
   }

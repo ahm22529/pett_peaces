@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/mydata/prsention/view/mydata.dart';
 
 class Cardd extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class Cardd extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black26,
               blurRadius: 10,
@@ -22,6 +23,7 @@ class Cardd extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 25),
           child: Column(
             children: [
+              SizedBox(height: 6),
               Text(
                 "أحمد حسين",
                 style: AppStyles.styleMedium16(context)
@@ -32,28 +34,32 @@ class Cardd extends StatelessWidget {
                 style: AppStyles.styleRegular14(context),
               ),
               SizedBox(height: 10),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(color: Color(0xffF78E32), width: 1),
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset("Asset/image/edit rectangle.png"),
-                      SizedBox(width: 5),
-                      Text(
-                        "تعديل بيناتي",
-                        style: AppStyles.styleRegular14(context).copyWith(
-                          color: Color(0xffF78E32),
-                          fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (builder) => Mydata())),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color(0xffF78E32), width: 1),
+                  ),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset("Asset/image/edit rectangle.png"),
+                        SizedBox(width: 5),
+                        Text(
+                          "تعديل بيناتي",
+                          style: AppStyles.styleRegular14(context).copyWith(
+                            color: Color(0xffF78E32),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

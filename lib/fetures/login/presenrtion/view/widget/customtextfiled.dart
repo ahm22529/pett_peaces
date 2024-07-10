@@ -17,7 +17,7 @@ class TextFieldWithShadow extends StatelessWidget {
           ),
         ],
       ),
-      child: const Textformfiledemail(
+      child: Textformfiledemail(
         maxline: 1,
       ),
     );
@@ -28,11 +28,15 @@ class Textformfiledemail extends StatelessWidget {
   const Textformfiledemail({
     super.key,
     this.maxline,
+    this.initialValue, // Added initialValue
   });
   final int? maxline;
+  final String? initialValue; // Added initialValue
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue, // Set initialValue here
       maxLines: maxline,
       validator: (v) {
         if (v!.isEmpty) {

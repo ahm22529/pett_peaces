@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
+import 'package:pett_peaces/fetures/mydata/prsention/view/widget/disapeltextfiled.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/eidget/countryphonetextfiled.dart';
 
 class Mydata extends StatelessWidget {
   @override
@@ -54,7 +56,9 @@ class BodyMyData extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const TextFieldWithShadow(),
+          const Textformfiledemail(
+            initialValue: "محمد أحمد علي",
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -68,7 +72,9 @@ class BodyMyData extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const TextFieldWithShadow(),
+          const Textformfiledemaildisaple(
+            initialValue: "Mohamedwael23@gmail.com",
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -82,7 +88,9 @@ class BodyMyData extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const ContinerTextFiled(),
+          const CountryPhoneTextfiled(
+            text: "00102102 ",
+          ),
           SizedBox(
             height: 32,
           ),

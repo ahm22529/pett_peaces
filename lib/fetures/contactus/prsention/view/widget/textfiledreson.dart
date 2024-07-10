@@ -5,8 +5,9 @@ class Textformfieldresoncon extends StatelessWidget {
     super.key,
     required this.maxline,
     required this.initialValue,
+    this.enabel,
   });
-
+  final bool? enabel;
   final int maxline;
   final String initialValue;
 
@@ -16,6 +17,7 @@ class Textformfieldresoncon extends StatelessWidget {
         TextEditingController(text: initialValue);
 
     return TextFormField(
+      enabled: enabel,
       controller: _controller,
       maxLines: maxline,
       decoration: InputDecoration(

@@ -8,6 +8,7 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/changelang.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/view/changepassword.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/contactwithpices.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/login.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/mating.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/mydata/prsention/view/mydata.dart';
@@ -16,6 +17,8 @@ import 'package:pett_peaces/fetures/order2/presention/view/bookting.dart';
 import 'package:pett_peaces/fetures/poilce/presention/view/poilcy.dart';
 import 'package:pett_peaces/fetures/resonbuy/presention/view/resonbuy.dart';
 import 'package:pett_peaces/fetures/subscribtion/presention/view/subsurbtion.dart';
+
+import '../../../../deletaccount/showdilog.dart';
 
 class Iteamconter extends StatefulWidget {
   const Iteamconter({Key? key}) : super(key: key);
@@ -44,16 +47,16 @@ class _IteamconterState extends State<Iteamconter> {
   List<Widget> nav = [
     Myanmiles(),
     Mating(),
-    Order(),
     Bookting(),
+    Order(),
     Subsurbtion(),
-    resonbay(),
     Changepassword(),
-    Mydata(),
-    Myaccount(),
     Changelang(),
-    Contactwithpices(),
     policy(),
+    Aboutus(),
+    resonbay(),
+    Contactwithpices(),
+    LoginView(),
   ];
 
   @override
@@ -67,8 +70,22 @@ class _IteamconterState extends State<Iteamconter> {
 
             return GestureDetector(
               onTap: () {
-                if (index < nav.length) {
+                if (index == 9) {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return CustomDialog(); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
+                    },
+                  );
+                } else if (index < nav.length - 1) {
+                  // -1 لأنه تحقق بالفعل من index < nav.length في الفقرة السابقة
                   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nav[index]),
+                  );
+                } else if (index == nav.length - 1) {
+                  // عندما يكون index آخر عنصر في nav
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => nav[index]),
                   );

@@ -3,11 +3,16 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/widget/bottom.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/widget/iteamlang.dart';
 
-class bodychangelang extends StatelessWidget {
+class bodychangelang extends StatefulWidget {
   const bodychangelang({
     super.key,
   });
 
+  @override
+  State<bodychangelang> createState() => _bodychangelangState();
+}
+
+class _bodychangelangState extends State<bodychangelang> {
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 
 class buttomanmandmating extends StatelessWidget {
   const buttomanmandmating({
@@ -13,13 +14,17 @@ class buttomanmandmating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 29.0, vertical: 5),
-        child: Center(
-          child: bodycontiner(image: image, text: text),
+    return GestureDetector(
+      onTap: () => Navigator.push(
+          context, MaterialPageRoute(builder: (builder) => Myaccount())),
+      child: Container(
+        decoration:
+            BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 29.0, vertical: 5),
+          child: Center(
+            child: bodycontiner(image: image, text: text),
+          ),
         ),
       ),
     );

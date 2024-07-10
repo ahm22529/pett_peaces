@@ -5,8 +5,9 @@ class DropdownField extends StatefulWidget {
     super.key,
     required this.options,
     required this.controller,
+    this.ddd = true,
   });
-
+  final bool? ddd;
   final List<String> options;
   final TextEditingController controller;
 
@@ -24,6 +25,7 @@ class _DropdownFieldState extends State<DropdownField> {
         DropdownButtonFormField<String>(
           value: selectedValue,
           decoration: InputDecoration(
+            enabled: widget.ddd!,
             fillColor: const Color(0xffFFFFFF),
             filled: true,
             border: OutlineInputBorder(

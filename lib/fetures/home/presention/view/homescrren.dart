@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/account/presention/view/account.dart';
 
 import 'package:pett_peaces/fetures/home/presention/view/widget/homeviewbody.dart';
+import 'package:pett_peaces/fetures/masssege/presention/view/massage.dart';
 
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/services.dart';
 
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           const HomeViewBody(),
           const Services(),
-          const Store(),
+          const Massage(),
           Acountff(),
         ],
       ),

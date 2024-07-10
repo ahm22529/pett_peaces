@@ -5,13 +5,20 @@ import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/accountappba
 class bodyfristcontiner extends StatelessWidget {
   const bodyfristcontiner({
     super.key,
+    required this.toggleEditingMode,
+    required this.togglecacelingMode,
   });
+
+  final VoidCallback toggleEditingMode, togglecacelingMode;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        acountappbar(),
+        acountappbar(
+          toggleEditingMode: toggleEditingMode,
+          togglecacelingMode: togglecacelingMode,
+        ),
         Image.asset("Asset/image/acc.png"),
         Text(
           "روز",

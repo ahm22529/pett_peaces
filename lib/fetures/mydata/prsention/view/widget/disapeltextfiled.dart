@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:country_code_text_field/country_code_text_field.dart';
 
-class CountryPhoneTextfiled extends StatelessWidget {
-  const CountryPhoneTextfiled({
+class Textformfiledemaildisaple extends StatelessWidget {
+  const Textformfiledemaildisaple({
     super.key,
-    this.initialCountryCode,
-    this.text,
+    this.maxline,
+    this.initialValue,
+    this.disabled = true, // Added disabled property with default value true
   });
-  final String? text;
-
-  final String? initialCountryCode;
+  final int? maxline;
+  final String? initialValue;
+  final bool disabled; // Added disabled property
 
   @override
   Widget build(BuildContext context) {
-    return CountryCodeTextField(
-      // Set initialSelection with fallback to "US" if not provided
-      initialValue: text,
+    return TextFormField(
+      initialValue: initialValue,
+      maxLines: maxline,
+      enabled:
+          !disabled, // Enable/disable the TextFormField based on disabled flag
+      validator: (v) {
+        if (v!.isEmpty) {
+          return "هذا الحقل مطلوب";
+        }
+        return null; // Ensure a null return when the input is valid
+      },
       decoration: InputDecoration(
-        fillColor: const Color(0xffFFFFFF),
+        fillColor: const Color(0xffEBEBEB),
         filled: true,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
