@@ -16,45 +16,58 @@ class Anmmalesme extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
-        child: Row(
-          children: [
-            SizedBox(
-              height: 110,
-              child: Image.asset(
-                  "Asset/image/adorable-cat-relaxing-indoors-removebg-preview 1.png"),
-            ),
-            const Column(
-              children: [
-                InfoAnmales(
-                  tt: "روز",
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                InfoAnmales(
-                  tt: "روز",
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  children: [
-                    InfoAnmales1(
-                      tt: "ذكر",
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    InfoAnmales1(
-                      tt: "3 سنوات",
-                    )
-                  ],
-                )
-              ],
-            ),
-          ],
+        child: FittedBox(
+          child: Row(
+            children: [
+              SizedBox(
+               
+                child: Image.asset(
+                    "Asset/image/adorable-cat-relaxing-indoors-removebg-preview 1.png"),
+              ),
+              informationanmiles(),
+            ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class informationanmiles extends StatelessWidget {
+  const informationanmiles({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        InfoAnmales(
+          tt: "روز",
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        InfoAnmales(
+          tt: "روز",
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        Row(
+          children: [
+            InfoAnmales1(
+              tt: "ذكر",
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            InfoAnmales1(
+              tt: "3 سنوات",
+            )
+          ],
+        )
+      ],
     );
   }
 }

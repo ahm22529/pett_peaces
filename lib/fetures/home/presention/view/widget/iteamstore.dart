@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 class IteamStore extends StatelessWidget {
-  const IteamStore({super.key});
+  const IteamStore({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.black12, width: 1),
+    return GestureDetector(
+      onTap: onTap,
+      child: FittedBox(
+                child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Colors.black12, width: 1),
+          ),
+          child: const bodyiteamstore(),
         ),
-        child: const bodyiteamstore(),
       ),
     );
   }
@@ -87,10 +91,6 @@ class infoiteamstore extends StatelessWidget {
           Image.asset("Asset/image/add.png")
         ],
       ),
-
-
-
-      
     );
   }
 }

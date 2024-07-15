@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.dart';
 
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/platformui.dart';
+
+
 class Myanmiles extends StatelessWidget {
   const Myanmiles({super.key});
 
@@ -9,7 +12,9 @@ class Myanmiles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset("Asset/image/Back.png"),
+        leading: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Image.asset("Asset/image/Back.png")),
         title: Text(
           "  حيواناتي",
           style: AppStyles.styleRegular24(context)
@@ -17,7 +22,7 @@ class Myanmiles extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: BodyAnmiles(),
+      body: PlatformuiMyanmiles(),
     );
   }
 }

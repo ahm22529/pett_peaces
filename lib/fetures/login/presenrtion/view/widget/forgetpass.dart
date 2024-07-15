@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/restpassword.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/enteremail.dart';
+
 
 class forgepasss extends StatelessWidget {
   const forgepasss({
@@ -14,7 +16,7 @@ class forgepasss extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (builder) => Restpassword())),
+              context, MaterialPageRoute(builder: (builder) => enteremailb())),
           child: Text(
             "نسيت كلمة المرور؟",
             style: AppStyles.styleRegular14(context)

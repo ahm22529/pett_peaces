@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombackground.dart';
 
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/bodynewspassword.dart';
+import 'package:pett_peaces/fetures/newpassword/presention/view/widget/shape.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/bodyenteremail.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/enteremail.dart';
 
 class Newpassword extends StatelessWidget {
   const Newpassword({super.key});
@@ -19,23 +23,9 @@ class NewPassWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Custombackground(
-        image: 'Asset/image/كلمة المرور الجديدة.png',
-        wideget: Center(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: BodyNewsPassword()),
-            ),
-          ),
-        ),
-      ),
+    return const Scaffold(
+      body: Shape(),
     );
   }
 }
+

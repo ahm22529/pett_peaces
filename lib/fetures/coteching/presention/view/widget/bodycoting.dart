@@ -13,12 +13,12 @@ class BodyCoating extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * .07,
           ),
-          const customAppbar(),
+          const customAppbar(name: 'المدربين',),
           const SizedBox(
             height: 24,
           ),
           const TitelappbarDoctore(
-            name: 'ابحث عن الأطباء ',
+            name: 'ابحث عن المدربين ',
           ),
           const SizedBox(
             height: 15,

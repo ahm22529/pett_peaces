@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/addanmiles.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/anmileshome.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/gridviewstore.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/grisviewservices.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/headersection.dart';
@@ -45,17 +47,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [
-                  const Anmmalesme(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: SizedBox(
-                        height: MediaQuery.of(context).size.height * .2,
-                        child: Image.asset("Asset/image/addanmailes.png")),
-                  )
-                ],
-              ),
+              anmileshome(),
               const SizedBox(
                 height: 35,
               ),
@@ -92,3 +84,4 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
+

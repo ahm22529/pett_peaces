@@ -1,3 +1,4 @@
+
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -19,17 +20,21 @@ class CustomGridViewstore extends StatelessWidget {
           crossAxisSpacing: MediaQuery.of(context).size.width >= 410 ? 10 : 0,
           crossAxisCount: 2,
           childAspectRatio: MediaQuery.of(context).size.width <= 600
-              ? .85
-              : 1 // نسبة العرض إلى الارتفاع
+              ? .85  :MediaQuery.of(context).size.width >= 400
+              ? 2.1
+              : 2.5// نسبة العرض إلى الارتفاع
           ),
       itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-            onTap: () {
-              log(MediaQuery.of(context).size.width.toString());
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (builder) => DetailesView()));
-            },
-            child: IteamStore());
+        return GestureDetector(onTap: () {
+          log(MediaQuery.of(context).size.width.toString());
+          Navigator.push(
+              context, MaterialPageRoute(builder: (builder) => DetailesView()));
+        }, child: IteamStore(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (builder) => DetailesView()));
+          },
+        ));
       },
     );
   }

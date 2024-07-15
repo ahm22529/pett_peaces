@@ -5,6 +5,10 @@ import 'package:pett_peaces/fetures/masssege/presention/view/widget/iteammassege
 import 'package:pett_peaces/fetures/store/prention/view/widget/continertextfiled.dart';
 
 class BodyMassege extends StatelessWidget {
+  final ValueChanged<int> onItemSelected;
+
+  BodyMassege({required this.onItemSelected});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -12,7 +16,9 @@ class BodyMassege extends StatelessWidget {
         const SizedBox(
           height: 73,
         ),
-        const customAppbar(),
+        const customAppbar(name: 'الرسايل',
+      
+        ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: continertextfiled(
@@ -20,17 +26,30 @@ class BodyMassege extends StatelessWidget {
           ),
         ),
         Expanded(
-            child: ListView.builder(
-                itemBuilder: (context, index) => Padding(
-                      padding: EdgeInsets.only(bottom: 1.0),
-                      child: GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (builder) => Chatdetails())),
-                          child: iteammassage()),
-                    )))
+          child: ListView.builder(
+            // عدد العناصر في القائمة
+            itemBuilder: (context, index) => Padding(
+              padding: EdgeInsets.only(bottom: 1.0),
+              child: GestureDetector(
+                onTap: () {
+                  onItemSelected(index);
+                  if (MediaQuery.of(context).size.width < 600) {
+                    // الانتقال إلى صفحة التفاصيل في وضع الجوال
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chatdetails(),
+                      ),
+                    );
+                  }
+                },
+                child: iteammassage(),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
 }
+

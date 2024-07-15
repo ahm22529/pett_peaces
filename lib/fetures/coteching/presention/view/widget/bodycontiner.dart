@@ -16,7 +16,7 @@ class BodyCotactcoting extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: customAppbar(),
+            child: customAppbar(name: 'تفاصيل المدرب',),
           ),
           const SizedBox(
             height: 24,

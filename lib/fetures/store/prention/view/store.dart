@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:pett_peaces/fetures/store/prention/view/widget/Bodystore.dart';
 
+import 'package:pett_peaces/fetures/store/prention/view/widget/allplatform.dart';
+
+
 import 'package:pett_peaces/fetures/store/prention/view/widget/titelappbar.dart';
 
 class Store extends StatelessWidget {
@@ -20,16 +23,7 @@ class Store extends StatelessWidget {
           name: 'ابحث عن المنتجات',
         ),
       ),
-      body: const BodyStore(),
+      body: Allplatform(),
     );
   }
 }
-
-
-
-
-
-
-
-
-// ignore: camel_case_types

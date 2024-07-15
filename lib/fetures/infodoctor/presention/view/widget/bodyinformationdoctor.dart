@@ -14,7 +14,7 @@ class BodyInformationDoctor extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SafeArea(child: customAppbar()),
+          const SafeArea(child: customAppbar(name: 'نفاصيل الطبيب',)),
           const SizedBox(
             height: 28,
           ),

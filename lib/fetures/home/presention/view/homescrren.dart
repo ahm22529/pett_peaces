@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/account/presention/view/account.dart';
-
 import 'package:pett_peaces/fetures/home/presention/view/widget/homeviewbody.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/massage.dart';
-
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/services.dart';
-
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
-
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,54 +24,34 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[100],
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
-            )
-          ],
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-            child: GNav(
-              rippleColor: const Color.fromARGB(255, 9, 9, 9),
-              hoverColor: Colors.blue,
-              gap: 8,
-              activeColor: Colors.white,
-              iconSize: 24,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              duration: const Duration(milliseconds: 400),
-              tabBackgroundColor: Colors.blue.withOpacity(.9),
-              color: Colors.black,
-              tabs: const [
-                GButton(
-                  icon: Icons.countertops,
-                  text: 'Home',
-                ),
-                GButton(
-                  icon: Icons.countertops,
-                  text: 'Courses',
-                ),
-                GButton(
-                  icon: Icons.search,
-                  text: 'Calendar',
-                ),
-                GButton(
-                  icon: Icons.account_tree_sharp,
-                  text: 'Profile',
-                ),
-              ],
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                _onItemTapped(index);
-              },
-            ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.grey,
+        onTap: _onItemTapped,
+        items:  [
+          BottomNavigationBarItem(
+            icon: Image.asset("Asset/image/home 04.png",color: _selectedIndex==0?Colors.orange:Colors.grey, ),
+            label: 'الرئيسبه',
           ),
-        ),
+          BottomNavigationBarItem(
+            icon:Image.asset("Asset/image/store.png",color: _selectedIndex==1?Colors.orange:Colors.grey,),
+            label: 'المتجر',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("Asset/image/store.png",color: _selectedIndex==2?Colors.orange:Colors.grey,),
+            label: 'خدمتنا',
+          ),
+          BottomNavigationBarItem(
+            icon:Image.asset("Asset/image/chat 2.png",color: _selectedIndex==3?Colors.orange:Colors.grey,),
+            label: 'الرسايل',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset("Asset/image/user-circle.png",color: _selectedIndex==4?Colors.orange:Colors.grey,),
+            label: 'الحساب',
+          ),
+        ],
       ),
       body: IndexedStack(
         index: _selectedIndex,
@@ -84,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const HomeViewBody(),
           const Services(),
           const Massage(),
+          const Store(), // الصفحة الجديدة
           Acountff(),
         ],
       ),

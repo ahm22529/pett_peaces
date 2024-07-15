@@ -23,7 +23,7 @@ class _LoginWidgetState extends State<LoginWidget> {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * .29,
+              height: MediaQuery.of(context).size.height * .1,
             ),
             Text(
               "مرحبا بك ",

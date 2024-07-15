@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/newpassword.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/bodyenteremail.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/opt.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/timedaown.dart';
 
@@ -15,6 +17,10 @@ class BodyRestPassword extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * .2),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: customdivider(color: Color(0xffD9D9D966).withOpacity(.5)),
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Container(
@@ -70,7 +76,12 @@ class BodyRestPassword extends StatelessWidget {
               ),
             ),
           ),
+
         ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: customdivider(color: Colors.orange),
+            )
       ],
     );
   }

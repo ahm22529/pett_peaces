@@ -35,7 +35,10 @@ class _HeaderdetailesState extends State<Headerdetailes> {
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 10.0, vertical: 30),
-                  child: Image.asset("Asset/image/Back.png"),
+                  child: GestureDetector(
+                    
+                onTap: ()=>Navigator.pop(context),
+                    child: Image.asset("Asset/image/Back.png")),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 35.0),

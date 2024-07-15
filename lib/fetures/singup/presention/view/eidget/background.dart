@@ -1,32 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/core/utiles/sizeconfig.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/singupcontiner.dart';
 
 import 'imagedog.dart';
 
 class CustomBackgroundSinup extends StatelessWidget {
-  const CustomBackgroundSinup({super.key});
-
+  const CustomBackgroundSinup({super.key, required this.widget1, required this.widget2});
+  final Widget widget1, widget2;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          const singupcontiner(),
-          const Positioned(
-            left: 0,
-            right: 0,
-            top: -0, // Adjust this value as needed
-            child: imagedog(),
-          ),
-          Positioned(
-              left: 0,
-              right: 0,
-              top: 5,
-              child: Image.asset(
-                  "Asset/image/photography-surprised-dog-looking-from-white-long-frame-banner-removebg-preview 1.png")),
-        ],
-      ),
-    );
+        child: Column(
+      children: [
+        widget1,
+        widget2
+      ],
+    ));
   }
 }

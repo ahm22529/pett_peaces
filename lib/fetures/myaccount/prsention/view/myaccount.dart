@@ -60,7 +60,7 @@ class _MyaccountState extends State<Myaccount> {
           children: [
             fristcontiner(
               toggleEditingMode: toggleEditingMode,
-              togglecacelingMode: toggleEdcancitingMode,
+              togglecacelingMode: toggleEdcancitingMode, text1: "روز", text2: 'قط شيراز',
             ),
             Container(
               color: Colors.white,

@@ -7,7 +7,9 @@ class Mating extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset("Asset/image/Back.png"),
+        leading: GestureDetector(
+          onTap: ()=>Navigator.pop(context),
+          child: Image.asset("Asset/image/Back.png")),
         title: Text(
           " التزاوج",
           style: AppStyles.styleRegular24(context)

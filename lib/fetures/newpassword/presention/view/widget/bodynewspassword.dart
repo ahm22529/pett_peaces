@@ -40,7 +40,13 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
               height: 24,
             ),
             formnewspassword(globalKey: globalKey),
-            buttomAccept(),
+            buttomAccept(onPressed: () { 
+              if(globalKey.currentState!.validate())
+              {
+
+              }
+              
+             },),
             const SizedBox(
               height: 50,
             ),

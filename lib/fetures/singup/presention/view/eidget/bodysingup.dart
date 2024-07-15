@@ -24,9 +24,7 @@ class _BodySingUpState extends State<BodySingUp> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .25,
-          ),
+          SizedBox(height: MediaQuery.of(context).size.height * .09),
           const Header(),
           const SizedBox(
             height: 20,
@@ -48,7 +46,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   const SizedBox(
                     height: 16,
                   ),
-                  const TextFieldWithShadow(),
+                  const Textformfiledemail(),
                   const SizedBox(
                     height: 16,
                   ),
@@ -62,7 +60,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   const SizedBox(
                     height: 16,
                   ),
-                  const TextFieldWithShadow(),
+                  const Textformfiledemail(),
                   const SizedBox(
                     height: 16,
                   ),

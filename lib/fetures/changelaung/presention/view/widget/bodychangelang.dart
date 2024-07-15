@@ -41,17 +41,17 @@ class _bodychangelangState extends State<bodychangelang> {
           const Row(
             children: [
               Expanded(
-                child: iteamchange(
+                child: IteamChange(
                   img: 'Asset/image/svgexport-17 (2) 1.png',
                   text: 'عربي',
-                  isactive: true,
+                  isActive: true,
                 ),
               ),
               const Expanded(
-                child: iteamchange(
+                child: IteamChange(
                   img: 'Asset/image/svgexport-17 (2) 1.png',
                   text: 'English',
-                  isactive: false,
+                  isActive: false,
                 ),
               ),
             ],

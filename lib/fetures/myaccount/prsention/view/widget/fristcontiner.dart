@@ -5,9 +5,10 @@ class fristcontiner extends StatelessWidget {
   const fristcontiner({
     super.key,
     required this.toggleEditingMode,
-    required this.togglecacelingMode,
+    required this.togglecacelingMode,required this.text1,required this.text2,
   });
   final VoidCallback toggleEditingMode, togglecacelingMode;
+  final String text1, text2;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,6 +24,8 @@ class fristcontiner extends StatelessWidget {
         child: bodyfristcontiner(
           toggleEditingMode: toggleEditingMode,
           togglecacelingMode: togglecacelingMode,
+          text1:text1,
+          text2: text2,
         ),
       ),
     );

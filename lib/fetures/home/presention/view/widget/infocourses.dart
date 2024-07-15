@@ -12,14 +12,16 @@ class infocourses extends StatelessWidget {
       color: Colors.white.withOpacity(.3),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Text(
-              "كلب",
-              style: AppStyles.styleMedium16(context)
-                  .copyWith(fontSize: 12, color: Colors.white),
-            )
-          ],
+        child: FittedBox(
+          child: Row(
+            children: [
+              Text(
+                "كلب",
+                style: AppStyles.styleMedium16(context)
+                    .copyWith(fontSize: 12, color: Colors.white),
+              )
+            ],
+          ),
         ),
       ),
     );

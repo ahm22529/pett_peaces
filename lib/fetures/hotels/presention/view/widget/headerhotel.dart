@@ -11,11 +11,15 @@ class Headerhotel extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Image.asset("Asset/image/view-dubai-marina-sunrise-uae 1.png"),
+        Image.asset(
+          
+          "Asset/image/view-dubai-marina-sunrise-uae 1.png",width: MediaQuery.of(context).size.width,fit: BoxFit.cover,),
         Positioned(
             child: Padding(
           padding: const EdgeInsets.all(20),
-          child: Image.asset("Asset/image/Back.png"),
+          child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("Asset/image/Back.png")),
         )),
         const Positioned(
           bottom: 10,
@@ -32,3 +36,4 @@ class Headerhotel extends StatelessWidget {
     );
   }
 }
+

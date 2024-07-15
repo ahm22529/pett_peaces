@@ -12,7 +12,7 @@ class BodyContinerDoctor extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-            "Asset/image/attractive-young-male-nutriologist-lab-coat-smiling-against-white-background-removebg-preview 1.png"),
+            "Asset/image/attractive-young-male-nutriologist-lab-coat-smiling-against-white-background-removebg-preview 1.png",fit: BoxFit.cover,width: MediaQuery.of(context).size.width,),
         Positioned(
             left: 10,
             bottom: 40,
