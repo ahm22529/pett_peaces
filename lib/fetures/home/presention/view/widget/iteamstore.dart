@@ -87,6 +87,10 @@ class infoiteamstore extends StatelessWidget {
           Image.asset("Asset/image/add.png")
         ],
       ),
+
+
+
+      
     );
   }
 }
