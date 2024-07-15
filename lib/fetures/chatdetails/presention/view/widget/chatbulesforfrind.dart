@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class ChatBubble extends StatelessWidget {
+class ChatBubbleForFriend extends StatelessWidget {
   final String message;
   final String time;
 
-  const ChatBubble({required this.message, required this.time});
+  const ChatBubbleForFriend({required this.message, required this.time});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Align(
-        alignment: Alignment.centerRight,
+        alignment: Alignment.centerLeft,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.only(
+              decoration: const BoxDecoration(
+                color: Color(0xffF78E32),
+                borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
+                  bottomLeft: Radius.circular(10),
                 ),
               ),
               child: Text(
                 message,
-                style: AppStyles.styleMedium16(context)
-                    .copyWith(color: Colors.black),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
             SizedBox(height: 4),

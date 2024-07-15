@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:pett_peaces/fetures/store/prention/view/widget/Bodystore.dart';
-
 import 'package:pett_peaces/fetures/store/prention/view/widget/allplatform.dart';
-
-
 import 'package:pett_peaces/fetures/store/prention/view/widget/titelappbar.dart';
 
 class Store extends StatelessWidget {
@@ -14,13 +10,15 @@ class Store extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFDFDFD),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFFFA44A),
-        elevation: 0,
-        automaticallyImplyLeading:
-            false, // hides the default leading widget on the AppBar
-        title: Titelappbar(
-          name: 'ابحث عن المنتجات',
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight + 20), // increase the height by 10px
+        child: AppBar(
+          backgroundColor: const Color(0xFFFFA44A),
+          elevation: 0,
+          automaticallyImplyLeading: false, // hides the default leading widget on the AppBar
+          title: Titelappbar(
+            name: 'ابحث عن المنتجات',
+          ),
         ),
       ),
       body: Allplatform(),

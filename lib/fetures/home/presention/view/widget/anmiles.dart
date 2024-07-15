@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 
 class Anmmalesme extends StatelessWidget {
   const Anmmalesme({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,16 +17,21 @@ class Anmmalesme extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
+        padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
         child: FittedBox(
           child: Row(
             children: [
               SizedBox(
-               
                 child: Image.asset(
-                    "Asset/image/adorable-cat-relaxing-indoors-removebg-preview 1.png"),
+                  "Asset/image/dooo.png",
+                  fit: BoxFit.cover,
+                ),
               ),
-              informationanmiles(),
+              const Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: 23.0, vertical: 16),
+                child: informationanmiles(),
+              ),
             ],
           ),
         ),
@@ -34,40 +41,51 @@ class Anmmalesme extends StatelessWidget {
 }
 
 class informationanmiles extends StatelessWidget {
-  const informationanmiles({
-    super.key,
-  });
+  const informationanmiles({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        InfoAnmales(
-          tt: "روز",
-        ),
-        SizedBox(
-          height: 8,
-        ),
-        InfoAnmales(
-          tt: "روز",
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        Row(
-          children: [
-            InfoAnmales1(
-              tt: "ذكر",
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * .46,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const InfoAnmales(
+            tt: "روز",
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          const InfoAnmales(
+            tt: "روز",
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * .42,
+            child: const Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: InfoAnmales1(
+                    tt: "ذكر",
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Expanded(
+                  flex: 2,
+                  child: InfoAnmales1(
+                    tt: "3 سنوات",
+                  ),
+                )
+              ],
             ),
-            SizedBox(
-              width: 5,
-            ),
-            InfoAnmales1(
-              tt: "3 سنوات",
-            )
-          ],
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

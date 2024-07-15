@@ -12,6 +12,7 @@ class cobontextfiled extends StatelessWidget {
     return Container(
       height: 44,
       decoration: BoxDecoration(
+        border: Border.all(color: Colors.black.withOpacity(.15)),
         color: Colors.white,
         borderRadius: BorderRadius.circular(9),
       ),

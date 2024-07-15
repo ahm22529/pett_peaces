@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/categoryservices.dart';
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/widget/catagrorybuttom.dart';
 
 class CustomGridViewHome extends StatefulWidget {
@@ -22,7 +23,7 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
         crossAxisCount: 2, // عدد الأعمدة
         mainAxisSpacing: 5, // التباعد الرأسي
         crossAxisSpacing: 3, // التباعد الأفقي
-        childAspectRatio: 1 / 3, // نسبة العرض إلى الارتفاع
+        childAspectRatio: 2.6 / 4.9, // نسبة العرض إلى الارتفاع
       ),
       itemBuilder: (BuildContext context, int index) {
         final services = [
@@ -47,7 +48,7 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
               selectedindex = index;
             });
           },
-          child: CategoryButton(
+          child: CategoryButtonhome(
             backgroundColor:
                 selectedindex == index ? Color(0xffF78E32) : Color(0xffF5E8DD),
             text: services[index]['text'] as String,

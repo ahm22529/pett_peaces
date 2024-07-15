@@ -22,9 +22,9 @@ class CustomGridViewServ extends StatelessWidget {
       itemCount: 9,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // عدد الأعمدة
-        mainAxisSpacing: 24, // التباعد الرأسي
-        crossAxisSpacing: 17, // التباعد الأفقي
-        childAspectRatio: 5.5 / 2, // نسبة العرض إلى الارتفاع
+        mainAxisSpacing: 17, // التباعد الرأسي
+        crossAxisSpacing: 14, // التباعد الأفقي
+        childAspectRatio: 7.5 / 2, // نسبة العرض إلى الارتفاع
       ),
       itemBuilder: (BuildContext context, int index) {
         final List nav = [

@@ -42,6 +42,7 @@ class _listiteamorderState extends State<listiteamorder> {
             if (index < iteam.length - 1)
               Divider(
                 height: 25,
+                color: Color(0xffD9D9D980).withOpacity(.5)
               ),
           ],
         );

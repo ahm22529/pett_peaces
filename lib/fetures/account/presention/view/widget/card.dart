@@ -27,7 +27,7 @@ class Cardd extends StatelessWidget {
               Text(
                 "أحمد حسين",
                 style: AppStyles.styleMedium16(context)
-                    .copyWith(fontWeight: FontWeight.w500),
+                    .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
               ),
               Text(
                 "AhmedHussen19@gmail.com",

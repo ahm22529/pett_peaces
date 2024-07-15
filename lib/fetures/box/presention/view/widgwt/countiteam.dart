@@ -39,7 +39,7 @@ class _CountiteamState extends State<Countiteam> {
         GestureDetector(
             onTap: () {
               setState(() {
-                if (numb > 0) {
+                if (numb > 1) {
                   setState(() {
                     numb--;
                   });
@@ -47,7 +47,7 @@ class _CountiteamState extends State<Countiteam> {
               });
             },
             child: AddMiuns(
-              iconData: Icons.exposure_minus_1,
+              iconData: Icons.remove,
             ))
       ],
     );

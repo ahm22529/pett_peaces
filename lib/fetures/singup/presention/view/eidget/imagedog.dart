@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class imagedog extends StatelessWidget {
   const imagedog({
-    super.key, required this.img, required this.hig,
+    super.key, required this.img, required this.hig, required this.bo,
   });
   final String img;
-  final double hig;
+  final double hig,bo;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -25,7 +25,7 @@ class imagedog extends StatelessWidget {
             top: MediaQuery.of(context).size.height * .12,
             left: 0,
             right: 0,
-            bottom: -10,
+            bottom: bo,
             child: Image.asset(img))
       ],
     );

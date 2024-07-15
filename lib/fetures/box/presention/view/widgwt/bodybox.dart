@@ -4,6 +4,7 @@ import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/box/data/infodetailesModel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/coboniteam.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/detailesorder.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/listtitelorder.dart';
 
 class Bodybox extends StatelessWidget {
@@ -47,53 +48,27 @@ class Bodybox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
-        children: [
-          SizedBox(height: 73,),
-          customAppbar(name: 'السله',),
-          listiteamorder(),
-          cobeniteam(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: lis.length,
-              itemBuilder: (context, index) {
-                if (index == lis.length - 1) {
-                  return Column(
-                    children: [
-                      Divider(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 9.0),
-                        child: buildRow(
-                          lis[index].text1,
-                          lis[index].text2,
-                          lis[index].fontWeight,
-                          lis[index].color1,
-                          lis[index].color2,
-                        ),
-                      ),
-                    ],
-                  );
-                } else {
-                  return buildRow(
-                    lis[index].text1,
-                    lis[index].text2,
-                    lis[index].fontWeight,
-                    lis[index].color1,
-                    lis[index].color2,
-                  );
-                }
-              },
-            ),
-          ),
-          Row(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
             children: [
-              Custombuttom(titel: "titel", onPressed: (){})
+              SizedBox(height: 73,),
+              customAppbar(name: 'السله',),
+              listiteamorder(),
+              Divider(height: 48,color: Color(0xffD9D9D980).withOpacity(.5),),
+              detailesorder(lis: lis),
+            Row(
+              children: [
+                Custombuttom(titel: "إدفع", onPressed: (){})
+              ],
+            )
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
 }
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/buttonofadvancesheet.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/catogryadvancebutomsheet.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/headerbuttomshhet.dart';
@@ -48,7 +49,13 @@ class bodycontinerofbuttomsheet extends StatelessWidget {
           height: 24,
           color: const Color(0xff21235F).withOpacity(.25),
         ),
-        const buttomadvancedsheet()
+       Row(
+        children: [
+          Custombuttom(titel: "تطبيق", onPressed: (){
+            
+          })
+        ],
+       )
       ],
     );
   }

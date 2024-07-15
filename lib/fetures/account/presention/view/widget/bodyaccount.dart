@@ -30,7 +30,7 @@ class _BodyAccountState extends State<BodyAccount> {
               ),
               Positioned(
                 top: MediaQuery.of(context).size.width <= SizeConfig.tablet
-                    ? MediaQuery.of(context).size.height * .15
+                    ? MediaQuery.of(context).size.height * .17
                     : MediaQuery.of(context).size.height * .2,
                 left: 0,
                 right: 0,
@@ -38,7 +38,7 @@ class _BodyAccountState extends State<BodyAccount> {
               ),
               Positioned(
                   top: MediaQuery.of(context).size.width <= SizeConfig.tablet
-                      ? MediaQuery.of(context).size.height * .09
+                      ? MediaQuery.of(context).size.height * .1
                       : MediaQuery.of(context).size.height * .17,
                   left: 0,
                   right: 0,

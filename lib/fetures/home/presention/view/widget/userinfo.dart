@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/box/presention/view/box.dart';
+import 'package:pett_peaces/fetures/notifaction/presention/notifaction.dart';
 
 class UserInfoCard extends StatelessWidget {
   @override
@@ -40,11 +42,17 @@ class UserInfoCard extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        Image.asset("Asset/image/Frame 1000004230.png"),
-        const SizedBox(
+        
+        GestureDetector(
+          onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Box())),
+          child: Image.asset("Asset/image/box.png")),
+         const SizedBox(
           width: 8,
         ),
-        Image.asset("Asset/image/Frame 1000004230.png"),
+        GestureDetector(
+          onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Notifactin())),
+          child: Image.asset("Asset/image/Frame 1000004230.png")),
+       
       ],
     );
   }

@@ -18,11 +18,8 @@ class buttonofbuttomsheet extends StatelessWidget {
           titel: "تطبيق",
           onPressed: () {
             print(selectedItems);
-            showModalBottomSheet(
-                context: context,
-                builder: (builder) => CustomButtomShhetadvance(
-                      lis: selectedItems,
-                    ));
+            
+            Navigator.pop(context);
           },
         )
       ],

@@ -25,7 +25,7 @@ class _IteamChangeState extends State<iteamadd> {
         strokeWidth: 1,
         child: Container(
          // Adjusted width to make it rectangular
-          padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 75.0),
+          padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 70.0),
           
             child: Center(
               child: Image.asset("Asset/image/add.png", fit: BoxFit.contain),

@@ -13,7 +13,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body:CustomBackgroundSinup(widget1: imagedog(img: "Asset/image/close-up-adorable-kitten-bathtub-removebg-preview 1 (1).png", hig: MediaQuery.of(context).size.height*.3,), widget2: LoginWidget(),)
+      body:CustomBackgroundSinup(widget1: imagedog(img: "Asset/image/close-up-adorable-kitten-bathtub-removebg-preview 1 (1).png", hig: MediaQuery.of(context).size.height*.31, bo: -15,), widget2: LoginWidget(),)
       
       
        

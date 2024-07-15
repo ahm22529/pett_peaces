@@ -11,7 +11,7 @@ class Singup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: CustomBackgroundSinup(widget1: imagedog(img: "Asset/image/photography-surprised-dog-looking-from-white-long-frame-banner-removebg-preview 1.png", hig: MediaQuery.of(context).size.height * .21,), widget2: singupcontiner(),),
+      body: CustomBackgroundSinup(widget1: imagedog(img: "Asset/image/photography-surprised-dog-looking-from-white-long-frame-banner-removebg-preview 1.png", hig: MediaQuery.of(context).size.height * .21, bo: -10,), widget2: singupcontiner(),),
     );
   }
 }

@@ -18,35 +18,39 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .1,
-            ),
-            Text(
-              "مرحبا بك ",
-              style: AppStyles.stylesmedium32(context),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              " أهلا بك في Petty Peace قم بتسجيل الدخول الآن ",
-              style: AppStyles.styleRegular14(context)
-                  .copyWith(color: const Color(0xff8A8A8A)),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Customformdiled(globalKey: globalKey),
-            singinbutto(globalKey: globalKey),
-            const SizedBox(
-              height: 22,
-            ),
-            const Forget()
-          ],
+      child: Container(
+        decoration: BoxDecoration(
+          color:Colors.white,
+          borderRadius: BorderRadius.circular(30)),
+        
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            children: [
+              SizedBox(height: 20,),
+              Text(
+                "مرحبا بك ",
+                style: AppStyles.stylesmedium32(context),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Text(
+                " أهلا بك في Petty Peace قم بتسجيل الدخول الآن ",
+                style: AppStyles.styleRegular14(context)
+                    .copyWith(color: const Color(0xff8A8A8A)),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Customformdiled(globalKey: globalKey),
+              singinbutto(globalKey: globalKey),
+              const SizedBox(
+                height: 22,
+              ),
+              const Forget()
+            ],
+          ),
         ),
       ),
     );

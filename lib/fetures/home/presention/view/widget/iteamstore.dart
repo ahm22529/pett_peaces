@@ -8,7 +8,7 @@ class IteamStore extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: FittedBox(
-                child: Container(
+        child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
@@ -38,11 +38,18 @@ class bodyiteamstore extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
-          Image.asset("Asset/image/20802-removebg-preview 1.png"),
+          Image.asset(
+            "Asset/image/20802-removebg-preview 1.png",
+            height: MediaQuery.of(context).size.height *
+                0.2, // Adjust the height as needed
+            width: MediaQuery.of(context).size.width *
+                0.5, // Adjust the width as needed
+            fit: BoxFit.cover, // Ensures the image covers the specified space
+          ),
           const SizedBox(height: 10),
           Container(
-            padding: const EdgeInsets.all(8.0),
-            width: MediaQuery.of(context).size.width * .5,
+            padding: const EdgeInsets.all(5.0),
+            width: MediaQuery.of(context).size.width * .55,
             decoration: BoxDecoration(
               color: const Color(0xffF78E32).withOpacity(.3),
               borderRadius: BorderRadius.circular(9),
@@ -63,7 +70,7 @@ class infoiteamstore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(2.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -88,7 +95,7 @@ class infoiteamstore extends StatelessWidget {
               )
             ],
           ),
-          Image.asset("Asset/image/add.png")
+          SizedBox(height: 25, child: Image.asset("Asset/image/add.png"))
         ],
       ),
     );

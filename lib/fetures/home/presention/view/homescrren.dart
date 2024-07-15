@@ -57,9 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _selectedIndex,
         children: [
           const HomeViewBody(),
+          const Store(), 
           const Services(),
           const Massage(),
-          const Store(), // الصفحة الجديدة
+          // الصفحة الجديدة
           Acountff(),
         ],
       ),

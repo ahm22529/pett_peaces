@@ -13,36 +13,43 @@ class CategoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: FittedBox(
+    return FittedBox(
+      child: Container(
+        height: 52,
+        width: 168,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Stack(
+            clipBehavior: Clip.none,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Image.asset(
-                  imagePath,
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 45.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      child: Text(
+                        text,
+                        style: const TextStyle(
+                          fontFamily: 'Changa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15,
+                          color: Colors.white,
+                          height: 1.4,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 0),
-                child: Text(
-                  text,
-                  style: const TextStyle(
-                    fontFamily: 'Changa',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18,
-                    color: Colors.white,
-                    height: 1.4,
-                  ),
-                ),
-              )
+              Positioned(bottom: 0, top: -33, child: Image.asset(imagePath))
             ],
           ),
         ),
