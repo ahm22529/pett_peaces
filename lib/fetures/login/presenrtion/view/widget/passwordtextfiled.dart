@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PasswordFiled extends StatelessWidget {
-  const PasswordFiled({super.key});
-
+  const PasswordFiled({super.key,required this.onSaved});
+final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
-    return const textfiledinput();
+    return  textfiledinput(onSaved: onSaved,);
   }
 }
 
 // ignore: camel_case_types
 class textfiledinput extends StatefulWidget {
-  const textfiledinput({super.key});
-
+  const textfiledinput({super.key,required this.onSaved});
+final void Function(String?)? onSaved;
   @override
   State<textfiledinput> createState() => _textfiledinputState();
 }
@@ -24,6 +24,7 @@ class _textfiledinputState extends State<textfiledinput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved:widget.onSaved ,
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";

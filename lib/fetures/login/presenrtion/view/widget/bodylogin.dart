@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
+import 'package:pett_peaces/fetures/home/data/model/loginuserimodel/loginusermodel.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/create.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/form.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/singinbuttom.dart';
@@ -44,7 +45,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 height: 20,
               ),
               Customformdiled(globalKey: globalKey),
-              singinbutto(globalKey: globalKey),
+           
               const SizedBox(
                 height: 22,
               ),

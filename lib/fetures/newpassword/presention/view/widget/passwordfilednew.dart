@@ -28,7 +28,7 @@ class PasswordFieldNew extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          PasswordFieldvaild(controller: _passwordController),
+          PasswordFieldvaild(controller: _passwordController, onSaved: (v ) {  },),
           const SizedBox(
             height: 8,
           ),
@@ -45,7 +45,7 @@ class PasswordFieldNew extends StatelessWidget {
           PasswordFieldvaild(
               controller: _confirmPasswordController,
               isConfirm: true,
-              passwordController: _passwordController),
+              passwordController: _passwordController, onSaved: (v) {  },),
           const SizedBox(
             height: 8,
           ),

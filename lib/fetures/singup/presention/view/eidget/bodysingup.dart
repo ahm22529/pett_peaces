@@ -3,6 +3,7 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/textfiledinput.dart';
+import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/accceptreules.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/buttomsingup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
@@ -17,9 +18,11 @@ class BodySingUp extends StatefulWidget {
 }
 
 class _BodySingUpState extends State<BodySingUp> {
+  String? name, email, pass, comfrimpass, phone;
   final GlobalKey<FormState> _globalKey = GlobalKey();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +32,7 @@ class _BodySingUpState extends State<BodySingUp> {
         children: [
           SizedBox(height: MediaQuery.of(context).size.height * .09),
           const Header(),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Form(
@@ -46,13 +47,13 @@ class _BodySingUpState extends State<BodySingUp> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const TextFilkedOther(),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
+                  TextFilkedOther(onSaved: (v) {
+                    setState(() {
+                      name = v;
+                    });
+                  }),
+                  const SizedBox(height: 16),
                   Text(
                     "    البريد الإلكتروني      ",
                     style: AppStyles.styleMedium16(context).copyWith(
@@ -60,13 +61,15 @@ class _BodySingUpState extends State<BodySingUp> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
+                  const SizedBox(height: 16),
+                  Textformfiledemail(
+                    onSaved: (v) {
+                      setState(() {
+                        email = v;
+                      });
+                    },
                   ),
-                  const Textformfiledemail(),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   Text(
                     "    الهاتف       ",
                     style: AppStyles.styleMedium16(context).copyWith(
@@ -74,13 +77,9 @@ class _BodySingUpState extends State<BodySingUp> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   const ContinerTextFiled(),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   Text(
                     "    كلمة المرور      ",
                     style: AppStyles.styleMedium16(context).copyWith(
@@ -88,13 +87,14 @@ class _BodySingUpState extends State<BodySingUp> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
+                  const SizedBox(height: 16),
+                  PasswordFieldvaild(
+                    controller: _passwordController,
+                    onSaved: (v) {
+                      pass = v;
+                    },
                   ),
-                  PasswordFieldvaild(controller: _passwordController),
-                  const SizedBox(
-                    height: 8,
-                  ),
+                  const SizedBox(height: 8),
                   Text(
                     "   تأكيد كلمة المرور      ",
                     style: AppStyles.styleMedium16(context).copyWith(
@@ -102,20 +102,22 @@ class _BodySingUpState extends State<BodySingUp> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
-                    height: 16,
+                  const SizedBox(height: 16),
+                  PasswordFieldvaild(
+                    controller: _confirmPasswordController,
+                    isConfirm: true,
+                    passwordController: _passwordController, onSaved: (v) {  setState(() {
+                      comfrimpass=v;
+                    });},
                   ),
-                  PasswordFieldvaild(controller: _confirmPasswordController, isConfirm: true, passwordController: _passwordController),
-                  const SizedBox(
-                    height: 8,
-                  ),
+                  const SizedBox(height: 8),
                 ],
               ),
             ),
           ),
           const AcceptsReuls(),
           const SizedBox(height: 20),
-          ButtomSingup(globalKey: _globalKey),
+          ButtomSingup(globalKey: _globalKey, singupusermodel: Singupusermodel(name: name!, phone: '', email: email!, password: pass!, comfrimpassword: comfrimpass!, fcm_token: ''),),
           const SizedBox(height: 20),
         ],
       ),

@@ -31,7 +31,9 @@ dependencies:
   carousel_slider: ^4.2.1
   country_code_text_field: ^1.1.2
   cupertino_icons: ^1.0.6
+  device_info_plus: ^10.1.0
   device_preview: ^1.2.0
+  dio: ^5.5.0+1
   dotted_border: ^2.1.0
   flutter:
     sdk: flutter

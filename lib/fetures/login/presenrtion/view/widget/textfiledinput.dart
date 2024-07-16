@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TextFilkedOther extends StatelessWidget {
-  const TextFilkedOther({super.key, this.maxl});
+  const TextFilkedOther({super.key, this.maxl,required this.onSaved});
   final int? maxl;
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
-    return  Textformfiledname(
-        maxline: 1,
-      );
+    return Textformfiledname(
+      maxline: 1, onSaved: onSaved,
+    );
   }
 }
 
@@ -15,11 +16,12 @@ class Textformfiledname extends StatelessWidget {
   const Textformfiledname({
     super.key,
     this.maxline,
-    this.initialValue, // Added initialValue
+    this.initialValue,
+    required this.onSaved, // Added initialValue
   });
   final int? maxline;
   final String? initialValue; // Added initialValue
-
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -31,6 +33,7 @@ class Textformfiledname extends StatelessWidget {
         }
         return null; // Ensure a null return when the input is valid
       },
+      onSaved: onSaved,
       decoration: InputDecoration(
         fillColor: const Color(0xffFFFFFF),
         filled: true,

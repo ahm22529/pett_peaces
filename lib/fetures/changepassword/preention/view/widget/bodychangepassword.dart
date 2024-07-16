@@ -29,7 +29,7 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
             style: AppStyles.styleMedium18(context),
           ),
           SizedBox(height: 16),
-          PasswordFiled(), // حقل كلمة المرور الحالية، يجب استخدام PasswordFiled أو PasswordFieldvaild حسب ما تم تحديده سابقًا
+          PasswordFiled(onSaved: (v ) {  },), // حقل كلمة المرور الحالية، يجب استخدام PasswordFiled أو PasswordFieldvaild حسب ما تم تحديده سابقًا
           SizedBox(height: 16),
          PasswordFieldNew(globalKey: globalKey,),
          Row(

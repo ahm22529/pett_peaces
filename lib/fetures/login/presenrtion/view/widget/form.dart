@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/home/data/model/loginuserimodel/loginusermodel.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/forgetpass.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/headereadsiz.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/singinbuttom.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/restpassword.dart';
 
-class Customformdiled extends StatelessWidget {
+class Customformdiled extends StatefulWidget {
   const Customformdiled({
     super.key,
     required this.globalKey,
@@ -15,30 +17,57 @@ class Customformdiled extends StatelessWidget {
   final GlobalKey<FormState> globalKey;
 
   @override
+  State<Customformdiled> createState() => _CustomformdiledState();
+}
+
+class _CustomformdiledState extends State<Customformdiled> {
+  String? email, pass;
+
+  @override
   Widget build(BuildContext context) {
     return Form(
-      key: globalKey,
-      child: const Column(
+      key: widget.globalKey,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           headerandsize(
-            widget: TextFieldWithShadow(),
+            widget: TextFieldWithShadow(
+              onSaved: (v) {
+                setState(() {
+                  email = v;
+                });
+              },
+            ),
             titel: "   البريد الإلكتروني      ",
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           headerandsize(
-            widget: PasswordFiled(),
+            widget: PasswordFiled(
+              onSaved: (v) {
+                setState(() {
+                  pass = v;
+                });
+              },
+            ),
             titel: "    كلمة المرور      ",
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
-          forgepasss(),
-          SizedBox(
+          const forgepasss(),
+          const SizedBox(
             height: 32,
-          )
+          ),
+         
+            singinbutto(
+              globalKey: widget.globalKey,
+              loiginUserInputModel: LoiginUserInputModel(
+                mname: "pass"!,
+                email: "email"!,
+              ),
+            ),
         ],
       ),
     );
