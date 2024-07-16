@@ -16,9 +16,16 @@ class detailesorder extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12)
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x40000000), // Color #000000 with 25% opacity
+            blurRadius: 8,
+            spreadRadius: 1,
+            offset: Offset(0, 2), // changes position of shadow
+          ),
+        ],
       ),
-    
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

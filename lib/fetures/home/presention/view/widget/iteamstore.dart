@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class IteamStore extends StatelessWidget {
   const IteamStore({super.key, this.onTap});
   final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -13,6 +14,14 @@ class IteamStore extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black12, width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x40000000), // Color #000000 with 25% opacity
+                blurRadius: 8,
+                spreadRadius: 2,
+                offset: Offset(0, 2), // changes position of shadow
+              ),
+            ],
           ),
           child: const bodyiteamstore(),
         ),
