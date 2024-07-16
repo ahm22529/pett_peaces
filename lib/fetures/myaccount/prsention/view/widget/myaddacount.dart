@@ -4,10 +4,13 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/accountappbar.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/addphote.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/buttomtext.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/droptextfiled.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/fristcontiner.dart';
 
 import 'dart:io';
+
+import 'package:pett_peaces/fetures/resonbuy/presention/view/resonbuy.dart';
 
 class Myaccountadd extends StatefulWidget {
   @override
@@ -56,63 +59,69 @@ class _MyaccountState extends State<Myaccountadd> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 24,),
                     Text(
                       "الاسم",
-                      style: AppStyles.styleMedium16(context),
+                      style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: 'روز',
+                      initialValue: '',
                       enabel: isacu,
                     ),
+                    SizedBox(height: 16,),
                     Text(
                       "النوع",
-                      style: AppStyles.styleMedium16(context),
+                        style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: 'قط شراز',
+                      initialValue: ' ',
                       enabel: isacu,
                     ),
+                    SizedBox(height: 16,),
                     Text(
                       "الجنس",
-                      style: AppStyles.styleMedium16(context),
+                       style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     DropdownField(
                       options: ["انثي", "ذكر"],
                       controller: TextEditingController(),
                     ),
+                    SizedBox(height: 16,),
                     Text(
                       "السنوات",
-                      style: AppStyles.styleMedium16(context),
+                        style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: '8',
+                      initialValue: '',
                       enabel: isacu,
                     ),
+                    SizedBox(height: 16,),
                     Text(
                       "الوصف",
-                      style: AppStyles.styleMedium16(context),
+                      style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
                       maxline: 1,
-                      initialValue: 'تم',
+                      initialValue: '',
                       enabel: isacu,
                     ),
+                    SizedBox(height: 16,),
                     Text(
-                      "وصف النوع",
-                      style: AppStyles.styleMedium16(context),
+                      " وصف النوع",
+                        style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
                       maxline: 3,
-                      initialValue: 'ققق',
+                      initialValue: '',
                       enabel: isacu,
                     ),
                     const SizedBox(height: 16),
@@ -164,16 +173,19 @@ class _MyaccountState extends State<Myaccountadd> {
                             ),
                           )
                         : Container(),
-                    Row(
+                     Row(
                       children: [
                         Expanded(
-                          child: buttomtext(
-                            color: Colors.orange,
-                            text: 'عرض للبيع',
-                            colortext: Colors.white,
+                          child: GestureDetector(
+                            onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>resonbay())),
+                            child: buttomtext(
+                              color: Colors.orange,
+                              text: 'عرض للبيع',
+                              colortext: Colors.white,
+                            ),
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -199,37 +211,3 @@ class _MyaccountState extends State<Myaccountadd> {
   }
 }
 
-class buttomtext extends StatelessWidget {
-  final Color color, colortext;
-  final String text;
-
-  const buttomtext({
-    Key? key,
-    required this.color,
-    required this.text,
-    required this.colortext,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange),
-        color: color,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 9),
-        child: Center(
-          child: Text(
-            text,
-            style: AppStyles.stylesemi20(context).copyWith(
-              color: colortext,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
+import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
 
-class bodychangepassword extends StatelessWidget {
-  const bodychangepassword({
-    super.key,
-  });
+class BodyChangePassword extends StatefulWidget {
+  const BodyChangePassword({
+    Key? key,
+  }) : super(key: key);
 
+  @override
+  State<BodyChangePassword> createState() => _BodyChangePasswordState();
+}
+
+class _BodyChangePasswordState extends State<BodyChangePassword> {
+     GlobalKey<FormState> globalKey=GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,45 +23,20 @@ class bodychangepassword extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 40,
-          ),
+          SizedBox(height: 40),
           Text(
             "كلمة المرور الحالية",
             style: AppStyles.styleMedium18(context),
           ),
-          SizedBox(
-            height: 16,
-          ),
-          PasswordFiled(),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            "كلمة المرور الجديدة",
-            style: AppStyles.styleMedium18(context),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          PasswordFiled(),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            "تأكيد كلمة المرور الجديدة ",
-            style: AppStyles.styleMedium18(context),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          PasswordFiled(),
-          SizedBox(
-            height: 32,
-          ),
-          Row(
-            children: [Custombuttom(titel: "تاكيد", onPressed: () {})],
-          )
+          SizedBox(height: 16),
+          PasswordFiled(), // حقل كلمة المرور الحالية، يجب استخدام PasswordFiled أو PasswordFieldvaild حسب ما تم تحديده سابقًا
+          SizedBox(height: 16),
+         PasswordFieldNew(globalKey: globalKey,),
+         Row(
+          children: [
+            Custombuttom(titel: "تاكيد", onPressed:() {})
+          ],
+         )
         ],
       ),
     );

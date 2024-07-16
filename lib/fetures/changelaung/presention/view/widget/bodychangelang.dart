@@ -3,16 +3,18 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/widget/bottom.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/widget/iteamlang.dart';
 
-class bodychangelang extends StatefulWidget {
-  const bodychangelang({
+class BodyChangeLang extends StatefulWidget {
+  const BodyChangeLang({
     super.key,
   });
 
   @override
-  State<bodychangelang> createState() => _bodychangelangState();
+  State<BodyChangeLang> createState() => _BodyChangeLangState();
 }
 
-class _bodychangelangState extends State<bodychangelang> {
+class _BodyChangeLangState extends State<BodyChangeLang> {
+  bool isArabic = true;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,35 +34,49 @@ class _bodychangelangState extends State<bodychangelang> {
             height: 2,
           ),
           Text(
-            " أختر اللغة التي تريد المتابعة في التطبيق بها",
+            "أختر اللغة التي تريد المتابعة في التطبيق بها",
             style: AppStyles.styleRegular14(context),
           ),
           const SizedBox(
             height: 32,
           ),
-          const Row(
+          Row(
             children: [
               Expanded(
-                child: IteamChange(
-                  img: 'Asset/image/svgexport-17 (2) 1.png',
-                  text: 'عربي',
-                  isActive: true,
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isArabic = true;
+                    });
+                  },
+                  child: IteamChange(
+                    img: 'Asset/image/svgexport-17 (2) 1.png',
+                    text: 'عربي',
+                    isActive: isArabic,
+                  ),
                 ),
               ),
-              const Expanded(
-                child: IteamChange(
-                  img: 'Asset/image/svgexport-17 (2) 1.png',
-                  text: 'English',
-                  isActive: false,
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isArabic = false;
+                    });
+                  },
+                  child: IteamChange(
+                    img: 'Asset/image/svgexport-17 (3) 1.png',
+                    text: 'English',
+                    isActive: !isArabic,
+                  ),
                 ),
               ),
             ],
           ),
-          Spacer(),
-          buttom(),
-          SizedBox(
+          const Spacer(),
+          const buttom(),
+          const SizedBox(
             height: 20,
-          )
+          ),
         ],
       ),
     );

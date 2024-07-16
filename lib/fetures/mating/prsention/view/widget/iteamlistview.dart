@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 
 class iteamlistviewm extends StatelessWidget {
@@ -21,53 +22,9 @@ class iteamlistviewm extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
-          child: Row(
-            children: [
-              SizedBox(
-                child: Image.asset(
-                    "Asset/image/adorable-cat-relaxing-indoors-removebg-preview 1.png"),
-              ),
-              Column(
-                children: const [
-                  InfoAnmales(
-                    tt: "روز",
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  InfoAnmales(
-                    tt: "روز",
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    children: [
-                      InfoAnmales1(
-                        tt: "ذكر",
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      InfoAnmales1(
-                        tt: "3 سنوات",
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  buttomanmandmating(
-                    text: ' إلغاء العرض',
-                    image: "Asset/image/remove-circle.png",
-                    color: Colors.red,
-                  )
-                ],
-              ),
-            ],
-          ),
+        child:  Padding(
+          padding:const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
+          child: iteamlistviewami(widget: buttomanmandmating(text: "الغاء العرض", image: "Asset/image/remove-circle.png", color: Colors.red, onTap: () {  },),)
         ),
       ),
     );

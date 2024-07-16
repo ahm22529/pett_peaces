@@ -7,16 +7,16 @@ class buttomanmandmating extends StatelessWidget {
     super.key,
     required this.text,
     required this.image,
-    required this.color,
+    required this.color,required this.onTap,
   });
   final String text, image;
   final Color color;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (builder) => Myaccount())),
+      onTap: onTap,
       child: Container(
         decoration:
             BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
@@ -29,7 +29,11 @@ class buttomanmandmating extends StatelessWidget {
       ),
     );
   }
+  
 }
+
+
+
 
 class bodycontiner extends StatelessWidget {
   const bodycontiner({

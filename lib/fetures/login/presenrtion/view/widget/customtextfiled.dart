@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class TextFieldWithShadow extends StatelessWidget {
   const TextFieldWithShadow({super.key, this.maxl});
   final int? maxl;
+
   @override
   Widget build(BuildContext context) {
-    return  Textformfiledemail(
-        maxline: 1,
-      );
+    return const Textformfiledemail(
+      maxline: 1,
+    );
   }
 }
 
@@ -28,6 +29,13 @@ class Textformfiledemail extends StatelessWidget {
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";
+        }
+        // Regular expression for validating an email
+        bool emailValid = RegExp(
+                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+            .hasMatch(v);
+        if (!emailValid) {
+          return "من فضلك ادخل بريد الكتروني صحيح";
         }
         return null; // Ensure a null return when the input is valid
       },

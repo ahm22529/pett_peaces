@@ -1,52 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class PasswordFiled extends StatelessWidget {
-  const PasswordFiled({super.key});
-
+class TextFilkedOther extends StatelessWidget {
+  const TextFilkedOther({super.key, this.maxl});
+  final int? maxl;
   @override
   Widget build(BuildContext context) {
-    return const textfiledinput();
+    return  Textformfiledname(
+        maxline: 1,
+      );
   }
 }
 
-// ignore: camel_case_types
-class textfiledinput extends StatefulWidget {
-  const textfiledinput({super.key});
-
-  @override
-  State<textfiledinput> createState() => _textfiledinputState();
-}
-
-class _textfiledinputState extends State<textfiledinput> {
-  bool _obscureText = true;
+class Textformfiledname extends StatelessWidget {
+  const Textformfiledname({
+    super.key,
+    this.maxline,
+    this.initialValue, // Added initialValue
+  });
+  final int? maxline;
+  final String? initialValue; // Added initialValue
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue, // Set initialValue here
+      maxLines: maxline,
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";
         }
-        return null; // Added to ensure it returns null when the input is valid
+        return null; // Ensure a null return when the input is valid
       },
-      obscureText: _obscureText,
       decoration: InputDecoration(
-        suffixIcon: GestureDetector(
-          onTap: () {
-            setState(() {
-              _obscureText = !_obscureText;
-            });
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(
-              _obscureText
-                  ? "Asset/image/eye disable.svg"
-                  : "Asset/image/eye enable.svg", // Change the icon based on the state
-            ),
-          ),
-        ),
         fillColor: const Color(0xffFFFFFF),
         filled: true,
         enabledBorder: OutlineInputBorder(
@@ -77,7 +62,8 @@ class _textfiledinputState extends State<textfiledinput> {
             width: 1.0,
           ),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
     );
   }

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/buttomaccept.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/formnewspassword.dart';
+import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
 
 class BodyNewsPassword extends StatefulWidget {
-  const BodyNewsPassword({super.key});
+  const BodyNewsPassword({Key? key}) : super(key: key);
 
   @override
   State<BodyNewsPassword> createState() => _BodyNewsPasswordState();
@@ -25,8 +27,7 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
             ),
             Text(
               "كلمة المرور الجديدة",
-              style:
-                  AppStyles.stylesemi20(context).copyWith(color: Colors.black),
+              style: AppStyles.stylesemi20(context).copyWith(color: Colors.black),
             ),
             const SizedBox(
               height: 8,
@@ -39,14 +40,14 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
             const SizedBox(
               height: 24,
             ),
-            formnewspassword(globalKey: globalKey),
-            buttomAccept(onPressed: () { 
-              if(globalKey.currentState!.validate())
-              {
-
-              }
-              
-             },),
+            PasswordFieldNew(globalKey: globalKey),
+            buttomAccept(
+              onPressed: () {
+                if (globalKey.currentState!.validate()) {
+                  // يمكنك هنا تنفيذ الإجراءات بمجرد تحقق النموذج
+                }
+              },
+            ),
             const SizedBox(
               height: 50,
             ),

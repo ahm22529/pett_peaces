@@ -39,11 +39,11 @@ class _BodyAccountState extends State<BodyAccount> {
               Positioned(
                   top: MediaQuery.of(context).size.width <= SizeConfig.tablet
                       ? MediaQuery.of(context).size.height * .1
-                      : MediaQuery.of(context).size.height * .17,
+                      : MediaQuery.of(context).size.height * .18,
                   left: 0,
                   right: 0,
                   child: const CircleAvatar(
-                    radius: 35,
+                    radius: 40,
                   ))
             ],
           ),

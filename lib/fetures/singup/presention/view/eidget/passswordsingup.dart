@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PasswordFiled extends StatelessWidget {
-  const PasswordFiled({super.key});
+class PasswordFieldvaild extends StatefulWidget {
+  const PasswordFieldvaild({
+    super.key,
+    this.controller,
+    this.isConfirm = false,
+    this.passwordController,
+  });
+
+  final TextEditingController? controller;
+  final bool isConfirm;
+  final TextEditingController? passwordController;
 
   @override
-  Widget build(BuildContext context) {
-    return const textfiledinput();
-  }
+  _PasswordFieldvaildState createState() => _PasswordFieldvaildState();
 }
 
-// ignore: camel_case_types
-class textfiledinput extends StatefulWidget {
-  const textfiledinput({super.key});
-
-  @override
-  State<textfiledinput> createState() => _textfiledinputState();
-}
-
-class _textfiledinputState extends State<textfiledinput> {
+class _PasswordFieldvaildState extends State<PasswordFieldvaild> {
   bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";
         }
-        return null; // Added to ensure it returns null when the input is valid
+        if (widget.isConfirm && v != widget.passwordController!.text) {
+          return "كلمات المرور غير متطابقة";
+        }
+        bool hasUppercase = v.contains(RegExp(r'[A-Z]'));
+        bool hasLowercase = v.contains(RegExp(r'[a-z]'));
+        if (!hasUppercase || !hasLowercase) {
+          return "يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير";
+        }
+        return null;
       },
       obscureText: _obscureText,
       decoration: InputDecoration(
@@ -40,10 +49,10 @@ class _textfiledinputState extends State<textfiledinput> {
           },
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(
+            child: Image.asset(
               _obscureText
-                  ? "Asset/image/eye disable.svg"
-                  : "Asset/image/eye enable.svg", // Change the icon based on the state
+                  ? "Asset/image/eye disable.png"
+                  : "Asset/image/eye disable.png", // Change the icon based on the state
             ),
           ),
         ),

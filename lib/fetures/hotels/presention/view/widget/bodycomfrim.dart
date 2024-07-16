@@ -25,7 +25,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
+      child: ListView(
         children: [
           const SizedBox(
             height: 73,
@@ -58,8 +58,11 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
           ...List.generate(
             titel.length,
             (index) => Expanded(
-              child: checkchoose(
-                titel: titel[index],
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 0.0),
+                child: checkchoose(
+                  titel: titel[index],
+                ),
               ),
             ),
           ),

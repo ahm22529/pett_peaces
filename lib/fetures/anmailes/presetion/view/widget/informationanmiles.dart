@@ -1,49 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
-
-class iteamlistviewami extends StatelessWidget {
-  const iteamlistviewami({super.key, required this.widget});
-  final Widget widget;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 0.0),
-      child: Container(
-        decoration: const BoxDecoration(
-          borderRadius:BorderRadiusDirectional.all(Radius.circular(10)) ,
-          image: DecorationImage(
-            alignment: Alignment.center,
-            image: AssetImage(
-                "Asset/image/Frame 1000004356.png"), // Replace with your image asset
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
-          child: FittedBox(
-            child: Row(
-              children: [
-                SizedBox(
-                  child: Image.asset(
-                    "Asset/image/dooo.png",
-                    fit: BoxFit.cover,
-                    height: MediaQuery.of(context).size.height*.25,
-                  ),
-                ),
-                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 0),
-                  child: informationanmiles(widget: widget,),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class informationanmiles extends StatelessWidget {
   const informationanmiles({super.key, required this.widget});

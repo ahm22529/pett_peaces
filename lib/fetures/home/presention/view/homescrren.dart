@@ -40,8 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'المتجر',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("Asset/image/store.png",color: _selectedIndex==2?Colors.orange:Colors.grey,),
-            label: 'خدمتنا',
+            icon: Image.asset("Asset/image/Frame 16487.png",color: _selectedIndex==2?Colors.orange:Colors.grey,),
+            label: '',
           ),
           BottomNavigationBarItem(
             icon:Image.asset("Asset/image/chat 2.png",color: _selectedIndex==3?Colors.orange:Colors.grey,),

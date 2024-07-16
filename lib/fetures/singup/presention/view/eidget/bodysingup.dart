@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/textfiledinput.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/accceptreules.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/buttomsingup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/header.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
 
 class BodySingUp extends StatefulWidget {
   const BodySingUp({Key? key}) : super(key: key);
@@ -16,7 +17,9 @@ class BodySingUp extends StatefulWidget {
 }
 
 class _BodySingUpState extends State<BodySingUp> {
-  GlobalKey<FormState> globalKey = GlobalKey();
+  final GlobalKey<FormState> _globalKey = GlobalKey();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class _BodySingUpState extends State<BodySingUp> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Form(
-              key: globalKey,
+              key: _globalKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,7 +49,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   const SizedBox(
                     height: 16,
                   ),
-                  const Textformfiledemail(),
+                  const TextFilkedOther(),
                   const SizedBox(
                     height: 16,
                   ),
@@ -88,12 +91,12 @@ class _BodySingUpState extends State<BodySingUp> {
                   const SizedBox(
                     height: 16,
                   ),
-                  const PasswordFiled(),
+                  PasswordFieldvaild(controller: _passwordController),
                   const SizedBox(
                     height: 8,
                   ),
                   Text(
-                    "   تاكيد كلمة المرور      ",
+                    "   تأكيد كلمة المرور      ",
                     style: AppStyles.styleMedium16(context).copyWith(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -102,7 +105,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   const SizedBox(
                     height: 16,
                   ),
-                  const PasswordFiled(),
+                  PasswordFieldvaild(controller: _confirmPasswordController, isConfirm: true, passwordController: _passwordController),
                   const SizedBox(
                     height: 8,
                   ),
@@ -112,7 +115,7 @@ class _BodySingUpState extends State<BodySingUp> {
           ),
           const AcceptsReuls(),
           const SizedBox(height: 20),
-          ButtomSingup(globalKey: globalKey),
+          ButtomSingup(globalKey: _globalKey),
           const SizedBox(height: 20),
         ],
       ),

@@ -19,7 +19,7 @@ class Changepassword extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: bodychangepassword(),
+      body: BodyChangePassword(),
     );
   }
 }

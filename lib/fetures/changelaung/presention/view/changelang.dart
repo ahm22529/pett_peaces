@@ -19,7 +19,7 @@ class Changelang extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: bodychangelang(),
+      body: BodyChangeLang(),
     );
   }
 }

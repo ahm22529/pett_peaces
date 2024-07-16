@@ -24,7 +24,11 @@ class Tabletui extends StatelessWidget {
                     crossAxisCount: 2,
                     childAspectRatio:450/209// نسبة العرض إلى ا,لارتفاع
                     ),
-                itemBuilder: (context, index) => iteamlistview()),
+                itemBuilder: (context, index) => iteamlistviewami(widget: buttomanmandmating(
+              text: 'تعديل البيانات',
+              image: "Asset/image/edit-rectangle.png",
+              color: Color(0xff9C4900), onTap: () {  },
+            ),)),
           ),
         ),
         Expanded(
@@ -35,7 +39,7 @@ class Tabletui extends StatelessWidget {
             child: buttomanmandmating(
               color: Colors.orange,
               text: 'إضافة حيوان جديد',
-              image: 'Asset/image/jjjdjd.png',
+              image: 'Asset/image/jjjdjd.png', onTap: () {  },
             ),
           ),
         )

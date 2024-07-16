@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/box/presention/view/box.dart';
 
 class listtilecustomcard extends StatelessWidget {
   const listtilecustomcard({
@@ -41,12 +42,15 @@ class listtilecustomcard extends StatelessWidget {
           color: const Color(0xFFF78E32),
           borderRadius: BorderRadius.circular(22),
         ),
-        child: const Center(
-          child: Icon(
-            Icons
-                .shopping_cart_outlined, // Example icon, replace with your asset path if needed
-            color: Colors.white,
-            size: 20,
+        child:  Center(
+          child: GestureDetector(
+            onTap:()=> Navigator.push(context,MaterialPageRoute(builder: (builder)=>Box())),
+            child: Icon(
+              Icons
+                  .shopping_cart_outlined, // Example icon, replace with your asset path if needed
+              color: Colors.white,
+              size: 20,
+            ),
           ),
         ),
       ),
