@@ -17,7 +17,7 @@ class CustomGridViewstore extends StatelessWidget {
       itemCount: 9,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           mainAxisSpacing: 10,
-          crossAxisSpacing: MediaQuery.of(context).size.width >= 410 ? 10 : 0,
+          crossAxisSpacing: MediaQuery.of(context).size.width >= 410 ? 10 : 10,
           crossAxisCount: 2,
           childAspectRatio: MediaQuery.of(context).size.width <= 600
               ? .85  :MediaQuery.of(context).size.width >= 400

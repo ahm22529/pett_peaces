@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/hatag.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteamcontiner.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
@@ -72,9 +73,11 @@ class bodyofcontinertwo extends StatelessWidget {
 
           ...List.generate(
               3,
-              (index) => const Padding(
+              (index) =>  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Bodyofheader(),
+                    child: GestureDetector(
+                      onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Hastag())),
+                      child: Bodyofheader()),
                   )),
         ],
       ),

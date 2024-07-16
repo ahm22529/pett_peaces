@@ -50,7 +50,7 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
           },
           child: CategoryButtonhome(
             backgroundColor:
-                selectedindex == index ? Color(0xffF78E32) : Color(0xffF5E8DD),
+                selectedindex == index ? Color(0xffF78E32) : Color(0xffF78E32),
             text: services[index]['text'] as String,
             imagePath: services[index]['imagePath'] as String,
           ),

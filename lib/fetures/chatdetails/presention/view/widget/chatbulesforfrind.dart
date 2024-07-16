@@ -17,13 +17,21 @@ class ChatBubbleForFriend extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              decoration: const BoxDecoration(
-                color: Color(0xffF78E32),
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                color: const Color(0xffF78E32),
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                   bottomLeft: Radius.circular(10),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5), // لون الظل وشفافيته
+                    spreadRadius: 2, // نطاق التوزيع
+                    blurRadius: 4, // نطاق الضبابية
+                    offset: Offset(0, 2), // تعيين موضع الظل بالنسبة للعنصر
+                  ),
+                ],
               ),
               child: Text(
                 message,

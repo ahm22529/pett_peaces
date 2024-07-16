@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/buildrow.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/coboniteam.dart';
-
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/custombuttombox.dart';
 
 class orderdetails extends StatelessWidget {
   const orderdetails({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.15), // لون الظل وشفافيته
+            spreadRadius: 2, // نطاق التوزيع
+            blurRadius: 4, // نطاق الضبابية
+            offset: Offset(0, 2), // تعيين موضع الظل بالنسبة للعنصر
+          ),
+        ],
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(

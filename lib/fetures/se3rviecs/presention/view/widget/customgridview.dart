@@ -22,7 +22,7 @@ class CustomGridViewServ extends StatelessWidget {
       itemCount: 9,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // عدد الأعمدة
-        mainAxisSpacing: 17, // التباعد الرأسي
+        mainAxisSpacing: 10, // التباعد الرأسي
         crossAxisSpacing: 14, // التباعد الأفقي
         childAspectRatio: 7.5 / 2, // نسبة العرض إلى الارتفاع
       ),

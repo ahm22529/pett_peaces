@@ -15,42 +15,44 @@ class CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
-        height: 52,
-        width: 168,
+        height: MediaQuery.of(context).size.height * .07,
+        width: MediaQuery.of(context).size.width * .7,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(5),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              FittedBox(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 45.0),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0),
-                      child: Text(
-                        text,
-                        style: const TextStyle(
-                          fontFamily: 'Changa',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                          color: Colors.white,
-                          height: 1.4,
-                        ),
+          child: Center(
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                FittedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 45.0),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
+                        child: Text(
+                          text,
+                          style: const TextStyle(
+                            fontFamily: 'Changa',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                            color: Colors.white,
+                            height: 1.4,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Positioned(bottom: 0, top: -33, child: Image.asset(imagePath))
-            ],
+                Positioned(bottom: 0, top: -33, child: Image.asset(imagePath))
+              ],
+            ),
           ),
         ),
       ),
