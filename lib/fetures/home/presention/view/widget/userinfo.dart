@@ -42,17 +42,17 @@ class UserInfoCard extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        
         GestureDetector(
-          onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Box())),
-          child: Image.asset("Asset/image/box.png")),
-         const SizedBox(
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (builder) => Box())),
+            child: Image.asset("Asset/image/box.png")),
+        const SizedBox(
           width: 8,
         ),
         GestureDetector(
-          onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Notifactin())),
-          child: Image.asset("Asset/image/Frame 1000004230.png")),
-       
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (builder) => Notifactin())),
+            child: Image.asset("Asset/image/Frame 1000004230.png")),
       ],
     );
   }

@@ -3,8 +3,6 @@ import 'package:pett_peaces/core/utiles/adaptiveui.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/bodystore.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/mobileui.dart';
 
-
-
 class Allplatform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,6 +12,3 @@ class Allplatform extends StatelessWidget {
         DeskTopLayOut: (context) => BodyStore());
   }
 }
-
-
-

@@ -9,9 +9,7 @@ class bottomdetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        Custombuttom(titel: "تواصل الآن", onPressed: () {})
-      ],
+      children: [Custombuttom(titel: "تواصل الآن", onPressed: () {})],
     );
   }
 }

@@ -6,13 +6,15 @@ class PasswordFieldvaild extends StatefulWidget {
     super.key,
     this.controller,
     this.isConfirm = false,
-    this.passwordController,required this.onSaved,
+    this.passwordController,
+    required this.onSaved,
   });
 
   final TextEditingController? controller;
   final bool isConfirm;
   final TextEditingController? passwordController;
-final void Function(String?)? onSaved;
+  final void Function(String?)? onSaved;
+
   @override
   _PasswordFieldvaildState createState() => _PasswordFieldvaildState();
 }
@@ -23,7 +25,7 @@ class _PasswordFieldvaildState extends State<PasswordFieldvaild> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onSaved:widget.onSaved ,
+      onSaved: widget.onSaved,
       controller: widget.controller,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (v) {
@@ -87,7 +89,8 @@ class _PasswordFieldvaildState extends State<PasswordFieldvaild> {
             width: 1.0,
           ),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
     );
   }

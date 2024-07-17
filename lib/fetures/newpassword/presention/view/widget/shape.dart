@@ -18,19 +18,22 @@ class Shape extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-               customdivider(color: Color(0xffD9D9D966)),
+                customdivider(color: Color(0xffD9D9D966)),
                 Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: BodyNewsPassword()),
-                     customdivider(color: Colors.orange.withOpacity(.5),),
+                customdivider(
+                  color: Colors.orange.withOpacity(.5),
+                ),
               ],
             ),
           ),
         ),
-      ), pos: MediaQuery.of(context).size.height*.2,
+      ),
+      pos: MediaQuery.of(context).size.height * .2,
     );
   }
 }

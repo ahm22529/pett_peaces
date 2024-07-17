@@ -37,9 +37,12 @@ class _BodysetailsmassageState extends State<Bodysetailsmassage> {
             },
           ),
         ),
-        Padding(padding: const EdgeInsets.all(16), child: foterdetailsmassage(scrollController: _controller,))
+        Padding(
+            padding: const EdgeInsets.all(16),
+            child: foterdetailsmassage(
+              scrollController: _controller,
+            ))
       ],
     );
   }
 }
-

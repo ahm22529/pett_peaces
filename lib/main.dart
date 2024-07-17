@@ -12,7 +12,7 @@ import 'generated/l10n.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: false,
       builder: (context) => MyApp(), // Wrap your app
     ), // Wrap your app
   );

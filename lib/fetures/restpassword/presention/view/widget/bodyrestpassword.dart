@@ -76,12 +76,11 @@ class BodyRestPassword extends StatelessWidget {
               ),
             ),
           ),
-
         ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: customdivider(color: Colors.orange),
-            )
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: customdivider(color: Colors.orange),
+        )
       ],
     );
   }

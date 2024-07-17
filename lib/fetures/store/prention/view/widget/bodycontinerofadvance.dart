@@ -49,13 +49,9 @@ class bodycontinerofbuttomsheet extends StatelessWidget {
           height: 24,
           color: const Color(0xff21235F).withOpacity(.25),
         ),
-       Row(
-        children: [
-          Custombuttom(titel: "تطبيق", onPressed: (){
-            
-          })
-        ],
-       )
+        Row(
+          children: [Custombuttom(titel: "تطبيق", onPressed: () {})],
+        )
       ],
     );
   }

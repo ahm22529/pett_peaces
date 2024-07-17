@@ -15,7 +15,7 @@ class BodyChangePassword extends StatefulWidget {
 }
 
 class _BodyChangePasswordState extends State<BodyChangePassword> {
-     GlobalKey<FormState> globalKey=GlobalKey();
+  GlobalKey<FormState> globalKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,14 +29,16 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
             style: AppStyles.styleMedium18(context),
           ),
           SizedBox(height: 16),
-          PasswordFiled(onSaved: (v ) {  },), // حقل كلمة المرور الحالية، يجب استخدام PasswordFiled أو PasswordFieldvaild حسب ما تم تحديده سابقًا
+          PasswordFiled(
+            onSaved: (v) {},
+          ), // حقل كلمة المرور الحالية، يجب استخدام PasswordFiled أو PasswordFieldvaild حسب ما تم تحديده سابقًا
           SizedBox(height: 16),
-         PasswordFieldNew(globalKey: globalKey,),
-         Row(
-          children: [
-            Custombuttom(titel: "تاكيد", onPressed:() {})
-          ],
-         )
+          PasswordFieldNew(
+            globalKey: globalKey,
+          ),
+          Row(
+            children: [Custombuttom(titel: "تاكيد", onPressed: () {})],
+          )
         ],
       ),
     );

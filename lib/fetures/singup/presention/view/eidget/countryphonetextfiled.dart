@@ -13,7 +13,7 @@ class CountryPhoneTextfiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CountryCodeTextField(
-      initialCountryCode: 'EG' , // تعيين الكود الابتدائي لمصر
+      initialCountryCode: 'EG', // تعيين الكود الابتدائي لمصر
       initialValue: text,
       decoration: InputDecoration(
         fillColor: const Color(0xffFFFFFF),
@@ -50,7 +50,7 @@ class CountryPhoneTextfiled extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
       validator: (value) {
-        if (value == null ) {
+        if (value == null) {
           return 'هذا الرقم غير صحيح';
         }
         // يمكنك إضافة تحقق إضافي هنا إذا لزم الأمر

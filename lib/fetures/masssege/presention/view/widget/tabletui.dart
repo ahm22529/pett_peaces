@@ -30,20 +30,38 @@ class _TabletmassuiState extends State<Tabletmassui> {
           child: selectedIndex != null
               ? Chatdetails()
               : Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("Asset/image/message sign.png",height: 200,),
-                    SizedBox(height: 30,),
-                    Text("فريقPetty Peace يتمني لك تجربه سعيده",style: AppStyles.styleRegular24(context).copyWith(color: Colors.orange,fontSize: 32),)
-                    ,
-                    SizedBox(height: 10,),
-                    Text(" احصل ع الاستشاره الكامله من دكاتره متميزين ",style:AppStyles.styleMedium18(context) ,),
-                    SizedBox(height: 10,),
-                    Text("اختر شاتك ",style:AppStyles.styleMedium18(context) ,)
-                  ],
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "Asset/image/message sign.png",
+                        height: 200,
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text(
+                        "فريقPetty Peace يتمني لك تجربه سعيده",
+                        style: AppStyles.styleRegular24(context)
+                            .copyWith(color: Colors.orange, fontSize: 32),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        " احصل ع الاستشاره الكامله من دكاتره متميزين ",
+                        style: AppStyles.styleMedium18(context),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "اختر شاتك ",
+                        style: AppStyles.styleMedium18(context),
+                      )
+                    ],
+                  ),
                 ),
-              ),
         ),
       ],
     );

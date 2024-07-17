@@ -20,7 +20,7 @@ class BodyAnmiles extends StatelessWidget {
               text: 'إضافة حيوان جديد',
               image: 'Asset/image/jjjdjd.png',
               onTap: () {
-                 Navigator.push(context,
+                Navigator.push(context,
                     MaterialPageRoute(builder: (builder) => Myaccountadd()));
               },
             ),

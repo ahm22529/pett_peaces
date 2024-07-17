@@ -54,16 +54,21 @@ class Bodybox extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              SizedBox(height: 73,),
-              customAppbar(name: 'السله',),
+              SizedBox(
+                height: 73,
+              ),
+              customAppbar(
+                name: 'السله',
+              ),
               listiteamorder(),
-              Divider(height: 48,color: Color(0xffD9D9D980).withOpacity(.5),),
+              Divider(
+                height: 48,
+                color: Color(0xffD9D9D980).withOpacity(.5),
+              ),
               detailesorder(lis: lis),
-            Row(
-              children: [
-                Custombuttom(titel: "إدفع", onPressed: (){})
-              ],
-            )
+              Row(
+                children: [Custombuttom(titel: "إدفع", onPressed: () {})],
+              )
             ],
           ),
         ),
@@ -71,4 +76,3 @@ class Bodybox extends StatelessWidget {
     );
   }
 }
-

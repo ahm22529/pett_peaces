@@ -33,11 +33,13 @@ class _IteamChangeState extends State<IteamChange> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(widget.img, height: 80), // Adjust image height as needed
+                Image.asset(widget.img,
+                    height: 80), // Adjust image height as needed
                 const SizedBox(height: 8),
                 Text(
                   widget.text,
-                  style: AppStyles.styleRegular16(context).copyWith(fontWeight: FontWeight.w600),
+                  style: AppStyles.styleRegular16(context)
+                      .copyWith(fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -47,5 +49,3 @@ class _IteamChangeState extends State<IteamChange> {
     );
   }
 }
-
-

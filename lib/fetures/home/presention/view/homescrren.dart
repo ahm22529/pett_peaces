@@ -30,25 +30,40 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
-        items:  [
+        items: [
           BottomNavigationBarItem(
-            icon: Image.asset("Asset/image/home 04.png",color: _selectedIndex==0?Colors.orange:Colors.grey, ),
+            icon: Image.asset(
+              "Asset/image/home 04.png",
+              color: _selectedIndex == 0 ? Colors.orange : Colors.grey,
+            ),
             label: 'الرئيسبه',
           ),
           BottomNavigationBarItem(
-            icon:Image.asset("Asset/image/store.png",color: _selectedIndex==1?Colors.orange:Colors.grey,),
+            icon: Image.asset(
+              "Asset/image/store.png",
+              color: _selectedIndex == 1 ? Colors.orange : Colors.grey,
+            ),
             label: 'المتجر',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("Asset/image/Frame 16487.png",color: _selectedIndex==2?Colors.orange:Colors.grey,),
+            icon: Image.asset(
+              "Asset/image/Frame 16487.png",
+              color: _selectedIndex == 2 ? Colors.orange : Colors.grey,
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon:Image.asset("Asset/image/chat 2.png",color: _selectedIndex==3?Colors.orange:Colors.grey,),
+            icon: Image.asset(
+              "Asset/image/chat 2.png",
+              color: _selectedIndex == 3 ? Colors.orange : Colors.grey,
+            ),
             label: 'الرسايل',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("Asset/image/user-circle.png",color: _selectedIndex==4?Colors.orange:Colors.grey,),
+            icon: Image.asset(
+              "Asset/image/user-circle.png",
+              color: _selectedIndex == 4 ? Colors.orange : Colors.grey,
+            ),
             label: 'الحساب',
           ),
         ],
@@ -57,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _selectedIndex,
         children: [
           const HomeViewBody(),
-          const Store(), 
+          const Store(),
           const Services(),
           const Massage(),
           // الصفحة الجديدة

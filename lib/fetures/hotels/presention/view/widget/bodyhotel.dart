@@ -27,14 +27,21 @@ class BodyHotel extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                     SizedBox(height: 30,),
+                      SizedBox(
+                        height: 30,
+                      ),
                       Text(
                         "فندق ستار بلازا",
                         style: AppStyles.stylesemi20(context)
                             .copyWith(color: Colors.black),
                       ),
                       const location(),
-                       SizedBox(height:MediaQuery.of(context).size.width<=SizeConfig.tablet? MediaQuery.of(context).size.height*.8:MediaQuery.of(context).size.height*.5, child: ThreeTabBarExample()),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.width <=
+                                  SizeConfig.tablet
+                              ? MediaQuery.of(context).size.height * .8
+                              : MediaQuery.of(context).size.height * .5,
+                          child: ThreeTabBarExample()),
                     ],
                   ),
                 ),

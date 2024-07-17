@@ -73,11 +73,12 @@ class bodyofcontinertwo extends StatelessWidget {
 
           ...List.generate(
               3,
-              (index) =>  Padding(
+              (index) => Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.0),
                     child: GestureDetector(
-                      onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Hastag())),
-                      child: Bodyofheader()),
+                        onTap: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (builder) => Hastag())),
+                        child: Bodyofheader()),
                   )),
         ],
       ),

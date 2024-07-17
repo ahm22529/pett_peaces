@@ -12,8 +12,9 @@ class contact extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Chatdetails())),
-          child: Image.asset("Asset/image/chatdoc.png")),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (builder) => Chatdetails())),
+            child: Image.asset("Asset/image/chatdoc.png")),
         const SizedBox(
           width: 8,
         ),

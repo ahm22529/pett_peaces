@@ -12,8 +12,8 @@ class Mydata extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap:()=> Navigator.pop(context),
-          child: Image.asset("Asset/image/Back.png")),
+            onTap: () => Navigator.pop(context),
+            child: Image.asset("Asset/image/Back.png")),
         title: Text(
           " بياناتي",
           style: AppStyles.styleRegular24(context)
@@ -58,8 +58,9 @@ class BodyMyData extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-           Textformfiledemail(
-            initialValue: "محمد أحمد علي", onSaved: (v ) {  },
+          Textformfiledemail(
+            initialValue: "محمد أحمد علي",
+            onSaved: (v) {},
           ),
           const SizedBox(
             height: 16,

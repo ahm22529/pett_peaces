@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/googelmaps.dart';

@@ -19,12 +19,16 @@ class BodyNotifaction extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           customAppbar(name: "الاشعارات"),
-          Expanded(child: ListView.builder(itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.only(bottom: 2.0),
-            child: iteamnotif(),
-          ))),
+          Expanded(
+              child: ListView.builder(
+                  itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 2.0),
+                        child: iteamnotif(),
+                      ))),
         ],
       ),
     );
@@ -43,7 +47,8 @@ class iteamnotif extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5.0),
         child: ListTile(
-          leading:Image.asset("Asset/image/view-building-with-cartoon-style-architecture__1_-removebg-preview 1.png"),
+          leading: Image.asset(
+              "Asset/image/view-building-with-cartoon-style-architecture__1_-removebg-preview 1.png"),
           trailing: Text(
             "اليوم",
             style: AppStyles.styleRegular14(context),

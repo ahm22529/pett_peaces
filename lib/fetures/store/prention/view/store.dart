@@ -11,11 +11,13 @@ class Store extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFDFDFD),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight + 20), // increase the height by 10px
+        preferredSize:
+            Size.fromHeight(kToolbarHeight + 20), // increase the height by 10px
         child: AppBar(
           backgroundColor: const Color(0xFFFFA44A),
           elevation: 0,
-          automaticallyImplyLeading: false, // hides the default leading widget on the AppBar
+          automaticallyImplyLeading:
+              false, // hides the default leading widget on the AppBar
           title: Titelappbar(
             name: 'ابحث عن المنتجات',
           ),

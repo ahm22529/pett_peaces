@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/newpassword/presention/manager/cubit/updatepassword_cubit.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/buttomaccept.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/formnewspassword.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
@@ -27,7 +29,8 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
             ),
             Text(
               "كلمة المرور الجديدة",
-              style: AppStyles.stylesemi20(context).copyWith(color: Colors.black),
+              style:
+                  AppStyles.stylesemi20(context).copyWith(color: Colors.black),
             ),
             const SizedBox(
               height: 8,
@@ -45,6 +48,14 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
               onPressed: () {
                 if (globalKey.currentState!.validate()) {
                   // يمكنك هنا تنفيذ الإجراءات بمجرد تحقق النموذج
+                  context
+                      .read<UpdatepasswordCubit>()
+                      .createUserWithEmailAndPassword({
+                    "email": "test200@gamil.com",
+                    "otp": "1234",
+                    "password": "12345678910",
+                    "password_confirmation": "12345678910"
+                  }, "forget-password/reset-password");
                 }
               },
             ),

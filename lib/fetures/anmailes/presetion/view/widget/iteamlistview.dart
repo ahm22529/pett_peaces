@@ -12,7 +12,7 @@ class iteamlistviewami extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 0.0),
       child: Container(
         decoration: const BoxDecoration(
-          borderRadius:BorderRadiusDirectional.all(Radius.circular(10)) ,
+          borderRadius: BorderRadiusDirectional.all(Radius.circular(10)),
           image: DecorationImage(
             alignment: Alignment.center,
             image: AssetImage(
@@ -29,12 +29,14 @@ class iteamlistviewami extends StatelessWidget {
                   child: Image.asset(
                     "Asset/image/dooo.png",
                     fit: BoxFit.cover,
-                    height: MediaQuery.of(context).size.height*.25,
+                    height: MediaQuery.of(context).size.height * .25,
                   ),
                 ),
-                 Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 0),
-                  child: informationanmiles(widget: widget,),
+                  child: informationanmiles(
+                    widget: widget,
+                  ),
                 ),
               ],
             ),
@@ -92,8 +94,11 @@ class informationanmiles extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * .43, child: widget),
-          SizedBox(height: 5,)
+          SizedBox(
+              width: MediaQuery.of(context).size.width * .43, child: widget),
+          SizedBox(
+            height: 5,
+          )
         ],
       ),
     );

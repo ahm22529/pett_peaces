@@ -13,7 +13,9 @@ class BodyCoating extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * .07,
           ),
-          const customAppbar(name: 'المدربين',),
+          const customAppbar(
+            name: 'المدربين',
+          ),
           const SizedBox(
             height: 24,
           ),

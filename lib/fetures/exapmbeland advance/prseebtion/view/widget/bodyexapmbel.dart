@@ -16,7 +16,9 @@ class BodyExample extends StatelessWidget {
                 SizedBox(
                   height: 73,
                 ),
-                customAppbar(name: 'الامثله والنصائح',),
+                customAppbar(
+                  name: 'الامثله والنصائح',
+                ),
               ],
             ),
           ),

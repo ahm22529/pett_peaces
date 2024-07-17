@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/manager/cubit/checkemail_cubit.dart';
 
 import 'package:pett_peaces/fetures/restpassword/presention/view/restpassword.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/buttomcomfrimrest.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 
 class BodyEnteremail extends StatefulWidget {
   const BodyEnteremail({super.key});
@@ -16,17 +19,17 @@ class BodyEnteremail extends StatefulWidget {
 }
 
 class _BodyEnteremailState extends State<BodyEnteremail> {
-
-  GlobalKey<FormState> globalKey=GlobalKey();
+  GlobalKey<FormState> globalKey = GlobalKey();
+  String email = "";
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: customdivider(color: Color(0xffD9D9D966).withOpacity(.4)),
-      ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: customdivider(color: Color(0xffD9D9D966).withOpacity(.4)),
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Container(
@@ -54,20 +57,24 @@ class _BodyEnteremailState extends State<BodyEnteremail> {
                       const SizedBox(
                         height: 40,
                       ),
-                       Textformfiledemail(onSaved: (v ) {  },),
+                      Textformfiledemail(
+                        onSaved: (v) {
+                          setState(() {
+                            email = v!;
+                          });
+                        },
+                      ),
                       const SizedBox(
                         height: 16,
                       ),
                       buttomcomfrimrest(
                         name: 'إرسال',
                         onPressed: () {
-                         if(globalKey.currentState!.validate())
-                         {
-                           Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (builder) => const Restpassword()));
-                         }
+                          if (globalKey.currentState!.validate()) {
+                            globalKey.currentState!.save();
+                            context.read<CheckemailCubit>().createUserWithEmailAndPassword(
+                      {"email":email}, "forget-password/check-email");
+                          }
                         },
                       ),
                       SizedBox(
@@ -82,11 +89,11 @@ class _BodyEnteremailState extends State<BodyEnteremail> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
-          child: customdivider(color: Colors.orange.withOpacity(.4),),
+          child: customdivider(
+            color: Colors.orange.withOpacity(.4),
+          ),
         ),
       ],
     );
   }
 }
-
-

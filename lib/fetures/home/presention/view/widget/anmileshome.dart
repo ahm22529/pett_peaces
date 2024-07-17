@@ -11,16 +11,14 @@ class anmileshome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  FittedBox(
+    return FittedBox(
       child: Row(
         children: [
           Anmmalesme(),
-       
-       GestureDetector(
-        onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>Myaccountadd())),
-        child: iteamadd())
-      
-         
+          GestureDetector(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (builder) => Myaccountadd())),
+              child: iteamadd())
         ],
       ),
     );

@@ -7,7 +7,9 @@ class bodyfristcontiner extends StatelessWidget {
   const bodyfristcontiner({
     super.key,
     required this.toggleEditingMode,
-    required this.togglecacelingMode, required this.text1, required this.text2,
+    required this.togglecacelingMode,
+    required this.text1,
+    required this.text2,
   });
 
   final VoidCallback toggleEditingMode, togglecacelingMode;
@@ -21,15 +23,15 @@ class bodyfristcontiner extends StatelessWidget {
           togglecacelingMode: togglecacelingMode,
         ),
         GestureDetector(
-          onTap: () => ImagePickerService().pickImages,
-          child: Image.asset("Asset/image/acc.png")),
+            onTap: () => ImagePickerService().pickImages,
+            child: Image.asset("Asset/image/acc.png")),
         Text(
           text1,
           style: AppStyles.styleRegular24(context).copyWith(
               fontSize: 28, fontWeight: FontWeight.w600, color: Colors.orange),
         ),
         Text(
-         text2,
+          text2,
           style: AppStyles.styleRegular24(context).copyWith(
               fontSize: 28,
               fontWeight: FontWeight.w600,

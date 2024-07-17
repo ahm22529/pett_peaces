@@ -3,7 +3,8 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/buttomshett.dart';
 
 class Catogry extends StatelessWidget {
-  const Catogry({Key? key, required this.titel1, required this.tiele2}) : super(key: key);
+  const Catogry({Key? key, required this.titel1, required this.tiele2})
+      : super(key: key);
   final String titel1, tiele2;
 
   @override
@@ -21,19 +22,20 @@ class Catogry extends StatelessWidget {
           },
           child: Text(
             tiele2,
-            style: AppStyles.styleRegular14(context).copyWith(color: Colors.black),
+            style:
+                AppStyles.styleRegular14(context).copyWith(color: Colors.black),
           ),
         ),
         const SizedBox(width: 16),
         GestureDetector(
           onTap: () {
             showModalBottomSheet(
-              context: context, 
+              context: context,
               builder: (builder) => Custommodelshhet(),
             );
           },
           child: SizedBox(
-            height: 15, 
+            height: 15,
             child: Image.asset("Asset/image/Vector.png"),
           ),
         ),

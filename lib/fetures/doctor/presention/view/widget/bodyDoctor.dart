@@ -11,7 +11,7 @@ class BodyDocoter extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 73),
       child: Column(
         children: [
-         customAppbar(name: "الاطباء"),
+          customAppbar(name: "الاطباء"),
           SizedBox(
             height: 24,
           ),

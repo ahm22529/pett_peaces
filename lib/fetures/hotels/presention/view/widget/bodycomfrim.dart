@@ -30,8 +30,8 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
           const SizedBox(
             height: 73,
           ),
-          const customAppbar(name: 'تاكيد الحجز',
-            
+          const customAppbar(
+            name: 'تاكيد الحجز',
           ),
           const SizedBox(
             height: 32,
@@ -91,4 +91,3 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
     );
   }
 }
-

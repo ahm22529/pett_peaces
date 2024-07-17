@@ -42,9 +42,10 @@ class listtilecustomcard extends StatelessWidget {
           color: const Color(0xFFF78E32),
           borderRadius: BorderRadius.circular(22),
         ),
-        child:  Center(
+        child: Center(
           child: GestureDetector(
-            onTap:()=> Navigator.push(context,MaterialPageRoute(builder: (builder)=>Box())),
+            onTap: () => Navigator.push(
+                context, MaterialPageRoute(builder: (builder) => Box())),
             child: Icon(
               Icons
                   .shopping_cart_outlined, // Example icon, replace with your asset path if needed

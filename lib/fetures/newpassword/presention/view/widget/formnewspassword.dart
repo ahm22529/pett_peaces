@@ -24,7 +24,9 @@ class formnewspassword extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          PasswordFiled(onSaved: (v ) {  },),
+          PasswordFiled(
+            onSaved: (v) {},
+          ),
           const SizedBox(
             height: 30,
           ),
@@ -36,7 +38,9 @@ class formnewspassword extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          PasswordFiled(onSaved: (v ) {  },),
+          PasswordFiled(
+            onSaved: (v) {},
+          ),
           const SizedBox(
             height: 38,
           ),

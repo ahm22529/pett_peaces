@@ -9,9 +9,14 @@ class BodyMating extends StatelessWidget {
     return ListView.builder(
         itemCount: 2,
         itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 4),
-              child: iteamlistviewami(widget:  buttomanmandmating(text: "الغاء العرض", image: "Asset/image/remove-circle.png", color: Colors.red, onTap: () {  },),)
-
-            ));
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 4),
+            child: iteamlistviewami(
+              widget: buttomanmandmating(
+                text: "الغاء العرض",
+                image: "Asset/image/remove-circle.png",
+                color: Colors.red,
+                onTap: () {},
+              ),
+            )));
   }
 }

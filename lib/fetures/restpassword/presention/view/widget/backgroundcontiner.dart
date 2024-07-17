@@ -3,7 +3,9 @@ import 'package:pett_peaces/fetures/restpassword/presention/view/widget/backgrou
 
 class backgroundrest extends StatelessWidget {
   const backgroundrest({
-    super.key, required this.widget, required this.pos,
+    super.key,
+    required this.widget,
+    required this.pos,
   });
   final Widget widget;
   final double pos;
@@ -25,11 +27,7 @@ class backgroundrest extends StatelessWidget {
               )
             ],
           ),
-          Positioned(
-              left: 0,
-              right: 0,
-              top:pos ,
-              child: widget)
+          Positioned(left: 0, right: 0, top: pos, child: widget)
         ],
       ),
     );

@@ -22,10 +22,16 @@ class iteamlistviewm extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child:  Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
-          child: iteamlistviewami(widget: buttomanmandmating(text: "الغاء العرض", image: "Asset/image/remove-circle.png", color: Colors.red, onTap: () {  },),)
-        ),
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
+            child: iteamlistviewami(
+              widget: buttomanmandmating(
+                text: "الغاء العرض",
+                image: "Asset/image/remove-circle.png",
+                color: Colors.red,
+                onTap: () {},
+              ),
+            )),
       ),
     );
   }

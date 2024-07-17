@@ -4,7 +4,6 @@ import 'package:pett_peaces/fetures/box/presention/view/box.dart';
 
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/addmiuns.dart';
 
-
 class Countiteam extends StatefulWidget {
   @override
   State<Countiteam> createState() => _CountiteamState();

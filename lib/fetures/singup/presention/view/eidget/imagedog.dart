@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 
 class imagedog extends StatelessWidget {
   const imagedog({
-    super.key, required this.img, required this.hig, required this.bo,
+    super.key,
+    required this.img,
+    required this.hig,
+    required this.bo,
   });
   final String img;
-  final double hig,bo;
+  final double hig, bo;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          height:hig ,
+          height: hig,
           decoration: const BoxDecoration(
             color: Color(0xffDF8639),
             image: DecorationImage(

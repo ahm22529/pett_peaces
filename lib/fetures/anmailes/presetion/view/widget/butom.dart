@@ -7,7 +7,8 @@ class buttomanmandmating extends StatelessWidget {
     super.key,
     required this.text,
     required this.image,
-    required this.color,required this.onTap,
+    required this.color,
+    required this.onTap,
   });
   final String text, image;
   final Color color;
@@ -29,11 +30,7 @@ class buttomanmandmating extends StatelessWidget {
       ),
     );
   }
-  
 }
-
-
-
 
 class bodycontiner extends StatelessWidget {
   const bodycontiner({

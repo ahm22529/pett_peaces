@@ -1,43 +1,79 @@
 import 'package:dio/dio.dart';
 
-class Requestservices {
-  String baseurl = "";
+class RequestServices {
+  String baseUrl = "https://animals.codeella.com/api/";
   final Dio dio;
 
-  Requestservices(this.dio);
+  RequestServices(this.dio);
 
-  Future<dynamic> post(data, String endPoint, token, cotanttype) async {
+  Future<dynamic> post(
+      data, String endPoint, String? token, String? contentType) async {
     try {
       var s = token;
       Map<String, dynamic> headers = {
         'Authorization': 'Bearer $s',
-        'Content-Type': cotanttype, // Depending on your API requirements
+        'Accept': "application/json",
+        'type': 'android', // تعديل هنا على نوع الجهاز
+        'x-version': '1',
+        'x-lang': 'ar',
       };
-      var re = await dio.post("$baseurl$endPoint",
-          data: data,
-          options: Options(
-            headers: headers,
-          ));
-      print('sssca${re.statusCode}');
+
+      var re = await dio.post(
+        "$baseUrl$endPoint",
+        data: data,
+        options: Options(
+          followRedirects: true, // السماح بإعادة التوجيه تلقائيًا
+          headers: headers,
+        ),
+      );
+
       return re.data;
+    } on DioError catch (e) {
+      if (e.response != null) {
+        print('DioError: ${e.response?.statusCode}');
+        print('Headers: ${e.response?.headers}');
+        print('Data: ${e.response?.data}');
+      } else {
+        print('DioError: $e');
+      }
+      throw e;
     } catch (e) {
+      print('استثناء أثناء إرسال الطلب: $e');
       throw e;
     }
   }
 
-  Future<dynamic> getReqest(String? cid,
+  Future<dynamic> getRequest(String? cid,
       {required String endPoint, required String? token}) async {
-    var s = token;
-    Map<String, dynamic> headers = {
-      'Authorization': 'Bearer $s',
-      'Content-Type': 'application/json', // Depending on your API requirements
-    };
+    try {
+      var s = token;
+      Map<String, dynamic> headers = {
+        'Authorization': 'Bearer $s',
+        'Content-Type': 'application/json',
+      };
 
-    var re = await dio.get('$baseurl$endPoint$cid',
+      var re = await dio.get(
+        '$baseUrl$endPoint$cid',
         options: Options(
           headers: headers,
-        ));
-    print('get ${re.statusCode}');
-    return re.data;
+          followRedirects: true, // السماح بإعادة التوجيه تلقائيًا
+        ),
+      );
+
+      print('get ${re.statusCode}');
+      return re.data;
+    } on DioError catch (e) {
+      if (e.response != null) {
+        print('DioError: ${e.response?.statusCode}');
+        print('Headers: ${e.response?.headers}');
+        print('Data: ${e.response?.data}');
+      } else {
+        print('DioError: $e');
+      }
+      throw e;
+    } catch (e) {
+      print('استثناء أثناء إرسال الطلب: $e');
+      throw e;
+    }
   }
 }

@@ -21,14 +21,14 @@ class _LoginWidgetState extends State<LoginWidget> {
     return SingleChildScrollView(
       child: Container(
         decoration: BoxDecoration(
-          color:Colors.white,
-          borderRadius: BorderRadius.circular(30)),
-        
+            color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 "مرحبا بك ",
                 style: AppStyles.stylesmedium32(context),
@@ -45,7 +45,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                 height: 20,
               ),
               Customformdiled(globalKey: globalKey),
-           
               const SizedBox(
                 height: 22,
               ),

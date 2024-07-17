@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PasswordFiled extends StatelessWidget {
-  const PasswordFiled({super.key,required this.onSaved});
-final void Function(String?)? onSaved;
+  const PasswordFiled({super.key, required this.onSaved});
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
-    return  textfiledinput(onSaved: onSaved,);
+    return textfiledinput(
+      onSaved: onSaved,
+    );
   }
 }
 
 // ignore: camel_case_types
 class textfiledinput extends StatefulWidget {
-  const textfiledinput({super.key,required this.onSaved});
-final void Function(String?)? onSaved;
+  const textfiledinput({super.key, required this.onSaved});
+  final void Function(String?)? onSaved;
   @override
   State<textfiledinput> createState() => _textfiledinputState();
 }
@@ -24,7 +26,7 @@ class _textfiledinputState extends State<textfiledinput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onSaved:widget.onSaved ,
+      onSaved: widget.onSaved,
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";
@@ -78,7 +80,8 @@ class _textfiledinputState extends State<textfiledinput> {
             width: 1.0,
           ),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
     );
   }

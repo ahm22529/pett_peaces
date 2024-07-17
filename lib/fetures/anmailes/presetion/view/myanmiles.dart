@@ -4,7 +4,6 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.d
 
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/platformui.dart';
 
-
 class Myanmiles extends StatelessWidget {
   const Myanmiles({super.key});
 

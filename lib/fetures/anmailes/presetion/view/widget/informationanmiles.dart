@@ -48,8 +48,11 @@ class informationanmiles extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * .43, child: widget),
-          SizedBox(height: 5,)
+          SizedBox(
+              width: MediaQuery.of(context).size.width * .43, child: widget),
+          SizedBox(
+            height: 5,
+          )
         ],
       ),
     );

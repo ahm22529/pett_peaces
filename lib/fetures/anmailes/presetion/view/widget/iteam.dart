@@ -12,14 +12,18 @@ class Anmmalesmeacc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 2, itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: iteamlistviewami(widget: buttomanmandmating(
-                text: 'تعديل البيانات',
-                image: "Asset/image/edit-rectangle.png",
-                color: Color(0xff9C4900), onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (builder) => Myaccount())),
-              ),),
-        ));
+        itemCount: 2,
+        itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: iteamlistviewami(
+                widget: buttomanmandmating(
+                  text: 'تعديل البيانات',
+                  image: "Asset/image/edit-rectangle.png",
+                  color: Color(0xff9C4900),
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (builder) => Myaccount())),
+                ),
+              ),
+            ));
   }
 }

@@ -10,8 +10,8 @@ class Changepassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap:()=> Navigator.pop(context),
-          child: Image.asset("Asset/image/Back.png")),
+            onTap: () => Navigator.pop(context),
+            child: Image.asset("Asset/image/Back.png")),
         title: Text(
           "  تغير كلمة المرور",
           style: AppStyles.styleRegular24(context)

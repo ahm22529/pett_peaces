@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/home/data/model/loginuserimodel/loginusermodel.dart';
+import 'package:pett_peaces/fetures/login/data/model/userinputdatalogin.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/forgetpass.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/headereadsiz.dart';
@@ -21,7 +22,7 @@ class Customformdiled extends StatefulWidget {
 }
 
 class _CustomformdiledState extends State<Customformdiled> {
-  String? email, pass;
+  String email = "", pass = "";
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class _CustomformdiledState extends State<Customformdiled> {
             widget: TextFieldWithShadow(
               onSaved: (v) {
                 setState(() {
-                  email = v;
+                  email = v!;
                 });
               },
             ),
@@ -47,7 +48,7 @@ class _CustomformdiledState extends State<Customformdiled> {
             widget: PasswordFiled(
               onSaved: (v) {
                 setState(() {
-                  pass = v;
+                  pass = v!;
                 });
               },
             ),
@@ -60,14 +61,13 @@ class _CustomformdiledState extends State<Customformdiled> {
           const SizedBox(
             height: 32,
           ),
-         
-            singinbutto(
-              globalKey: widget.globalKey,
-              loiginUserInputModel: LoiginUserInputModel(
-                mname: "pass"!,
-                email: "email"!,
-              ),
-            ),
+          singinbutto(
+            globalKey: widget.globalKey,
+            logindataModel: LogindataModel(
+                password: "11111111",
+                email: "test200@gamil.com",
+                fcm_token: "wq"),
+          ),
         ],
       ),
     );

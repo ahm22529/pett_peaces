@@ -16,8 +16,8 @@ class header extends StatelessWidget {
             child: Padding(
           padding: const EdgeInsets.all(20),
           child: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: Image.asset("Asset/image/Back.png")),
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("Asset/image/Back.png")),
         )),
         const Positioned(
           bottom: 10,

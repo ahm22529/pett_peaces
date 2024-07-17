@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/prices.dart';
 
-
 class checkchoose extends StatefulWidget {
   const checkchoose({
     super.key,
@@ -47,4 +46,3 @@ class _checkchooseState extends State<checkchoose> {
     );
   }
 }
-

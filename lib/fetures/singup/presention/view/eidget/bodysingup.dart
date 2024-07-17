@@ -1,9 +1,12 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/textfiledinput.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/accceptreules.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/buttomsingup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
@@ -18,11 +21,12 @@ class BodySingUp extends StatefulWidget {
 }
 
 class _BodySingUpState extends State<BodySingUp> {
-  String? name, email, pass, comfrimpass, phone;
+  String name = "", email = "", pass = "", comfrimpass = "", phone = "";
   final GlobalKey<FormState> _globalKey = GlobalKey();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
+  bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +53,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   ),
                   const SizedBox(height: 16),
                   TextFilkedOther(onSaved: (v) {
-                    setState(() {
-                      name = v;
-                    });
+                    name = v!;
                   }),
                   const SizedBox(height: 16),
                   Text(
@@ -64,9 +66,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   const SizedBox(height: 16),
                   Textformfiledemail(
                     onSaved: (v) {
-                      setState(() {
-                        email = v;
-                      });
+                      email = v!;
                     },
                   ),
                   const SizedBox(height: 16),
@@ -91,7 +91,7 @@ class _BodySingUpState extends State<BodySingUp> {
                   PasswordFieldvaild(
                     controller: _passwordController,
                     onSaved: (v) {
-                      pass = v;
+                      pass = v!;
                     },
                   ),
                   const SizedBox(height: 8),
@@ -106,19 +106,43 @@ class _BodySingUpState extends State<BodySingUp> {
                   PasswordFieldvaild(
                     controller: _confirmPasswordController,
                     isConfirm: true,
-                    passwordController: _passwordController, onSaved: (v) {  setState(() {
-                      comfrimpass=v;
-                    });},
+                    passwordController: _passwordController,
+                    onSaved: (v) {
+                      comfrimpass = v!;
+                    },
                   ),
                   const SizedBox(height: 8),
                 ],
               ),
             ),
           ),
-          const AcceptsReuls(),
+          AcceptsReuls(onChanged: (value) {
+            setState(() {
+              isTermsAccepted = value;
+            });
+          }),
           const SizedBox(height: 20),
-          ButtomSingup(globalKey: _globalKey, singupusermodel: Singupusermodel(name: name!, phone: '', email: email!, password: pass!, comfrimpassword: comfrimpass!, fcm_token: ''),),
+          ButtomSingup(
+              globalKey: _globalKey,
+              singupusermodel: Singupusermodel(
+                  name: name,
+                  phone: "010225255205",
+                  email: email,
+                  password: pass,
+                  comfrimpassword: comfrimpass,
+                  fcm_token: "fcm_token",
+                  mobile_country_code: '+20')),
           const SizedBox(height: 20),
+          IconButton(
+            onPressed: () {
+              if (_globalKey.currentState!.validate()) {
+                _globalKey.currentState!.save();
+                print(name);
+                print(email);
+              }
+            },
+            icon: Icon(Icons.safety_divider),
+          ),
         ],
       ),
     );

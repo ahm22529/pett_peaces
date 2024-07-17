@@ -12,8 +12,10 @@ class Headerhotel extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Image.asset(
-          
-          "Asset/image/view-dubai-marina-sunrise-uae 1.png",width: MediaQuery.of(context).size.width,fit: BoxFit.cover,),
+          "Asset/image/view-dubai-marina-sunrise-uae 1.png",
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
         Positioned(
             child: Padding(
           padding: const EdgeInsets.all(20),
@@ -36,4 +38,3 @@ class Headerhotel extends StatelessWidget {
     );
   }
 }
-

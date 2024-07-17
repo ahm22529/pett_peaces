@@ -28,8 +28,7 @@ class Anmmalesme extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: 23.0, vertical: 16),
+                padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 16),
                 child: informationanmiles(),
               ),
             ],

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
@@ -60,7 +59,6 @@ class description extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-        
           const SizedBox(
             height: 16,
           ),
@@ -69,4 +67,3 @@ class description extends StatelessWidget {
     );
   }
 }
-

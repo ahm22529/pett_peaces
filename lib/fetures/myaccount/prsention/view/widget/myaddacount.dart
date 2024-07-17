@@ -39,9 +39,6 @@ class _MyaccountState extends State<Myaccountadd> {
     });
   }
 
- 
-
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +46,10 @@ class _MyaccountState extends State<Myaccountadd> {
         child: Column(
           children: [
             fristcontiner(
-              toggleEditingMode: (){},
-              togglecacelingMode: (){}, text1: "", text2: '',
+              toggleEditingMode: () {},
+              togglecacelingMode: () {},
+              text1: "",
+              text2: '',
             ),
             Container(
               color: Colors.white,
@@ -59,10 +58,13 @@ class _MyaccountState extends State<Myaccountadd> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 24,),
+                    SizedBox(
+                      height: 24,
+                    ),
                     Text(
                       "الاسم",
-                      style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: AppStyles.styleMedium16(context).copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
@@ -70,10 +72,13 @@ class _MyaccountState extends State<Myaccountadd> {
                       initialValue: '',
                       enabel: isacu,
                     ),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Text(
                       "النوع",
-                        style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: AppStyles.styleMedium16(context).copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
@@ -81,20 +86,26 @@ class _MyaccountState extends State<Myaccountadd> {
                       initialValue: ' ',
                       enabel: isacu,
                     ),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Text(
                       "الجنس",
-                       style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: AppStyles.styleMedium16(context).copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     DropdownField(
                       options: ["انثي", "ذكر"],
                       controller: TextEditingController(),
                     ),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Text(
                       "السنوات",
-                        style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: AppStyles.styleMedium16(context).copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
@@ -102,10 +113,13 @@ class _MyaccountState extends State<Myaccountadd> {
                       initialValue: '',
                       enabel: isacu,
                     ),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Text(
                       "الوصف",
-                      style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: AppStyles.styleMedium16(context).copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
@@ -113,10 +127,13 @@ class _MyaccountState extends State<Myaccountadd> {
                       initialValue: '',
                       enabel: isacu,
                     ),
-                    SizedBox(height: 16,),
+                    SizedBox(
+                      height: 16,
+                    ),
                     Text(
                       " وصف النوع",
-                        style: AppStyles.styleMedium16(context).copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: AppStyles.styleMedium16(context).copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 16),
                     Textformfieldresoncon(
@@ -173,11 +190,14 @@ class _MyaccountState extends State<Myaccountadd> {
                             ),
                           )
                         : Container(),
-                     Row(
+                    Row(
                       children: [
                         Expanded(
                           child: GestureDetector(
-                            onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>resonbay())),
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (builder) => resonbay())),
                             child: buttomtext(
                               color: Colors.orange,
                               text: 'عرض للبيع',
@@ -210,4 +230,3 @@ class _MyaccountState extends State<Myaccountadd> {
     );
   }
 }
-

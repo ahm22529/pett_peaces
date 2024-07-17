@@ -13,10 +13,16 @@ class gridviewstore extends StatelessWidget {
         height: MediaQuery.of(context).size.height * .31,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) =>  Padding(
-                  padding:const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: AspectRatio(aspectRatio: 3.5/5,
-                  child: IteamStore(onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>DetailesView())),)),
+            itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: AspectRatio(
+                      aspectRatio: 3.5 / 5,
+                      child: IteamStore(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => DetailesView())),
+                      )),
                 )));
   }
 }

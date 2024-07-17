@@ -27,8 +27,8 @@ class Bodysellerandbuyerdetails extends StatelessWidget {
             top: MediaQuery.of(context).size.height * .01,
             right: 5,
             child: GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: Image.asset("Asset/image/Back.png")),
+                onTap: () => Navigator.pop(context),
+                child: Image.asset("Asset/image/Back.png")),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * .08,

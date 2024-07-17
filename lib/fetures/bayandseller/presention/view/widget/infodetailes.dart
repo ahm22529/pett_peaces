@@ -13,11 +13,20 @@ class infoa extends StatelessWidget {
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          iteaminfo(text1: 'روز', text2: 'الأسم',),
+          iteaminfo(
+            text1: 'روز',
+            text2: 'الأسم',
+          ),
           SizedBox(height: 8),
-          iteaminfo(text1: '8 شهور', text2: 'العمر',),
+          iteaminfo(
+            text1: '8 شهور',
+            text2: 'العمر',
+          ),
           SizedBox(height: 8),
-          iteaminfo(text1: 'ذكر', text2: 'النوع',),
+          iteaminfo(
+            text1: 'ذكر',
+            text2: 'النوع',
+          ),
         ],
       ),
     );

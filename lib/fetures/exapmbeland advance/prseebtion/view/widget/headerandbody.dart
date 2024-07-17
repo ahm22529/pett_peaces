@@ -15,7 +15,7 @@ class HeaderAndBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Row(
+        Row(
           children: [
             ItemContainer(),
             SizedBox(
@@ -26,8 +26,9 @@ class HeaderAndBody extends StatelessWidget {
               width: 8,
             ),
             GestureDetector(
-              onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (builder)=>Hastag())),
-              child: ItemContainer()),
+                onTap: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (builder) => Hastag())),
+                child: ItemContainer()),
           ],
         ),
         const SizedBox(

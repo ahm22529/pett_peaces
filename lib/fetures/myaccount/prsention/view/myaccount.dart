@@ -17,13 +17,8 @@ class Myaccount extends StatefulWidget {
 }
 
 class _MyaccountState extends State<Myaccount> {
- 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:Bodymyaccount()
-    );
+    return Scaffold(body: Bodymyaccount());
   }
 }
-

@@ -16,8 +16,8 @@ class BodyMassege extends StatelessWidget {
         const SizedBox(
           height: 73,
         ),
-        const customAppbar(name: 'الرسايل',
-      
+        const customAppbar(
+          name: 'الرسايل',
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -52,4 +52,3 @@ class BodyMassege extends StatelessWidget {
     );
   }
 }
-
