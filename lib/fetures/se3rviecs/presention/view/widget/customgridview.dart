@@ -33,7 +33,9 @@ class CustomGridViewServ extends StatelessWidget {
           Cotching(),
           SellerAndBuyer(),
           Myanmiles(),
-          Store(),
+          Store(
+            pro: [],
+          ),
           SellerAndBuyer(),
           coursesiteam(),
           Example()

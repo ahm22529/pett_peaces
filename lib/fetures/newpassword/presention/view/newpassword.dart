@@ -36,9 +36,7 @@ class _NewPassWordState extends State<NewPassWord> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => UpdatepasswordCubit(updateRepo),
-      child: const Scaffold(
-        body: RestorAccount()
-      ),
+      child: const Scaffold(body: RestorAccount()),
     );
   }
 }

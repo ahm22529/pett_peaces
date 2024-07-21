@@ -43,17 +43,22 @@ class RequestServices {
     }
   }
 
-  Future<dynamic> getRequest(String? cid,
-      {required String endPoint, required String? token}) async {
+  Future<dynamic> getRequest(
+      {required String endPoint,
+      required String? token,
+      required String? id}) async {
     try {
       var s = token;
       Map<String, dynamic> headers = {
         'Authorization': 'Bearer $s',
-        'Content-Type': 'application/json',
+        'Accept': "application/json",
+        'type': 'android', // تعديل هنا على نوع الجهاز
+        'x-version': '1',
+        'x-lang': 'ar',
       };
 
       var re = await dio.get(
-        '$baseUrl$endPoint$cid',
+        '$baseUrl$endPoint$id',
         options: Options(
           headers: headers,
           followRedirects: true, // السماح بإعادة التوجيه تلقائيًا

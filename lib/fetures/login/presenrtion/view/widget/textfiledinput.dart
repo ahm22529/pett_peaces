@@ -34,7 +34,7 @@ class Textformfiledname extends StatelessWidget {
         }
         return null; // Ensure a null return when the input is valid
       },
-      onSaved: onSaved,
+      onChanged: onSaved,
       decoration: InputDecoration(
         fillColor: const Color(0xffFFFFFF),
         filled: true,

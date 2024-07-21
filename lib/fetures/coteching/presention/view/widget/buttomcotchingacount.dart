@@ -10,12 +10,9 @@ class buttomcountactcotch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          // Make the button fill the width of the screen
-          child: Custombuttom(
-            titel: "تواصل مع المدرب",
-            onPressed: () {},
-          ),
+        Custombuttom(
+          titel: "تواصل مع المدرب",
+          onPressed: () {},
         ),
       ],
     );

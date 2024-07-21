@@ -26,7 +26,7 @@ class Textformfiledemail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onSaved: onSaved,
+      onChanged: onSaved,
       initialValue: initialValue, // Set initialValue here
       maxLines: maxline,
       validator: (v) {

@@ -10,7 +10,7 @@ class CheckemailCubit extends Cubit<CheckemailState> {
   CheckemailCubit(this.restPasswordRepo) : super(CheckemailInitial());
   RestPasswordRepo restPasswordRepo;
   Future<void> createUserWithEmailAndPassword(
-      Map<String,dynamic> email, String endpoint) async {
+      Map<String, dynamic> email, String endpoint) async {
     emit(CheckLoading());
     final result = await restPasswordRepo.checkemail(email, endpoint);
     result.fold(

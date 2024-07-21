@@ -63,10 +63,8 @@ class _CustomformdiledState extends State<Customformdiled> {
           ),
           singinbutto(
             globalKey: widget.globalKey,
-            logindataModel: LogindataModel(
-                password: "11111111",
-                email: "test200@gamil.com",
-                fcm_token: "wq"),
+            logindataModel:
+                LogindataModel(password: pass, email: email, fcm_token: "wq"),
           ),
         ],
       ),

@@ -4,11 +4,14 @@ class customtextfiledstore extends StatelessWidget {
   const customtextfiledstore({
     super.key,
     required this.name,
+    required this.textEditingController,
   });
+  final TextEditingController textEditingController;
   final String name;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: textEditingController,
       decoration: InputDecoration(
           hintText: name,
           hintStyle: const TextStyle(

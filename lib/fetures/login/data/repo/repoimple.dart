@@ -12,19 +12,19 @@ class LoginrepoImp extends LoginRepo {
   @override
   Future<Either<Failure, UserEntitymodel>> Login(
       {required Map<String, dynamic> input, required String endponit}) async {
-      try {
+    try {
       dynamic result = await requestServices.post(input, endponit, "", "");
 
       // Check if result is Map<String, dynamic> and process accordingly
       if (result is Map<String, dynamic>) {
-        // Assuming you need to create a Usermodel instance from the response
         Usermodel userModel = Usermodel.fromapi(result);
         return right(userModel);
       } else {
-        // Handle unexpected response structure
-        return left(ServFailure('Unexpected response structure'));
+        return left(ServFailure('هيكل الرد غير متوقع'));
       }
-    } on Exception catch (e) {
+    } on DioError catch (e) {
+      return left(ServFailure.formdioerr(e));
+    } catch (e) {
       return left(ServFailure(e.toString()));
     }
   }

@@ -22,7 +22,7 @@ class BodyExample extends StatelessWidget {
               ],
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Column(
               children: [
                 SizedBox(
@@ -30,6 +30,7 @@ class BodyExample extends StatelessWidget {
                 ),
                 continertextfiled(
                   name: 'ابحث عن الأمثلة',
+                  textEditingController: TextEditingController(),
                 ),
               ],
             ),

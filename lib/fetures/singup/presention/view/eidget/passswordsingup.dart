@@ -25,7 +25,7 @@ class _PasswordFieldvaildState extends State<PasswordFieldvaild> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onSaved: widget.onSaved,
+      onChanged: widget.onSaved,
       controller: widget.controller,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (v) {

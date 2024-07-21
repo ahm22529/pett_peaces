@@ -67,15 +67,28 @@ class _BodyEnteremailState extends State<BodyEnteremail> {
                       const SizedBox(
                         height: 16,
                       ),
-                      buttomcomfrimrest(
-                        name: 'إرسال',
-                        onPressed: () {
-                          if (globalKey.currentState!.validate()) {
-                            globalKey.currentState!.save();
-                            context.read<CheckemailCubit>().createUserWithEmailAndPassword(
-                      {"email":email}, "forget-password/check-email");
-                          }
+                      BlocListener<CheckemailCubit, CheckemailState>(
+                        listener: (context, state) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (builder) => Restpassword(
+                                        email: email,
+                                      )));
                         },
+                        child: buttomcomfrimrest(
+                          name: 'إرسال',
+                          onPressed: () {
+                            if (globalKey.currentState!.validate()) {
+                              globalKey.currentState!.save();
+                              context
+                                  .read<CheckemailCubit>()
+                                  .createUserWithEmailAndPassword(
+                                      {"email": email},
+                                      "forget-password/check-email");
+                            }
+                          },
+                        ),
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * .11,

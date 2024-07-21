@@ -5,8 +5,10 @@ class continertextfiled extends StatelessWidget {
   const continertextfiled({
     super.key,
     required this.name,
+    required this.textEditingController,
   });
   final String name;
+  final TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +30,7 @@ class continertextfiled extends StatelessWidget {
             Expanded(
               child: customtextfiledstore(
                 name: name,
+                textEditingController: textEditingController,
               ),
             ),
           ],

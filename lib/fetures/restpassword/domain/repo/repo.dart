@@ -4,6 +4,5 @@ import 'package:pett_peaces/fetures/restpassword/domain/entity/checkentity.dart'
 
 abstract class RestPasswordRepo {
   Future<Either<Failure, Checkentity>> checkemail(
-      Map<String,dynamic> email, String enfponit);
-      
+      Map<String, dynamic> email, String enfponit);
 }

@@ -38,24 +38,11 @@ class ServFailure extends Failure {
       return ServFailure("المورد غير موجود");
     } else if (statusCode == 500) {
       return ServFailure("خطأ في اتصال الخادم");
+    } else if (statusCode == 400) {
+      return ServFailure("   بيانات الاعتماد غير صحيحه");
     } else if (statusCode == 422) {
       String errorMessage = "ادخل البيانات بشكل صحيح";
-      if (response != null &&
-          response is Map<String, dynamic> &&
-          response.containsKey('errors')) {
-        Map<String, dynamic> errors = response['errors'];
-        if (errors.containsKey('name')) {
-          errorMessage = "حقل الاسم مطلوب";
-        } else if (errors.containsKey('email')) {
-          errorMessage = "حقل البريد الإلكتروني مطلوب";
-        } else if (errors.containsKey('password')) {
-          errorMessage = "حقل كلمة المرور مطلوب";
-        } else if (errors.containsKey('password_confirmation')) {
-          errorMessage = "حقل تأكيد كلمة المرور مطلوب";
-        } else if (errors.containsKey('mobile')) {
-          errorMessage = "رقم الهاتف مستخدم بالفعل";
-        }
-      }
+
       return ServFailure(errorMessage);
     } else {
       return ServFailure("حاول مرة أخرى");

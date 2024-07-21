@@ -8,8 +8,6 @@ import 'package:pett_peaces/fetures/restpassword/presention/manager/cubit/checke
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/backgroundcontiner.dart';
 import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 
-
-
 class RestorAccount extends StatelessWidget {
   const RestorAccount({super.key});
   @override
@@ -24,7 +22,7 @@ class RestorAccount extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: state is UpdatepasswordLoading ? true : false,
-          child:  Shape(),
+          child: Shape(),
         );
       },
     );

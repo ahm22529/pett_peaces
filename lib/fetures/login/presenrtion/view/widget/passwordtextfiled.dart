@@ -26,7 +26,7 @@ class _textfiledinputState extends State<textfiledinput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onSaved: widget.onSaved,
+      onChanged: widget.onSaved,
       validator: (v) {
         if (v!.isEmpty) {
           return "هذا الحقل مطلوب";

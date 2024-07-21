@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/home_entity.dart';
 
 class infocourses extends StatelessWidget {
   const infocourses({
     super.key,
+    required this.Co,
   });
-
+  final String Co;
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white.withOpacity(.3),
+      width: 50,
+      color: const Color(0xff020202).withOpacity(.3),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: FittedBox(
           child: Row(
             children: [
               Text(
-                "كلب",
+                Co,
                 style: AppStyles.styleMedium16(context)
                     .copyWith(fontSize: 12, color: Colors.white),
               )
@@ -29,17 +33,25 @@ class infocourses extends StatelessWidget {
 }
 
 class Courses extends StatelessWidget {
+  const Courses({Key? key, required this.courseseEntity}) : super(key: key);
+
+  final CourseseEntity courseseEntity;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-              "Asset/image/foter.png"), // Replace with your image asset
+          image: NetworkImage(
+            courseseEntity.imag ??
+                'https://example.com/default-image.jpg', // Provide a fallback image URL if `imag` is null
+          ),
           fit: BoxFit.cover,
         ),
       ),
-      child: bodycontinercourses(),
+      child: bodycontinercourses(
+        courseseEntity: courseseEntity,
+      ),
     );
   }
 }
@@ -47,8 +59,9 @@ class Courses extends StatelessWidget {
 class bodycontinercourses extends StatelessWidget {
   const bodycontinercourses({
     super.key,
+    required this.courseseEntity,
   });
-
+  final CourseseEntity courseseEntity;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -57,13 +70,13 @@ class bodycontinercourses extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              color: const Color(0xffFFFFFF).withOpacity(.3),
+              color: const Color(0xff020202).withOpacity(.3),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40.0, vertical: 7),
                 child: FittedBox(
                   child: Text(
-                    "كورس تعليم الكلاب ",
+                    courseseEntity.nameof,
                     style: AppStyles.styleMedium16(context)
                         .copyWith(color: Colors.white),
                   ),
@@ -75,18 +88,23 @@ class bodycontinercourses extends StatelessWidget {
             height: 60,
           ),
           Expanded(
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Row(
               children: [
-                infocourses(),
-                SizedBox(
+                infocourses(
+                  Co: courseseEntity.type,
+                ),
+                const SizedBox(
                   width: 5,
                 ),
-                infocourses(),
-                SizedBox(
+                infocourses(
+                  Co: courseseEntity.day.toString(),
+                ),
+                const SizedBox(
                   width: 5,
                 ),
-                infocourses(),
+                infocourses(
+                  Co: courseseEntity.priceof,
+                ),
               ],
             ),
           )

@@ -11,10 +11,12 @@ class ButtomSingup extends StatelessWidget {
     super.key,
     required this.globalKey,
     required this.singupusermodel,
+    required this.accept,
   });
 
   final GlobalKey<FormState> globalKey;
   final Singupusermodel singupusermodel;
+  final bool accept;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +26,14 @@ class ButtomSingup extends StatelessWidget {
         children: [
           Custombuttom(
               titel: "تسجيل الدخول ",
-              onPressed: () {
-                if (globalKey.currentState!.validate()) {
+              onPressed: () async {
+                if (globalKey.currentState!.validate() && accept == true) {
                   globalKey.currentState!.save();
-
-                  context.read<SignupCubit>().createUserWithEmailAndPassword(
-                      singupusermodel.toJson(), "auth/register");
+                  print(singupusermodel.email);
+                  await context
+                      .read<SignupCubit>()
+                      .createUserWithEmailAndPassword(
+                          singupusermodel.toJson(), "auth/register");
                 } else {}
               }),
         ],

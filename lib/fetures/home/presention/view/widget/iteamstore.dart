@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
 class IteamStore extends StatelessWidget {
-  const IteamStore({super.key, this.onTap});
+  const IteamStore({super.key, this.onTap, required this.producEntity});
   final void Function()? onTap;
+  final ProducEntity producEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,9 @@ class IteamStore extends StatelessWidget {
               ),
             ],
           ),
-          child: const bodyiteamstore(),
+          child: bodyiteamstore(
+            producEntity: producEntity,
+          ),
         ),
       ),
     );
@@ -34,21 +38,22 @@ class IteamStore extends StatelessWidget {
 class bodyiteamstore extends StatelessWidget {
   const bodyiteamstore({
     super.key,
+    required this.producEntity,
   });
-
+  final ProducEntity producEntity;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(9.0),
       child: Column(
         children: [
-          const Text(
-            "طعام يوناني الأصل مستورد",
+          Text(
+            producEntity.nameof,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
-          Image.asset(
-            "Asset/image/20802-removebg-preview 1.png",
+          Image.network(
+            producEntity.img,
             height: MediaQuery.of(context).size.height *
                 0.2, // Adjust the height as needed
             width: MediaQuery.of(context).size.width *
@@ -63,7 +68,9 @@ class bodyiteamstore extends StatelessWidget {
               color: const Color(0xffF78E32).withOpacity(.3),
               borderRadius: BorderRadius.circular(9),
             ),
-            child: const infoiteamstore(),
+            child: infoiteamstore(
+              producEntity: producEntity,
+            ),
           ),
         ],
       ),
@@ -74,8 +81,9 @@ class bodyiteamstore extends StatelessWidget {
 class infoiteamstore extends StatelessWidget {
   const infoiteamstore({
     super.key,
+    required this.producEntity,
   });
-
+  final ProducEntity producEntity;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -83,11 +91,11 @@ class infoiteamstore extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "299\$",
+                "${producEntity.prices}\$",
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   color: Color(0xffF78E32),

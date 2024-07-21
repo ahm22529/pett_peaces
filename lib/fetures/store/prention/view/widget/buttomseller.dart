@@ -5,8 +5,9 @@ import 'package:pett_peaces/fetures/box/presention/view/box.dart';
 class buttomsell extends StatelessWidget {
   const buttomsell({
     super.key,
+    required this.o,
   });
-
+  final int o;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,8 +28,7 @@ class buttomsell extends StatelessWidget {
             Custombuttom(
               titel: 'شراء (250\$)',
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (builder) => Box()));
+                print(o);
               },
             ),
           ],

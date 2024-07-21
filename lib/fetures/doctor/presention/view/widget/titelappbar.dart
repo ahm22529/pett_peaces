@@ -15,6 +15,7 @@ class TitelappbarDoctore extends StatelessWidget {
         Expanded(
           child: continertextfiled(
             name: name,
+            textEditingController: TextEditingController(),
           ),
         ),
       ],

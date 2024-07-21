@@ -8,22 +8,28 @@ import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 
 import 'bodyrestpassword.dart';
 
-class CheckBlocConsiumer extends StatelessWidget {  @override
+class CheckBlocConsiumer extends StatelessWidget {
+  final String email;
+
+  const CheckBlocConsiumer({super.key, required this.email});
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<CheckemailCubit, CheckemailState>(
       listener: (context, state) {
         if (state is CheckemailCubit) {}
-        if (state is CheckemailCubit) {
-          buildErrorBar(context, "state.message");
+        if (state is CheckemailFailure) {
+          buildErrorBar(context, state.message);
         }
       },
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: state is SignupLoading ? true : false,
-          child:   backgroundrest(
-        widget: BodyRestPassword(),
-        pos: MediaQuery.of(context).size.height * .1,
-      ),
+          child: backgroundrest(
+            widget: BodyRestPassword(
+              email: email,
+            ),
+            pos: MediaQuery.of(context).size.height * .1,
+          ),
         );
       },
     );

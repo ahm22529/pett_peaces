@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CustomBackgroundSinup extends StatelessWidget {
   const CustomBackgroundSinup(
       {super.key, required this.widget1, required this.widget2});

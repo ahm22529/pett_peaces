@@ -1,17 +1,22 @@
 import 'dart:developer';
+
+import 'package:country_code_text_field/phone_number.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
+
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/textfiledinput.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
 import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
+
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/accceptreules.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/buttomsingup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/header.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/eidget/varifte_email.dart';
 
 class BodySingUp extends StatefulWidget {
   const BodySingUp({Key? key}) : super(key: key);
@@ -21,7 +26,12 @@ class BodySingUp extends StatefulWidget {
 }
 
 class _BodySingUpState extends State<BodySingUp> {
-  String name = "", email = "", pass = "", comfrimpass = "", phone = "";
+  String name = "",
+      email = "",
+      pass = "",
+      comfrimpass = "",
+      phone = "",
+      code = "";
   final GlobalKey<FormState> _globalKey = GlobalKey();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
@@ -78,7 +88,14 @@ class _BodySingUpState extends State<BodySingUp> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const ContinerTextFiled(),
+                  ContinerTextFiled(
+                    onSaved: (PhoneNumber? s) {
+                      setState(() {
+                        phone = s!.number.toString();
+                        code = s.countryCode.toString();
+                      });
+                    },
+                  ),
                   const SizedBox(height: 16),
                   Text(
                     "    كلمة المرور      ",
@@ -122,27 +139,34 @@ class _BodySingUpState extends State<BodySingUp> {
             });
           }),
           const SizedBox(height: 20),
-          ButtomSingup(
+          BlocListener<SignupCubit, SignupState>(
+            listener: (context, state) {
+              // TODO: implement listener
+              if (state is SignupSuccess) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => Varifyemail(
+                              token: state.userEntity.token,
+                              email: email,
+                            )));
+              }
+            },
+            child: ButtomSingup(
               globalKey: _globalKey,
               singupusermodel: Singupusermodel(
                   name: name,
-                  phone: "010225255205",
+                  phone: phone,
                   email: email,
                   password: pass,
                   comfrimpassword: comfrimpass,
                   fcm_token: "fcm_token",
-                  mobile_country_code: '+20')),
-          const SizedBox(height: 20),
-          IconButton(
-            onPressed: () {
-              if (_globalKey.currentState!.validate()) {
-                _globalKey.currentState!.save();
-                print(name);
-                print(email);
-              }
-            },
-            icon: Icon(Icons.safety_divider),
+                  mobile_country_code: '+20'),
+              accept: isTermsAccepted,
+            ),
           ),
+          const SizedBox(height: 20),
+         
         ],
       ),
     );

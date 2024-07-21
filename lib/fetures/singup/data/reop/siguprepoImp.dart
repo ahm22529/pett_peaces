@@ -33,10 +33,12 @@ class Siguprepoimp extends SingupRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitymodel>> send(
-      {required String token, required String endpoint}) async {
+  Future<Either<Failure, UserEntitymodel>> Varify(
+      {required String token,
+      required Map<String, dynamic> input,
+      required String endpoint}) async {
     try {
-      dynamic result = await requestservices.post(token, endpoint, "", "");
+      dynamic result = await requestservices.post(input, endpoint, token, "");
 
       if (result is Map<String, dynamic>) {
         Usermodel userModel = Usermodel.fromapi(result);
@@ -49,5 +51,11 @@ class Siguprepoimp extends SingupRepo {
     } catch (e) {
       return left(ServFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<Either<Failure, UserEntitymodel>> send({required String endpoint}) {
+    // TODO: implement send
+    throw UnimplementedError();
   }
 }

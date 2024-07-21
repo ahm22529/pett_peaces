@@ -11,9 +11,8 @@ class UpdatePassWordImp extends UpdateRepo {
   RequestServices requestServices = RequestServices(Dio());
   @override
   Future<Either<Failure, UserEntitymodel>> updatepass(
-      Map<String, dynamic> input, endpoint)async {
-
-           try {
+      Map<String, dynamic> input, endpoint) async {
+    try {
       dynamic result = await requestServices.post(input, endpoint, "", "");
 
       // Check if result is Map<String, dynamic> and process accordingly
@@ -29,5 +28,4 @@ class UpdatePassWordImp extends UpdateRepo {
       return left(ServFailure(e.toString()));
     }
   }
-      }
-
+}

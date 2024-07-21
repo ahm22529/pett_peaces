@@ -20,10 +20,11 @@ class cobontextfiled extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Row(
           children: [
-            const SizedBox(width: 8),
+            SizedBox(width: 8),
             Expanded(
               child: customtextfiledstore(
                 name: name,
+                textEditingController: TextEditingController(),
               ),
             ),
           ],

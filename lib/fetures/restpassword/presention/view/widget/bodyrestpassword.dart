@@ -1,16 +1,28 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/newpassword.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/manager/cubit/checkemail_cubit.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/bodyenteremail.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/opt.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/timedaown.dart';
 
-class BodyRestPassword extends StatelessWidget {
-  const BodyRestPassword({super.key});
+class BodyRestPassword extends StatefulWidget {
+  const BodyRestPassword({super.key, required this.email});
+  final String email;
 
+  @override
+  State<BodyRestPassword> createState() => _BodyRestPasswordState();
+}
+
+class _BodyRestPasswordState extends State<BodyRestPassword> {
+  String code = "";
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,22 +58,37 @@ class BodyRestPassword extends StatelessWidget {
                     const SizedBox(
                       height: 32,
                     ),
-                    const opt(),
+                    opt(
+                      onSubmit: (String s) {
+                        setState(() {
+                          code = s;
+                        });
+                      },
+                    ),
                     const SizedBox(
                       height: 30,
                     ),
-                    Row(
-                      children: [
-                        Custombuttom(
-                          titel: 'إرسال',
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (builder) => NewPassWord()));
-                          },
-                        ),
-                      ],
+                    BlocListener<CheckemailCubit, CheckemailState>(
+                      listener: (context, state) {
+                        // TODO: implement listener
+                        if (state is CheckemailFailure) {
+                          buildErrorBar(context, "message");
+                        }
+                      },
+                      child: Row(
+                        children: [
+                          Custombuttom(
+                            titel: 'إرسال',
+                            onPressed: () {
+                              context
+                                  .read<CheckemailCubit>()
+                                  .createUserWithEmailAndPassword(
+                                      {"email": widget.email, "otp": code},
+                                      "forget-password/check-otp");
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 20,

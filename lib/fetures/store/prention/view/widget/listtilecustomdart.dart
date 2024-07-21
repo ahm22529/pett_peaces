@@ -1,40 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/box.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
 class listtilecustomcard extends StatelessWidget {
   const listtilecustomcard({
     super.key,
+    required this.producEntity,
   });
-
+  final ProducEntity producEntity;
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(height: 5),
-          Text(
-            'طعام يوناني مستورد\nأصيل فئة اولي',
-            style: TextStyle(
-              fontFamily: 'Changa',
-              fontWeight: FontWeight.w500,
-              fontSize: 18,
-              color: Color(0xFF020202),
-              height: 1.4,
-            ),
-            textAlign: TextAlign.right,
-          ),
-          Text('\$250',
-              style: TextStyle(
-                fontFamily: 'Changa',
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-                color: Color(0xFFF78E32),
-                height: 1.4,
-              )),
-        ],
-      ),
+      title: Titel_List_tile(producEntity: producEntity),
       trailing: Container(
         width: 44,
         height: 44,
@@ -55,6 +33,56 @@ class listtilecustomcard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Titel_List_tile extends StatelessWidget {
+  const Titel_List_tile({
+    super.key,
+    required this.producEntity,
+  });
+
+  final ProducEntity producEntity;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 5),
+            Text(
+              producEntity.nameof,
+              style: TextStyle(
+                fontFamily: 'Changa',
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                color: Color(0xFF020202),
+                height: 1.4,
+              ),
+              textAlign: TextAlign.right,
+            ),
+            Text(producEntity.prices,
+                style: TextStyle(
+                  fontFamily: 'Changa',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                  color: Color(0xFFF78E32),
+                  height: 1.4,
+                )),
+          ],
+        ),
+        SizedBox(
+          width: 15,
+        ),
+        Text(
+          producEntity.oldprice,
+          style: AppStyles.styleRegular14(context),
+        )
+      ],
     );
   }
 }

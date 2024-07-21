@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/coteching/cotactcoting.dart';
+import 'package:pett_peaces/fetures/coteching/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/coteching/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchig/fetachingallcout_cubit.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/bodycoting.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/widget/titelappbar.dart';
 
-class Cotching extends StatelessWidget {
+class Cotching extends StatefulWidget {
+  @override
+  State<Cotching> createState() => _CotchingState();
+}
+
+class _CotchingState extends State<Cotching> {
+  CoatchingRepo coatchingRepo = CoatingRepoImp();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BodyCoating(),
+    return BlocProvider(
+      create: (context) => FetachingallcoutCubit(coatchingRepo),
+      child: Scaffold(
+        body: BodyCoating(),
+      ),
     );
   }
 }

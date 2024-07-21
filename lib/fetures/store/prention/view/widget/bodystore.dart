@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/customlistview.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/gridview.dart';
 
 class BodyStore extends StatelessWidget {
-  const BodyStore({super.key});
-
+  const BodyStore({super.key, required this.product});
+  final List<ProducEntity> product;
   @override
   Widget build(BuildContext context) {
     return const Row(

@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/fetures/store/data/repo/repo_imp.dart';
+import 'package:pett_peaces/fetures/store/domain/repo.dart';
+import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
+import 'package:pett_peaces/fetures/store/prention/manager/fetachproductdetailk/fetech_product_details_cubit.dart';
+
 import 'package:pett_peaces/fetures/store/prention/view/widget/bodydetails.dart';
 
-class DetailesView extends StatefulWidget {
-  @override
-  _DetailesViewState createState() => _DetailesViewState();
-}
+class DetailesView extends StatelessWidget {
+  StoreRepo storeRepo = StoreRepoImp();
 
-class _DetailesViewState extends State<DetailesView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BodyDetails(),
+    return BlocProvider(
+      create: (context) => FetechProductDetailsCubit(storeRepo),
+      child: Scaffold(
+        body: BodyDetails(),
+      ),
     );
   }
 }

@@ -18,7 +18,8 @@ class RestPassWordRepoImp extends RestPasswordRepo {
     if (resuit is Map<String, dynamic>) {
       // Assuming you need to create a Usermodel instance from the response
       print(resuit);
-      Checkentity userModel = Checkdata.fromapi(CheckResponseModel.fromJson(resuit));
+      Checkentity userModel =
+          Checkdata.fromapi(CheckResponseModel.fromJson(resuit));
       return right(userModel);
     } else {
       // Handle unexpected response structure

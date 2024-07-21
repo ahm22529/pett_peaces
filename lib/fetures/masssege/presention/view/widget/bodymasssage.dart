@@ -19,10 +19,11 @@ class BodyMassege extends StatelessWidget {
         const customAppbar(
           name: 'الرسايل',
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: continertextfiled(
             name: "ابحث عن شخص",
+            textEditingController: TextEditingController(),
           ),
         ),
         Expanded(

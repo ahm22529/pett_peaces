@@ -5,7 +5,6 @@ sealed class CheckemailState {}
 
 final class CheckemailInitial extends CheckemailState {}
 
-
 final class CheckLoading extends CheckemailState {}
 
 final class CheckemailSuccess extends CheckemailState {

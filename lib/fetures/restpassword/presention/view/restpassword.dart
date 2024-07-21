@@ -14,8 +14,8 @@ import 'package:pett_peaces/fetures/restpassword/presention/view/widget/bodyrest
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/enteremail.dart';
 
 class Restpassword extends StatefulWidget {
-  const Restpassword({super.key});
-
+  const Restpassword({super.key, required this.email});
+  final String email;
   @override
   State<Restpassword> createState() => _RestpasswordState();
 }
@@ -26,9 +26,10 @@ class _RestpasswordState extends State<Restpassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (context) => CheckemailCubit(restPasswordRepo),
-        child: CheckBlocConsiumer()
-      ),
+          create: (context) => CheckemailCubit(restPasswordRepo),
+          child: CheckBlocConsiumer(
+            email: widget.email,
+          )),
     );
   }
 }

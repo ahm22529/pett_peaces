@@ -22,8 +22,7 @@ class _enteremailbState extends State<enteremailb> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CheckemailCubit(restPasswordRepo),
-      child: Scaffold(
-          body:CheckemailBlocConsiumer()),
+      child: Scaffold(body: CheckemailBlocConsiumer()),
     );
   }
 }

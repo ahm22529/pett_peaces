@@ -1,3 +1,4 @@
+import 'package:country_code_text_field/phone_number.dart';
 import 'package:flutter/material.dart';
 import 'package:country_code_text_field/country_code_text_field.dart';
 
@@ -6,13 +7,16 @@ class CountryPhoneTextfiled extends StatelessWidget {
     super.key,
     this.initialCountryCode,
     this.text,
+    required this.onSaved,
   });
   final String? text;
   final String? initialCountryCode;
+  final void Function(PhoneNumber?) onSaved;
 
   @override
   Widget build(BuildContext context) {
     return CountryCodeTextField(
+      onChanged: onSaved,
       initialCountryCode: 'EG', // تعيين الكود الابتدائي لمصر
       initialValue: text,
       decoration: InputDecoration(

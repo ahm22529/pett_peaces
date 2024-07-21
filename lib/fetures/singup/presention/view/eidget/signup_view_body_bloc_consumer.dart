@@ -7,6 +7,7 @@ import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/background.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/imagedog.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/singupcontiner.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/eidget/varifte_email.dart';
 
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({

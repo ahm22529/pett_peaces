@@ -15,14 +15,10 @@ class CheckemailBlocConsiumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<CheckemailCubit, CheckemailState>(
       listener: (context, state) {
-        if (state is CheckemailSuccess) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (builder) => const Restpassword()));
-        }
         if (state is CheckemailFailure) {
-          buildErrorBar(context, "ggg");
+          buildErrorBar(context, state.message);
         }
-      }, 
+      },
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: state is SignupLoading ? true : false,
