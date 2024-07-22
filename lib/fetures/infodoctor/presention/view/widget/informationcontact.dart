@@ -30,7 +30,7 @@ class informationcontact extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        emailandphone(),
+        emailandphone(titel: '', imagee: '',),
       ],
     );
   }

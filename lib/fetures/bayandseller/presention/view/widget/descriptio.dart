@@ -55,7 +55,9 @@ class description extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          show(),
+          show(
+            hotelEntity: [],
+          ),
           const SizedBox(
             height: 16,
           ),

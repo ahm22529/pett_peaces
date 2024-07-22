@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class show extends StatelessWidget {
-  final List<String> images = [
-    'Asset/image/red-white-cat-i-white-studio__1_-removebg-preview (1) 1.png',
-    'Asset/image/red-white-cat-i-white-studio__1_-removebg-preview (1) 1.png',
-    'Asset/image/red-white-cat-i-white-studio__1_-removebg-preview (1) 1.png',
-    'Asset/image/red-white-cat-i-white-studio__1_-removebg-preview (1) 1.png',
-    'Asset/image/red-white-cat-i-white-studio__1_-removebg-preview (1) 1.png',
-    'Asset/image/red-white-cat-i-white-studio__1_-removebg-preview (1) 1.png'
-    // صورة إضافية للعرض مع عدد الصور الزائدة
-  ];
+  final List? hotelEntity;
+
+  show({super.key, required this.hotelEntity});
 
   @override
   Widget build(BuildContext context) {
+    if (hotelEntity == null || hotelEntity!.isEmpty) {
+      return Center(
+        child: Text('مفيش صور متاحة'),
+      );
+    }
+
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -21,15 +21,15 @@ class show extends StatelessWidget {
         crossAxisSpacing: 4.0, // تباعد أفقي بين العناصر
         mainAxisSpacing: 4.0, // تباعد رأسي بين العناصر
       ),
-      itemCount: images.length > 4 ? 4 : images.length,
+      itemCount: hotelEntity!.length > 4 ? 4 : hotelEntity!.length,
       itemBuilder: (context, index) {
         if (index < 3) {
           // عرض الصور الأولى
           return GestureDetector(
             onTap: () {
-              _showImageDialog(context, images[index]);
+              _showImageDialog(context, hotelEntity![index]);
             },
-            child: Image.asset(images[index], fit: BoxFit.cover),
+            child: Image.asset(hotelEntity![index], fit: BoxFit.cover),
           );
         } else {
           // عنصر خاص بعرض الصورة الأخيرة مع عدد الصور الزائدة
@@ -40,12 +40,12 @@ class show extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.asset(images[index], fit: BoxFit.cover),
+                Image.asset(hotelEntity![index], fit: BoxFit.cover),
                 Container(
                   color: Colors.black.withOpacity(0.5), // لون خلفية النص
                   child: Center(
                     child: Text(
-                      '+${images.length - 4}',
+                      '+${hotelEntity!.length - 4}',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24.0,
@@ -75,7 +75,7 @@ class show extends StatelessWidget {
 
   void _showRemainingImagesDialog(BuildContext context) {
     final remainingImages =
-        images.sublist(4); // الصور الباقية من الفهرس 4 فصاعدًا
+        hotelEntity!.sublist(4); // الصور الباقية من الفهرس 4 فصاعدًا
 
     showDialog(
       context: context,

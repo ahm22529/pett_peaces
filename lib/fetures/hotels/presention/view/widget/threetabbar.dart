@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
+import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/tabbar.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/googelmaps.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/emailandphone.dart';
 
 class ThreeTabBarExample extends StatefulWidget {
-  const ThreeTabBarExample({super.key});
-
+  const ThreeTabBarExample({super.key, required this.hotelEntity});
+  final HotelEntity hotelEntity;
   @override
   _ThreeTabBarExampleState createState() => _ThreeTabBarExampleState();
 }
@@ -46,9 +47,13 @@ class _ThreeTabBarExampleState extends State<ThreeTabBarExample>
       body: TabBarView(
         controller: _tabController,
         children: [
-          Informationaboutus(),
-          ServicesHotel(),
-          show(),
+          Informationaboutus(
+            hotelEntity: HotelEntity(ser: []),
+          ),
+          ServicesHotel(
+            hotelEntity: HotelEntity(ser: []),
+          ),
+          show(hotelEntity: [],),
         ],
       ),
     );

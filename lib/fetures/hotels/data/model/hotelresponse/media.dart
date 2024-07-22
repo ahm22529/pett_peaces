@@ -2,7 +2,7 @@ import 'image.dart';
 
 class Media {
   int? additionalImageCount;
-  List<Image>? images;
+  List<dynamic>? images;
 
   Media({this.additionalImageCount, this.images});
 

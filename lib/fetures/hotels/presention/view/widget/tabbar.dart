@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
+import 'package:pett_peaces/fetures/hotels/data/model/hotelresponse/hotelresponse.dart';
+import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/googelmaps.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/emailandphone.dart';
 
 class ThreeTabBarExample extends StatefulWidget {
-  const ThreeTabBarExample({super.key});
-
+  const ThreeTabBarExample({super.key, required this.hotelEntity});
+  final HotelEntity hotelEntity;
   @override
   _ThreeTabBarExampleState createState() => _ThreeTabBarExampleState();
 }
@@ -45,9 +47,15 @@ class _ThreeTabBarExampleState extends State<ThreeTabBarExample>
       body: TabBarView(
         controller: _tabController,
         children: [
-          Informationaboutus(),
-          ServicesHotel(),
-          show(),
+          Informationaboutus(
+            hotelEntity: widget.hotelEntity,
+          ),
+          ServicesHotel(
+            hotelEntity: widget.hotelEntity,
+          ),
+          show(
+            hotelEntity: widget.hotelEntity.ser[0].otherimage,
+          ),
         ],
       ),
     );
@@ -55,6 +63,8 @@ class _ThreeTabBarExampleState extends State<ThreeTabBarExample>
 }
 
 class ServicesHotel extends StatelessWidget {
+  const ServicesHotel({super.key, required this.hotelEntity});
+  final HotelEntity hotelEntity;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -71,25 +81,28 @@ class ServicesHotel extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        servicesIteam(),
-        SizedBox(
-          height: 16,
-        ),
-        servicesIteam(),
-        SizedBox(
-          height: 16,
-        ),
-        servicesIteam(),
-        SizedBox(
-          height: 16,
-        ),
-        servicesIteam(),
+        Expanded(
+            child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: hotelEntity.ser[0].ser.length,
+                itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: servicesIteam(
+                          img: hotelEntity.ser[0].ser[index].imagee,
+                          name: hotelEntity.ser[0].ser[index].servacename,
+                          price: hotelEntity.ser[0].ser[index].pric),
+                    )))
       ],
     );
   }
 }
 
 class servicesIteam extends StatelessWidget {
+  final String img, name, price;
+
+  const servicesIteam(
+      {super.key, required this.img, required this.name, required this.price});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -98,20 +111,18 @@ class servicesIteam extends StatelessWidget {
           color: Color(0xff3A599C).withOpacity(.8),
           child: Padding(
             padding: const EdgeInsets.all(5),
-            child: SizedBox(
-                height: 24,
-                child: Image.asset("Asset/image/health-report (1) 1.png")),
+            child: SizedBox(height: 24, child: Image.network(img)),
           ),
         ),
         SizedBox(
           width: 8,
         ),
-        Text("رعاية طبيبة",
+        Text(name,
             style: AppStyles.styleMedium16(context)
                 .copyWith(color: Colors.black, fontWeight: FontWeight.w600)),
         Spacer(),
         Text(
-          " 20\$",
+          price,
           style: AppStyles.styleMedium16(context)
               .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
         ),
@@ -129,6 +140,9 @@ class servicesIteam extends StatelessWidget {
 }
 
 class Informationaboutus extends StatelessWidget {
+  final HotelEntity hotelEntity;
+
+  const Informationaboutus({super.key, required this.hotelEntity});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -137,18 +151,24 @@ class Informationaboutus extends StatelessWidget {
           height: 22,
         ),
         Text(
-          "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى حيث يمكنك أن تولد",
+          hotelEntity.ser[0].des,
           style: AppStyles.styleRegular14(context)
               .copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(
           height: 16,
         ),
-        const emailandphone(),
+        emailandphone(
+          titel: hotelEntity.ser[0].emai,
+          imagee: 'Asset/image/mail.png',
+        ),
         const SizedBox(
           height: 12,
         ),
-        const emailandphone(),
+        emailandphone(
+          titel: hotelEntity.ser[0].phonr,
+          imagee: "Asset/image/call.png",
+        ),
         const googelmapsContiner()
       ],
     );

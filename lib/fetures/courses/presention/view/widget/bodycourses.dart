@@ -5,6 +5,7 @@ import 'package:pett_peaces/fetures/courses/presention/view/widget/gridview.dart
 import 'package:pett_peaces/fetures/courses/presention/view/widget/head.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/location.dart';
+import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 
 class BodyCourses extends StatelessWidget {
   @override
@@ -29,7 +30,7 @@ class BodyCourses extends StatelessWidget {
                           .copyWith(fontWeight: FontWeight.w600),
                     ),
                   ),
-                  const location(),
+                   location(hotelresponse: HotelEntity(ser: []),),
                   const SizedBox(
                     height: 16,
                   ),
@@ -60,7 +61,7 @@ class BodyCourses extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: show(),
+              child: show(hotelEntity: [],),
             ),
           ),
           SliverToBoxAdapter(

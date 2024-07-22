@@ -10,7 +10,9 @@ class vidoplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset("Asset/image/play.png"),
+        GestureDetector(
+          onTap: (){},
+          child: Image.asset("Asset/image/play.png")),
         const SizedBox(
           width: 5,
         ),

@@ -29,6 +29,7 @@ class Datum extends DetailsEntity {
   }) : super(
             adders: address ?? "",
             namee: name ?? "",
+            otherimage: media?.images??[],
             emai: email ?? "",
             latlong: latLong ?? "",
             des: details ?? "",

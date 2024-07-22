@@ -5,6 +5,7 @@ class DetailsEntity {
 
   final String namee, emai, phonr, latlong, adders, des, image, vido;
   final int numberofimage;
+  final List otherimage;
 
   DetailsEntity(
       {required this.ser,
@@ -16,5 +17,6 @@ class DetailsEntity {
       required this.des,
       required this.numberofimage,
       required this.image,
+      required this.otherimage,
       required this.vido});
 }

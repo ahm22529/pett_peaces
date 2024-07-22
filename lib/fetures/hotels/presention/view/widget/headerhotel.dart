@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/videoplay.dart';
+import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 
 class Headerhotel extends StatelessWidget {
   const Headerhotel({
     super.key,
+    required this.hotelEntity,
   });
-
+  final HotelEntity hotelEntity;
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Image.asset(
-          "Asset/image/view-dubai-marina-sunrise-uae 1.png",
+        Image.network(
+          hotelEntity.ser[0].image,
           width: MediaQuery.of(context).size.width,
           fit: BoxFit.cover,
         ),
