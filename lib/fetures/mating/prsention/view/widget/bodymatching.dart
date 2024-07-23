@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/iteamlistview.dart';
 
 class BodyMating extends StatelessWidget {
@@ -17,6 +18,16 @@ class BodyMating extends StatelessWidget {
                 color: Colors.red,
                 onTap: () {},
               ),
+              animel: AnmilesEntity(
+                  agee: 1,
+                  namee: '',
+                  otherimage: [],
+                  typee: '',
+                  des: '',
+                  gendere: '',
+                  imagee: '',
+                  idd: 0,
+                  predec: ''),
             )));
   }
 }

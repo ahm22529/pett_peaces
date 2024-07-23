@@ -31,10 +31,17 @@ class Course extends CourseseEntity {
     this.isUserAuthSubscribe,
   }) : super(
             day: duration ?? 0,
+            locatione: location ?? "",
+            idd: id ?? 0,
+            startdate: startDate ?? "",
+            videoo: video ?? "",
+            otherimg: media?.image ?? [],
             nameof: name ?? "",
             priceof: price ?? "",
             type: animalType ?? "",
-            imag: image ?? "");
+            des: description ?? "",
+            imag: image ?? "",
+            isactive: isUserAuthSubscribe ?? false);
 
   factory Course.fromJson(Map<String, dynamic> json) => Course(
         id: json['id'] as int?,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/courselist.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/courses.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/doctor.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/exapmel.dart';
@@ -37,7 +38,7 @@ class CustomGridViewServ extends StatelessWidget {
             pro: [],
           ),
           SellerAndBuyer(),
-          coursesiteam(),
+          Courselist(),
           Example()
         ];
         final services = [

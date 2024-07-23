@@ -53,7 +53,9 @@ class _ThreeTabBarExampleState extends State<ThreeTabBarExample>
           ServicesHotel(
             hotelEntity: HotelEntity(ser: []),
           ),
-          show(hotelEntity: [],),
+          show(
+            hotelEntity: [],
+          ),
         ],
       ),
     );

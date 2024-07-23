@@ -12,10 +12,7 @@ class Custombuttomcours extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: TextButton(
-        onPressed: () {
-          showModalBottomSheet(
-              context: context, builder: (builder) => Wayofpay());
-        },
+        onPressed: () {},
         style: TextButton.styleFrom(
           backgroundColor: const Color(0xffF78E32),
           shape: RoundedRectangleBorder(

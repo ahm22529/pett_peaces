@@ -19,19 +19,35 @@ class ServicesHotel extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        servicesIteam(img: '', name: '', price: '',),
+        servicesIteam(
+          img: '',
+          name: '',
+          price: '',
+        ),
         SizedBox(
           height: 16,
         ),
-        servicesIteam(img: '', name: '', price: '',),
+        servicesIteam(
+          img: '',
+          name: '',
+          price: '',
+        ),
         SizedBox(
           height: 16,
         ),
-        servicesIteam(img: '', name: '', price: '',),
+        servicesIteam(
+          img: '',
+          name: '',
+          price: '',
+        ),
         SizedBox(
           height: 16,
         ),
-        servicesIteam(img: '', name: '', price: '',),
+        servicesIteam(
+          img: '',
+          name: '',
+          price: '',
+        ),
       ],
     );
   }

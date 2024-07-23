@@ -25,11 +25,13 @@ class Headerhotel extends StatelessWidget {
               onTap: () => Navigator.pop(context),
               child: Image.asset("Asset/image/Back.png")),
         )),
-        const Positioned(
+        Positioned(
           bottom: 10,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: vidoplay(),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: VideoPlay(
+              video: hotelEntity.ser[0].vido,
+            ),
           ),
         ),
         Positioned(

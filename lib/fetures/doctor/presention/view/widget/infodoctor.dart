@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
 
 class InfoDoctore extends StatelessWidget {
   const InfoDoctore({
     super.key,
+    required this.coatch,
   });
-
+  final DoctorEntitydetails coatch;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,12 +23,12 @@ class InfoDoctore extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "د/محمد توفيق غلي",
+              coatch.namee,
               style: AppStyles.styleRegular14(context)
                   .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
             ),
             Text(
-              "تخصص عظام وصدر",
+              coatch.specfication,
               style: AppStyles.styleMedium12(context).copyWith(
                   color: Color(0xff545454), fontWeight: FontWeight.w500),
             )

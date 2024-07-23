@@ -1,0 +1,24 @@
+import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
+import 'package:pett_peaces/fetures/doctor/domain/entity/doctor_entity.dart';
+import 'package:pett_peaces/fetures/doctor/domain/repo/doctorerepo.dart';
+
+part 'fetchdoctor_state.dart';
+
+class FetchdoctorCubit extends Cubit<FetchdoctorState> {
+  FetchdoctorCubit(this.doctorerepo) : super(FetchdoctorInitial());
+  Doctorerepo doctorerepo;
+  void getdata(
+      {required String endpoint,
+      required String token,
+      Map<String, dynamic> data = const {}}) async {
+    emit(Fetchdoctorload());
+    final result = await doctorerepo.getallcoatch(
+        endpoint: endpoint, token: token, data: data);
+    print("fectch $result");
+    result.fold(
+      (failure) => emit(FetchdoctorfAUILER(errmas: failure.errmas)),
+      (userEntity) => emit(Fetchdoctorsucess(doctorEntity: userEntity)),
+    );
+  }
+}

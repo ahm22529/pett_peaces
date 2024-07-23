@@ -1,9 +1,15 @@
 class AnmilesEntity {
-  final String name, type, age, des;
-
+  final String namee, typee, des, gendere, imagee, predec;
+  final List otherimage;
+  final int idd, agee;
   AnmilesEntity(
-      {required this.name,
-      required this.type,
-      required this.age,
-      required this.des});
+      {required this.namee,
+      required this.otherimage,
+      required this.typee,
+      required this.agee,
+      required this.des,
+      required this.gendere,
+      required this.idd,
+      required this.imagee,
+      required this.predec});
 }

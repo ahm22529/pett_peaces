@@ -14,10 +14,13 @@ class InfoAnmales1 extends StatelessWidget {
           color: const Color(0xff101010).withOpacity(.2),
           borderRadius: BorderRadius.circular(8)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
-        child: Text(
-          tt,
-          style: AppStyles.styleMedium18(context),
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 9),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            tt,
+            style: AppStyles.styleMedium18(context),
+          ),
         ),
       ),
     );
@@ -37,10 +40,12 @@ class InfoAnmales extends StatelessWidget {
           color: const Color(0xff101010).withOpacity(.2),
           borderRadius: BorderRadius.circular(8)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 66.0, vertical: 9),
-        child: Text(
-          tt,
-          style: AppStyles.styleMedium18(context),
+        padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 9),
+        child: FittedBox(
+          child: Text(
+            tt,
+            style: AppStyles.styleMedium18(context),
+          ),
         ),
       ),
     );

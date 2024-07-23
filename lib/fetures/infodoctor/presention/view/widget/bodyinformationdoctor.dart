@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/googelmaps.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/informationcontact.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/summerydoctor.dart';
@@ -6,6 +7,9 @@ import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/summerydoc
 import '../../../../../core/utiles/widget/customappbar.dart';
 
 class BodyInformationDoctor extends StatelessWidget {
+  final DoctorEntitydetails coatch;
+
+  const BodyInformationDoctor({super.key, required this.coatch});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -21,15 +25,18 @@ class BodyInformationDoctor extends StatelessWidget {
           const SizedBox(
             height: 28,
           ),
-          SummaryDoctor(),
+          SummaryDoctor(
+            coatch: coatch,
+          ),
           const SizedBox(
             height: 24,
           ),
-          const informationcontact(),
+          informationcontact(
+            coatch: coatch,
+          ),
           const SizedBox(
             height: 26,
           ),
-          const googelmapsContiner()
         ],
       ),
     );

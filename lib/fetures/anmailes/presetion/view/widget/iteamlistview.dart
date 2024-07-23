@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 
 class iteamlistviewami extends StatelessWidget {
-  const iteamlistviewami({super.key, required this.widget});
+  const iteamlistviewami(
+      {super.key, required this.widget, required this.animel});
   final Widget widget;
+  final AnmilesEntity animel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,8 +29,8 @@ class iteamlistviewami extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(
-                  child: Image.asset(
-                    "Asset/image/dooo.png",
+                  child: Image.network(
+                    animel.imagee,
                     fit: BoxFit.cover,
                     height: MediaQuery.of(context).size.height * .25,
                   ),
@@ -36,6 +39,7 @@ class iteamlistviewami extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 0),
                   child: informationanmiles(
                     widget: widget,
+                    animel: animel,
                   ),
                 ),
               ],
@@ -48,8 +52,10 @@ class iteamlistviewami extends StatelessWidget {
 }
 
 class informationanmiles extends StatelessWidget {
-  const informationanmiles({super.key, required this.widget});
+  const informationanmiles(
+      {super.key, required this.widget, required this.animel});
   final Widget widget;
+  final AnmilesEntity animel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -57,35 +63,35 @@ class informationanmiles extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const InfoAnmales(
-            tt: "روز",
+          InfoAnmales(
+            tt: animel.namee,
           ),
           const SizedBox(
             height: 8,
           ),
-          const InfoAnmales(
-            tt: "روز",
+          InfoAnmales(
+            tt: animel.des,
           ),
           const SizedBox(
             height: 16,
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * .42,
-            child: const Row(
+            child: Row(
               children: [
                 Expanded(
                   flex: 1,
                   child: InfoAnmales1(
-                    tt: "ذكر",
+                    tt: animel.gendere,
                   ),
                 ),
                 SizedBox(
-                  width: 5,
+                  width: 3,
                 ),
                 Expanded(
                   flex: 2,
                   child: InfoAnmales1(
-                    tt: "3 سنوات",
+                    tt: animel.agee.toString(),
                   ),
                 )
               ],

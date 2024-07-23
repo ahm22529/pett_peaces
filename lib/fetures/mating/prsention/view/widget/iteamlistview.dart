@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 
 class iteamlistviewm extends StatelessWidget {
@@ -31,6 +32,16 @@ class iteamlistviewm extends StatelessWidget {
                 color: Colors.red,
                 onTap: () {},
               ),
+              animel: AnmilesEntity(
+                  agee: 1,
+                  namee: ",d",
+                  otherimage: [],
+                  typee: '',
+                  des: '',
+                  gendere: '',
+                  idd: 0,
+                  predec: '',
+                  imagee: ''),
             )),
       ),
     );

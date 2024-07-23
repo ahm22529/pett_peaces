@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/buttomcourses.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/priceanddiscount.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
 
 class foter extends StatelessWidget {
   const foter({
     super.key,
+    required this.courseseEntity,
   });
-
+  final CourseseEntity courseseEntity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,15 +21,12 @@ class foter extends StatelessWidget {
         const SizedBox(
           width: 48,
         ),
-        Text(
-          "%20 off",
-          style: AppStyles.styleMedium10(context)
-              .copyWith(color: Colors.black, fontSize: 12),
-        ),
         const SizedBox(
           width: 8,
         ),
-        const priceanddiscount(),
+        priceanddiscount(
+          courseseEntity: courseseEntity,
+        ),
       ],
     );
   }

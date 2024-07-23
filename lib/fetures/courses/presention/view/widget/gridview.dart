@@ -14,9 +14,7 @@ class CustomGridViewcourses extends StatefulWidget {
 class _CustomGridViewcoursesState extends State<CustomGridViewcourses> {
   final services = [
     IteamGridviewModel(
-        Imag: "Asset/image/Frame 1000004370.png",
-        titiel: "نوع الحيوان",
-        titel2: "كلب"),
+        Imag: "Asset/image/name.png", titiel: "نوع الحيوان", titel2: "كلب"),
     IteamGridviewModel(
         Imag: "Asset/image/Frame 1000004370.png",
         titiel: "نوع الحيوان",

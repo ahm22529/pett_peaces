@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/videoplay.dart';
+import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 
 class header extends StatelessWidget {
   const header({
     super.key,
+    required this.video,
   });
-
+  final String video;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,11 +21,13 @@ class header extends StatelessWidget {
               onTap: () => Navigator.pop(context),
               child: Image.asset("Asset/image/Back.png")),
         )),
-        const Positioned(
+        Positioned(
           bottom: 10,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: vidoplay(),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: VideoPlay(
+              video: video,
+            ),
           ),
         ),
         Positioned(

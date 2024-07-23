@@ -6,8 +6,14 @@ class checkchoose extends StatefulWidget {
   const checkchoose({
     super.key,
     required this.titel,
+    required this.titel2,
+    required this.serviceId,
+    required this.onSelected,
   });
   final String titel;
+  final String titel2;
+  final int serviceId;
+  final ValueChanged<int> onSelected;
 
   @override
   State<checkchoose> createState() => _checkchooseState();
@@ -42,7 +48,10 @@ class _checkchooseState extends State<checkchoose> {
           color: Color(0xff00070D).withOpacity(.8),
         ),
       ),
-      trailing: price(isactive: isactive),
+      trailing: price(
+        isactive: isactive,
+        titel: widget.titel2,
+      ),
     );
   }
 }

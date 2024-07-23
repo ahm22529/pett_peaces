@@ -166,7 +166,6 @@ class _BodySingUpState extends State<BodySingUp> {
             ),
           ),
           const SizedBox(height: 20),
-         
         ],
       ),
     );

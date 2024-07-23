@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
+import 'package:pett_peaces/fetures/doctor/domain/entity/doctor_entity.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/widget/bodyiteamgridview.dart';
 
 class IteamGridViewDoctor extends StatelessWidget {
   const IteamGridViewDoctor({
     super.key,
+    required this.coatch,
   });
+  final DoctorEntitydetails coatch;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,9 @@ class IteamGridViewDoctor extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: const BodyContinerDoctor(),
+      child: BodyContinerDoctor(
+        coatch: coatch,
+      ),
     );
   }
 }

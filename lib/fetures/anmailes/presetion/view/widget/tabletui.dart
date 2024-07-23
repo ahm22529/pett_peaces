@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 
 class Tabletui extends StatelessWidget {
@@ -27,6 +28,16 @@ class Tabletui extends StatelessWidget {
                         color: Color(0xff9C4900),
                         onTap: () {},
                       ),
+                      animel: AnmilesEntity(
+                          namee: "namee",
+                          otherimage: [],
+                          typee: "",
+                          agee: 5,
+                          des: "des",
+                          gendere: "",
+                          idd: 0,
+                          imagee: "",
+                          predec: ""),
                     )),
           ),
         ),

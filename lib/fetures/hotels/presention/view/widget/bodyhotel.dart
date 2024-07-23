@@ -60,13 +60,17 @@ class _BodyHotelState extends State<BodyHotel> {
                               style: AppStyles.stylesemi20(context)
                                   .copyWith(color: Colors.black),
                             ),
-                             location(hotelresponse: state.hotelresponse,),
+                            location(
+                              adderss: state.hotelresponse.ser[0].adders,
+                            ),
                             SizedBox(
                                 height: MediaQuery.of(context).size.width <=
                                         SizeConfig.tablet
                                     ? MediaQuery.of(context).size.height * .8
                                     : MediaQuery.of(context).size.height * .5,
-                                child: ThreeTabBarExample(hotelEntity: state.hotelresponse,)),
+                                child: ThreeTabBarExample(
+                                  hotelEntity: state.hotelresponse,
+                                )),
                           ],
                         ),
                       ),
@@ -88,7 +92,9 @@ class _BodyHotelState extends State<BodyHotel> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (builder) => comfrimbook()));
+                                    builder: (builder) => comfrimbook(
+                                          hotelEntity: state.hotelresponse,
+                                        )));
                           },
                         )),
                   ),

@@ -10,7 +10,6 @@ class HotelCubit extends Cubit<HotelState> {
   HotelCubit(this.hotelrep) : super(HotelInitial());
   Hotelrep hotelrep;
   void getdata({required String endpoint, required String token}) async {
-   
     emit(Hotellaod());
     final result = await hotelrep.gethotel(endpoint: endpoint, token: token);
     result.fold(

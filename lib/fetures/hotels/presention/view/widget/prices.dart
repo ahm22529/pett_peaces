@@ -5,10 +5,11 @@ class price extends StatelessWidget {
   const price({
     super.key,
     required this.isactive,
+    required this.titel,
   });
 
   final bool isactive;
-
+  final String titel;
   @override
   Widget build(BuildContext context) {
     return Visibility(
@@ -17,7 +18,7 @@ class price extends StatelessWidget {
         text: TextSpan(
           children: [
             TextSpan(
-              text: "\$20  ",
+              text: titel,
               style: AppStyles.styleMedium12(context).copyWith(
                 fontWeight: FontWeight.w600,
                 color: Colors.black,

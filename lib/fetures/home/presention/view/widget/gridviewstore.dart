@@ -22,7 +22,21 @@ class listviewCourses extends StatelessWidget {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (builder) => coursesiteam())),
+                              builder: (builder) => coursesiteam(
+                                    courseseEntity: CourseseEntity(
+                                        nameof: "nameof",
+                                        day: 1,
+                                        idd: 1,
+                                        isactive: false,
+                                        type: "type",
+                                        priceof: "priceof",
+                                        imag: "imag",
+                                        otherimg: [],
+                                        startdate: "startdate",
+                                        videoo: "videoo",
+                                        locatione: '',
+                                        des: ''),
+                                  ))),
                       child: Courses(
                         courseseEntity: cours[index],
                       )),

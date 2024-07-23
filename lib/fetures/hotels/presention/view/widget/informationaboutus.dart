@@ -19,11 +19,17 @@ class Informationaboutus extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        const emailandphone(titel: '', imagee: '',),
+        const emailandphone(
+          titel: '',
+          imagee: '',
+        ),
         const SizedBox(
           height: 12,
         ),
-        const emailandphone(titel: '', imagee: '',),
+        const emailandphone(
+          titel: '',
+          imagee: '',
+        ),
         const googelmapsContiner()
       ],
     );

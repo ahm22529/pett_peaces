@@ -6,7 +6,12 @@ class Service extends ServicesEntity {
   String? price;
   String? image;
 
-  Service({this.id, this.name, this.price, this.image}):super(imagee: image??"",pric: price??"",servacename: name??"");
+  Service({this.id, this.name, this.price, this.image})
+      : super(
+            imagee: image ?? "",
+            pric: price ?? "",
+            servacename: name ?? "",
+            idd: id ?? 0);
 
   factory Service.fromJson(Map<String, dynamic> json) => Service(
         id: json['id'] as int?,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/hatag.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteamcontiner.dart';
@@ -9,14 +10,15 @@ import '../../../../../core/utiles/sttyel.dart';
 class informationcontiner extends StatelessWidget {
   const informationcontiner({
     super.key,
+    required this.examel,
   });
-
+  final ExambelEnitydetails examel;
   @override
   Widget build(BuildContext context) {
     return Positioned(
       left: 0,
       right: 0,
-      top: MediaQuery.of(context).size.height * .23,
+      top: MediaQuery.of(context).size.height * .28,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0),
         child: Container(
@@ -28,7 +30,9 @@ class informationcontiner extends StatelessWidget {
               topRight: Radius.circular(30),
             ),
           ),
-          child: const bodyofcontinertwo(),
+          child: bodyofcontinertwo(
+            examel: examel,
+          ),
         ),
       ),
     );
@@ -38,8 +42,9 @@ class informationcontiner extends StatelessWidget {
 class bodyofcontinertwo extends StatelessWidget {
   const bodyofcontinertwo({
     super.key,
+    required this.examel,
   });
-
+  final ExambelEnitydetails examel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -47,18 +52,31 @@ class bodyofcontinertwo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 10,
+          ),
           // صف يحتوي على عناصر صغيرة وتاريخ
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: List.generate(
-                    3,
-                    (index) => const Padding(
-                          padding: EdgeInsets.all(20),
-                          child: ItemContainer(),
-                        )),
+                children: examel.tag.map((item) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: ItemContainer(
+                      titel: examel.tag[0],
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => Hastag(
+                                      examel: examel,
+                                    )));
+                      },
+                    ),
+                  );
+                }).toList(),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 20),
@@ -71,15 +89,9 @@ class bodyofcontinertwo extends StatelessWidget {
             ],
           ),
 
-          ...List.generate(
-              3,
-              (index) => Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    child: GestureDetector(
-                        onTap: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (builder) => Hastag())),
-                        child: Bodyofheader()),
-                  )),
+          Bodyofheader(
+            examel: examel,
+          ),
         ],
       ),
     );
