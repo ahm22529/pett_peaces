@@ -8,7 +8,7 @@ final class CheckoutInitial extends CheckoutState {}
 final class Checkoutload extends CheckoutState {}
 
 final class Checkoutsucess extends CheckoutState {
-  final Checkentity checkentity;
+  final String checkentity;
 
   Checkoutsucess({required this.checkentity});
 }

@@ -71,6 +71,7 @@ class _MyaccountState extends State<Myaccountadd> {
                       maxline: 1,
                       initialValue: '',
                       enabel: isacu,
+                      onChanged: (String) {},
                     ),
                     SizedBox(
                       height: 16,
@@ -85,6 +86,7 @@ class _MyaccountState extends State<Myaccountadd> {
                       maxline: 1,
                       initialValue: ' ',
                       enabel: isacu,
+                      onChanged: (String) {},
                     ),
                     SizedBox(
                       height: 16,
@@ -112,6 +114,7 @@ class _MyaccountState extends State<Myaccountadd> {
                       maxline: 1,
                       initialValue: '',
                       enabel: isacu,
+                      onChanged: (String) {},
                     ),
                     SizedBox(
                       height: 16,
@@ -126,6 +129,7 @@ class _MyaccountState extends State<Myaccountadd> {
                       maxline: 1,
                       initialValue: '',
                       enabel: isacu,
+                      onChanged: (String) {},
                     ),
                     SizedBox(
                       height: 16,
@@ -140,6 +144,7 @@ class _MyaccountState extends State<Myaccountadd> {
                       maxline: 3,
                       initialValue: '',
                       enabel: isacu,
+                      onChanged: (String) {},
                     ),
                     const SizedBox(height: 16),
                     GestureDetector(

@@ -23,7 +23,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginSuccess) {
           Navigator.push(context,
-              MaterialPageRoute(builder: (builder) => const HomeScreen()));
+              MaterialPageRoute(builder: (builder) =>  HomeScreen(userEntitymodel: state.userEntity,)));
         }
 
         if (state is LoginFailure) {

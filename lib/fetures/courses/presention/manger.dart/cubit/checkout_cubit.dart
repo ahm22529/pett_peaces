@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:pett_peaces/fetures/courses/domain/entity/checkout_enity.dart';
 import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/restpassword/domain/entity/checkentity.dart';
 
@@ -14,8 +15,9 @@ class CheckoutCubit extends Cubit<CheckoutState> {
       required Map<String, dynamic> data}) async {
     try {
       emit(Checkoutload());
-    var result=await  courseRepo.checkout(ndpoint: endpoint, token: token, data: data);
- result.fold(
+      var result = await courseRepo.checkout(
+          ndpoint: endpoint, token: token, data: data);
+      result.fold(
         (failure) => emit(Checkoutfauler(errmas: failure.errmas)),
         (userEntity) => emit(Checkoutsucess(checkentity: userEntity)),
       );

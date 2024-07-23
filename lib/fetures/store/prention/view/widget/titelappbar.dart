@@ -31,11 +31,11 @@ class _TitelappbarState extends State<Titelappbar> {
         debounce?.cancel();
       }
       debounce = Timer(const Duration(milliseconds: 300), () {
-        BlocProvider.of<FectchProductCubit>(context).getdata(
+        BlocProvider.of<FectchProductCubit>(context).searchProducts(
           endpoint: "products",
           token:
               "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNTQ2MjkxLCJleHAiOjE3MjIxNTEwOTEsIm5iZiI6MTcyMTU0NjI5MSwianRpIjoiNmp0MDdDcVVjUnZBNkVrQyIsInN1YiI6IjU4IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.sbgX8KCFnG6Fr1XxtIOaQ8-2aERTiPVaomS23DD7P2g",
-          data: {"key_words": textEditingController.text},
+          query: {"key_words": textEditingController.text},
         );
       });
     });

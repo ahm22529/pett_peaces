@@ -1,28 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/contactus/data/model/inputusermodel.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 
-class CustomDialog extends StatelessWidget {
-  const CustomDialog({super.key});
+class CustomDialog extends StatefulWidget {
+  const CustomDialog({super.key, required this.contactdata});
+  final Contactdata contactdata;
 
   @override
+  State<CustomDialog> createState() => _CustomDialogState();
+}
+
+class _CustomDialogState extends State<CustomDialog> {
+  ContactusRepo contactusRepo = ContactusRepoimp();
+  @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(14),
-      ),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            "هل أنت متاكد من الإرسال",
-            style:
-                AppStyles.styleMedium18(context).copyWith(color: Colors.black),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          const twobuttom(),
-        ],
+    return BlocProvider(
+      create: (context) => ContactCubit(contactusRepo),
+      child: AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "هل أنت متاكد من الإرسال",
+              style: AppStyles.styleMedium18(context)
+                  .copyWith(color: Colors.black),
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            twobuttom(
+              contactdata: widget.contactdata,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -31,14 +48,18 @@ class CustomDialog extends StatelessWidget {
 class twobuttom extends StatelessWidget {
   const twobuttom({
     super.key,
+    required this.contactdata,
   });
+  final Contactdata contactdata;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        iteamsend(),
+        iteamsend(
+          contactdata: contactdata,
+        ),
         buttomcancel(),
       ],
     );
@@ -80,8 +101,9 @@ class buttomcancel extends StatelessWidget {
 class iteamsend extends StatelessWidget {
   const iteamsend({
     super.key,
+    required this.contactdata,
   });
-
+  final Contactdata contactdata;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -95,7 +117,16 @@ class iteamsend extends StatelessWidget {
             ),
             padding: const EdgeInsets.symmetric(vertical: 16),
           ),
-          onPressed: () {},
+          onPressed: () async {
+            await BlocProvider.of<ContactCubit>(context)
+                .contact(endpoint: "contact-us", data: {
+              "comment": contactdata.contact,
+              "subject": contactdata.sub,
+              "email": contactdata.email,
+              "full_name": contactdata.name
+            });
+            Navigator.pop(context);
+          },
           child: Text(
             'ارسال',
             style:

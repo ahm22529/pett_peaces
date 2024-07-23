@@ -68,12 +68,12 @@ class bodycontinercourses extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
       child: Column(
         children: [
-          Container(
-            color: const Color(0xff020202).withOpacity(.3),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 40.0, vertical: 7),
-              child: FittedBox(
+          Expanded(
+            child: Container(
+              color: const Color(0xff020202).withOpacity(.3),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40.0, vertical: 7),
                 child: Text(
                   courseseEntity.nameof,
                   style: AppStyles.styleMedium16(context)
@@ -85,24 +85,26 @@ class bodycontinercourses extends StatelessWidget {
           const SizedBox(
             height: 60,
           ),
-          Row(
-            children: [
-              infocourses(
-                Co: courseseEntity.type,
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              infocourses(
-                Co: courseseEntity.day.toString(),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              infocourses(
-                Co: courseseEntity.priceof,
-              ),
-            ],
+          Expanded(
+            child: Row(
+              children: [
+                infocourses(
+                  Co: courseseEntity.type,
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                infocourses(
+                  Co: courseseEntity.day.toString(),
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                infocourses(
+                  Co: courseseEntity.priceof,
+                ),
+              ],
+            ),
           )
         ],
       ),

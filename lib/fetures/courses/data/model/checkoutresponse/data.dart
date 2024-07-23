@@ -1,6 +1,6 @@
 import 'package:pett_peaces/fetures/courses/domain/entity/checkout_enity.dart';
 
-class Data extends CheckoutEnity{
+class Data extends payoutEnity{
   String? urlPayment;
 
   Data({this.urlPayment}):super(url: urlPayment??"");

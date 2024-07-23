@@ -21,6 +21,7 @@ class BodyCourses extends StatelessWidget {
           SliverToBoxAdapter(
             child: header(
               video: courseseEntity.videoo,
+              image: courseseEntity.imag,
             ),
           ),
           SliverToBoxAdapter(

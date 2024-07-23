@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/courses/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/courses/presention/manger.dart/fetachcourses/coursecubit_cubit.dart';
@@ -55,30 +56,98 @@ class _bodylistcoursesState extends State<bodylistcourses> {
         if (state is Coursecubitsucess) {
           return ListView.builder(
               itemCount: state.coursesEntityList.cou.length,
-              itemBuilder: (context, index) => Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(state.coursesEntityList.cou[index]
-                              .imag // Provide a fallback image URL if `imag` is null
+              itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20.0, vertical: 5),
+                    child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(12),
+                          image: DecorationImage(
+                            image: NetworkImage(state
+                                    .coursesEntityList
+                                    .cou[index]
+                                    .imag // Provide a fallback image URL if `imag` is null
+                                ),
+                            fit: BoxFit.cover,
                           ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => coursesiteam(
-                                    courseseEntity:
-                                        state.coursesEntityList.cou[index],
-                                  ))),
-                      child: Courses(
-                          courseseEntity:
-                              state.coursesEntityList.cou[index]))));
+                        ),
+                        child: GestureDetector(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (builder) => coursesiteam(
+                                          courseseEntity: state
+                                              .coursesEntityList.cou[index],
+                                        ))),
+                            child: Couresesiteamlistviw(
+                                courseseEntity:
+                                    state.coursesEntityList.cou[index]))),
+                  ));
         } else {
           return CircleAvatar();
         }
       },
+    );
+  }
+}
+
+class Couresesiteamlistviw extends StatelessWidget {
+  const Couresesiteamlistviw({
+    super.key,
+    required this.courseseEntity,
+  });
+  final CourseseEntity courseseEntity;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+      child: Column(
+        children: [
+          // العنصر الأول يأخذ العرض الكامل
+          Container(
+            width: double.infinity, // اجعل العرض يملأ الحاوية بالكامل
+            color: const Color(0xff020202).withOpacity(.3),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 40.0, vertical: 7),
+              child: Text(
+                courseseEntity.nameof,
+                style: AppStyles.styleMedium16(context)
+                    .copyWith(color: Colors.white),
+                textAlign: TextAlign.center, // لتوسيع النص لملء الـ Container
+              ),
+            ),
+          ),
+          const SizedBox(height: 80),
+          // باقي العناصر تتوزع بشكل متساوي
+          Row(
+            children: [
+              Expanded(
+                flex: 5,
+                child: infocourses(
+                  Co: courseseEntity.type,
+                ),
+              ),
+              const SizedBox(width: 5),
+              Expanded(
+                flex: 1,
+                child: infocourses(
+                  Co: courseseEntity.day.toString(),
+                ),
+              ),
+              const SizedBox(width: 5),
+              Expanded(
+                flex: 2,
+                child: infocourses(
+                  Co: courseseEntity.priceof,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

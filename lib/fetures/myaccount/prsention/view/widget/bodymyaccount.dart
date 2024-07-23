@@ -79,7 +79,7 @@ class _BodymyaccountState extends State<Bodymyaccount> {
                   Textformfieldresoncon(
                     maxline: 1,
                     initialValue: 'روز',
-                    enabel: isacu,
+                    enabel: isacu, onChanged: (String ) {  },
                   ),
                   Text(
                     "النوع",
@@ -89,7 +89,7 @@ class _BodymyaccountState extends State<Bodymyaccount> {
                   Textformfieldresoncon(
                     maxline: 1,
                     initialValue: 'قط شراز',
-                    enabel: isacu,
+                    enabel: isacu, onChanged: (String ) {  },
                   ),
                   Text(
                     "الجنس",
@@ -108,7 +108,7 @@ class _BodymyaccountState extends State<Bodymyaccount> {
                   Textformfieldresoncon(
                     maxline: 1,
                     initialValue: '8',
-                    enabel: isacu,
+                    enabel: isacu, onChanged: (String ) {  },
                   ),
                   Text(
                     "الوصف",
@@ -118,7 +118,7 @@ class _BodymyaccountState extends State<Bodymyaccount> {
                   Textformfieldresoncon(
                     maxline: 1,
                     initialValue: 'تم',
-                    enabel: isacu,
+                    enabel: isacu, onChanged: (String ) {  },
                   ),
                   Text(
                     "وصف النوع",
@@ -128,7 +128,7 @@ class _BodymyaccountState extends State<Bodymyaccount> {
                   Textformfieldresoncon(
                     maxline: 3,
                     initialValue: 'ققق',
-                    enabel: isacu,
+                    enabel: isacu, onChanged: (String ) {  },
                   ),
                   const SizedBox(height: 16),
                   GestureDetector(

@@ -11,7 +11,7 @@ class ImageSlider extends StatelessWidget {
         autoPlay: true,
         autoPlayInterval: const Duration(seconds: 5),
         enlargeCenterPage: true,
-        aspectRatio: 37 / 12,
+        aspectRatio: 45.0 / 17,
         viewportFraction: 0.8,
       ),
       items: img.map((i) {

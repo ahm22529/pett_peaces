@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:pett_peaces/fetures/account/presention/view/account.dart';
 import 'package:pett_peaces/fetures/home/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
@@ -8,11 +9,12 @@ import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dar
 import 'package:pett_peaces/fetures/home/presention/view/widget/homeviewbody.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/massage.dart';
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/services.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -88,7 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: IndexedStack(
             index: _selectedIndex,
             children: [
-              const HomeViewBody(),
+               HomeViewBody(
+                userEntitymodel: widget.userEntitymodel,
+              ),
               Store(
                 pro: product,
               ),

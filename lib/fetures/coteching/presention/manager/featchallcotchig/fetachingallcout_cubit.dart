@@ -22,4 +22,21 @@ class FetachingallcoutCubit extends Cubit<FetachingallcoutState> {
           emit(Fetachingallcoutsucess(coatchEntiityFrist: userEntity)),
     );
   }
+  Future<void> searchProducts({
+    required String endpoint,
+    required String token,
+    required Map<String,dynamic> query, // البحث استناداً إلى استعلام
+  }) async {
+    emit(Fetachingallcoutload());
+    final result = await coatchingRepo.getallcoatch(
+      endpoint: endpoint,
+      token: token,
+      data: query, // إرسال استعلام البحث كبيانات
+    );
+    print("search $result");
+    result.fold(
+      (failure) => emit(Fetachingallcoutfaulerl(errmas: failure.errmas)),
+      (userEntity) => emit(Fetachingallcoutsucess(coatchEntiityFrist: userEntity)),
+    );
+  }
 }

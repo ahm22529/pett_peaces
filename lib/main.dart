@@ -2,9 +2,13 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:pett_peaces/constant.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 
 import 'package:pett_peaces/fetures/splash/presention/view/splashview.dart';
 import 'generated/l10n.dart';
@@ -18,26 +22,35 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  ContactusRepo contactusRepo = ContactusRepoimp();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      useInheritedMediaQuery: true,
-      builder: DevicePreview.appBuilder,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: fontfamily),
-      locale: const Locale("ar"),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      home: const Splashview(),
+    return BlocProvider(
+      create: (context) => ContactCubit(contactusRepo),
+      child: MaterialApp(
+        useInheritedMediaQuery: true,
+        builder: DevicePreview.appBuilder,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: fontfamily),
+        locale: const Locale("ar"),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        home: const Splashview(),
+      ),
     );
   }
 }

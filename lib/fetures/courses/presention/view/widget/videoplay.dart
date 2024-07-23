@@ -97,19 +97,25 @@ class _VideoPlayState extends State<VideoPlay> {
         const SizedBox(
           width: 5,
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "فيديو تعريفي",
-              style: AppStyles.styleRegular14(context)
-                  .copyWith(color: Colors.white, fontWeight: FontWeight.w600),
+        Container(
+          color: Color(0xff2222222).withOpacity(.5),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "فيديو تعريفي",
+                  style: AppStyles.styleRegular14(context).copyWith(
+                      color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  "3:20 ",
+                  style: AppStyles.styleMedium10(context),
+                ),
+              ],
             ),
-            Text(
-              "3:20 ",
-              style: AppStyles.styleMedium10(context),
-            ),
-          ],
+          ),
         ),
       ],
     );

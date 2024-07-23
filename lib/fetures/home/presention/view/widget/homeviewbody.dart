@@ -12,10 +12,11 @@ import 'package:pett_peaces/fetures/home/presention/view/widget/headersection.da
 import 'package:pett_peaces/fetures/home/presention/view/widget/listviewstore.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/silder.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/userinfo.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
-
+  const HomeViewBody({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   _HomeViewBodyState createState() => _HomeViewBodyState();
 }
@@ -25,10 +26,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    BlocProvider.of<HomeCubit>(context).getdata(
-        endpoint: "home",
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxMjkxNzU5LCJleHAiOjE3MjE4OTY1NTksIm5iZiI6MTcyMTI5MTc1OSwianRpIjoiQkZxS1dWTGxhWFRmVjR5SyIsInN1YiI6IjI4IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.w5SxYXDiu3a_xWcblwcl6u5l-xAywNHqPOvva8-Kwjw");
+    BlocProvider.of<HomeCubit>(context)
+        .getdata(endpoint: "home", token: widget.userEntitymodel.token);
   }
 
   @override

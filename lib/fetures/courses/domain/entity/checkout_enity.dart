@@ -1,5 +1,5 @@
-class CheckoutEnity {
+class payoutEnity {
   final String url;
 
-  CheckoutEnity({required this.url});
+  payoutEnity({required this.url});
 }
