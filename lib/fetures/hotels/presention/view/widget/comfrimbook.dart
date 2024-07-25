@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/manager/cubit/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/hotels/data/repo/hotel_rep_imp.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/domain/repo/hotelrep.dart';

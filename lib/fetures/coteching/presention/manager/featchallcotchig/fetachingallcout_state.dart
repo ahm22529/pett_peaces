@@ -13,6 +13,12 @@ final class Fetachingallcoutsucess extends FetachingallcoutState {
   Fetachingallcoutsucess({required this.coatchEntiityFrist});
 }
 
+final class Fetachingallcoutsucessserach extends FetachingallcoutState {
+  final CoatchEntiityFrist coatchEntiityFrist;
+
+  Fetachingallcoutsucessserach({required this.coatchEntiityFrist});
+}
+
 final class Fetachingallcoutfaulerl extends FetachingallcoutState {
   final String errmas;
 

@@ -61,22 +61,28 @@ class bodyofcontinertwo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                children: examel.tag.map((item) {
+                children: List.generate(
+                    examel.tag.length > 3 ? 3 : examel.tag.length, (index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: CustomContainerButton(
-                      titel: examel.tag[0],
-                      onPressed: () {
-                        Navigator.push(
+                    child: FittedBox(
+                      child: CustomContainerButton(
+                        titel: examel
+                            .tag[index], // استخدم العنصر الحالي من القائمة
+                        onPressed: () {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (builder) => Hastag(
-                                      examel: examel,
-                                    )));
-                      },
+                              builder: (context) => Hastag(
+                                examel: examel,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   );
-                }).toList(),
+                }),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 20),
@@ -90,7 +96,9 @@ class bodyofcontinertwo extends StatelessWidget {
           ),
 
           Bodyofheader(
+            contact: examel.contant,
             examel: examel,
+            screensize: MediaQuery.of(context).size.width,
           ),
         ],
       ),

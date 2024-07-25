@@ -8,17 +8,42 @@ part 'fetchdoctor_state.dart';
 class FetchdoctorCubit extends Cubit<FetchdoctorState> {
   FetchdoctorCubit(this.doctorerepo) : super(FetchdoctorInitial());
   Doctorerepo doctorerepo;
-  void getdata(
-      {required String endpoint,
-      required String token,
-      Map<String, dynamic> data = const {}}) async {
+
+  void getdata({
+    required String endpoint,
+    required String token,
+    Map<String, dynamic> data = const {},
+  }) async {
     emit(Fetchdoctorload());
     final result = await doctorerepo.getallcoatch(
-        endpoint: endpoint, token: token, data: data);
-    print("fectch $result");
+      endpoint: endpoint,
+      token: token,
+      data: data,
+    );
+    print("fetch $result");
     result.fold(
       (failure) => emit(FetchdoctorfAUILER(errmas: failure.errmas)),
-      (userEntity) => emit(Fetchdoctorsucess(doctorEntity: userEntity)),
+      (userEntity) => emit(
+        Fetchdoctorsucess(doctorEntity: userEntity),
+      ),
+    );
+  }
+
+  Future<void> searchProducts({
+    required String endpoint,
+    required String token,
+    required Map<String, dynamic> query,
+  }) async {
+    emit(Fetchdoctorload());
+    final result = await doctorerepo.getallcoatch(
+      endpoint: endpoint,
+      token: token,
+      data: query,
+    );
+    print("search $result");
+    result.fold(
+      (failure) => emit(FetchdoctorfAUILER(errmas: failure.errmas)),
+      (userEntity) => emit(Fetchdoctorsucessserch(doctorEntity: userEntity)),
     );
   }
 }

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
 import 'package:pett_peaces/fetures/order/presention/view/widget/titelandsub.dart';
 
 class chartertics extends StatelessWidget {
   const chartertics({
     super.key,
+    required this.bookingEneity,
   });
-
+  final BookingEneity bookingEneity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,15 +15,15 @@ class chartertics extends StatelessWidget {
       children: [
         titelsub(
           titel: 'الحيوان المختار',
-          subtitel: 'ماريو',
+          subtitel: bookingEneity.price ?? "",
         ),
         titelsub(
           titel: 'تاريخ الحجز من',
-          subtitel: '24-5-2024',
+          subtitel: bookingEneity.statrdate,
         ),
         titelsub(
-          subtitel: 'إلي',
-          titel: '29-5-2024',
+          subtitel: bookingEneity.enddate,
+          titel: 'إلي',
         )
       ],
     );

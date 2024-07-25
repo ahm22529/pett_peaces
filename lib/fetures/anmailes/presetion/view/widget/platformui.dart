@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/adaptiveui.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/manager/cubit/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam.dart';

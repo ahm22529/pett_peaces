@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/hatag.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
 
@@ -24,7 +23,7 @@ class CustomContainerButton extends StatelessWidget {
           color: const Color(0xffFFE2C9),
           borderRadius: BorderRadius.circular(4),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 2),
         child: Center(
           child: Text(
             titel,
@@ -46,39 +45,16 @@ class HeaderAndBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Limiting the number of tags to 2
-    final tagsToDisplay = examel.tag.take(2).toList();
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Wrap(
-          spacing: 8.0, // Horizontal spacing between buttons
-          runSpacing: 4.0, // Vertical spacing between rows
-          children: tagsToDisplay.map((item) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4.0),
-              child: CustomContainerButton(
-                titel: item,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (builder) => Hastag(
-                        examel: examel,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            );
-          }).toList(),
-        ),
         const SizedBox(
           height: 8,
         ),
         Bodyofheader(
           examel: examel,
+          screensize: MediaQuery.of(context).size.width,
+          contact: examel.contant,
         )
       ],
     );

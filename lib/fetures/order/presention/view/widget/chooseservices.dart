@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/order/presention/view/widget/iteamchooseservices.dart';
 
-class chooseservices extends StatelessWidget {
-  const chooseservices({
-    super.key,
-  });
+class ChooseServices extends StatelessWidget {
+  const ChooseServices({
+    Key? key,
+    required this.services,
+  }) : super(key: key);
+
+  final List services;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        iteamchooseservice(),
-        SizedBox(
-          width: 5,
-        ),
-        iteamchooseservice(),
-        SizedBox(
-          width: 5,
-        ),
-        iteamchooseservice(),
-      ],
+    return Row(
+      children: List.generate(services.length, (index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 2.5),
+          child: ItemChooseService(
+            titel: '',
+          ),
+        );
+      }),
     );
   }
 }

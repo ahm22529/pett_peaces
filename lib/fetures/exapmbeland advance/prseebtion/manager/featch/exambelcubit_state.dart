@@ -13,6 +13,12 @@ final class Exambelcubitsucess extends ExambelcubitState {
   Exambelcubitsucess({required this.ex});
 }
 
+final class Exambelcubitsucessserch extends ExambelcubitState {
+  final ExamelEntity ex;
+
+  Exambelcubitsucessserch({required this.ex});
+}
+
 final class Exambelcubitfauleer extends ExambelcubitState {
   final String errmas;
 

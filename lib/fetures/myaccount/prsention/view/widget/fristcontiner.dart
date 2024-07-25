@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/bodyfristcontiner.dart';
 
@@ -8,9 +10,14 @@ class fristcontiner extends StatelessWidget {
     required this.togglecacelingMode,
     required this.text1,
     required this.text2,
+    required this.onImagePicked,
+    required this.img,
+    required this.id,
   });
   final VoidCallback toggleEditingMode, togglecacelingMode;
-  final String text1, text2;
+  final String text1, text2, id;
+  final dynamic Function(File?) onImagePicked;
+  final String img;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +35,8 @@ class fristcontiner extends StatelessWidget {
           togglecacelingMode: togglecacelingMode,
           text1: text1,
           text2: text2,
+          onImagePicked: onImagePicked,
+          id: id,
         ),
       ),
     );

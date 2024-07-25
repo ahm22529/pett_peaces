@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: IndexedStack(
             index: _selectedIndex,
             children: [
-               HomeViewBody(
+              HomeViewBody(
                 userEntitymodel: widget.userEntitymodel,
               ),
               Store(

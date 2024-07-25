@@ -22,10 +22,11 @@ class FetachingallcoutCubit extends Cubit<FetachingallcoutState> {
           emit(Fetachingallcoutsucess(coatchEntiityFrist: userEntity)),
     );
   }
+
   Future<void> searchProducts({
     required String endpoint,
     required String token,
-    required Map<String,dynamic> query, // البحث استناداً إلى استعلام
+    required Map<String, dynamic> query, // البحث استناداً إلى استعلام
   }) async {
     emit(Fetachingallcoutload());
     final result = await coatchingRepo.getallcoatch(
@@ -36,7 +37,8 @@ class FetachingallcoutCubit extends Cubit<FetachingallcoutState> {
     print("search $result");
     result.fold(
       (failure) => emit(Fetachingallcoutfaulerl(errmas: failure.errmas)),
-      (userEntity) => emit(Fetachingallcoutsucess(coatchEntiityFrist: userEntity)),
+      (userEntity) =>
+          emit(Fetachingallcoutsucessserach(coatchEntiityFrist: userEntity)),
     );
   }
 }

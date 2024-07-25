@@ -6,6 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:pett_peaces/constant.dart';
+import 'package:pett_peaces/fetures/anmailes/data/model/addanimlesdata/add_amiles_data.dart';
+import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/addanmiles/add_amiles_cubit.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
@@ -32,10 +36,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   ContactusRepo contactusRepo = ContactusRepoimp();
+  AnmilesRepo anmilesRepo = AnimelsRepoImp();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ContactCubit(contactusRepo),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ContactCubit(contactusRepo),
+        ),
+        BlocProvider(
+          create: (context) => AddAmilesCubit(anmilesRepo),
+        )
+      ],
       child: MaterialApp(
         useInheritedMediaQuery: true,
         builder: DevicePreview.appBuilder,

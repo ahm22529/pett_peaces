@@ -1,15 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/poilce/presention/manger/cubit/policy_cubit.dart';
 
-class BodyPolicy extends StatelessWidget {
+class BodyPolicy extends StatefulWidget {
+  @override
+  State<BodyPolicy> createState() => _BodyPolicyState();
+}
+
+class _BodyPolicyState extends State<BodyPolicy> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    BlocProvider.of<PolicyCubit>(context).getpolicy(
+        endpoint: "data/about/policy",
+        token:
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjY2MTU5LCJleHAiOjE3MjIyNzA5NTksIm5iZiI6MTcyMTY2NjE1OSwianRpIjoiZUJodjZtQ2dFV2UyY0xnUSIsInN1YiI6IjEwOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.99iC7a6BaYfnVCcCvll3dLteePiKdN3_de0zeO4vATA");
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
-      child: Text(
-        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى حيث يمكنك أن تولد هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى حيث يمكنك أن تولد هذا النص هو مثال لنص ",
-        style: AppStyles.styleMedium16(context),
-      ),
+    return BlocConsumer<PolicyCubit, PolicyState>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
+      builder: (context, state) {
+        if (state is PolicyIsuicess) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
+            child: Text(
+              state.policyentity.polic,
+              style: AppStyles.styleMedium16(context),
+            ),
+          );
+        } else {
+          return Center(child: CircularProgressIndicator());
+        }
+      },
     );
   }
 }

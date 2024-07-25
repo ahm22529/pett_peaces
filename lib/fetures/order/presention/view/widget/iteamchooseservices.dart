@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
 
-class iteamchooseservice extends StatelessWidget {
-  const iteamchooseservice({
-    super.key,
+class ItemChooseService extends StatelessWidget {
+  const ItemChooseService({
+    super.key, required this.titel,
   });
-
+  final String titel;
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,34 +1,45 @@
-import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/function/imagePicker.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/accountappbar.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/addphote.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/buttomtext.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/droptextfiled.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/fristcontiner.dart';
-
+import 'dart:developer';
 import 'dart:io';
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/function/imagePicker.dart';
+import 'package:pett_peaces/core/utiles/function/submit.dart';
+import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/addanmiles/add_amiles_cubit.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/addphote.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/formadd.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/header_add_account.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/listview_image.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/submit_buttom.dart';
 
-import 'package:pett_peaces/fetures/resonbuy/presention/view/resonbuy.dart';
-
-class Myaccountadd extends StatefulWidget {
+class MyAccountAdd extends StatefulWidget {
   @override
-  _MyaccountState createState() => _MyaccountState();
+  _MyAccountAddState createState() => _MyAccountAddState();
 }
 
-class _MyaccountState extends State<Myaccountadd> {
+class _MyAccountAddState extends State<MyAccountAdd> {
   final ImagePickerService _imagePickerService = ImagePickerService();
+  final AnmilesRepo _anmilesRepo = AnimelsRepoImp();
+
   List<File> _selectedImages = [];
-  bool isacu = true;
-  bool showDotContainer = true;
+  File? _pickedImage;
+  bool isEditing = true;
+
+  // Variables to store input values
+  String name = '';
+  String type = '';
+  String gender = '';
+  int age = 0;
+  String description = '';
+  String typeDescription = '';
 
   Future<void> _pickImage() async {
-    final selectedImage = await _imagePickerService.pickImages();
-
-    if (selectedImage != null) {
+    final selectedImages = await _imagePickerService.pickImages();
+    if (selectedImages != null) {
       setState(() {
-        _selectedImages.addAll(selectedImage);
+        _selectedImages.addAll(selectedImages);
       });
     }
   }
@@ -39,198 +50,105 @@ class _MyaccountState extends State<Myaccountadd> {
     });
   }
 
+  void _handleImagePicked(File? image) {
+    setState(() {
+      _pickedImage = image;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            fristcontiner(
-              toggleEditingMode: () {},
-              togglecacelingMode: () {},
-              text1: "",
-              text2: '',
-            ),
-            Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 24,
-                    ),
-                    Text(
-                      "الاسم",
-                      style: AppStyles.styleMedium16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 16),
-                    Textformfieldresoncon(
-                      maxline: 1,
-                      initialValue: '',
-                      enabel: isacu,
-                      onChanged: (String) {},
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      "النوع",
-                      style: AppStyles.styleMedium16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 16),
-                    Textformfieldresoncon(
-                      maxline: 1,
-                      initialValue: ' ',
-                      enabel: isacu,
-                      onChanged: (String) {},
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      "الجنس",
-                      style: AppStyles.styleMedium16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 16),
-                    DropdownField(
-                      options: ["انثي", "ذكر"],
-                      controller: TextEditingController(),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      "السنوات",
-                      style: AppStyles.styleMedium16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 16),
-                    Textformfieldresoncon(
-                      maxline: 1,
-                      initialValue: '',
-                      enabel: isacu,
-                      onChanged: (String) {},
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      "الوصف",
-                      style: AppStyles.styleMedium16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 16),
-                    Textformfieldresoncon(
-                      maxline: 1,
-                      initialValue: '',
-                      enabel: isacu,
-                      onChanged: (String) {},
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      " وصف النوع",
-                      style: AppStyles.styleMedium16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 16),
-                    Textformfieldresoncon(
-                      maxline: 3,
-                      initialValue: '',
-                      enabel: isacu,
-                      onChanged: (String) {},
-                    ),
-                    const SizedBox(height: 16),
-                    GestureDetector(
-                      onTap: _pickImage,
-                      child: Visibility(visible: isacu, child: const addphot()),
-                    ),
-                    const SizedBox(height: 30),
-                    _selectedImages.isNotEmpty
-                        ? Container(
-                            height: 100,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _selectedImages.length,
-                              itemBuilder: (context, index) {
-                                return Stack(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Image.file(
-                                        _selectedImages[index],
-                                        width: 100,
-                                        height: 100,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      top: 0,
-                                      right: 0,
-                                      child: GestureDetector(
-                                        onTap: () => _removeImage(index),
-                                        child: Container(
-                                          padding: const EdgeInsets.all(4),
-                                          decoration: const BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Colors.red,
-                                          ),
-                                          child: const Icon(
-                                            Icons.close,
-                                            color: Colors.white,
-                                            size: 18,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ),
-                          )
-                        : Container(),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (builder) => resonbay())),
-                            child: buttomtext(
-                              color: Colors.orange,
-                              text: 'عرض للبيع',
-                              colortext: Colors.white,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          child: buttomtext(
-                            color: Colors.transparent,
-                            text: ' عرض للتزاوج',
-                            colortext: Colors.orange,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    )
-                  ],
+    return BlocProvider(
+      create: (context) => AddAmilesCubit(_anmilesRepo),
+      child: Scaffold(
+        body: BlocListener<AddAmilesCubit, AddAmilesState>(
+          listener: (context, state) {
+            log('add');
+          },
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SafeArea(
+                    child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: HeaderWidget(
+                    toggleEditingMode: () {
+                      // Your toggle editing logic
+                    },
+                    text1: '',
+                    text2: '',
+                    onImagePicked: _handleImagePicked,
+                    toggleCancelingMode: () {
+                      // Your toggle canceling logic
+                    },
+                    id: '',
+                  ),
+                )),
+                FormWidget(
+                  isEditing: true,
+                  onNameChanged: (value) {
+                    name = value;
+                  },
+                  onTypeChanged: (value) {
+                    type = value;
+                  },
+                  onGenderChanged: (value) {
+                    gender = value;
+                  },
+                  onAgeChanged: (value) {
+                    age = value;
+                  },
+                  onDescriptionChanged: (value) {
+                    description = value;
+                  },
+                  onTypeDescriptionChanged: (value) {
+                    typeDescription = value;
+                  },
                 ),
-              ),
+                _buildImagePicker(),
+                ImageListWidget(
+                  selectedImages: _selectedImages,
+                  onRemoveImage: (index) {
+                    // Handle image removal logic here
+                    setState(() {
+                      _selectedImages.removeAt(index);
+                    });
+                  },
+                ),
+                // ig,nore: prefer_const_constructors
+                const SizedBox(
+                  height: 15,
+                ),
+                SubmitButtons(
+                  onSubmit: () {
+                    submit(
+                      name: name,
+                      age: age,
+                      description: description,
+                      typeDescription: typeDescription,
+                      image: _pickedImage != null
+                          ? MultipartFile.fromFileSync(_pickedImage!.path)
+                          : null,
+                      selimage: _selectedImages,
+                      context: context,
+                      type: type,
+                    );
+                  },
+                ),
+              ],
             ),
-          ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildImagePicker() {
+    return GestureDetector(
+      onTap: _pickImage,
+      child: Visibility(
+        visible: isEditing,
+        child: const addphot(),
       ),
     );
   }

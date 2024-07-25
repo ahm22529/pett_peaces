@@ -13,6 +13,12 @@ final class Fetchdoctorsucess extends FetchdoctorState {
   Fetchdoctorsucess({required this.doctorEntity});
 }
 
+final class Fetchdoctorsucessserch extends FetchdoctorState {
+  final DoctorEntity doctorEntity;
+
+  Fetchdoctorsucessserch({required this.doctorEntity});
+}
+
 final class FetchdoctorfAUILER extends FetchdoctorState {
   final String errmas;
 

@@ -57,7 +57,7 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
           setState(() {
             isLoadingMore = false;
             // دمج العناصر الجديدة مع العناصر القديمة
-            products=state.producEntity.product;
+            products = state.producEntity.product;
           });
         }
       },

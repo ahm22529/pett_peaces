@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:pett_peaces/core/apiservices/apiservices.dart';
@@ -18,7 +20,33 @@ class AnimelsRepoImp extends AnmilesRepo {
       ListAnmileEntity listAnmileEntity = AnmilesResponse.fromJson(result);
       return right(listAnmileEntity);
     } on Exception catch (e) {
+      return left(ServFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> addanmiles(
+      {required String endpoint,
+      required String token,
+      required FormData data}) async {
+    try {
+      await requestServices.post(data, endpoint, token, "");
+      return right(Void);
+    } on Exception catch (e) {
       // TODO
+      return left(ServFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> deletanmiles(
+      {required String endpoint, required String token}) async {
+    try {
+      await requestServices.post("", endpoint, token, "");
+      return right(Void);
+    } on Exception catch (e) {
+      // TODO
+
       return left(ServFailure(e.toString()));
     }
   }

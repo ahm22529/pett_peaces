@@ -17,7 +17,7 @@ class anmileshome extends StatelessWidget {
           Anmmalesme(),
           GestureDetector(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (builder) => Myaccountadd())),
+                  MaterialPageRoute(builder: (builder) => MyAccountAdd())),
               child: iteamadd())
         ],
       ),

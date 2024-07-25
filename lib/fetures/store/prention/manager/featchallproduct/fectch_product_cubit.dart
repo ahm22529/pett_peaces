@@ -33,7 +33,7 @@ class FectchProductCubit extends Cubit<FectchProductState> {
   Future<void> searchProducts({
     required String endpoint,
     required String token,
-    required Map<String,dynamic> query, // البحث استناداً إلى استعلام
+    required Map<String, dynamic> query, // البحث استناداً إلى استعلام
   }) async {
     emit(FectchProductLoad());
     final result = await storeRepo.getAllProducts(

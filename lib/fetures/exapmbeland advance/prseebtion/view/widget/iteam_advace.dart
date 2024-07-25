@@ -9,7 +9,7 @@ class ItemAdvanced extends StatelessWidget {
     super.key,
     required this.examel,
   });
-  
+
   final ExambelEnitydetails examel;
 
   @override

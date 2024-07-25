@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
 
 class headeriteam extends StatelessWidget {
   const headeriteam({
-    super.key,
+    super.key, required this.bookingEneity,
   });
-
+final BookingEneity bookingEneity;
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       RichText(
-        text: const TextSpan(
+        text:  TextSpan(
           style: TextStyle(
             color: Colors.black,
             fontSize: 16.0,
@@ -23,7 +24,7 @@ class headeriteam extends StatelessWidget {
               ),
             ),
             TextSpan(
-              text: '#12528290344ogd',
+              text: bookingEneity.numberoforder,
               style: TextStyle(
                 color: Colors.orange,
               ),

@@ -22,8 +22,12 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (builder) =>  HomeScreen(userEntitymodel: state.userEntity,)));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (builder) => HomeScreen(
+                        userEntitymodel: state.userEntity,
+                      )));
         }
 
         if (state is LoginFailure) {

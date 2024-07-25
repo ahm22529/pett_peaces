@@ -22,7 +22,7 @@ class doctorestatus extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                cotachEntity.namee,
+                cotachEntity.namee ?? "",
                 style: AppStyles.styleRegular14(context),
               ),
               avalibal(

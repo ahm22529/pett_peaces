@@ -5,7 +5,8 @@ import 'package:pett_peaces/fetures/contactus/prsention/view/widget/customdialog
 
 class buttomshowalert extends StatelessWidget {
   const buttomshowalert({
-    super.key, required this.contactdata,
+    super.key,
+    required this.contactdata,
   });
   final Contactdata contactdata;
   @override

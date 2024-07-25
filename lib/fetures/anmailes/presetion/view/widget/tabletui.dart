@@ -45,7 +45,20 @@ class Tabletui extends StatelessWidget {
           flex: 1,
           child: GestureDetector(
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (builder) => Myaccount())),
+                context,
+                MaterialPageRoute(
+                    builder: (builder) => Myaccount(
+                          anmilesEntity: AnmilesEntity(
+                              namee: "namee",
+                              otherimage: [],
+                              typee: "typee",
+                              agee: 5,
+                              des: "des",
+                              gendere: "gendere",
+                              idd: 1,
+                              imagee: "imagee",
+                              predec: "predec"),
+                        ))),
             child: buttomanmandmating(
               color: Colors.orange,
               text: 'إضافة حيوان جديد',

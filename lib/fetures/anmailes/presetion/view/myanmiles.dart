@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/manager/cubit/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.dart';
 
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/platformui.dart';

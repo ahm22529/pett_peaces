@@ -22,8 +22,12 @@ class Anmmalesmeacc extends StatelessWidget {
                   text: 'تعديل البيانات',
                   image: "Asset/image/edit-rectangle.png",
                   color: Color(0xff9C4900),
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => Myaccount())),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => Myaccount(
+                                anmilesEntity: listAnmileEntity.anmiles[index],
+                              ))),
                 ),
                 animel: listAnmileEntity.anmiles[index],
               ),

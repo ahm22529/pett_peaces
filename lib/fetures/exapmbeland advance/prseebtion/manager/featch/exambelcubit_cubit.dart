@@ -22,4 +22,22 @@ class ExambelcubitCubit extends Cubit<ExambelcubitState> {
       (userEntity) => emit(Exambelcubitsucess(ex: userEntity)),
     );
   }
+
+  Future<void> searchProducts({
+    required String endpoint,
+    required String token,
+    required Map<String, dynamic> query, // البحث استناداً إلى استعلام
+  }) async {
+    emit(Exambelcubitload());
+    final result = await exam.getexambel(
+      endpoint: endpoint,
+      token: token,
+      data: query, // إرسال استعلام البحث كبيانات
+    );
+    print("search $result");
+    result.fold(
+      (failure) => emit(Exambelcubitfauleer(errmas: failure.errmas)),
+      (userEntity) => emit(Exambelcubitsucessserch(ex: userEntity)),
+    );
+  }
 }

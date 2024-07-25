@@ -27,7 +27,11 @@ class VarfyEmailBlocConsumer extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.userEntity.massage.toString())));
           Navigator.push(
-              context, MaterialPageRoute(builder: (builder) => HomeScreen(userEntitymodel: state.userEntity,)));
+              context,
+              MaterialPageRoute(
+                  builder: (builder) => HomeScreen(
+                        userEntitymodel: state.userEntity,
+                      )));
         }
         if (state is VarifyEmailFailure) {
           ScaffoldMessenger.of(context)

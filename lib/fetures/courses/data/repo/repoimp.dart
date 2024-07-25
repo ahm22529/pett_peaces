@@ -11,9 +11,7 @@ import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
 import 'package:pett_peaces/fetures/restpassword/domain/entity/checkentity.dart';
 
 class CorseRepoImp extends CourseRepo {
-  final RequestServices requestServices=RequestServices(Dio());
-
- 
+  final RequestServices requestServices = RequestServices(Dio());
 
   @override
   Future<Either<Failure, CoursesEntityList>> getcoursedata(

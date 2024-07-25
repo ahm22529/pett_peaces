@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/manager/cubit/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
@@ -25,7 +25,7 @@ class BodyAnmiles extends StatelessWidget {
                 )),
                 GestureDetector(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => Myaccountadd())),
+                      MaterialPageRoute(builder: (builder) => MyAccountAdd())),
                   child: buttomanmandmating(
                     color: Colors.orange,
                     text: 'إضافة حيوان جديد',
@@ -34,7 +34,7 @@ class BodyAnmiles extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (builder) => Myaccountadd()));
+                              builder: (builder) => MyAccountAdd()));
                     },
                   ),
                 ),

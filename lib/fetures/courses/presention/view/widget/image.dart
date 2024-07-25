@@ -26,11 +26,10 @@ class show extends StatelessWidget {
         if (index < 3) {
           // عرض الصور الأولى
           return GestureDetector(
-            onTap: () {
-              _showImageDialog(context, hotelEntity![index]);
-            },
-            child: Image.asset(hotelEntity![index], fit: BoxFit.cover),
-          );
+              onTap: () {
+                _showImageDialog(context, hotelEntity![index]);
+              },
+              child: hotelEntity![index]);
         } else {
           // عنصر خاص بعرض الصورة الأخيرة مع عدد الصور الزائدة
           return GestureDetector(
@@ -40,7 +39,7 @@ class show extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.asset(hotelEntity![index], fit: BoxFit.cover),
+                hotelEntity![index],
                 Container(
                   color: Colors.black.withOpacity(0.5), // لون خلفية النص
                   child: Center(
