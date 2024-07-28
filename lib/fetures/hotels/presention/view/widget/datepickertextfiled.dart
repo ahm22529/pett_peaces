@@ -5,9 +5,11 @@ class DatePickerField extends StatefulWidget {
     super.key,
     required this.controller,
     required this.Imag,
+    required this.onTap,
   });
   final String Imag;
   final TextEditingController controller;
+  final void Function()? onTap;
 
   @override
   _DatePickerFieldState createState() => _DatePickerFieldState();
@@ -29,20 +31,7 @@ class _DatePickerFieldState extends State<DatePickerField> {
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
-      onTap: () async {
-        DateTime? pickedDate = await showDatePicker(
-          context: context,
-          initialDate: DateTime.now(),
-          firstDate: DateTime(2000),
-          lastDate: DateTime(2101),
-        );
-
-        if (pickedDate != null) {
-          setState(() {
-            widget.controller.text = "${pickedDate.toLocal()}".split(' ')[0];
-          });
-        }
-      },
+      onTap: widget.onTap,
     );
   }
 }

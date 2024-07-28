@@ -3,14 +3,15 @@ import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
 
 class headeriteam extends StatelessWidget {
   const headeriteam({
-    super.key, required this.bookingEneity,
+    super.key,
+    required this.bookingEneity,
   });
-final BookingEneity bookingEneity;
+  final BookingEneity bookingEneity;
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       RichText(
-        text:  TextSpan(
+        text: TextSpan(
           style: TextStyle(
             color: Colors.black,
             fontSize: 16.0,

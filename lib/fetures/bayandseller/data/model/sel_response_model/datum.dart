@@ -1,6 +1,8 @@
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
+
 import 'animal.dart';
 
-class Datum {
+class Datum extends SelEntity {
   int? price;
   String? saleDescription;
   Animal? animal;
@@ -11,7 +13,11 @@ class Datum {
     this.saleDescription,
     this.animal,
     this.isAllowedDelete,
-  });
+  }) : super(
+            anmilesEntity: animal!,
+            selde: saleDescription ?? '',
+            pricee: price ?? 0,
+            isactive: isAllowedDelete);
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         price: json['price'] as int?,

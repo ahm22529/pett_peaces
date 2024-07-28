@@ -1,23 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/mating/data/repo/repo.dart';
+import 'package:pett_peaces/fetures/mating/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/mating/prsention/manager/Add_remove/add_or_remove_cubit.dart';
+import 'package:pett_peaces/fetures/mating/prsention/manager/getmating/get_mating_cubit.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/bodymatching.dart';
 
-class Mating extends StatelessWidget {
+class Mating extends StatefulWidget {
+  @override
+  State<Mating> createState() => _MatingState();
+}
+
+class _MatingState extends State<Mating> {
+  Matingrepo matingrepo = Matingrepoimp();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: Image.asset("Asset/image/Back.png")),
-        title: Text(
-          " التزاوج",
-          style: AppStyles.styleRegular24(context)
-              .copyWith(fontWeight: FontWeight.w500),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => GetMatingCubit(matingrepo),
         ),
-        centerTitle: true,
+        BlocProvider(
+          create: (context) => AddOrRemoveCubit(matingrepo),
+        )
+      ],
+      child: Scaffold(
+        appBar: AppBar(
+          leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset("Asset/image/Back.png")),
+          title: Text(
+            " التزاوج",
+            style: AppStyles.styleRegular24(context)
+                .copyWith(fontWeight: FontWeight.w500),
+          ),
+          centerTitle: true,
+        ),
+        body: BodyMating(),
       ),
-      body: BodyMating(),
     );
   }
 }

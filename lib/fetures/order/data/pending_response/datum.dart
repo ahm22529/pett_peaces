@@ -22,7 +22,7 @@ class Datum extends BookingEneity {
     this.isApproved,
     this.services,
   }) : super(
-    name: animal??"",
+          name: animal ?? "",
           enddate: endDate ?? "",
           statrdate: startDate ?? "",
           service: services ?? [],

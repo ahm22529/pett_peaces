@@ -95,11 +95,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Store(
                 pro: product,
+                userEntitymodel: widget.userEntitymodel,
               ),
-              const Services(),
+              Services(
+                userEntitymodel: widget.userEntitymodel,
+              ),
               const Massage(),
               // الصفحة الجديدة
-              Acountff(),
+              Acountff(
+                userEntitymodel: widget.userEntitymodel,
+              ),
             ],
           ),
         ),

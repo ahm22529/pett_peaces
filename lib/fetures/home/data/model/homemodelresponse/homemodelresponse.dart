@@ -1,4 +1,3 @@
-import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/home_entity.dart';
 
 import 'data.dart';

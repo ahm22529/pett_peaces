@@ -4,9 +4,13 @@ import 'package:pett_peaces/fetures/detailsorder/presention/view/widget/bodyorde
 import 'package:pett_peaces/fetures/home/presention/view/widget/listviewstore.dart';
 import 'package:pett_peaces/fetures/order/presention/order.dart';
 import 'package:pett_peaces/fetures/order/presention/view/widget/titelandsub.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/gridview.dart';
 
 class OrderDetails extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const OrderDetails({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +23,9 @@ class OrderDetails extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: BodyorderDetails(),
+      body: BodyorderDetails(
+        userEntitymodel: userEntitymodel,
+      ),
     );
   }
 }

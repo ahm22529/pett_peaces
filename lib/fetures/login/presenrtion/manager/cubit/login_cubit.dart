@@ -9,6 +9,7 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit(this.loginRepo) : super(LoginInitial());
   LoginRepo loginRepo;
   void Login(Map<String, dynamic> input, String endpoint) async {
+    emit(LoginLoading());
     final result = await loginRepo.Login(input: input, endponit: endpoint);
 
     result.fold(

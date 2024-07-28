@@ -7,10 +7,10 @@ class HeaderWidget extends StatelessWidget {
   final VoidCallback toggleEditingMode;
   final String text1;
   final String text2;
- 
+
   final VoidCallback toggleCancelingMode;
   final String id;
- final void Function(File?)onImagePicked;
+  final void Function(File?) onImagePicked;
   const HeaderWidget({
     Key? key,
     required this.toggleEditingMode,
@@ -24,14 +24,11 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return bodyfristcontiner(
-      toggleEditingMode: toggleEditingMode,
-      text1: text1,
-      text2: text2,
-      onImagePicked: onImagePicked,
-     
-      id: id, togglecacelingMode:toggleCancelingMode
-    );
+        toggleEditingMode: toggleEditingMode,
+        text1: text1,
+        text2: text2,
+        onImagePicked: onImagePicked,
+        id: id,
+        togglecacelingMode: toggleCancelingMode);
   }
 }
-
-

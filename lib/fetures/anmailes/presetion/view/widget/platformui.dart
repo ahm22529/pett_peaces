@@ -8,8 +8,12 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/tabletui.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class PlatformuiMyanmiles extends StatefulWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const PlatformuiMyanmiles({super.key, required this.userEntitymodel});
   @override
   State<PlatformuiMyanmiles> createState() => _PlatformuiMyanmilesState();
 }
@@ -19,10 +23,8 @@ class _PlatformuiMyanmilesState extends State<PlatformuiMyanmiles> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    BlocProvider.of<FetachMyAnmilesCubit>(context).getanmiles(
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjY2MTU5LCJleHAiOjE3MjIyNzA5NTksIm5iZiI6MTcyMTY2NjE1OSwianRpIjoiZUJodjZtQ2dFV2UyY0xnUSIsInN1YiI6IjEwOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.99iC7a6BaYfnVCcCvll3dLteePiKdN3_de0zeO4vATA",
-        endpoint: "animals/");
+    BlocProvider.of<FetachMyAnmilesCubit>(context)
+        .getanmiles(token: widget.userEntitymodel.token, endpoint: "animals/");
   }
 
   @override

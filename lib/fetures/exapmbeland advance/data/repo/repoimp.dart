@@ -21,8 +21,7 @@ class Exambelrepimp extends Exambelrepo {
         "",
       );
 
-      ExambelAndAdvaceResponse storeResponse =
-          ExambelAndAdvaceResponse.fromJson(result);
+      ExamelEntity storeResponse = ExambelAndAdvaceResponse.fromJson(result);
 
       return right(storeResponse);
     } on Exception catch (e) {

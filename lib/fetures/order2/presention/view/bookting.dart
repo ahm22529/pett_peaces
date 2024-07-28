@@ -6,8 +6,12 @@ import 'package:pett_peaces/fetures/order/presention/order.dart';
 import 'package:pett_peaces/fetures/order/presention/view/widget/titelandsub.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/bodybook.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/header.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bookting extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const Bookting({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +26,9 @@ class Bookting extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: BodyBookting(),
+      body: BodyBookting(
+        userEntitymodel: userEntitymodel,
+      ),
     );
   }
 }

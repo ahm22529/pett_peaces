@@ -12,6 +12,7 @@ final class PolicyIsuicess extends PolicyState {
 
   PolicyIsuicess({required this.policyentity});
 }
+
 final class PolicyIsuicessAboutus extends PolicyState {
   final Dataentity policyentity;
 

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sizeconfig.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/continerbuttom.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/location.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/hotel/hotel_cubit.dart';
@@ -22,6 +23,7 @@ class _BodyHotelState extends State<BodyHotel> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     BlocProvider.of<HotelCubit>(context).getdata(
         endpoint: "hotel",
         token:
@@ -86,7 +88,7 @@ class _BodyHotelState extends State<BodyHotel> {
                         horizontal: 0.0, vertical: 0.0),
                     child: Container(
                         width: MediaQuery.of(context).size.width,
-                        color: Colors.white,
+                        color: const Color.fromRGBO(255, 255, 255, 1),
                         child: butomcomfrim(
                           onPressed: () {
                             Navigator.push(

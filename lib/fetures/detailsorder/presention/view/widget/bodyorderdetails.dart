@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/detailsorder/presention/view/orderdetails.dart';
 import 'package:pett_peaces/fetures/detailsorder/presention/view/widget/iteamdetails.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/gridview.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
 
 class BodyorderDetails extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  BodyorderDetails({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +32,10 @@ class BodyorderDetails extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          Expanded(child: CustomGridViewstore())
+          Expanded(
+              child: CustomGridViewstore(
+            userEntitymodel: userEntitymodel,
+          ))
         ],
       ),
     );

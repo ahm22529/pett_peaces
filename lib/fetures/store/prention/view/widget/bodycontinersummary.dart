@@ -4,14 +4,17 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/listviewstore.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/buttomseller.dart';
 
 class BodyContiner extends StatelessWidget {
   const BodyContiner({
     super.key,
     required this.producEntity,
+    required this.userEntitymodel,
   });
   final ProducEntity producEntity;
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -46,6 +49,7 @@ class BodyContiner extends StatelessWidget {
         ),
         Suggetionproduct(
           producEntity: producEntity,
+          userEntitymodel: userEntitymodel,
         ),
         SizedBox(
           height: 20,
@@ -60,8 +64,9 @@ class BodyContiner extends StatelessWidget {
 
 class Suggetionproduct extends StatelessWidget {
   final ProducEntity producEntity;
-
-  const Suggetionproduct({super.key, required this.producEntity});
+  final UserEntitymodel userEntitymodel;
+  const Suggetionproduct(
+      {super.key, required this.producEntity, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Visibility(
@@ -83,6 +88,7 @@ class Suggetionproduct extends StatelessWidget {
               height: MediaQuery.of(context).size.height * .26,
               child: gridviewstore(
                 producEntity: producEntity.pro,
+                userEntitymodel: userEntitymodel,
               )),
           const SizedBox(
             height: 30,

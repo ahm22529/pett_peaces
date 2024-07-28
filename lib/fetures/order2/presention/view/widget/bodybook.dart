@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/buttomshowdetails.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/header.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/infoandheader.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyBookting extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const BodyBookting({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,9 +26,11 @@ class BodyBookting extends StatelessWidget {
           ),
           Expanded(
               child: ListView.builder(
-            itemBuilder: (context, index) => const Padding(
-              padding: EdgeInsets.only(bottom: 20.0),
-              child: iteambooktin(),
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: iteambooktin(
+                userEntitymodel: userEntitymodel,
+              ),
             ),
           ))
         ],
@@ -36,23 +42,26 @@ class BodyBookting extends StatelessWidget {
 class iteambooktin extends StatelessWidget {
   const iteambooktin({
     super.key,
+    required this.userEntitymodel,
   });
-
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(10)),
-      child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 24),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24),
         child: Column(
           children: [
             const headerordersection(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            infoorder(),
-            buttomshowdetails()
+            const infoorder(),
+            buttomshowdetails(
+              userEntitymodel: userEntitymodel,
+            )
           ],
         ),
       ),

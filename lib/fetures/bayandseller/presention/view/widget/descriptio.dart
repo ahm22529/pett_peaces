@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
+import 'package:pett_peaces/fetures/anmailes/domin/enitiy/anmiles_entity.dart';
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/show_Image.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 
 class description extends StatelessWidget {
   const description({
     super.key,
+    required this.anmilesEntity,
   });
-
+  final SelEntity anmilesEntity;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +27,7 @@ class description extends StatelessWidget {
             height: 16,
           ),
           Text(
-            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، تولد مثل هذا النص أو العديد من النصوص ",
+            anmilesEntity.anmilesEntity.des,
             style: AppStyles.styleRegular14(context)
                 .copyWith(color: const Color(0xff333333)),
           ),
@@ -38,7 +42,7 @@ class description extends StatelessWidget {
             height: 16,
           ),
           Text(
-            "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، تولد مثل هذا النص أو العديد من النصوص ",
+            anmilesEntity.selde,
             style: AppStyles.styleRegular14(context)
                 .copyWith(color: const Color(0xff333333)),
           ),
@@ -55,8 +59,13 @@ class description extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          show(
-            hotelEntity: [],
+          IconButton(
+              onPressed: () {
+                print(anmilesEntity.anmilesEntity.otherimage[1]['image']);
+              },
+              icon: Icon(Icons.abc)),
+          ShowImage(
+            hotelEntity: anmilesEntity.anmilesEntity.otherimage,
           ),
           const SizedBox(
             height: 16,

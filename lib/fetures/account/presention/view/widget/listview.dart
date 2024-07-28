@@ -16,12 +16,15 @@ import 'package:pett_peaces/fetures/order/presention/order.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/bookting.dart';
 import 'package:pett_peaces/fetures/poilce/presention/view/poilcy.dart';
 import 'package:pett_peaces/fetures/resonbuy/presention/view/resonbuy.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/subscribtion/presention/view/subsurbtion.dart';
 
 import '../../../../deletaccount/showdilog.dart';
 
 class Iteamconter extends StatefulWidget {
-  const Iteamconter({Key? key}) : super(key: key);
+  final UserEntitymodel userEntitymodel;
+  const Iteamconter({Key? key, required this.userEntitymodel})
+      : super(key: key);
 
   @override
   State<Iteamconter> createState() => _IteamconterState();
@@ -45,9 +48,33 @@ class _IteamconterState extends State<Iteamconter> {
   ];
 
   List<Widget> nav = [
-    Myanmiles(),
+    Myanmiles(
+      userEntitymodel: UserEntitymodel(
+          email: "",
+          massage: '',
+          id: '',
+          type: '',
+          name: '',
+          phone: '',
+          image: '',
+          token: '',
+          is_plan_subscribe: false,
+          email_verified_at: false),
+    ),
     Mating(),
-    Bookting(),
+    Bookting(
+      userEntitymodel: UserEntitymodel(
+          email: "",
+          massage: '',
+          id: '',
+          type: '',
+          name: '',
+          phone: '',
+          image: '',
+          token: '',
+          is_plan_subscribe: false,
+          email_verified_at: false),
+    ),
     Order(),
     Subsurbtion(),
     Changepassword(),

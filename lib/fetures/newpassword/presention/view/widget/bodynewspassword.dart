@@ -43,7 +43,11 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
             const SizedBox(
               height: 24,
             ),
-            PasswordFieldNew(globalKey: globalKey),
+            PasswordFieldNew(
+              globalKey: globalKey,
+              onSaved1: (String? v) {},
+              onSaved2: (String? v) {},
+            ),
             buttomAccept(
               onPressed: () {
                 if (globalKey.currentState!.validate()) {

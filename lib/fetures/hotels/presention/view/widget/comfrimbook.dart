@@ -39,8 +39,15 @@ class _comfrimbookState extends State<comfrimbook> {
         )
       ],
       child: Scaffold(
-        body: Bodycomfrimbook(
-          hotelEntity: widget.hotelEntity,
+        body: BlocConsumer<FetachMyAnmilesCubit, FetachMyAnmilesState>(
+          listener: (context, state) {
+            // TODO: implement listener
+          },
+          builder: (context, state) {
+            return Bodycomfrimbook(
+              hotelEntity: widget.hotelEntity,
+            );
+          },
         ),
       ),
     );

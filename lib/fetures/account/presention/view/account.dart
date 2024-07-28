@@ -6,12 +6,14 @@ import 'package:pett_peaces/fetures/account/presention/view/widget/bodyaccount.d
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/deletmyanmiles/delet_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Acountff extends StatefulWidget {
-  const Acountff({super.key});
+  const Acountff({super.key, required this.userEntitymodel});
 
   @override
   State<Acountff> createState() => _AcountffState();
+  final UserEntitymodel userEntitymodel;
 }
 
 class _AcountffState extends State<Acountff> {
@@ -24,7 +26,10 @@ class _AcountffState extends State<Acountff> {
       ],
       child: Scaffold(
         body: Custombackground(
-            image: 'Asset/image/accountback.png', wideget: BodyAccount()),
+            image: 'Asset/image/accountback.png',
+            wideget: BodyAccount(
+              userEntitymodel: widget.userEntitymodel,
+            )),
       ),
     );
   }

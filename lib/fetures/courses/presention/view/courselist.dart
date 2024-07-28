@@ -31,7 +31,7 @@ class _CourselistState extends State<Courselist> {
         appBar: AppBar(
           backgroundColor: Colors.orange,
           title: Appbarsearch(
-              name: "name",
+              name: "ابحث   عن الكورسات",
               fetchPredictions: () {},
               textEditingController: TextEditingController()),
         ),

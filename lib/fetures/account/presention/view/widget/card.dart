@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/mydata/prsention/view/mydata.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Cardd extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const Cardd({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,18 +29,22 @@ class Cardd extends StatelessWidget {
             children: [
               SizedBox(height: 6),
               Text(
-                "أحمد حسين",
+                userEntitymodel.name,
                 style: AppStyles.styleMedium16(context)
                     .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
               ),
               Text(
-                "AhmedHussen19@gmail.com",
+                userEntitymodel.email,
                 style: AppStyles.styleRegular14(context),
               ),
               SizedBox(height: 10),
               GestureDetector(
                 onTap: () => Navigator.push(
-                    context, MaterialPageRoute(builder: (builder) => Mydata())),
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => Mydata(
+                              userEntitymodel: userEntitymodel,
+                            ))),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,

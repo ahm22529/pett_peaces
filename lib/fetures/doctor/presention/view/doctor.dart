@@ -4,8 +4,12 @@ import 'package:pett_peaces/fetures/doctor/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/doctor/domain/repo/doctorerepo.dart';
 import 'package:pett_peaces/fetures/doctor/presention/manager/cubit/fetchdoctor_cubit.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/widget/bodyDoctor.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Doctor extends StatefulWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const Doctor({super.key, required this.userEntitymodel});
   @override
   State<Doctor> createState() => _DoctorState();
 }
@@ -18,7 +22,9 @@ class _DoctorState extends State<Doctor> {
       create: (context) => FetchdoctorCubit(doctorerepo),
       child: Scaffold(
         backgroundColor: const Color(0xFFFDFDFD),
-        body: BodyDocoter(),
+        body: BodyDocoter(
+          userEntitymodel: widget.userEntitymodel,
+        ),
       ),
     );
   }

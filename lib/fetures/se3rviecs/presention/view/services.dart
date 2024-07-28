@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/widget/customgridview.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Services extends StatelessWidget {
-  const Services({super.key});
-
+  const Services({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,8 +25,10 @@ class Services extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30.0),
-          const Expanded(
-            child: CustomGridViewServ(),
+          Expanded(
+            child: CustomGridViewServ(
+              userEntitymodel: userEntitymodel,
+            ),
           ),
         ],
       ),

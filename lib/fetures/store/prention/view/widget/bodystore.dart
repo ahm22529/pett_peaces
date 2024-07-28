@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/customlistview.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/gridview.dart';
 
 class BodyStore extends StatelessWidget {
-  const BodyStore({super.key, required this.product});
+  const BodyStore(
+      {super.key, required this.product, required this.userEntitymodel});
   final List<ProducEntity> product;
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Expanded(flex: 28, child: Customlistview()),
         SizedBox(
@@ -18,7 +21,9 @@ class BodyStore extends StatelessWidget {
             flex: 72,
             child: Padding(
               padding: EdgeInsets.only(left: 5.0, top: 20),
-              child: CustomGridViewstore(),
+              child: CustomGridViewstore(
+                userEntitymodel: userEntitymodel,
+              ),
             ))
       ],
     );

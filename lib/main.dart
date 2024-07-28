@@ -10,6 +10,9 @@ import 'package:pett_peaces/fetures/anmailes/data/model/addanimlesdata/add_amile
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/addanmiles/add_amiles_cubit.dart';
+import 'package:pett_peaces/fetures/bayandseller/data/repo/repo_imp.dart';
+import 'package:pett_peaces/fetures/bayandseller/domain/repo/buyandsell_entity.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
@@ -37,6 +40,7 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   ContactusRepo contactusRepo = ContactusRepoimp();
   AnmilesRepo anmilesRepo = AnimelsRepoImp();
+  Buyandsell buyandsell = SellRepoImp();
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -46,6 +50,9 @@ class _MyAppState extends State<MyApp> {
         ),
         BlocProvider(
           create: (context) => AddAmilesCubit(anmilesRepo),
+        ),
+        BlocProvider(
+          create: (context) => SelCubit(buyandsell),
         )
       ],
       child: MaterialApp(

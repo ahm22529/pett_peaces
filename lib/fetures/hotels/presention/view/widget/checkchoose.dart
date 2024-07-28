@@ -9,11 +9,13 @@ class checkchoose extends StatefulWidget {
     required this.titel2,
     required this.serviceId,
     required this.onSelected,
+    required this.onremove,
   });
   final String titel;
   final String titel2;
   final int serviceId;
   final ValueChanged<int> onSelected;
+  final ValueChanged<int> onremove;
 
   @override
   State<checkchoose> createState() => _checkchooseState();
@@ -31,6 +33,7 @@ class _checkchooseState extends State<checkchoose> {
                 setState(() {
                   isactive = !isactive;
                 });
+                widget.onremove(widget.serviceId);
               },
               child: Image.asset("Asset/image/acti.png"),
             )
@@ -39,6 +42,7 @@ class _checkchooseState extends State<checkchoose> {
                 setState(() {
                   isactive = !isactive;
                 });
+                widget.onSelected(widget.serviceId);
               },
               child: Image.asset("Asset/image/notactiv.png"),
             ),

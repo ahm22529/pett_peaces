@@ -27,7 +27,7 @@ class show extends StatelessWidget {
           // عرض الصور الأولى
           return GestureDetector(
               onTap: () {
-                _showImageDialog(context, hotelEntity![index]);
+                _showImageDialog(context, hotelEntity![index]['image']);
               },
               child: hotelEntity![index]);
         } else {
@@ -39,7 +39,6 @@ class show extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                hotelEntity![index],
                 Container(
                   color: Colors.black.withOpacity(0.5), // لون خلفية النص
                   child: Center(
@@ -66,7 +65,7 @@ class show extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          child: Image.asset(imagePath),
+          child: Image.network(imagePath),
         );
       },
     );

@@ -7,9 +7,11 @@ import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/f
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.dart';
 
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/platformui.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Myanmiles extends StatefulWidget {
-  const Myanmiles({super.key});
+  final UserEntitymodel userEntitymodel;
+  const Myanmiles({super.key, required this.userEntitymodel});
 
   @override
   State<Myanmiles> createState() => _MyanmilesState();
@@ -33,7 +35,9 @@ class _MyanmilesState extends State<Myanmiles> {
           ),
           centerTitle: true,
         ),
-        body: PlatformuiMyanmiles(),
+        body: PlatformuiMyanmiles(
+          userEntitymodel: widget.userEntitymodel,
+        ),
       ),
     );
   }

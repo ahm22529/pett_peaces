@@ -23,9 +23,7 @@ class BodyHatage extends StatelessWidget {
             height: 24,
           ),
         ),
-        ListViewAdvanced(
-          entity: ExamelEntity(examel: [], lastpage: 0, nextpageurl: ''),
-        ),
+      
       ],
     );
   }

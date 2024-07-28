@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/iteamstore.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
 
 class CustomGridViewstore extends StatefulWidget {
-  const CustomGridViewstore({super.key});
+  const CustomGridViewstore({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   State<CustomGridViewstore> createState() => _CustomGridViewstoreState();
 }
@@ -14,21 +16,20 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
   final ScrollController _scrollController = ScrollController();
   int currentPage = 1;
   bool isLoadingMore = false;
-  List products = []; // قائمة لتخزين المنتجات
+  List products = [];
 
   @override
   void initState() {
     super.initState();
+
     _loadData();
     _scrollController.addListener(_onScroll);
   }
 
   void _loadData() {
     context.read<FectchProductCubit>().getdata(
-          endpoint: "products?page=$currentPage",
-          token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNTQ2MjkxLCJleHAiOjE3MjIxNTEwOTEsIm5iZiI6MTcyMTU0NjI5MSwianRpIjoiNmp0MDdDcVVjUnZBNkVrQyIsInN1YiI6IjU4IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.sbgX8KCFnG6Fr1XxtIOaQ8-2aERTiPVaomS23DD7P2g",
-        );
+        endpoint: "products?page=$currentPage",
+        token: widget.userEntitymodel.token);
   }
 
   void _onScroll() {
@@ -56,8 +57,8 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
         if (state is FectchProductsucess) {
           setState(() {
             isLoadingMore = false;
-            // دمج العناصر الجديدة مع العناصر القديمة
-            products = state.producEntity.product;
+            // إضافة العناصر الجديدة في بداية قائمة المنتجات
+            products.insertAll(0, state.producEntity.product);
           });
         }
       },
@@ -84,14 +85,22 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => DetailesView()),
+                    MaterialPageRoute(
+                        builder: (_) => DetailesView(
+                              userEntitymode: widget.userEntitymodel,
+                              producEntity: products[index],
+                            )),
                   );
                 },
                 child: IteamStore(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => DetailesView()),
+                      MaterialPageRoute(
+                          builder: (_) => DetailesView(
+                                userEntitymode: widget.userEntitymodel,
+                                producEntity: products[index],
+                              )),
                     );
                   },
                   producEntity: products[index],

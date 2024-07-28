@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class ImageSlider extends StatelessWidget {
   const ImageSlider({super.key, required this.img});
   final List<dynamic> img;
+
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
@@ -12,7 +13,11 @@ class ImageSlider extends StatelessWidget {
         autoPlayInterval: const Duration(seconds: 5),
         enlargeCenterPage: true,
         aspectRatio: 45.0 / 17,
-        viewportFraction: 0.8,
+        viewportFraction: 1.0, // Make the item take full width
+        // Enable infinite scroll
+        enableInfiniteScroll: true,
+        // Enable scroll physics for better user interaction
+        scrollPhysics: BouncingScrollPhysics(),
       ),
       items: img.map((i) {
         return Builder(

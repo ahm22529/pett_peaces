@@ -25,25 +25,30 @@ class iteamlistviewami extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
-          child: FittedBox(
-            child: Row(
-              children: [
-                SizedBox(
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(12)),
                   child: Image.network(
                     animel.imagee,
                     fit: BoxFit.cover,
                     height: MediaQuery.of(context).size.height * .25,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 0),
+              ),
+              Expanded(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 3.0, vertical: 2),
                   child: informationanmiles(
                     widget: widget,
                     animel: animel,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -63,8 +68,11 @@ class informationanmiles extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InfoAnmales(
-            tt: animel.namee,
+          Padding(
+            padding: const EdgeInsets.only(top: 2.0),
+            child: InfoAnmales(
+              tt: animel.namee,
+            ),
           ),
           const SizedBox(
             height: 8,
@@ -76,7 +84,6 @@ class informationanmiles extends StatelessWidget {
             height: 16,
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width * .42,
             child: Row(
               children: [
                 Expanded(
@@ -85,8 +92,8 @@ class informationanmiles extends StatelessWidget {
                     tt: animel.gendere,
                   ),
                 ),
-                SizedBox(
-                  width: 3,
+                const SizedBox(
+                  width: 5,
                 ),
                 Expanded(
                   flex: 2,
@@ -97,12 +104,12 @@ class informationanmiles extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           SizedBox(
               width: MediaQuery.of(context).size.width * .43, child: widget),
-          SizedBox(
+          const SizedBox(
             height: 5,
           )
         ],

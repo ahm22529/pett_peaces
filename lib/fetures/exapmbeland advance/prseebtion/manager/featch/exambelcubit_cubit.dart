@@ -16,7 +16,7 @@ class ExambelcubitCubit extends Cubit<ExambelcubitState> {
     emit(Exambelcubitload());
     final result =
         await exam.getexambel(endpoint: endpoint, token: token, data: data);
-    print("fectch $result");
+    print("fectch ${result}");
     result.fold(
       (failure) => emit(Exambelcubitfauleer(errmas: failure.errmas)),
       (userEntity) => emit(Exambelcubitsucess(ex: userEntity)),

@@ -3,8 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/addanmiles.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles.dart';
+
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmileshome.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/gridviewstore.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/grisviewservices.dart';
@@ -50,7 +49,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * .05,
                     ),
-                    UserInfoCard(),
+                    UserInfoCard(
+                      userEntitymodel: widget.userEntitymodel,
+                    ),
                     const SizedBox(
                       height: 24,
                     ),
@@ -92,6 +93,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     ),
                     gridviewstore(
                       producEntity: state.homeEntity.product,
+                      userEntitymodel: widget.userEntitymodel,
                     ),
                     const SizedBox(
                       height: 25,

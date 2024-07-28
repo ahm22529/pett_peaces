@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/courselist.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/courses.dart';
+
 import 'package:pett_peaces/fetures/doctor/presention/view/doctor.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/exapmel.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/infocourses.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/hotel.dart';
+import 'package:pett_peaces/fetures/mating/prsention/view/all_anmiles_mating.dart';
 import 'package:pett_peaces/fetures/se3rviecs/presention/view/widget/catagrorybuttom.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 import '../../../../bayandseller/presention/view/sellerandbuy.dart';
@@ -15,8 +16,9 @@ import '../../../../bayandseller/presention/view/sellerandbuy.dart';
 class CustomGridViewServ extends StatelessWidget {
   const CustomGridViewServ({
     super.key,
+    required this.userEntitymodel,
   });
-
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -30,15 +32,24 @@ class CustomGridViewServ extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         final List nav = [
           Hotel(),
-          Doctor(),
-          Cotching(),
-          SellerAndBuyer(),
-          Myanmiles(),
+          Doctor(
+            userEntitymodel: userEntitymodel,
+          ),
+          Cotching(
+            userEntitymodel: userEntitymodel,
+          ),
+          AllAnmilesMating(
+            userEntitymodel: userEntitymodel,
+          ),
+          Myanmiles(
+            userEntitymodel: userEntitymodel,
+          ),
           Store(
             pro: [],
+            userEntitymodel: userEntitymodel,
           ),
-          SellerAndBuyer(),
-          Courselist(),
+          const SellerAndBuyer(),
+          const Courselist(),
           Example()
         ];
         final services = [

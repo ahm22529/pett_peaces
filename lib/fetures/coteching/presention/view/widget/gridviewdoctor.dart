@@ -2,15 +2,18 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/fetures/coteching/cotactcoting.dart';
 
 import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchig/fetachingallcout_cubit.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/iteamgridview.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/widget/iteamgridview.dart';
 
 import 'package:pett_peaces/fetures/infodoctor/presention/view/infodoctor.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class gridviewco extends StatefulWidget {
-  const gridviewco({super.key});
+  const gridviewco({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   State<gridviewco> createState() => _CustomGridViewstoreState();
 }
@@ -31,10 +34,8 @@ class _CustomGridViewstoreState extends State<gridviewco> {
 
   void _loadData() {
     context.read<FetachingallcoutCubit>().getdata(
-          endpoint: "users/trainers?page=$currentPage",
-          token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNTQ2MjkxLCJleHAiOjE3MjIxNTEwOTEsIm5iZiI6MTcyMTU0NjI5MSwianRpIjoiNmp0MDdDcVVjUnZBNkVrQyIsInN1YiI6IjU4IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.sbgX8KCFnG6Fr1XxtIOaQ8-2aERTiPVaomS23DD7P2g",
-        );
+        endpoint: "users/trainers?page=$currentPage",
+        token: widget.userEntitymodel.token);
   }
 
   void _onScroll() {
@@ -96,8 +97,8 @@ class _CustomGridViewstoreState extends State<gridviewco> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (builder) => IformationDoctore(
-                        coatch: products[index],
+                      builder: (builder) => Cotactcoting(
+                        cotachEntity: products[index],
                       ),
                     ),
                   );

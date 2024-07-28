@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/bodycontinersummary.dart';
 
 class summary extends StatelessWidget {
   const summary({
     super.key,
     required this.producEntity,
+    required this.userEntitymodel,
   });
   final ProducEntity producEntity;
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +21,7 @@ class summary extends StatelessWidget {
               topLeft: Radius.circular(30), topRight: Radius.circular(30))),
       child: BodyContiner(
         producEntity: producEntity,
+        userEntitymodel: userEntitymodel,
       ),
     );
   }

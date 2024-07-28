@@ -4,7 +4,8 @@ import '../../../../../core/utiles/sttyel.dart';
 
 class ItemChooseService extends StatelessWidget {
   const ItemChooseService({
-    super.key, required this.titel,
+    super.key,
+    required this.titel,
   });
   final String titel;
   @override

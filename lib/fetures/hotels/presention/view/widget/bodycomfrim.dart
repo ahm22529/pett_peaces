@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/cubit/book_cubit.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/buttomcomfrim.dart';
@@ -11,13 +10,10 @@ import 'package:pett_peaces/fetures/hotels/presention/view/widget/checkchoose.da
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/dateofbook.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepicker.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/droptextfiled.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/droptextfiled.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
 
 class Bodycomfrimbook extends StatefulWidget {
-  const Bodycomfrimbook({
-    super.key,
-    required this.hotelEntity,
-  });
+  const Bodycomfrimbook({super.key, required this.hotelEntity});
 
   final HotelEntity hotelEntity;
 
@@ -26,32 +22,74 @@ class Bodycomfrimbook extends StatefulWidget {
 }
 
 class _BodycomfrimbookState extends State<Bodycomfrimbook> {
-  late List titel;
-  Animal? selectedValue;
-  int? anmilesid;
+  Animal? selectedAnimal;
   final TextEditingController animalController = TextEditingController();
   final TextEditingController startDateController = TextEditingController();
   final TextEditingController endDateController = TextEditingController();
+  final TextEditingController daysController = TextEditingController();
+  String startdate = '', enddate = '', vule = '';
   List<int> selectedServiceIds = [];
+  bool showDaysField = false;
 
   @override
   void initState() {
     super.initState();
-    titel = widget.hotelEntity.ser[0].ser;
     BlocProvider.of<FetachMyAnmilesCubit>(context).getanmiles(
         token:
             "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjY2MTU5LCJleHAiOjE3MjIyNzA5NTksIm5iZiI6MTcyMTY2NjE1OSwianRpIjoiZUJodjZtQ2dFV2UyY0xnUSIsInN1YiI6IjEwOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.99iC7a6BaYfnVCcCvll3dLteePiKdN3_de0zeO4vATA",
         endpoint: "animals/");
   }
 
-  void onServiceSelected(int serviceId) {
+  void selectService(int serviceId) {
     setState(() {
-      if (selectedServiceIds.contains(serviceId)) {
-        selectedServiceIds.remove(serviceId);
-      } else {
-        selectedServiceIds.add(serviceId);
+      selectedServiceIds.add(serviceId);
+      if (serviceId == 5) showDaysField = true;
+    });
+  }
+
+  void removeService(int serviceId) {
+    setState(() {
+      selectedServiceIds.remove(serviceId);
+      if (serviceId == 5) {
+        showDaysField = false;
+        daysController.clear();
       }
     });
+  }
+
+  void onConfirmPressed() {
+    if (startdate.isEmpty ||
+        enddate.isEmpty ||
+        selectedAnimal == null ||
+        selectedServiceIds.isEmpty ||
+        (selectedServiceIds.contains(5) && vule.isEmpty)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('يرجى إدخال كافة المعلومات المطلوبة'),
+        ),
+      );
+      return;
+    }
+  }
+
+  Future<void> selectDate(BuildContext context,
+      TextEditingController controller, bool isStartDate) async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (pickedDate != null) {
+      setState(() {
+        String formattedDate = pickedDate.toLocal().toString().split(' ')[0];
+        controller.text = formattedDate;
+        if (isStartDate)
+          startdate = formattedDate;
+        else
+          enddate = formattedDate;
+      });
+    }
   }
 
   @override
@@ -60,19 +98,16 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: ListView(
         children: [
-          const SizedBox(
-            height: 73,
+          const SizedBox(height: 73),
+          const customAppbar(name: 'تاكيد الحجز'),
+          const SizedBox(height: 32),
+          dateofbook(
+            textEditingController1: startDateController,
+            textEditingController2: endDateController,
+            onTap1: () => selectDate(context, startDateController, true),
+            onTap2: () => selectDate(context, endDateController, false),
           ),
-          const customAppbar(
-            name: 'تاكيد الحجز',
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          dateofbook(),
-          const SizedBox(
-            height: 16,
-          ),
+          const SizedBox(height: 16),
           BlocBuilder<FetachMyAnmilesCubit, FetachMyAnmilesState>(
             builder: (context, state) {
               if (state is FetachMyAnmsucesss) {
@@ -82,6 +117,9 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
                         .map((e) => Animal(id: e.idd, name: e.namee))
                         .toList(),
                     controller: animalController,
+                    onSelected: (Animal? value) {
+                      selectedAnimal = value;
+                    },
                   ),
                   text: "اختر الحيوان",
                 );
@@ -90,13 +128,13 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
               }
             },
           ),
-          const SizedBox(
-            height: 16,
-          ),
+          const SizedBox(height: 16),
           Text(
             "الخدمات",
-            style: AppStyles.styleMedium16(context)
-                .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
+            style: AppStyles.styleMedium16(context).copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
           ),
           ListView.builder(
             shrinkWrap: true,
@@ -110,33 +148,30 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
                   titel: service.servacename,
                   titel2: service.pric,
                   serviceId: service.idd,
-                  onSelected: onServiceSelected,
+                  onSelected: selectService,
+                  onremove: removeService,
                 ),
               );
             },
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          datepic(
-            widget: Textformfieldresoncon(
-              maxline: 1,
-              initialValue: '',
-              onChanged: (String) {},
+          const SizedBox(height: 20),
+          if (showDaysField)
+            datepic(
+              widget: Textformfieldresoncon(
+                maxline: 1,
+                initialValue: '',
+                onChanged: (String s) {
+                  setState(() {
+                    vule = s;
+                  });
+                },
+              ),
+              text: "عدد أيام التزاوج",
             ),
-            text: "عدد أيام التزاوج",
-          ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Container(
             color: Colors.white,
-            child: butomcomfrim(onPressed: () {
-              print(0);
-              print(
-                selectedServiceIds.map((id) => {"service_id": id}).toList(),
-              );
-            }),
+            child: butomcomfrim(onPressed: onConfirmPressed),
           ),
           BlocListener<BookCubit, BookState>(
             listener: (context, state) {
@@ -144,9 +179,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
                 print(state.errmas);
               }
             },
-            child: const SizedBox(
-              height: 20,
-            ),
+            child: const SizedBox(height: 20),
           ),
         ],
       ),

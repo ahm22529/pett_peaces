@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class Animal {
@@ -13,11 +15,13 @@ class DropdownFieldbook extends StatefulWidget {
     required this.options,
     required this.controller,
     this.ddd = true,
+    required this.onSelected, // Add callback function
   });
 
   final bool? ddd;
   final List<Animal> options;
   final TextEditingController controller;
+  final ValueChanged<Animal?> onSelected; // Add callback function type
 
   @override
   _DropdownFieldState createState() => _DropdownFieldState();
@@ -52,6 +56,8 @@ class _DropdownFieldState extends State<DropdownFieldbook> {
             setState(() {
               selectedValue = newValue;
               widget.controller.text = newValue?.name ?? '';
+              widget.onSelected(newValue); // Call the callback function
+              log(newValue?.id.toString() ?? "");
             });
           },
         ),

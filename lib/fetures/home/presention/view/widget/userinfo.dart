@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/box/presention/view/box.dart';
 import 'package:pett_peaces/fetures/notifaction/presention/notifaction.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class UserInfoCard extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const UserInfoCard({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const CircleAvatar(
+        CircleAvatar(
           radius: 20,
-          backgroundImage: AssetImage(
-              'Asset/image/Ellipse 892.png'), // Ensure you have added the image in your assets folder
+          backgroundImage: NetworkImage(userEntitymodel
+              .image), // Ensure you have added the image in your assets folder
         ),
         const SizedBox(width: 8),
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "AhmedHussen19@gmail.com",
-              style: TextStyle(
+              userEntitymodel.email,
+              style: const TextStyle(
                 fontFamily: 'Changa',
                 fontWeight: FontWeight.w600,
                 fontSize: 12,
@@ -29,8 +33,8 @@ class UserInfoCard extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             Text(
-              "أحمد حسين",
-              style: TextStyle(
+              userEntitymodel.name,
+              style: const TextStyle(
                 fontFamily: 'Changa',
                 fontWeight: FontWeight.w600,
                 fontSize: 14,

@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/iteamstore.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
 
 class gridviewstore extends StatelessWidget {
   const gridviewstore({
     super.key,
     required this.producEntity,
+    required this.userEntitymodel,
   });
   final List producEntity;
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,7 +27,10 @@ class gridviewstore extends StatelessWidget {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (builder) => DetailesView())),
+                                builder: (builder) => DetailesView(
+                                      userEntitymode: userEntitymodel,
+                                      producEntity: producEntity[index],
+                                    ))),
                         producEntity: producEntity[index],
                       )),
                 )));

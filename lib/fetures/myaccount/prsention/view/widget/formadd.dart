@@ -36,7 +36,8 @@ class FormWidget extends StatelessWidget {
             ["انثي", "ذكر"],
             onGenderChanged,
           ),
-          _buildTextField("السنوات", (value) => onAgeChanged(int.tryParse(value) ?? 0)),
+          _buildTextField(
+              "السنوات", (value) => onAgeChanged(int.tryParse(value) ?? 0)),
           _buildTextField("الوصف", onDescriptionChanged),
           _buildTextField(
             "وصف النوع",

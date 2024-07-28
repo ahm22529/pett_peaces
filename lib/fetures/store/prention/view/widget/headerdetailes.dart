@@ -27,8 +27,9 @@ class _HeaderdetailesState extends State<Headerdetailes> {
             : widget.producEntity.img;
 
     // تحديد قائمة الصور، تأخذ أول عنصرين إذا كانت القائمة تحتوي على عناصر
-    List images = [widget.producEntity.img]
-      ..addAll(widget.producEntity.oherimage.take(2));
+    List images = [widget.producEntity.img]..addAll(widget
+        .producEntity.oherimage
+        .take(widget.producEntity.oherimage.length > 1 ? 0 : 1));
 
     return Container(
       decoration: const BoxDecoration(

@@ -1,12 +1,16 @@
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/list_anmiles._enity%20.dart';
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
+
 import 'data.dart';
 
-class SelResponseModel {
+class SelResponseModel extends ListSelEnity {
   bool? status;
   int? statusCode;
   Data? data;
   String? message;
 
-  SelResponseModel({this.status, this.statusCode, this.data, this.message});
+  SelResponseModel({this.status, this.statusCode, this.data, this.message})
+      : super(sell: data?.data ?? []);
 
   factory SelResponseModel.fromJson(Map<String, dynamic> json) {
     return SelResponseModel(

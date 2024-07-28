@@ -17,9 +17,12 @@ class Imageacive extends StatelessWidget {
         color: Color(0xffFDDCBF),
         border: Border.all(color: color),
       ),
-      child: Image.network(
-        imagePath, // استخدام مسار الصورة المرسل
-        fit: BoxFit.cover, // ضبط الصورة بشكل مناسب داخل الContainer
+      child: SizedBox(
+        height: MediaQuery.of(context).size.width * .12,
+        child: Image.network(
+          imagePath, // استخدام مسار الصورة المرسل
+          fit: BoxFit.cover, // ضبط الصورة بشكل مناسب داخل الContainer
+        ),
       ),
     );
   }

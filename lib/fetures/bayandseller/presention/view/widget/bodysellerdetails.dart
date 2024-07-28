@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/descriptio.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/infodetailes.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 
 class Bodysellerandbuyerdetails extends StatelessWidget {
+  final SelEntity selEntity;
+
+  const Bodysellerandbuyerdetails({super.key, required this.selEntity});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -12,15 +18,20 @@ class Bodysellerandbuyerdetails extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                "Asset/image/seller.png",
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.cover,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .45,
+                child: Image.network(
+                  selEntity.anmilesEntity.imagee,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.cover,
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const description(),
+              description(
+                anmilesEntity: selEntity,
+              ),
             ],
           ),
           Positioned(
@@ -33,7 +44,9 @@ class Bodysellerandbuyerdetails extends StatelessWidget {
           Positioned(
             top: MediaQuery.of(context).size.height * .08,
             right: 5,
-            child: infoa(),
+            child: infoa(
+              anmilesEntity: selEntity.anmilesEntity,
+            ),
           ),
         ],
       ),

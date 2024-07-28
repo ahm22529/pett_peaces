@@ -1,13 +1,16 @@
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/list_anmiles._enity%20.dart';
+import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
+
 import 'datum.dart';
 import 'links.dart';
 import 'meta.dart';
 
-class Data {
+class Data extends ListSelEnity {
   List<Datum>? data;
   Links? links;
   Meta? meta;
 
-  Data({this.data, this.links, this.meta});
+  Data({this.data, this.links, this.meta}) : super(sell: data ?? []);
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         data: (json['data'] as List<dynamic>?)

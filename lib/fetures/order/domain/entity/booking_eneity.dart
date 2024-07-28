@@ -1,5 +1,5 @@
 class BookingEneity {
-  final String number, statrdate, numberoforder, price, enddate,name;
+  final String number, statrdate, numberoforder, price, enddate, name;
   final int idd;
   List service;
 
@@ -11,6 +11,5 @@ class BookingEneity {
       required this.numberoforder,
       required this.price,
       required this.name,
-
       required this.idd});
 }

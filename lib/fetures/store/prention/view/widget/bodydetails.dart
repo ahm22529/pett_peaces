@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/fetachproductdetailk/fetech_product_details_cubit.dart';
@@ -10,8 +12,11 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/summary.dart';
 class BodyDetails extends StatefulWidget {
   const BodyDetails({
     super.key,
+    required this.userEntitymodel,
+    required this.producEntity,
   });
-
+  final UserEntitymodel userEntitymodel;
+  final ProducEntity producEntity;
   @override
   State<BodyDetails> createState() => _BodyDetailsState();
 }
@@ -21,9 +26,8 @@ class _BodyDetailsState extends State<BodyDetails> {
   void initState() {
     BlocProvider.of<FetechProductDetailsCubit>(context).getdata(
         endpoint: "products/",
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNTQ2MjkxLCJleHAiOjE3MjIxNTEwOTEsIm5iZiI6MTcyMTU0NjI5MSwianRpIjoiNmp0MDdDcVVjUnZBNkVrQyIsInN1YiI6IjU4IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.sbgX8KCFnG6Fr1XxtIOaQ8-2aERTiPVaomS23DD7P2g",
-        id: "3");
+        token: widget.userEntitymodel.token,
+        id: widget.producEntity.id.toString());
     super.initState();
   }
 
@@ -37,11 +41,14 @@ class _BodyDetailsState extends State<BodyDetails> {
               children: [
                 Column(
                   children: [
-                    Headerdetailes(
-                      producEntity: state.producEntity,
+                    SizedBox(
+                      child: Headerdetailes(
+                        producEntity: state.producEntity,
+                      ),
                     ),
                     summary(
                       producEntity: state.producEntity,
+                      userEntitymodel: widget.userEntitymodel,
                     ),
                   ],
                 ),
