@@ -29,6 +29,7 @@ class SuggestedProduct extends ProducEntity {
             nameof: name ?? "",
             img: image ?? "",
             oldprice: oldPrice ?? "",
+            qan: 0,
             pro: []);
 
   factory SuggestedProduct.fromJson(Map<String, dynamic> json) {

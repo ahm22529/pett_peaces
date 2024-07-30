@@ -48,7 +48,11 @@ class UserInfoCard extends StatelessWidget {
         const Spacer(),
         GestureDetector(
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (builder) => Box())),
+                context,
+                MaterialPageRoute(
+                    builder: (builder) => Box(
+                          userEntitymodel: userEntitymodel,
+                        ))),
             child: Image.asset("Asset/image/box.png")),
         const SizedBox(
           width: 8,

@@ -91,7 +91,7 @@ class _FromupdateState extends State<Fromupdate> {
 
                   BlocProvider.of<UpdateCubit>(context).UpdateData(
                     endpoint: "profile/update/information",
-                    token:widget.userEntitymodel.token,
+                    token: widget.userEntitymodel.token,
                     data: formData,
                   );
                 })

@@ -33,7 +33,11 @@ class _PlatformuiMyanmilesState extends State<PlatformuiMyanmiles> {
         MobileLauyOut: (context) => BodyAnmiles(
               userEntitymodel: widget.userEntitymodel,
             ),
-        TabletLayOut: (context) => Tabletui(userEntitymodel: widget.userEntitymodel,),
-        DeskTopLayOut: (context) => Tabletui(userEntitymodel: widget.userEntitymodel,));
+        TabletLayOut: (context) => Tabletui(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+        DeskTopLayOut: (context) => Tabletui(
+              userEntitymodel: widget.userEntitymodel,
+            ));
   }
 }

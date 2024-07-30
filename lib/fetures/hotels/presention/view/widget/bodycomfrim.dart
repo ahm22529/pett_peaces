@@ -169,7 +169,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
                     onSelected: (Animal? value) {
                       selectedValue = value;
                       animalController.text = value!.name;
-                    }, 
+                    },
                   ),
                   text: "اختر الحيوان",
                 );

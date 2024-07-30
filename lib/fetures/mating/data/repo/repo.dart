@@ -25,7 +25,7 @@ class Matingrepoimp extends Matingrepo {
     }
   }
 
-    Future<Either<Failure, ListAllMatingEntity>> getallanmilesMating(
+  Future<Either<Failure, ListAllMatingEntity>> getallanmilesMating(
       {required String endpoint, required String token}) async {
     try {
       final res = await requestServices.getRequest(

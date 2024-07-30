@@ -104,6 +104,7 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
                     );
                   },
                   producEntity: products[index],
+                  userEntitymodel: widget.userEntitymodel,
                 ),
               );
             },

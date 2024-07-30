@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/fetures/box/data/repo/repo_Imp.dart';
+import 'package:pett_peaces/fetures/box/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/data/repo/repo_imp.dart';
@@ -18,6 +21,7 @@ class Store extends StatefulWidget {
 
 class _StoreState extends State<Store> {
   final StoreRepo storeRepo = StoreRepoImp();
+  final Boxrepo boxrepo = BoxRepoImp();
   @override
   void initState() {
     // TODO: implement initState
@@ -26,8 +30,15 @@ class _StoreState extends State<Store> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FectchProductCubit(storeRepo),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FectchProductCubit(storeRepo),
+        ),
+        BlocProvider(
+          create: (context) => AddBoxCubit(boxrepo),
+        )
+      ],
       child: Scaffold(
         backgroundColor: const Color(0xFFFDFDFD),
         appBar: PreferredSize(

@@ -12,7 +12,8 @@ class bodyfristcontiner extends StatefulWidget {
     required this.text1,
     required this.text2,
     required this.onImagePicked,
-    required this.id,required this.onTap, // Add this
+    required this.id,
+    required this.onTap, // Add this
   });
 
   final VoidCallback toggleEditingMode, togglecacelingMode;

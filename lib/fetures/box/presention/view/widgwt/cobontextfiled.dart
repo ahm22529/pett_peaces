@@ -4,9 +4,12 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/customtextfiledst
 class cobontextfiled extends StatelessWidget {
   const cobontextfiled({
     super.key,
-    required this.name,
+    required this.name, this.onChanged,
   });
   final String name;
+
+  final void Function(String)? onChanged;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,6 +26,7 @@ class cobontextfiled extends StatelessWidget {
             SizedBox(width: 8),
             Expanded(
               child: customtextfiledstore(
+                onChanged:onChanged ,
                 name: name,
                 textEditingController: TextEditingController(),
               ),

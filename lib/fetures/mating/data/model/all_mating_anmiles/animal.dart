@@ -23,7 +23,16 @@ class Animal extends AnmilesEntity {
     this.description,
     this.typeDescription,
     this.additonalPhotots,
-  }):super(agee:age??0 ,idd: id??0,imagee:image??"" ,otherimage: additonalPhotots?.images??[],des:description??"" ,predec:typeDescription??"" ,typee:type??"" ,gendere:gender??"" ,namee: name??"");
+  }) : super(
+            agee: age ?? 0,
+            idd: id ?? 0,
+            imagee: image ?? "",
+            otherimage: additonalPhotots?.images ?? [],
+            des: description ?? "",
+            predec: typeDescription ?? "",
+            typee: type ?? "",
+            gendere: gender ?? "",
+            namee: name ?? "");
 
   factory Animal.fromJson(Map<String, dynamic> json) => Animal(
         id: json['id'] as int?,

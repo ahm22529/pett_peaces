@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:pett_peaces/fetures/courses/domain/entity/checkout_enity.dart';
@@ -17,6 +19,7 @@ class CheckoutCubit extends Cubit<CheckoutState> {
       emit(Checkoutload());
       var result = await courseRepo.checkout(
           ndpoint: endpoint, token: token, data: data);
+      log(result.toString());
       result.fold(
         (failure) => emit(Checkoutfauler(errmas: failure.errmas)),
         (userEntity) => emit(Checkoutsucess(checkentity: userEntity)),

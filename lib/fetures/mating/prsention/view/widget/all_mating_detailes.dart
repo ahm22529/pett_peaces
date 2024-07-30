@@ -10,14 +10,14 @@ import 'package:pett_peaces/fetures/mating/prsention/view/widget/body_all_mating
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/body_mating_details.dart';
 
 class AllMatingDetailesview extends StatelessWidget {
-  final AllMatingEntity  anmiles;
+  final AllMatingEntity anmiles;
 
   const AllMatingDetailesview({super.key, required this.anmiles});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BodyMatingDetails(
-        selEntity: anmiles, 
+        selEntity: anmiles,
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(

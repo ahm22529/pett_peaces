@@ -21,6 +21,7 @@ class Product extends ProducEntity {
     this.details,
   }) : super(
             nameof: name!,
+            qan: 0,
             volum: details!,
             id: id ?? 0,
             img: image!,

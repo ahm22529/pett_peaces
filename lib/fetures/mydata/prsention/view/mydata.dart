@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,4 +43,3 @@ class _MydataState extends State<Mydata> {
     );
   }
 }
-

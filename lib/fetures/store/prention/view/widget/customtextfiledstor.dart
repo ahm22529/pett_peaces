@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 
 class customtextfiledstore extends StatelessWidget {
   const customtextfiledstore({
+
     super.key,
     required this.name,
-    required this.textEditingController,
+    required this.textEditingController, this.onChanged,
   });
+  final void Function(String)? onChanged;
   final TextEditingController textEditingController;
   final String name;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged:onChanged ,
       controller: textEditingController,
       decoration: InputDecoration(
           hintText: name,

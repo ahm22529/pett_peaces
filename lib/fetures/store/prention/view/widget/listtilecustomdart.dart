@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/box.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class listtilecustomcard extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
   const listtilecustomcard({
     super.key,
-    required this.producEntity,
+    required this.producEntity, required this.userEntitymodel,
   });
   final ProducEntity producEntity;
   @override
@@ -23,7 +25,11 @@ class listtilecustomcard extends StatelessWidget {
         child: Center(
           child: GestureDetector(
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (builder) => Box())),
+                context,
+                MaterialPageRoute(
+                    builder: (builder) => Box(
+                          userEntitymodel: userEntitymodel,
+                        ))),
             child: const Icon(
               Icons
                   .shopping_cart_outlined, // Example icon, replace with your asset path if needed

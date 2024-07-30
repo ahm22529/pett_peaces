@@ -2,13 +2,14 @@ import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart'
 
 import 'data.dart';
 
-class AllMatingAnmiles extends ListAllMatingEntity{
+class AllMatingAnmiles extends ListAllMatingEntity {
   bool? status;
   int? statusCode;
   Data? data;
   String? message;
 
-  AllMatingAnmiles({this.status, this.statusCode, this.data, this.message}):super(da: data?.da??[] );
+  AllMatingAnmiles({this.status, this.statusCode, this.data, this.message})
+      : super(da: data?.da ?? []);
 
   factory AllMatingAnmiles.fromJson(Map<String, dynamic> json) {
     return AllMatingAnmiles(

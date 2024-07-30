@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:pett_peaces/fetures/account/presention/view/account.dart';
+import 'package:pett_peaces/fetures/box/data/repo/repo_Imp.dart';
+import 'package:pett_peaces/fetures/box/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
 import 'package:pett_peaces/fetures/home/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/home/domain/repo/repo.dart';
@@ -29,10 +32,18 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   HomeRepo homeRepo = HomeRepoImp();
+  Boxrepo boxrepo = BoxRepoImp();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeCubit(homeRepo),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => HomeCubit(homeRepo),
+        ),
+        BlocProvider(
+          create: (context) => AddBoxCubit(boxrepo),
+        )
+      ],
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,

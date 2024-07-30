@@ -32,6 +32,7 @@ class gridviewstore extends StatelessWidget {
                                       producEntity: producEntity[index],
                                     ))),
                         producEntity: producEntity[index],
+                        userEntitymodel: userEntitymodel,
                       )),
                 )));
   }

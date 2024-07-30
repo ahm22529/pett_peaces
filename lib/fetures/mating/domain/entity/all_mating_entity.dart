@@ -11,7 +11,7 @@ class AllMatingEntity {
 }
 
 class ListAllMatingEntity {
-final  List<AllMatingEntity> da;
+  final List<AllMatingEntity> da;
 
   ListAllMatingEntity({required this.da});
 }

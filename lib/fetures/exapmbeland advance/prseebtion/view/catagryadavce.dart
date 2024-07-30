@@ -8,7 +8,19 @@ class Catagryadavce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  BodyExample(userEntitymodel: UserEntitymodel(massage: '', id: '', type: '', name: '', phone: '', email: '', image: '', token: '', is_plan_subscribe: false, email_verified_at: false),),
+      body: BodyExample(
+        userEntitymodel: UserEntitymodel(
+            massage: '',
+            id: '',
+            type: '',
+            name: '',
+            phone: '',
+            email: '',
+            image: '',
+            token: '',
+            is_plan_subscribe: false,
+            email_verified_at: false),
+      ),
     );
   }
 }

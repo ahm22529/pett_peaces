@@ -1,15 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/buildrow.dart';
-import 'package:pett_peaces/fetures/box/data/infodetailesModel.dart';
+import 'package:pett_peaces/fetures/box/data/model/infodetailesModel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/coboniteam.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class detailesorder extends StatelessWidget {
+class detailesorder extends StatefulWidget {
   const detailesorder({
     super.key,
-    required this.lis,
+    required this.count,
+    required this.total,
+    required this.taxpr,
+    required this.userEntitymodel,
   });
+  final String count, total, taxpr;
+  final UserEntitymodel userEntitymodel;
+  @override
+  State<detailesorder> createState() => _detailesorderState();
+}
 
-  final List<Detailsmodel> lis;
+class _detailesorderState extends State<detailesorder> {
+  late List<Detailsmodel> lis;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    lis = [
+      Detailsmodel(
+        color1: const Color(0xff00070D),
+        text1: "${widget.count} منتجات",
+        text2: "عدد المنتجات",
+        color2: const Color(0xff545454),
+        fontWeight: FontWeight.w500,
+      ),
+      Detailsmodel(
+        color1: const Color(0xff00070D),
+        text1: widget.taxpr,
+        text2: "خدمة توصيل",
+        color2: const Color(0xff545454),
+        fontWeight: FontWeight.w500,
+      ),
+      Detailsmodel(
+        color1: const Color(0xff00070D),
+        text1: "${widget.total}",
+        text2: "سعر المنتجات",
+        color2: const Color(0xff545454),
+        fontWeight: FontWeight.w500,
+      ),
+      Detailsmodel(
+        text1: "${widget.total}",
+        text2: "السعر النهائي",
+        color1: const Color(0xff00070D),
+        color2: Colors.black,
+        fontWeight: FontWeight.w600,
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +63,7 @@ class detailesorder extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: Color(0x40000000), // Color #000000 with 25% opacity
             blurRadius: 8,
             spreadRadius: 1,
@@ -30,16 +75,18 @@ class detailesorder extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            cobeniteam(),
+            cobeniteam(
+              userEntitymodel: widget.userEntitymodel,
+            ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: lis.length,
               itemBuilder: (context, index) {
                 if (index == lis.length - 1) {
                   return Column(
                     children: [
-                      Divider(),
+                      const Divider(),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 9.0),
                         child: buildRow(

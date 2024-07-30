@@ -15,7 +15,7 @@ class _BodyListCoursesState extends State<BodyListCourses> {
   final ScrollController _scrollController = ScrollController();
   int currentPage = 1;
   bool isLoadingMore = false;
-  List courses = []; // قائمة لتخزين الكورسات
+  List courses = []; 
 
   @override
   void initState() {

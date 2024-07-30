@@ -8,10 +8,7 @@ abstract class MydataRepo {
       {required String token,
       required String endpoint,
       required FormData form});
-    
-   Future<Either<Failure, void>> deleteMyaccount(
-      {required String token,
-      required String endpoint,
-      required String form});  
 
+  Future<Either<Failure, void>> deleteMyaccount(
+      {required String token, required String endpoint, required String form});
 }

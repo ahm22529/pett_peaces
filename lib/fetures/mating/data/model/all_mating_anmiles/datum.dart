@@ -4,11 +4,25 @@ import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart'
 
 import 'animal.dart';
 
-class Datum extends AllMatingEntity{
+class Datum extends AllMatingEntity {
   Animal? animal;
   bool? isAllowedDelete;
 
-  Datum({this.animal, this.isAllowedDelete}):super(anmilesEntity: animal??AnmilesEntity(namee: "", otherimage: [], typee: "", agee: 0, des: "", gendere: "", idd: 0, imagee: "", predec: ""),isactive:isAllowedDelete ,);
+  Datum({this.animal, this.isAllowedDelete})
+      : super(
+          anmilesEntity: animal ??
+              AnmilesEntity(
+                  namee: "",
+                  otherimage: [],
+                  typee: "",
+                  agee: 0,
+                  des: "",
+                  gendere: "",
+                  idd: 0,
+                  imagee: "",
+                  predec: ""),
+          isactive: isAllowedDelete,
+        );
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         animal: json['animal'] == null

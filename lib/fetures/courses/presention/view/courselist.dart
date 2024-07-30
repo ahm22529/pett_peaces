@@ -1,17 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
+
 import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/fetures/courses/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/courses/presention/manger.dart/fetachcourses/coursecubit_cubit.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/courses.dart';
+
 import 'package:pett_peaces/fetures/courses/presention/view/widget/body_course_list.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/featch/exambelcubit_cubit.dart';
-import 'package:pett_peaces/fetures/home/data/model/homemodelresponse/course.dart';
-import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/infocourses.dart';
+
 
 class Courselist extends StatefulWidget {
   const Courselist({super.key});

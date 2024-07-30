@@ -25,7 +25,8 @@ class HeaderWidget extends StatelessWidget {
     required this.onImagePicked,
     required this.toggleCancelingMode,
     required this.id,
-    required this.userEntitymodel,required this.onTap,
+    required this.userEntitymodel,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -45,9 +46,7 @@ class HeaderWidget extends StatelessWidget {
           onImagePicked: onImagePicked,
           id: id,
           togglecacelingMode: toggleCancelingMode,
-          onTap:onTap ),
+          onTap: onTap),
     );
   }
 }
-
-

@@ -19,6 +19,7 @@ class Data extends ProducEntity {
           detai: product?.detai ?? "",
           shortdescription: product?.shortDescription ?? "",
           pro: suggestedProducts ?? [],
+          qan: 0
         );
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(

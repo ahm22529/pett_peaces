@@ -67,6 +67,7 @@ class _BodyDetailsState extends State<BodyDetails> {
                       padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: CustomCard(
                         producEntity: state.producEntity,
+                        userEntitymodel: widget.userEntitymodel,
                       ),
                     ))
               ],

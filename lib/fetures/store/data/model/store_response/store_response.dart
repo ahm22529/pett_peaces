@@ -19,6 +19,7 @@ class StoreResponse extends ProducEntity {
             oldprice: data?.oldprice ?? "",
             detai: data?.detai ?? "",
             shortdescription: data?.shortdescription ?? "",
+            qan: 0,
             pro: data?.suggestedProducts ?? []);
 
   factory StoreResponse.fromJson(Map<String, dynamic> json) => StoreResponse(

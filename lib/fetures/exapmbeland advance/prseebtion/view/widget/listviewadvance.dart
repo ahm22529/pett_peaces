@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget
 import 'package:intl/intl.dart';
 
 class ListViewAdvanced extends StatelessWidget {
-  final List <ExambelEnitydetails> entity;
+  final List<ExambelEnitydetails> entity;
 
   const ListViewAdvanced({super.key, required this.entity});
   @override

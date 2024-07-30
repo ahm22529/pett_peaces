@@ -1,20 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/buttom_cobon.dart';
 
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobontextfiled.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class cobeniteam extends StatelessWidget {
+class cobeniteam extends StatefulWidget {
   const cobeniteam({
     super.key,
+    required this.userEntitymodel,
   });
+  final UserEntitymodel userEntitymodel;
+  @override
+  State<cobeniteam> createState() => _cobeniteamState();
+}
 
+class _cobeniteamState extends State<cobeniteam> {
+  String code = '';
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
+        Expanded(
           flex: 3,
           child: cobontextfiled(
+            onChanged: (String v) {
+              setState(() {
+                code = v;
+              });
+            },
             name: 'أضف الكوبون هنا',
           ),
         ),
@@ -23,20 +40,21 @@ class cobeniteam extends StatelessWidget {
         ),
         Expanded(
           flex: 1,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: const Color(0xffF78E32)),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 17.0, vertical: 10),
-              child: Center(
-                child: Text(
-                  "تطبيق",
-                  style: AppStyles.styleRegular14(context)
-                      .copyWith(color: Colors.white),
-                ),
-              ),
+          child: BlocListener<AddBoxCubit, AddBoxState>(
+            listener: (context, state) {
+              // TODO: implement listener
+              if (state is AddBoxfailer) {
+                buildErrorBar(context, "الكود خطا ");
+              }
+            },
+            child: GestureDetector(
+              onTap: () {
+                BlocProvider.of<AddBoxCubit>(context).addproduct(
+                    token: widget.userEntitymodel.token,
+                    endpoint: "cart/check-coupon",
+                    data: {"code": "123"});
+              },
+              child: Buttomcobaon(),
             ),
           ),
         ),
@@ -44,3 +62,5 @@ class cobeniteam extends StatelessWidget {
     );
   }
 }
+
+

@@ -30,7 +30,7 @@ class _MyaccountState extends State<Myaccount> {
           BlocProvider(
             create: (context) => DeletAnmilesCubit(anmilesRepo),
           ),
-          BlocProvider(create: (context)=>FetachMyAnmilesCubit(anmilesRepo))
+          BlocProvider(create: (context) => FetachMyAnmilesCubit(anmilesRepo))
         ],
         child: Scaffold(
             body: Bodymyaccount(

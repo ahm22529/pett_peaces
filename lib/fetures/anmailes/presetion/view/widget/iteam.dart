@@ -10,7 +10,10 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
 
 class Anmmalesmeacc extends StatelessWidget {
-  const Anmmalesmeacc({super.key, required this.listAnmileEntity, required this.userEntitymodel});
+  const Anmmalesmeacc(
+      {super.key,
+      required this.listAnmileEntity,
+      required this.userEntitymodel});
   final ListAnmileEntity listAnmileEntity;
   final UserEntitymodel userEntitymodel;
   @override

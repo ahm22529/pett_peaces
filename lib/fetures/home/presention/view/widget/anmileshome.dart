@@ -9,7 +9,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class anmileshome extends StatelessWidget {
   const anmileshome({
     super.key,
-    required this.anmiles, required this.userEntitymodel,
+    required this.anmiles,
+    required this.userEntitymodel,
   });
   final UserEntitymodel userEntitymodel;
   final AnmilesEntity anmiles;

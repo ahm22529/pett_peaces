@@ -126,13 +126,13 @@ class ConfirmationDialog extends StatelessWidget {
 class ConfirmationDialogContent extends StatefulWidget {
   const ConfirmationDialogContent({super.key});
 
-
   @override
-  State<ConfirmationDialogContent> createState() => _ConfirmationDialogContentState();
+  State<ConfirmationDialogContent> createState() =>
+      _ConfirmationDialogContentState();
 }
 
 class _ConfirmationDialogContentState extends State<ConfirmationDialogContent> {
-  String pass='';
+  String pass = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -143,13 +143,15 @@ class _ConfirmationDialogContentState extends State<ConfirmationDialogContent> {
           style: AppStyles.styleMedium18(context).copyWith(color: Colors.black),
         ),
         SizedBox(height: 16),
-        PasswordFieldvaild(onSaved: (s) {setState(() {
-          pass=s!;
-        });}),
+        PasswordFieldvaild(onSaved: (s) {
+          setState(() {
+            pass = s!;
+          });
+        }),
         SizedBox(height: 32),
-        Delbuttom(onPressed: (){
-          
-        },),
+        Delbuttom(
+          onPressed: () {},
+        ),
       ],
     );
   }
@@ -157,9 +159,10 @@ class _ConfirmationDialogContentState extends State<ConfirmationDialogContent> {
 
 class Delbuttom extends StatelessWidget {
   const Delbuttom({
-    super.key, this.onPressed,
+    super.key,
+    this.onPressed,
   });
-final void Function()? onPressed;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(

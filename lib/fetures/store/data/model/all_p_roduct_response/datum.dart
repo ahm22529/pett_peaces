@@ -30,6 +30,7 @@ class Datum extends ProducEntity {
           oldprice: oldPrice ?? "",
           detai: details ?? "",
           shortdescription: shortDescription ?? "",
+          qan: 0,
           pro: [],
         );
 

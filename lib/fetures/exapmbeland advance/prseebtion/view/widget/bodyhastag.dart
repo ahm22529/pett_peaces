@@ -23,7 +23,6 @@ class BodyHatage extends StatelessWidget {
             height: 24,
           ),
         ),
-      
       ],
     );
   }

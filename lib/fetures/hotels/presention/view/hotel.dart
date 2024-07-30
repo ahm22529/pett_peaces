@@ -33,7 +33,9 @@ class _HotelState extends State<Hotel> {
         )
       ],
       child: Scaffold(
-        body: BodyHotel(userEntitymodel: widget.userEntitymodel,),
+        body: BodyHotel(
+          userEntitymodel: widget.userEntitymodel,
+        ),
       ),
     );
   }

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
 
-
 import 'package:pett_peaces/fetures/mating/data/repo/repo.dart';
 import 'package:pett_peaces/fetures/mating/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/cubit/all_mating_cubit.dart';

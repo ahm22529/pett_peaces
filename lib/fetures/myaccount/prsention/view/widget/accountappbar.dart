@@ -10,7 +10,8 @@ class acountappbar extends StatefulWidget {
     Key? key,
     required this.toggleEditingMode,
     required this.togglecacelingMode,
-    required this.id,required this.onTap,
+    required this.id,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -27,8 +28,7 @@ class _acountappbarState extends State<acountappbar> {
             child: Image.asset("Asset/image/Back.png")),
         Spacer(),
         GestureDetector(
-            onTap: widget.onTap,
-            child: Image.asset("Asset/image/dasdasd.png")),
+            onTap: widget.onTap, child: Image.asset("Asset/image/dasdasd.png")),
         SizedBox(
           width: 15,
         ),

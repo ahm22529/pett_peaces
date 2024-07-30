@@ -4,12 +4,12 @@ import 'datum.dart';
 import 'links.dart';
 import 'meta.dart';
 
-class Data extends ListAllMatingEntity{
+class Data extends ListAllMatingEntity {
   List<Datum>? data;
   Links? links;
   Meta? meta;
 
-  Data({this.data, this.links, this.meta}):super(da: data??[] );
+  Data({this.data, this.links, this.meta}) : super(da: data ?? []);
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         data: (json['data'] as List<dynamic>?)

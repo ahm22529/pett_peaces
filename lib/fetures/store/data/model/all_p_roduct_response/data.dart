@@ -12,6 +12,7 @@ class Data extends ProducEntity {
   Data({this.data, this.links, this.meta})
       : super(
           img: "",
+          qan: 0,
           prices: "",
           id: 0,
           nameof: "",

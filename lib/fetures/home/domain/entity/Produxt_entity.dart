@@ -1,10 +1,11 @@
 class ProducEntity {
   final String nameof, prices, volum, img, shortdescription, oldprice, detai;
-  int? id;
+  int? id,qan;
   final List oherimage, pro;
 
   ProducEntity(
       {required this.nameof,
+      required this.qan,
       required this.id,
       required this.prices,
       required this.volum,
