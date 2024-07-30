@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles.dart';
-import 'package:pett_peaces/fetures/mating/domain/entity/mating_entity.dart';
 
 class InformationAnmilesMating extends StatelessWidget {
   const InformationAnmilesMating({
@@ -24,11 +20,15 @@ class InformationAnmilesMating extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                  child: Text(anmilesEntity.gendere,
-                      style: AppStyles.stylesemi20(context).copyWith(
+                  width: MediaQuery.of(context).size.width * .21,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(anmilesEntity.namee.substring(0, 10),
+                        style: AppStyles.stylesemi20(context).copyWith(
                           color: Color(0xfff020202),
                           fontWeight: FontWeight.w600,
-                          overflow: TextOverflow.ellipsis)),
+                        )),
+                  ),
                 ),
                 Text("(${anmilesEntity.typee})",
                     style: AppStyles.stylesemi20(context).copyWith(

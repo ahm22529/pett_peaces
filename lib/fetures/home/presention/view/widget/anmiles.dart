@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
+
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 
 class Anmmalesme extends StatelessWidget {
-  const Anmmalesme({super.key});
-
+  const Anmmalesme({super.key, required this.anmilesEntity});
+  final AnmilesEntity anmilesEntity;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,19 +20,21 @@ class Anmmalesme extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
-        child: FittedBox(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
           child: Row(
             children: [
-              SizedBox(
-                child: Image.asset(
-                  "Asset/image/dooo.png",
+              Expanded(
+                child: Image.network(
+                  anmilesEntity.imagee,
+                  height: MediaQuery.of(context).size.height * .2,
                   fit: BoxFit.cover,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 23.0, vertical: 16),
-                child: informationanmiles(),
-              ),
+              Expanded(
+                  child: informationanmiles(
+                animel: anmilesEntity,
+              ))
             ],
           ),
         ),
@@ -40,49 +44,52 @@ class Anmmalesme extends StatelessWidget {
 }
 
 class informationanmiles extends StatelessWidget {
-  const informationanmiles({super.key});
+  const informationanmiles({super.key, required this.animel});
 
+  final AnmilesEntity animel;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * .46,
+    return Padding(
+      padding: const EdgeInsets.all(0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const InfoAnmales(
-            tt: "روز",
+          Padding(
+            padding: const EdgeInsets.only(top: 0.0),
+            child: InfoAnmales(
+              tt: animel.namee,
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
-          const InfoAnmales(
-            tt: "روز",
+          InfoAnmales(
+            tt: animel.des,
           ),
           const SizedBox(
             height: 16,
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width * .42,
-            child: const Row(
+            child: Row(
               children: [
                 Expanded(
                   flex: 1,
                   child: InfoAnmales1(
-                    tt: "ذكر",
+                    tt: animel.gendere,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: InfoAnmales1(
-                    tt: "3 سنوات",
+                    tt: animel.agee.toString(),
                   ),
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

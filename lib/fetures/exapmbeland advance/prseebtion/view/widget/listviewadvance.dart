@@ -8,22 +8,22 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget
 import 'package:intl/intl.dart';
 
 class ListViewAdvanced extends StatelessWidget {
-  final ExamelEntity entity;
+  final List <ExambelEnitydetails> entity;
 
   const ListViewAdvanced({super.key, required this.entity});
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
-        itemCount: entity.examel.length,
+        itemCount: entity.length,
         itemBuilder: (context, index) => GestureDetector(
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (builder) => ProfileAdvance(
-                          examel: entity.examel[index],
+                          examel: entity[index],
                         ))),
             child: ItemAdvanced(
-              examel: entity.examel[index],
+              examel: entity[index],
             )));
   }
 }

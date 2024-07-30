@@ -65,7 +65,7 @@ class _CustomGridViewstoreState extends State<BodyAllMating> {
         }
       },
       builder: (context, state) {
-        if (state is AllMatingfauiler) {
+        if (state is AllMatingfauiler ) {
           return Center(child: Text(state.errmas));
         }
         if (state is Allmatingsucess || isLoadingMore) {

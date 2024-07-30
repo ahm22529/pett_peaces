@@ -16,6 +16,7 @@ class AddAmilesCubit extends Cubit<AddAmilesState> {
       final re = await anmilesRepo.addanmiles(
           endpoint: endpoint, token: token, data: data);
       print(re);
+      print(re);
       re.fold(
         (failure) => emit(AddAmilesfauiler(errmas: failure.errmas)),
         (userEntity) => emit(AddAmilessucess(mas: "تمت الاضافه بنجاح")),

@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/anmileshome.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/cubit/book_cubit.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/buttomcomfrim.dart';
@@ -10,10 +12,12 @@ import 'package:pett_peaces/fetures/hotels/presention/view/widget/checkchoose.da
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/dateofbook.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepicker.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/droptextfiled.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
 
 class Bodycomfrimbook extends StatefulWidget {
-  const Bodycomfrimbook({super.key, required this.hotelEntity});
+  const Bodycomfrimbook({
+    super.key,
+    required this.hotelEntity,
+  });
 
   final HotelEntity hotelEntity;
 
@@ -22,18 +26,22 @@ class Bodycomfrimbook extends StatefulWidget {
 }
 
 class _BodycomfrimbookState extends State<Bodycomfrimbook> {
-  Animal? selectedAnimal;
+  late List titel;
+  Animal? selectedValue;
   final TextEditingController animalController = TextEditingController();
+  String startdate = '';
+  String enddate = '';
+  List<int> selectedServiceIds = [];
+  String vule = '';
+  bool showDaysField = false;
   final TextEditingController startDateController = TextEditingController();
   final TextEditingController endDateController = TextEditingController();
   final TextEditingController daysController = TextEditingController();
-  String startdate = '', enddate = '', vule = '';
-  List<int> selectedServiceIds = [];
-  bool showDaysField = false;
 
   @override
   void initState() {
     super.initState();
+    titel = widget.hotelEntity.ser[0].ser;
     BlocProvider.of<FetachMyAnmilesCubit>(context).getanmiles(
         token:
             "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjY2MTU5LCJleHAiOjE3MjIyNzA5NTksIm5iZiI6MTcyMTY2NjE1OSwianRpIjoiZUJodjZtQ2dFV2UyY0xnUSIsInN1YiI6IjEwOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.99iC7a6BaYfnVCcCvll3dLteePiKdN3_de0zeO4vATA",
@@ -43,7 +51,9 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
   void selectService(int serviceId) {
     setState(() {
       selectedServiceIds.add(serviceId);
-      if (serviceId == 5) showDaysField = true;
+      if (serviceId == 5) {
+        showDaysField = true;
+      }
     });
   }
 
@@ -58,38 +68,47 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
   }
 
   void onConfirmPressed() {
-    if (startdate.isEmpty ||
-        enddate.isEmpty ||
-        selectedAnimal == null ||
-        selectedServiceIds.isEmpty ||
-        (selectedServiceIds.contains(5) && vule.isEmpty)) {
+    if (startdate.isEmpty || enddate.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('يرجى إدخال كافة المعلومات المطلوبة'),
+          content: Text('يرجى إدخال تاريخ البداية والنهاية'),
         ),
       );
       return;
     }
-  }
 
-  Future<void> selectDate(BuildContext context,
-      TextEditingController controller, bool isStartDate) async {
-    DateTime? pickedDate = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
-    );
-    if (pickedDate != null) {
-      setState(() {
-        String formattedDate = pickedDate.toLocal().toString().split(' ')[0];
-        controller.text = formattedDate;
-        if (isStartDate)
-          startdate = formattedDate;
-        else
-          enddate = formattedDate;
-      });
+    if (selectedValue == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('يرجى اختيار الحيوان'),
+        ),
+      );
+      return;
     }
+
+    if (selectedServiceIds.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('يرجى اختيار خدمة واحدة على الأقل'),
+        ),
+      );
+      return;
+    }
+
+    if (selectedServiceIds.contains(5) && vule.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('يرجى إدخال عدد أيام التزاوج للخدمة المحددة'),
+        ),
+      );
+      return;
+    }
+
+    print(enddate);
+    print(
+      selectedServiceIds.map((id) => {"service_id": id}).toList(),
+    );
+    // منطق تأكيد الحجز
   }
 
   @override
@@ -104,8 +123,38 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
           dateofbook(
             textEditingController1: startDateController,
             textEditingController2: endDateController,
-            onTap1: () => selectDate(context, startDateController, true),
-            onTap2: () => selectDate(context, endDateController, false),
+            onTap1: () async {
+              DateTime? pickedDate = await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2000),
+                lastDate: DateTime(2101),
+              );
+
+              if (pickedDate != null) {
+                setState(() {
+                  startDateController.text =
+                      pickedDate.toLocal().toString().split(' ')[0];
+                  startdate = pickedDate.toLocal().toString().split(' ')[0];
+                });
+              }
+            },
+            onTap2: () async {
+              DateTime? pickedDate = await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2000),
+                lastDate: DateTime(2101),
+              );
+
+              if (pickedDate != null) {
+                setState(() {
+                  endDateController.text =
+                      pickedDate.toLocal().toString().split(' ')[0];
+                  enddate = pickedDate.toLocal().toString().split(' ')[0];
+                });
+              }
+            },
           ),
           const SizedBox(height: 16),
           BlocBuilder<FetachMyAnmilesCubit, FetachMyAnmilesState>(
@@ -118,8 +167,9 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
                         .toList(),
                     controller: animalController,
                     onSelected: (Animal? value) {
-                      selectedAnimal = value;
-                    },
+                      selectedValue = value;
+                      animalController.text = value!.name;
+                    }, 
                   ),
                   text: "اختر الحيوان",
                 );
@@ -131,10 +181,8 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
           const SizedBox(height: 16),
           Text(
             "الخدمات",
-            style: AppStyles.styleMedium16(context).copyWith(
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
-            ),
+            style: AppStyles.styleMedium16(context)
+                .copyWith(fontWeight: FontWeight.w600, color: Colors.black),
           ),
           ListView.builder(
             shrinkWrap: true,

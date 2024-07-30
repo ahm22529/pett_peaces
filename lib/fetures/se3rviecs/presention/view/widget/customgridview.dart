@@ -31,7 +31,9 @@ class CustomGridViewServ extends StatelessWidget {
       ),
       itemBuilder: (BuildContext context, int index) {
         final List nav = [
-          Hotel(),
+          Hotel(
+            userEntitymodel: userEntitymodel,
+          ),
           Doctor(
             userEntitymodel: userEntitymodel,
           ),
@@ -48,9 +50,13 @@ class CustomGridViewServ extends StatelessWidget {
             pro: [],
             userEntitymodel: userEntitymodel,
           ),
-          const SellerAndBuyer(),
+          SellerAndBuyer(
+            userEntitymodel: userEntitymodel,
+          ),
           const Courselist(),
-          Example()
+          Example(
+            userEntitymodel: userEntitymodel,
+          )
         ];
         final services = [
           {

@@ -8,16 +8,23 @@ import 'package:pett_peaces/core/utiles/function/submit.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/addanmiles/add_amiles_cubit.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/deletmyanmiles/delet_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/addphote.dart';
+
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/formadd.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/header_add_account.dart';
+import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/image_picker_widget.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/listview_image.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/submit_buttom.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bodymyaccount extends StatefulWidget {
-  const Bodymyaccount({super.key, required this.anmilesEntityn});
+  const Bodymyaccount(
+      {super.key,
+      required this.anmilesEntityn,
+      required this.userEntitymodell});
   final AnmilesEntity anmilesEntityn;
+  final UserEntitymodel userEntitymodell;
   @override
   _MyAccountAddState createState() => _MyAccountAddState();
 }
@@ -63,7 +70,9 @@ class _MyAccountAddState extends State<Bodymyaccount> {
   Widget build(BuildContext context) {
     return BlocListener<AddAmilesCubit, AddAmilesState>(
       listener: (context, state) {
-        log('add');
+        if (state is AddAmilessucess) {
+          log("message");
+        }
       },
       child: SingleChildScrollView(
         child: Column(
@@ -78,10 +87,14 @@ class _MyAccountAddState extends State<Bodymyaccount> {
                 text1: widget.anmilesEntityn.namee,
                 text2: widget.anmilesEntityn.des,
                 onImagePicked: _handleImagePicked,
-                toggleCancelingMode: () {
-                  // Your toggle canceling logic
+                toggleCancelingMode: () {},
+                id: widget.anmilesEntityn.idd.toString(),
+                userEntitymodel: widget.userEntitymodell,
+                onTap: () {
+                  BlocProvider.of<DeletAnmilesCubit>(context).deletAnmiles(
+                      endpoint: "animals/${widget.anmilesEntityn.idd}/delete",
+                      token: widget.userEntitymodell.token);
                 },
-                id: '',
               ),
             )),
             FormWidget(
@@ -105,7 +118,7 @@ class _MyAccountAddState extends State<Bodymyaccount> {
                 typeDescription = value;
               },
             ),
-            _buildImagePicker(),
+
             ImageListWidget(
               selectedImages: _selectedImages,
               onRemoveImage: (index) {
@@ -115,6 +128,7 @@ class _MyAccountAddState extends State<Bodymyaccount> {
                 });
               },
             ),
+            ImagePickerWidget(isEditing: isEditing, pickImage: _pickImage),
             // ig,nore: prefer_const_constructors
             const SizedBox(
               height: 15,
@@ -122,6 +136,8 @@ class _MyAccountAddState extends State<Bodymyaccount> {
             SubmitButtons(
               onSubmit: () {
                 submit(
+                  endpoint: "animals/${widget.anmilesEntityn.idd}/update",
+                  token: widget.userEntitymodell.token,
                   name: name.isEmpty ? widget.anmilesEntityn.namee : name,
                   age: age == widget.anmilesEntityn.agee
                       ? widget.anmilesEntityn.agee
@@ -143,16 +159,6 @@ class _MyAccountAddState extends State<Bodymyaccount> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildImagePicker() {
-    return GestureDetector(
-      onTap: _pickImage,
-      child: Visibility(
-        visible: isEditing,
-        child: const addphot(),
       ),
     );
   }

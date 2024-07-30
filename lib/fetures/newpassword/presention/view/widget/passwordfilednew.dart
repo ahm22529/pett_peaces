@@ -4,20 +4,22 @@ import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingu
 
 class PasswordFieldNew extends StatelessWidget {
   final GlobalKey<FormState> globalKey;
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
-  const PasswordFieldNew(
-      {Key? key,
-      required this.globalKey,
-      required this.onSaved1,
-      required this.onSaved2})
-      : super(key: key);
+  PasswordFieldNew({
+    Key? key,
+    required this.globalKey,
+    required this.onSaved1,
+    required this.onSaved2,
+  }) : super(key: key);
+
   final void Function(String?)? onSaved1;
   final void Function(String?)? onSaved2;
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController _passwordController = TextEditingController();
-    TextEditingController _confirmPasswordController = TextEditingController();
-
     return Form(
       key: globalKey,
       child: Column(
@@ -54,7 +56,7 @@ class PasswordFieldNew extends StatelessWidget {
             controller: _confirmPasswordController,
             isConfirm: true,
             passwordController: _passwordController,
-            onSaved: (v) {},
+            onSaved: onSaved2,
           ),
           const SizedBox(
             height: 8,

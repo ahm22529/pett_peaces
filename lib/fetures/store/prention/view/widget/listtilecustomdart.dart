@@ -24,7 +24,7 @@ class listtilecustomcard extends StatelessWidget {
           child: GestureDetector(
             onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (builder) => Box())),
-            child: Icon(
+            child: const Icon(
               Icons
                   .shopping_cart_outlined, // Example icon, replace with your asset path if needed
               color: Colors.white,
@@ -53,20 +53,23 @@ class Titel_List_tile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 5),
-            Text(
-              producEntity.nameof,
-              style: TextStyle(
-                fontFamily: 'Changa',
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: Color(0xFF020202),
-                height: 1.4,
+            const SizedBox(height: 5),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                producEntity.nameof,
+                style: const TextStyle(
+                  fontFamily: 'Changa',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  color: Color(0xFF020202),
+                  height: 1.4,
+                ),
+                textAlign: TextAlign.right,
               ),
-              textAlign: TextAlign.right,
             ),
             Text(producEntity.prices,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'Changa',
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
@@ -75,7 +78,7 @@ class Titel_List_tile extends StatelessWidget {
                 )),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 15,
         ),
         Text(

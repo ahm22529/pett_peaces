@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/src/form_data.dart';
@@ -18,6 +20,20 @@ class MydataRepoImp extends MydataRepo {
       final res = await requestServices.post(form, endpoint, token, "");
       final Usermodel userModel = Usermodel.fromapi(res);
       return right(userModel);
+    } on Exception catch (e) {
+      return Left(ServFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> deleteMyaccount(
+      {required String token,
+      required String endpoint,
+      required String form}) async {
+    try {
+      final res = await requestServices.post(form, endpoint, token, "");
+      final Usermodel userModel = Usermodel.fromapi(res);
+      return right(Void);
     } on Exception catch (e) {
       return Left(ServFailure(e.toString()));
     }

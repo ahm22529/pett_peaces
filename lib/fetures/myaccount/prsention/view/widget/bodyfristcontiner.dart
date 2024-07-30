@@ -12,12 +12,13 @@ class bodyfristcontiner extends StatefulWidget {
     required this.text1,
     required this.text2,
     required this.onImagePicked,
-    required this.id, // Add this
+    required this.id,required this.onTap, // Add this
   });
 
   final VoidCallback toggleEditingMode, togglecacelingMode;
   final String text1, text2, id;
-  final Function(File?) onImagePicked; // Add this
+  final Function(File?) onImagePicked;
+  final void Function()? onTap; // Add this
 
   @override
   _bodyfristcontinerState createState() => _bodyfristcontinerState();
@@ -45,6 +46,7 @@ class _bodyfristcontinerState extends State<bodyfristcontiner> {
           toggleEditingMode: widget.toggleEditingMode,
           togglecacelingMode: widget.togglecacelingMode,
           id: widget.id,
+          onTap: widget.onTap,
         ),
         GestureDetector(
           onTap: _pickImage,

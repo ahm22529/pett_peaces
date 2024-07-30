@@ -72,6 +72,7 @@ class _bodysellerandbuyerState extends State<bodysellerandbuyer> {
             isLoadingMore = false;
             // دمج العناصر الجديدة مع العناصر القديمة
             products = state.listSelEnity.sell;
+            print("products.length");
           });
         }
       },

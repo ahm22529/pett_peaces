@@ -30,8 +30,10 @@ class _PlatformuiMyanmilesState extends State<PlatformuiMyanmiles> {
   @override
   Widget build(BuildContext context) {
     return AdaptiveUi(
-        MobileLauyOut: (context) => BodyAnmiles(),
-        TabletLayOut: (context) => Tabletui(),
-        DeskTopLayOut: (context) => Tabletui());
+        MobileLauyOut: (context) => BodyAnmiles(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+        TabletLayOut: (context) => Tabletui(userEntitymodel: widget.userEntitymodel,),
+        DeskTopLayOut: (context) => Tabletui(userEntitymodel: widget.userEntitymodel,));
   }
 }

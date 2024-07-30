@@ -32,16 +32,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit, HomeState>(
-      listener: (context, state) {
-        // TODO: implement listener
-        if (state is HomeSucess) {
-          log("message");
-        }
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         if (state is HomeSucess) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 17.0),
             child: SingleChildScrollView(
               child: SafeArea(
                 child: Column(
@@ -68,17 +63,20 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     Visibility(
                       visible:
                           state.homeEntity.anmilesEntity == null ? false : true,
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Headersection(
+                          const Headersection(
                             titel1: 'حيواناتي',
                             titel2: 'عرض المزيد',
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          anmileshome(),
-                          SizedBox(
+                          anmileshome(
+                            anmiles: state.homeEntity.anmilesEntity!,
+                            userEntitymodel: widget.userEntitymodel,
+                          ),
+                          const SizedBox(
                             height: 35,
                           ),
                         ],

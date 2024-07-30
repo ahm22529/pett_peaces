@@ -16,6 +16,7 @@ class UpdateCubit extends Cubit<UpdateState> {
     emit(Updateload());
     final res = await mydataRepo.updateData(
         token: token, endpoint: endpoint, form: data);
+    print(res);
     res.fold(
       (failure) => emit(Updatefauiler(errma: failure.errmas)),
       (userEntity) => emit(Updatesucess(userEntitymodel: userEntity)),

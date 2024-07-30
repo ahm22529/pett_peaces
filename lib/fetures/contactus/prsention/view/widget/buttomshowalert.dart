@@ -7,8 +7,10 @@ class buttomshowalert extends StatelessWidget {
   const buttomshowalert({
     super.key,
     required this.contactdata,
+    required this.globalKey,
   });
   final Contactdata contactdata;
+  final GlobalKey<FormState> globalKey;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,12 +18,14 @@ class buttomshowalert extends StatelessWidget {
         Custombuttom(
           titel: "ارسال",
           onPressed: () {
-            showDialog(
-              context: context,
-              builder: (builder) => CustomDialog(
-                contactdata: contactdata,
-              ),
-            );
+            if (globalKey.currentState!.validate()) {
+              showDialog(
+                context: context,
+                builder: (builder) => CustomDialog(
+                  contactdata: contactdata,
+                ),
+              );
+            }
           },
         ),
       ],

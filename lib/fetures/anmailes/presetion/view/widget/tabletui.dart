@@ -3,8 +3,12 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Tabletui extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const Tabletui({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -58,6 +62,7 @@ class Tabletui extends StatelessWidget {
                               idd: 1,
                               imagee: "imagee",
                               predec: "predec"),
+                          userEntitymodel: userEntitymodel,
                         ))),
             child: buttomanmandmating(
               color: Colors.orange,

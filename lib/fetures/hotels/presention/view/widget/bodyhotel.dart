@@ -3,17 +3,19 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sizeconfig.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
-import 'package:pett_peaces/fetures/coteching/presention/view/widget/continerbuttom.dart';
+
 import 'package:pett_peaces/fetures/courses/presention/view/widget/location.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/hotel/hotel_cubit.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/buttomcomfrim.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/comfrimbook.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/headerhotel.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/tabbar.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyHotel extends StatefulWidget {
+  final UserEntitymodel userEntitymodel;
+
+  BodyHotel({super.key, required this.userEntitymodel});
   @override
   State<BodyHotel> createState() => _BodyHotelState();
 }
@@ -25,9 +27,9 @@ class _BodyHotelState extends State<BodyHotel> {
     super.initState();
 
     BlocProvider.of<HotelCubit>(context).getdata(
-        endpoint: "hotel",
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjMyMzQ5LCJleHAiOjE3MjIyMzcxNDksIm5iZiI6MTcyMTYzMjM0OSwianRpIjoiSm1pUkFMZlFFbmtaUEhXVyIsInN1YiI6Ijk2IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.uyrEk0t3CkOp2HKgtqTCRmS7h0MiXDPp8j6SkZPPF2Y");
+      endpoint: "hotel",
+      token: widget.userEntitymodel.token,
+    );
   }
 
   @override

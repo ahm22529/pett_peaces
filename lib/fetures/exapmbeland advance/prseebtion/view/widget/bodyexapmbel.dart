@@ -1,23 +1,33 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
+import 'package:pett_peaces/fetures/coteching/presention/view/widget/appbar_cot.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/examel_entity.dart';
 
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/featch/exambelcubit_cubit.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/listviewadvance.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/search.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyExample extends StatefulWidget {
-  const BodyExample({super.key});
-
+  const BodyExample({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   State<BodyExample> createState() => _BodyExampleState();
 }
 
 class _BodyExampleState extends State<BodyExample> {
+  Timer? debounce;
   final ScrollController _scrollController = ScrollController();
   int currentPage = 1;
   bool isLoadingMore = false;
-  List items = []; // قائمة لتخزين العناصر
+  List<ExambelEnitydetails> items = [];
+  TextEditingController textEditingController = TextEditingController();
 
   @override
   void initState() {
@@ -30,7 +40,7 @@ class _BodyExampleState extends State<BodyExample> {
     context.read<ExambelcubitCubit>().getdata(
           endpoint: "posts?page=$currentPage",
           token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjM3NDI0LCJleHAiOjE3MjIyNDIyMjQsIm5iZiI6MTcyMTYzNzQyNCwianRpIjoid2ZQU1o0eVZzZ0NGSFhVNiIsInN1YiI6IjEwNiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.4dS3VEbXlOKfR1PCwnw0pNbXE9-P6SxdrwpVJlQUku8",
+              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMjM2Njg5LCJleHAiOjE3MjI4NDE0ODksIm5iZiI6MTcyMjIzNjY4OSwianRpIjoiaXp3ZjFlUG5IS0JOV3Z6TiIsInN1YiI6IjEyMCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fkqOMsnicpLCx47OK-OuegkNLk_sQranHL8pFmrU6OI",
         );
   }
 
@@ -54,72 +64,69 @@ class _BodyExampleState extends State<BodyExample> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ExambelcubitCubit, ExambelcubitState>(
-      listener: (context, state) {
-        if (state is Exambelcubitsucess) {
-          setState(() {
-            isLoadingMore = false;
-            // دمج العناصر الجديدة مع العناصر القديمة
-            items.addAll(state.ex.examel);
-          });
-        }
-      },
-      builder: (context, state) {
-        if (state is Exambelcubitsucess || isLoadingMore) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: CustomScrollView(
-              controller: _scrollController,
-              slivers: [
-                const SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 73,
-                      ),
-                      customAppbar(
-                        name: 'الامثله والنصائح',
-                      ),
-                    ],
-                  ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 73,
                 ),
-                const SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 24,
-                      ),
-                    ],
-                  ),
+                customAppbar(
+                  name: 'الامثله والنصائح',
                 ),
-                const SliverToBoxAdapter(
-                  child: SizedBox(
-                    height: 24,
-                  ),
+                TitelappbarExam(
+                  name: 'ابحث عن الامثله والنصايح ',
+                  userEntitymodel: widget.userEntitymodel,
                 ),
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return ListViewAdvanced(
-                        entity: items[index],
-                      );
-                    },
-                    childCount: items.length,
-                  ),
-                ),
-                if (isLoadingMore)
-                  const SliverToBoxAdapter(
-                    child: Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  ),
               ],
             ),
-          );
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
-      },
+          ),
+          const SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 24,
+                ),
+              ],
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 24,
+            ),
+          ),
+          BlocConsumer<ExambelcubitCubit, ExambelcubitState>(
+            builder: (context, state) {
+              if (state is Exambelcubitsucess ||
+                  state is Exambelcubitsucessserch) {
+                return ListViewAdvanced(
+                  entity: items,
+                );
+              } else {
+                return SliverToBoxAdapter();
+              }
+            },
+            listener: (BuildContext context, ExambelcubitState state) {
+              if (state is Exambelcubitsucess) {
+                items.addAll(state.ex.examel);
+              }
+              if (state is Exambelcubitsucessserch) {
+                items = state.ex.examel;
+              }
+            },
+          ),
+          if (isLoadingMore)
+            const SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

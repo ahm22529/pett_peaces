@@ -15,8 +15,8 @@ class CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
-        height: MediaQuery.of(context).size.height * .07,
-        width: MediaQuery.of(context).size.width * .7,
+        height: MediaQuery.of(context).size.height * .09,
+        width: MediaQuery.of(context).size.width * .8,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(5),
@@ -50,7 +50,12 @@ class CategoryButton extends StatelessWidget {
                     ],
                   ),
                 ),
-                Positioned(bottom: 0, top: -33, child: Image.asset(imagePath))
+                Positioned(
+                  bottom: 0,
+                  top: -40,
+                  child: Image.asset(imagePath),
+                  right: 0,
+                )
               ],
             ),
           ),

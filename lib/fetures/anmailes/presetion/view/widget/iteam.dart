@@ -6,11 +6,13 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
 
 class Anmmalesmeacc extends StatelessWidget {
-  const Anmmalesmeacc({super.key, required this.listAnmileEntity});
+  const Anmmalesmeacc({super.key, required this.listAnmileEntity, required this.userEntitymodel});
   final ListAnmileEntity listAnmileEntity;
+  final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -27,6 +29,7 @@ class Anmmalesmeacc extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (builder) => Myaccount(
                                 anmilesEntity: listAnmileEntity.anmiles[index],
+                                userEntitymodel: userEntitymodel,
                               ))),
                 ),
                 animel: listAnmileEntity.anmiles[index],

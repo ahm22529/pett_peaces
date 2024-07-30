@@ -8,8 +8,12 @@ import 'package:pett_peaces/fetures/hotels/domain/repo/hotelrep.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/hotel/hotel_cubit.dart';
 
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/bodyhotel.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Hotel extends StatefulWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const Hotel({super.key, required this.userEntitymodel});
   @override
   State<Hotel> createState() => _HotelState();
 }
@@ -29,7 +33,7 @@ class _HotelState extends State<Hotel> {
         )
       ],
       child: Scaffold(
-        body: BodyHotel(),
+        body: BodyHotel(userEntitymodel: widget.userEntitymodel,),
       ),
     );
   }

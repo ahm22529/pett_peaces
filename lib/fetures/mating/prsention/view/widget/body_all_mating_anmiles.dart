@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/imageanmiles.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/informationanmiles.dart';
-import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
+
 import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart';
-import 'package:pett_peaces/fetures/mating/domain/entity/mating_entity.dart';
+
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/information_Anmiles_mating.dart';
 
 class BodyAllMatingAnmiles extends StatelessWidget {
@@ -62,6 +60,15 @@ class BodyAllMatingAnmiles extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+              left: 0,
+              top: 0,
+              child: Visibility(
+                visible: selEntity.isactive,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Image.asset("Asset/image/delet.png")),
+              ))
         ],
       ),
     );

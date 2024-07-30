@@ -5,8 +5,12 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/myaddacount.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyAnmiles extends StatelessWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const BodyAnmiles({super.key, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<FetachMyAnmilesCubit, FetachMyAnmilesState>(
@@ -22,10 +26,15 @@ class BodyAnmiles extends StatelessWidget {
                 Expanded(
                     child: Anmmalesmeacc(
                   listAnmileEntity: state.lis,
+                  userEntitymodel: userEntitymodel,
                 )),
                 GestureDetector(
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (builder) => MyAccountAdd())),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => MyAccountAdd(
+                                userEntitymodel: userEntitymodel,
+                              ))),
                   child: buttomanmandmating(
                     color: Colors.orange,
                     text: 'إضافة حيوان جديد',
@@ -34,7 +43,9 @@ class BodyAnmiles extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (builder) => MyAccountAdd()));
+                              builder: (builder) => MyAccountAdd(
+                                    userEntitymodel: userEntitymodel,
+                                  )));
                     },
                   ),
                 ),
@@ -45,7 +56,10 @@ class BodyAnmiles extends StatelessWidget {
             ),
           );
         } else {
-          return CircularProgressIndicator();
+          return const Center(
+              child: CircularProgressIndicator(
+            color: Colors.orange,
+          ));
         }
       },
     );

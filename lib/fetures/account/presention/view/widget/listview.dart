@@ -46,45 +46,38 @@ class _IteamconterState extends State<Iteamconter> {
     ModelActino(image: "Asset/image/id card.png", text: "تواصل معنا"),
     ModelActino(image: "Asset/image/login 01.png", text: "تسجيل خروج"),
   ];
+  late List<Widget> nav;
+  @override
+  void initState() {
+    // TODO: implement initState
 
-  List<Widget> nav = [
-    Myanmiles(
-      userEntitymodel: UserEntitymodel(
-          email: "",
-          massage: '',
-          id: '',
-          type: '',
-          name: '',
-          phone: '',
-          image: '',
-          token: '',
-          is_plan_subscribe: false,
-          email_verified_at: false),
-    ),
-    Mating(),
-    Bookting(
-      userEntitymodel: UserEntitymodel(
-          email: "",
-          massage: '',
-          id: '',
-          type: '',
-          name: '',
-          phone: '',
-          image: '',
-          token: '',
-          is_plan_subscribe: false,
-          email_verified_at: false),
-    ),
-    Order(),
-    Subsurbtion(),
-    Changepassword(),
-    Changelang(),
-    policy(),
-    Aboutus(),
-    resonbay(),
-    Contactwithpices(),
-    LoginView(),
-  ];
+    nav = [
+      Myanmiles(userEntitymodel: widget.userEntitymodel),
+      Mating(),
+      Bookting(
+        userEntitymodel: UserEntitymodel(
+            email: "",
+            massage: '',
+            id: '',
+            type: '',
+            name: '',
+            phone: '',
+            image: '',
+            token: '',
+            is_plan_subscribe: false,
+            email_verified_at: false),
+      ),
+      Order(),
+      Subsurbtion(),
+      Changepassword(),
+      Changelang(),
+      policy(),
+      Aboutus(),
+      resonbay(),
+      Contactwithpices(),
+      LoginView(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
