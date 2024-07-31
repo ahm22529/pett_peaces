@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/descriptio.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/infodetailes.dart';
-import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/decription_mating.dart';
-
 class BodyMatingDetails extends StatelessWidget {
   final AllMatingEntity selEntity;
 

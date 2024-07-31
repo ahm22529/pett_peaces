@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/sellerdetails.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 
 import 'package:pett_peaces/fetures/mating/prsention/manager/cubit/all_mating_cubit.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/all_mating_detailes.dart';
@@ -66,9 +68,21 @@ class _CustomGridViewstoreState extends State<BodyAllMating> {
       },
       builder: (context, state) {
         if (state is AllMatingfauiler) {
-          return Center(child: Text(state.errmas));
+          return const CustomWidgetfauier();
         }
         if (state is Allmatingsucess || isLoadingMore) {
+          if (products.isEmpty) {
+            return Column(
+              children: [
+                Image.asset("Asset/image/Dog and cat lying on a pillow.png"),
+                Text(
+                  "لا يوجد حيوانات للتزاوج ف الوقت الحالي ",
+                  style: AppStyles.styleRegular24(context),
+                )
+              ],
+            );
+          }
+
           return GridView.builder(
             itemCount: products.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -93,7 +107,7 @@ class _CustomGridViewstoreState extends State<BodyAllMating> {
             },
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return const Loadwidgwt();
       },
     );
   }

@@ -29,7 +29,6 @@ class _SellerAndBuyerState extends State<AllAnmilesMating> {
   Timer? debounce;
   Matingrepo matingrepo = Matingrepoimp();
 
-  @override
   void fetchPredictions() {
     textEditingController.addListener(() {
       if (debounce?.isActive ?? false) {

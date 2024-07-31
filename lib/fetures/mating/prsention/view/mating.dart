@@ -8,6 +8,8 @@ import 'package:pett_peaces/fetures/mating/prsention/manager/getmating/get_matin
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/bodymatching.dart';
 
 class Mating extends StatefulWidget {
+  const Mating({super.key});
+
   @override
   State<Mating> createState() => _MatingState();
 }
@@ -37,7 +39,7 @@ class _MatingState extends State<Mating> {
           ),
           centerTitle: true,
         ),
-        body: BodyMating(),
+        body: const BodyMating(),
       ),
     );
   }

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/anmailes/domin/enitiy/anmiles_entity.dart';
-import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/show_Image.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart';
 
 class DecriptionMating extends StatelessWidget {
@@ -52,7 +48,7 @@ class DecriptionMating extends StatelessWidget {
               onPressed: () {
                 print(anmilesEntity.anmilesEntity.otherimage[0]);
               },
-              icon: Icon(Icons.abc)),
+              icon: const Icon(Icons.abc)),
           ShowImage(
             hotelEntity: [],
           ),

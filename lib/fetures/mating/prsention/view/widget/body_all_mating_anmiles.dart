@@ -18,7 +18,7 @@ class BodyAllMatingAnmiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Stack(
         children: [
           Column(
@@ -30,7 +30,7 @@ class BodyAllMatingAnmiles extends StatelessWidget {
                 ), // Assuming this widget fills available height
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: InformationAnmilesMating(
                     anmilesEntity: selEntity.anmilesEntity),
               ),
@@ -43,17 +43,17 @@ class BodyAllMatingAnmiles extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                 ),
-                color: Color(0xff000000).withOpacity(.1),
+                color: const Color(0xff000000).withOpacity(.1),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   selEntity.anmilesEntity.des,
                   style: AppStyles.styleRegular14(context).copyWith(
-                    color: Color(0xffF78E32),
+                    color: const Color(0xffF78E32),
                     fontWeight: FontWeight.w600,
                   ),
                 ),
