@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/buildrow.dart';
 import 'package:pett_peaces/fetures/box/data/model/infodetailesModel.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/coboniteam.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobon_iteam.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class detailesorder extends StatefulWidget {
-  const detailesorder({
+class Detailesorder
+ extends StatefulWidget {
+  const Detailesorder({
     super.key,
     required this.count,
     required this.total,
@@ -15,10 +16,10 @@ class detailesorder extends StatefulWidget {
   final String count, total, taxpr;
   final UserEntitymodel userEntitymodel;
   @override
-  State<detailesorder> createState() => _detailesorderState();
+  State<Detailesorder> createState() => _DetailesorderState();
 }
 
-class _detailesorderState extends State<detailesorder> {
+class _DetailesorderState extends State<Detailesorder> {
   late List<Detailsmodel> lis;
   @override
   void initState() {

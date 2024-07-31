@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/addmiuns.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/add_miuns.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-
 class Countiteam extends StatefulWidget {
   final String prices;
   final UserEntitymodel userEntitymodel;
@@ -27,7 +26,6 @@ class _CountiteamState extends State<Countiteam> {
   late int numb;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     numb = widget.count ?? 1;
   }
@@ -60,7 +58,7 @@ class _CountiteamState extends State<Countiteam> {
               numb++;
             });
           },
-          child: AddMiuns(
+          child: const AddMiuns(
             iconData: Icons.add,
           ),
         ),
@@ -80,7 +78,7 @@ class _CountiteamState extends State<Countiteam> {
               }
             });
           },
-          child: AddMiuns(
+          child: const AddMiuns(
             iconData: Icons.remove,
           ),
         ),

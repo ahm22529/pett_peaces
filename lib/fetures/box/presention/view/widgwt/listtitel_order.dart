@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/box/domain/entity/iteam_entity.dart';
-
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/iteambox.dart';
-
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/iteam_box.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-
-class listiteamorder extends StatefulWidget {
-  const listiteamorder(
-      {Key? key, required this.iteam, required this.userEntitymodel});
-  final List<IteamEntity> iteam;
+class Listiteamorder extends StatefulWidget {
+  const Listiteamorder(
+      {Key? key, required this.iteam, required this.userEntitymodel, required this.onRemoveItem});
+  final List iteam;
   final UserEntitymodel userEntitymodel;
+  final void Function(ProducEntity) onRemoveItem;
 
   @override
-  State<listiteamorder> createState() => _listiteamorderState();
+  State<Listiteamorder> createState() => _ListiteamorderState();
 }
 
-class _listiteamorderState extends State<listiteamorder> {
-  late List<IteamEntity> iteam;
+class _ListiteamorderState extends State<Listiteamorder> {
+  late List iteam;
 
   @override
   void initState() {
@@ -25,11 +22,7 @@ class _listiteamorderState extends State<listiteamorder> {
     iteam = widget.iteam;
   }
 
-  void _removeItem(ProducEntity producEntity) {
-    setState(() {
-      iteam.removeWhere((item) => item.products.id == producEntity.id);
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +36,7 @@ class _listiteamorderState extends State<listiteamorder> {
             IteamBox(
               producEntity: widget.iteam[index].products,
               userEntitymodel: widget.userEntitymodel,
-              onRemoveItem: _removeItem,
+              onRemoveItem:widget.onRemoveItem,
               count: widget.iteam[index].qounte,
             ),
             if (index < iteam.length - 1)

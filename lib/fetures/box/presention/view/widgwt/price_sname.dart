@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
-import 'package:pett_peaces/fetures/box/presention/manager/cubit/getbox_cubit.dart';
 
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/countiteam.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/informationiteam.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/count_iteam.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/information_iteam.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
@@ -32,7 +31,7 @@ class _pricevulemnameState extends State<pricevulemname> {
       children: [
         Row(
           children: [
-            informtionorderiteam(
+            Informtionorderiteam(
               box: widget.producEntity,
             ),
             const Spacer(),

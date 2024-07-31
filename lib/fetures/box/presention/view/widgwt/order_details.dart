@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/buildrow.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/coboniteam.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/custombuttombox.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobon_iteam.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/custom_buttom_box.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class orderdetails extends StatelessWidget {

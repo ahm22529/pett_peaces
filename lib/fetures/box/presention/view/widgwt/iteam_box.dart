@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/pricesname.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/price_sname.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 

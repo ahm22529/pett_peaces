@@ -4,7 +4,7 @@ import 'package:pett_peaces/fetures/box/data/repo/repo_Imp.dart';
 import 'package:pett_peaces/fetures/box/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/cubit/getbox_cubit.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/bodybox.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/body_box.dart';
 import 'package:pett_peaces/fetures/courses/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/courses/presention/manger.dart/cubit/checkout_cubit.dart';

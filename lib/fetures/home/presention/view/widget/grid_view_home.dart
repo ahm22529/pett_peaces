@@ -28,7 +28,6 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
   int selectedindex = -1;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     final List nav = [
           Hotel(

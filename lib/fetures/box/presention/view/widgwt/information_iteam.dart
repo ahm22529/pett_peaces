@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
-class informtionorderiteam extends StatelessWidget {
-  const informtionorderiteam({
+class Informtionorderiteam extends StatelessWidget {
+  const Informtionorderiteam({
     super.key,
     required this.box,
   });

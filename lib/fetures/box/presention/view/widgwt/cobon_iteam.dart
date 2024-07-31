@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/buttom_cobon.dart';
-
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobontextfiled.dart';
+import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobon_text_filed.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-
 class cobeniteam extends StatefulWidget {
   const cobeniteam({
     super.key,
@@ -17,7 +14,6 @@ class cobeniteam extends StatefulWidget {
   @override
   State<cobeniteam> createState() => _cobeniteamState();
 }
-
 class _cobeniteamState extends State<cobeniteam> {
   String code = '';
   @override

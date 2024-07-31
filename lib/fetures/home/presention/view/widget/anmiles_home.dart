@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/add_anmiles.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/myaddacount.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
@@ -35,7 +34,8 @@ class Anmileshome extends StatelessWidget {
                       builder: (builder) => MyAccountAdd(
                             userEntitymodel: userEntitymodel,
                           ))),
-              child: Iteamadd()),
+              // ignore: p,refer_const_constructors
+              child: const Iteamadd()),
         )
       ],
     );
