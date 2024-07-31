@@ -46,7 +46,7 @@ class bodyresonbay extends StatelessWidget {
                 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، هذا النص أو العديد من النصوص الأخرى',
           ),
           const Spacer(),
-          const continerbuttom(),
+          const Continerbuttom(),
           const SizedBox(
             height: 20,
           )

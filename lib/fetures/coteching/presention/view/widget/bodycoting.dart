@@ -1,13 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
-import 'package:pett_peaces/fetures/account/presention/view/widget/textcontiner.dart';
 import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchig/fetachingallcout_cubit.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/gridviewdoctor.dart';
-import 'package:pett_peaces/fetures/doctor/presention/view/widget/titel_appbar.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyCoating extends StatefulWidget {
@@ -68,7 +65,7 @@ class _BodyCoatingState extends State<BodyCoating> {
             height: 15,
           ),
           Expanded(
-            child: gridviewco(
+            child: Gridviewco(
               userEntitymodel: widget.userEntitymodel,
             ),
           ),

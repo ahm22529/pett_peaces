@@ -3,8 +3,8 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/coteching/domain/entity/cotach_entity.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/availael.dart';
 
-class doctorestatus extends StatelessWidget {
-  const doctorestatus({
+class Doctorestatus extends StatelessWidget {
+  const Doctorestatus({
     super.key,
     required this.cotachEntity,
   });
@@ -22,10 +22,10 @@ class doctorestatus extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                cotachEntity.namee ?? "",
+                cotachEntity.namee,
                 style: AppStyles.styleRegular14(context),
               ),
-              avalibal(
+              Avalibal(
                 cotachEntity: cotachEntity,
               ),
             ],

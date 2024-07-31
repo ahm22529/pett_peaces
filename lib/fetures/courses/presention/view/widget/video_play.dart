@@ -41,27 +41,31 @@ class _VideoPlayState extends State<VideoPlay> {
 
   @override
   Widget build(BuildContext context) {
-    return _controller.value.isInitialized
-        ? Stack(
-            alignment: Alignment.center,
-            children: [
-              AspectRatio(
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        _controller.value.isInitialized
+            ? AspectRatio(
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
+              )
+            : Container(
+                color: Colors.black,
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
               ),
-              if (!_controller.value.isPlaying)
-                Icon(
-                  Icons.play_arrow,
+        _controller.value.isInitialized
+            ? IconButton(
+                icon: Icon(
+                  _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
                   color: Colors.white,
                   size: 50,
                 ),
-            ],
-          )
-        : Container(
-            color: Colors.black,
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
+                onPressed: _togglePlayPause,
+              )
+            : Container(), // Empty container while video is loading
+      ],
+    );
   }
 }

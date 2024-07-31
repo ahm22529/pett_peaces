@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/coteching/domain/entity/cotach_entity.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/buttomcotchingacount.dart';
-import 'package:pett_peaces/fetures/coteching/presention/view/widget/continerbuttom.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/namedandstuts.dart';
 
 class BodyCotactcoting extends StatelessWidget {
@@ -35,8 +33,8 @@ class BodyCotactcoting extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: nameandstuts(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Nameandstuts(
                 cotachEntity: cotachEntity,
               ),
             ),
@@ -49,13 +47,13 @@ class BodyCotactcoting extends StatelessWidget {
                 cotachEntity.dec,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             // ,Adds space between the text and the button
             Visibility(
                 visible: !cotachEntity.isavliabel,
-                child: buttomcountactcotch()),
+                child: const Buttomcountactcotch()),
             const SizedBox(
                 height: 16), // Add some space at the bottom if needed
           ],

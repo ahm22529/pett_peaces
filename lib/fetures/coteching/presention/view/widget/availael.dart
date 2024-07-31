@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/coteching/domain/entity/cotach_entity.dart';
 
-class avalibal extends StatelessWidget {
-  const avalibal({
+class Avalibal extends StatelessWidget {
+  const Avalibal({
     super.key,
     required this.cotachEntity,
   });

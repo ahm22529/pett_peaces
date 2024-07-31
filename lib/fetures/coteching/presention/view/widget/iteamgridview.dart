@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/coteching/domain/entity/cotach_entity.dart';
-import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/doctorstatus.dart';
-
 class CustomgridviewDoctoriteam extends StatelessWidget {
   final CotachEntity cotachEntity;
 
@@ -17,7 +15,7 @@ class CustomgridviewDoctoriteam extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
         ),
-        doctorestatus(
+        Doctorestatus(
           cotachEntity: cotachEntity,
         ),
       ],

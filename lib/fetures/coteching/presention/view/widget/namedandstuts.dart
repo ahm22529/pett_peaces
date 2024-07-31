@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/coteching/domain/entity/cotach_entity.dart';
-import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/availael.dart';
 
-class nameandstuts extends StatelessWidget {
-  const nameandstuts({
+class Nameandstuts extends StatelessWidget {
+  const Nameandstuts({
     super.key,
     required this.cotachEntity,
   });
@@ -20,7 +19,7 @@ class nameandstuts extends StatelessWidget {
           style: AppStyles.stylesemi20(context).copyWith(
               color: const Color(0xfff020202), fontWeight: FontWeight.w600),
         ),
-        avalibal(
+        Avalibal(
           cotachEntity: cotachEntity,
         ),
       ],

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchig/fetachingallcout_cubit.dart';
 
-import 'package:pett_peaces/fetures/doctor/presention/manager/cubit/fetchdoctor_cubit.dart';
-
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class TitelappbarDoctore extends StatefulWidget {

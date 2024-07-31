@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 
-class buttomcountactcotch extends StatelessWidget {
-  const buttomcountactcotch({
+class Buttomcountactcotch extends StatelessWidget {
+  const Buttomcountactcotch({
     super.key,
   });
 
