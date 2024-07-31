@@ -17,7 +17,7 @@ class Item extends IteamEntity {
             qounte: qty ?? 0,
             products: product ??
                 ProducEntity(
-                  qan: qty,
+                    qan: qty,
                     nameof: '',
                     id: id,
                     prices: '',

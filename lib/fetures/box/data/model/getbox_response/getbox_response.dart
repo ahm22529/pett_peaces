@@ -8,7 +8,14 @@ class GetboxResponse extends BoxEntity {
   Data? data;
   String? message;
 
-  GetboxResponse({this.status, this.statusCode, this.data, this.message}):super(count: data?.count??0,massage: message??"",product: data?.items??[],total: data?.subTotal??0,dis: data?.taxPercent??0,id: data?.count??0);
+  GetboxResponse({this.status, this.statusCode, this.data, this.message})
+      : super(
+            count: data?.count ?? 0,
+            massage: message ?? "",
+            product: data?.items ?? [],
+            total: data?.subTotal ?? 0,
+            dis: data?.taxPercent ?? 0,
+            id: data?.count ?? 0);
 
   factory GetboxResponse.fromJson(Map<String, dynamic> json) {
     return GetboxResponse(

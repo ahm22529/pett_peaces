@@ -1,67 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/fetures/order2/presention/manager/cubit/order_cubit.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/buttomshowdetails.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/header.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/infoandheader.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class BodyBookting extends StatelessWidget {
+class BodyBookting extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
 
   const BodyBookting({super.key, required this.userEntitymodel});
+
+  @override
+  State<BodyBookting> createState() => _BodyBooktingState();
+}
+
+class _BodyBooktingState extends State<BodyBookting> {
+  int selectedTabIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<OrderCubit>(context).getdata(
+        endpoint: "my-orders/checkout",
+        token:
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMzQ2NTg1LCJleHAiOjE3MjI5NTEzODUsIm5iZiI6MTcyMjM0NjU4NSwianRpIjoicHJwQlZIbngzYWNSeGVHZyIsInN1YiI6IjEyMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lYnKBGmPOSiuH3gnIYbMJ6fFgNKRjL7-lJ9J04B6xMk");
+  }
+
+  void _handleTabChange(int index) {
+    setState(() {
+      selectedTabIndex = index;
+    });
+    if (index == 1) {
+      // Load or display the empty list
+      BlocProvider.of<OrderCubit>(context).getdata(
+          endpoint: "my-orders/delivered",
+          token:
+              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMzQ2NTg1LCJleHAiOjE3MjI5NTEzODUsIm5iZiI6MTcyMjM0NjU4NSwianRpIjoicHJwQlZIbngzYWNSeGVHZyIsInN1YiI6IjEyMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lYnKBGmPOSiuH3gnIYbMJ6fFgNKRjL7-lJ9J04B6xMk");
+    } else {
+      BlocProvider.of<OrderCubit>(context).getdata(
+          endpoint: "my-orders/checkout",
+          token:
+              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMzQ2NTg1LCJleHAiOjE3MjI5NTEzODUsIm5iZiI6MTcyMjM0NjU4NSwianRpIjoicHJwQlZIbngzYWNSeGVHZyIsInN1YiI6IjEyMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lYnKBGmPOSiuH3gnIYbMJ6fFgNKRjL7-lJ9J04B6xMk");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
         children: [
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0.0),
-            child: headerBookting(),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Expanded(
-              child: ListView.builder(
-            itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
-              child: iteambooktin(
-                userEntitymodel: userEntitymodel,
-              ),
-            ),
-          ))
+          const SizedBox(height: 20),
+          HeaderBookting(onTabChanged: _handleTabChange),
+          const SizedBox(height: 20),
+          BlocConsumer<OrderCubit, OrderState>(
+            listener: (context, state) {},
+            builder: (context, state) {
+              if (state is Ordersucess) {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: state.listOrderEntity.order.length,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 20.0),
+                      child: ItemBooktin(
+                        userEntitymodel: widget.userEntitymodel,
+                      ),
+                    ),
+                  ),
+                );
+              } else {
+                return CircularProgressIndicator();
+              }
+            },
+          )
         ],
       ),
     );
   }
 }
 
-class iteambooktin extends StatelessWidget {
-  const iteambooktin({
-    super.key,
-    required this.userEntitymodel,
-  });
+class ItemBooktin extends StatelessWidget {
   final UserEntitymodel userEntitymodel;
+
+  const ItemBooktin({super.key, required this.userEntitymodel});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24),
         child: Column(
           children: [
             const headerordersection(),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             const infoorder(),
-            buttomshowdetails(
-              userEntitymodel: userEntitymodel,
-            )
+            buttomshowdetails(userEntitymodel: userEntitymodel),
           ],
         ),
       ),

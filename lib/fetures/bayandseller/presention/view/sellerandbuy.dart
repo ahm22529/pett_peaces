@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cu
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/gridview.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/search.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/titelappbar.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart';
 
 class SellerAndBuyer extends StatefulWidget {
   const SellerAndBuyer({super.key, required this.userEntitymodel});

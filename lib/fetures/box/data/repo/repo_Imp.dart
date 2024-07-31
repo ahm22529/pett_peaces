@@ -22,11 +22,13 @@ class BoxRepoImp extends Boxrepo {
       return Left(ServFailure(e.toString()));
     }
   }
-  
+
   @override
-  Future<Either<Failure, BoxEntity>> getBoxdata({required String endpoint, required String token})async {
+  Future<Either<Failure, BoxEntity>> getBoxdata(
+      {required String endpoint, required String token}) async {
     try {
-      final res = await requestServices.getRequest(endPoint: endpoint, token: token, id: '' );
+      final res = await requestServices.getRequest(
+          endPoint: endpoint, token: token, id: '');
       BoxEntity box = GetboxResponse.fromJson(res);
       return right(box);
     } on Exception catch (e) {

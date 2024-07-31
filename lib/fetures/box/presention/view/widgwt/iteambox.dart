@@ -13,7 +13,8 @@ class IteamBox extends StatefulWidget {
       {super.key,
       required this.producEntity,
       required this.userEntitymodel,
-      required this.onRemoveItem, required this.count});
+      required this.onRemoveItem,
+      required this.count});
   @override
   State<IteamBox> createState() => _IteamBoxState();
 }
@@ -43,7 +44,8 @@ class _IteamBoxState extends State<IteamBox> {
             child: pricevulemname(
               producEntity: widget.producEntity,
               userEntitymodel: widget.userEntitymodel,
-              onRemoveItem: widget.onRemoveItem, count: widget.count,
+              onRemoveItem: widget.onRemoveItem,
+              count: widget.count,
             ),
           )
         ],

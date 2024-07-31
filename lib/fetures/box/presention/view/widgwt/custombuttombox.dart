@@ -7,7 +7,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BotttomPay extends StatelessWidget {
   const BotttomPay({
-    super.key, required this.userEntitymodel,
+    super.key,
+    required this.userEntitymodel,
   });
 
   final UserEntitymodel userEntitymodel;

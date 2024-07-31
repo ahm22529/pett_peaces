@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/bodycontinersummary.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/body_continer_summary.dart';
 
-class summary extends StatelessWidget {
-  const summary({
+class Summary extends StatelessWidget {
+  const Summary({
     super.key,
     required this.producEntity,
     required this.userEntitymodel,

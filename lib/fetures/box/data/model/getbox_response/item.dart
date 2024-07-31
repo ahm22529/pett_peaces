@@ -3,14 +3,32 @@ import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
 import 'product.dart';
 
-class Item extends IteamEntity{
+class Item extends IteamEntity {
   int? id;
   int? price;
   int? qty;
   int? total;
   Product? product;
 
-  Item({this.id, this.price, this.qty, this.total, this.product}):super(idd: id??0,pricee: price??0,qounte: qty??0,totale:total ??0,products: product??ProducEntity(nameof: '', id: id, prices: '', volum: '', img: '', detai: '', oherimage: [], oldprice: '', shortdescription: '', pro: [],qan: qty));
+  Item({this.id, this.price, this.qty, this.total, this.product})
+      : super(
+            idd: id ?? 0,
+            pricee: price ?? 0,
+            qounte: qty ?? 0,
+            totale: total ?? 0,
+            products: product ??
+                ProducEntity(
+                    nameof: '',
+                    id: id,
+                    prices: '',
+                    volum: '',
+                    img: '',
+                    detai: '',
+                    oherimage: [],
+                    oldprice: '',
+                    shortdescription: '',
+                    pro: [],
+                    qan: qty));
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
         id: json['id'] as int?,

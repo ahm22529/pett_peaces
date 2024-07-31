@@ -4,7 +4,8 @@ import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
 class informtionorderiteam extends StatelessWidget {
   const informtionorderiteam({
-    super.key, required this.box,
+    super.key,
+    required this.box,
   });
   final ProducEntity box;
   @override
@@ -13,7 +14,7 @@ class informtionorderiteam extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-         box.nameof,
+          box.nameof,
           style: AppStyles.styleMedium18(context)
               .copyWith(fontWeight: FontWeight.w600),
         ),

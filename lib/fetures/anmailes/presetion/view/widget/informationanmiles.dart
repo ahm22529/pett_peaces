@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 
 class informationanmiles extends StatelessWidget {
   const informationanmiles({super.key, required this.widget});

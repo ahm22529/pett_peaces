@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/Add_remove/add_or_remove_cubit.dart';
 
 class iteamlistviewm extends StatelessWidget {

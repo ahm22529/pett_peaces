@@ -13,7 +13,8 @@ class pricevulemname extends StatefulWidget {
     super.key,
     required this.producEntity,
     required this.userEntitymodel,
-    required this.onRemoveItem, required this.count,
+    required this.onRemoveItem,
+    required this.count,
   });
   final ProducEntity producEntity;
   final UserEntitymodel userEntitymodel;
@@ -53,7 +54,8 @@ class _pricevulemnameState extends State<pricevulemname> {
         Countiteam(
           prices: widget.producEntity.prices,
           userEntitymodel: widget.userEntitymodel,
-          producEntity: widget.producEntity, count: widget.count,
+          producEntity: widget.producEntity,
+          count: widget.count,
         )
       ],
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 
 class CustomDialog extends StatelessWidget {
   const CustomDialog({super.key});

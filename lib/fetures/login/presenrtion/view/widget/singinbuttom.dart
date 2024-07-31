@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/home/data/model/loginuserimodel/loginusermodel.dart';
-import 'package:pett_peaces/fetures/home/presention/view/homescrren.dart';
 import 'package:pett_peaces/fetures/login/data/model/userinputdatalogin.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/manager/cubit/login_cubit.dart';
 
-class singinbutto extends StatelessWidget {
-  const singinbutto({
+class SinginButtom extends StatelessWidget {
+  const SinginButtom({
     super.key,
     required this.globalKey,
     required this.logindataModel,

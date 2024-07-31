@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/continertextfiled.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class Appbarsearch extends StatefulWidget {
   const Appbarsearch({
@@ -45,7 +45,7 @@ class _AppbarsearchState extends State<Appbarsearch> {
     return Row(
       children: [
         Expanded(
-          child: continertextfiled(
+          child: Continertextfiled(
             name: widget.name,
             textEditingController: widget.textEditingController,
           ),

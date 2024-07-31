@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 
-import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 
 class Anmmalesme extends StatelessWidget {
   const Anmmalesme({super.key, required this.anmilesEntity});

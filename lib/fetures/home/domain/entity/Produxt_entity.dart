@@ -1,6 +1,6 @@
 class ProducEntity {
   final String nameof, prices, volum, img, shortdescription, oldprice, detai;
-  int? id,qan;
+  int? id, qan;
   final List oherimage, pro;
 
   ProducEntity(

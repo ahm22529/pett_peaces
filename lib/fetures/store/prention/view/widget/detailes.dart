@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/store/domain/repo.dart';
 
 import 'package:pett_peaces/fetures/store/prention/manager/fetachproductdetailk/fetech_product_details_cubit.dart';
 
-import 'package:pett_peaces/fetures/store/prention/view/widget/bodydetails.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/body_details.dart';
 
 class DetailesView extends StatelessWidget {
   StoreRepo storeRepo = StoreRepoImp();

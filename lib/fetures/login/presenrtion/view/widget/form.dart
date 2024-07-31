@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/home/data/model/loginuserimodel/loginusermodel.dart';
+
 import 'package:pett_peaces/fetures/login/data/model/userinputdatalogin.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/forgetpass.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/headereadsiz.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/singinbuttom.dart';
-import 'package:pett_peaces/fetures/restpassword/presention/view/restpassword.dart';
 
 class Customformdiled extends StatefulWidget {
   const Customformdiled({
@@ -31,7 +29,7 @@ class _CustomformdiledState extends State<Customformdiled> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          headerandsize(
+          HeaderAndSize(
             widget: TextFieldWithShadow(
               onSaved: (v) {
                 setState(() {
@@ -44,7 +42,7 @@ class _CustomformdiledState extends State<Customformdiled> {
           const SizedBox(
             height: 16,
           ),
-          headerandsize(
+          HeaderAndSize(
             widget: PasswordFiled(
               onSaved: (v) {
                 setState(() {
@@ -61,7 +59,7 @@ class _CustomformdiledState extends State<Customformdiled> {
           const SizedBox(
             height: 32,
           ),
-          singinbutto(
+          SinginButtom(
             globalKey: widget.globalKey,
             logindataModel:
                 LogindataModel(password: pass, email: email, fcm_token: "wq"),

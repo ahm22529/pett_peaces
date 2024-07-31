@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/listtilecustomdart.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/list_tile_custom.dart';
 
 class CustomCard extends StatelessWidget {
   final ProducEntity producEntity;
   final UserEntitymodel userEntitymodel;
-  const CustomCard({super.key, required this.producEntity, required this.userEntitymodel});
+  const CustomCard(
+      {super.key, required this.producEntity, required this.userEntitymodel});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class CustomCard extends StatelessWidget {
             )
           ],
         ),
-        child: listtilecustomcard(
+        child: ListtileCustomcard(
           producEntity: producEntity,
           userEntitymodel: userEntitymodel,
         ));

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class headerandsize extends StatelessWidget {
-  const headerandsize({
+class HeaderAndSize extends StatelessWidget {
+  const HeaderAndSize({
     super.key,
     required this.widget,
     required this.titel,

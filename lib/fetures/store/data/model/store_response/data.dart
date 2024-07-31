@@ -9,18 +9,17 @@ class Data extends ProducEntity {
 
   Data({this.product, this.suggestedProducts})
       : super(
-          img: product?.image ?? "",
-          prices: product?.price ?? "",
-          id: product?.id,
-          nameof: product?.name ?? "",
-          volum: product?.shortDescription ?? "",
-          oherimage: product?.otherImages ?? [],
-          oldprice: product?.oldPrice ?? "",
-          detai: product?.detai ?? "",
-          shortdescription: product?.shortDescription ?? "",
-          pro: suggestedProducts ?? [],
-          qan: 0
-        );
+            img: product?.image ?? "",
+            prices: product?.price ?? "",
+            id: product?.id,
+            nameof: product?.name ?? "",
+            volum: product?.shortDescription ?? "",
+            oherimage: product?.otherImages ?? [],
+            oldprice: product?.oldPrice ?? "",
+            detai: product?.detai ?? "",
+            shortdescription: product?.shortDescription ?? "",
+            pro: suggestedProducts ?? [],
+            qan: 0);
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         product: json['product'] == null

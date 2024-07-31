@@ -4,10 +4,10 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/enitiy/anmiles_det.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/infoanmiles.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/eidget/continertextfiledcontry.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/continertextfiledcontry.dart';
 
 class Anmmalesmeacc extends StatelessWidget {
   const Anmmalesmeacc(

@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfile
 import 'package:pett_peaces/fetures/mydata/prsention/view/manager/cubit/update_cubit.dart';
 import 'package:pett_peaces/fetures/mydata/prsention/view/widget/disapeltextfiled.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/eidget/countryphonetextfiled.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/countryphonetextfiled.dart';
 
 class Fromupdate extends StatefulWidget {
   final UserEntitymodel userEntitymodel;

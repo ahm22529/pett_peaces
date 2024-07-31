@@ -4,7 +4,7 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/anmileshome.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/cubit/book_cubit.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/buttomcomfrim.dart';

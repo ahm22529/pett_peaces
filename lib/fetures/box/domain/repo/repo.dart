@@ -8,8 +8,6 @@ abstract class Boxrepo {
       required String endpoint,
       required String token});
 
-       Future<Either<Failure, BoxEntity>> getBoxdata(
-      {
-      required String endpoint,
-      required String token});
+  Future<Either<Failure, BoxEntity>> getBoxdata(
+      {required String endpoint, required String token});
 }

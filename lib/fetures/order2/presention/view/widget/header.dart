@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/order/data/headermodel.dart';
 import 'package:pett_peaces/fetures/order/presention/view/widget/buttomorder.dart';
-import 'package:pett_peaces/fetures/order2/presention/view/widget/header.dart';
 
-class headerBookting extends StatefulWidget {
+class HeaderBookting extends StatefulWidget {
+  final ValueChanged<int> onTabChanged; // Callback to update selected index
+
+  const HeaderBookting({super.key, required this.onTabChanged});
+
   @override
-  _BodyOrderState createState() => _BodyOrderState();
+  _HeaderBooktingState createState() => _HeaderBooktingState();
 }
 
-class _BodyOrderState extends State<headerBookting> {
+class _HeaderBooktingState extends State<HeaderBookting> {
   List<Headermodel> lis = [
     Headermodel(
         text: "في الإنتظار", Color1: Colors.black, Color2: Colors.black),
@@ -29,9 +32,12 @@ class _BodyOrderState extends State<headerBookting> {
             Headermodel model = entry.value;
             return Expanded(
               child: GestureDetector(
-                onTap: () => setState(() {
-                  selindex = idx;
-                }),
+                onTap: () {
+                  setState(() {
+                    selindex = idx;
+                  });
+                  widget.onTabChanged(idx); // Notify the parent widget
+                },
                 child: ButtomOrder(
                   color: selindex == idx
                       ? Color(0xffF78E32)

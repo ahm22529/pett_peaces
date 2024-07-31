@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/newpassword/presention/manager/cubit/updatep
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/buttomaccept.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/formnewspassword.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 
 class BodyNewsPassword extends StatefulWidget {
   const BodyNewsPassword({Key? key}) : super(key: key);

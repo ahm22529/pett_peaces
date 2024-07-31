@@ -62,5 +62,3 @@ class _cobeniteamState extends State<cobeniteam> {
     );
   }
 }
-
-

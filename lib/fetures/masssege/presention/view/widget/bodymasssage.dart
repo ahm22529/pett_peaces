@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chatdetails.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/iteammassege.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/continertextfiled.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class BodyMassege extends StatelessWidget {
   final ValueChanged<int> onItemSelected;
@@ -21,7 +21,7 @@ class BodyMassege extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
-          child: continertextfiled(
+          child: Continertextfiled(
             name: "ابحث عن شخص",
             textEditingController: TextEditingController(),
           ),

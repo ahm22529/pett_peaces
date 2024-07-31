@@ -9,7 +9,6 @@ import 'package:pett_peaces/fetures/courses/presention/manger.dart/fetachcourses
 
 import 'package:pett_peaces/fetures/courses/presention/view/widget/body_course_list.dart';
 
-
 class Courselist extends StatefulWidget {
   const Courselist({super.key});
 

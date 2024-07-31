@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/detailsorder/presention/view/orderdetails.dart';
 import 'package:pett_peaces/fetures/detailsorder/presention/view/widget/iteamdetails.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/gridview.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/grid_view.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
 

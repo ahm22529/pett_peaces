@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class active extends StatelessWidget {
-  const active({super.key, required this.text, required this.color});
+class Active extends StatelessWidget {
+  const Active({super.key, required this.text, required this.color});
   final String text;
   final Color color;
   @override

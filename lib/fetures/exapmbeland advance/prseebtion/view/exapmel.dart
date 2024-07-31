@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/cub
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/featch/exambelcubit_cubit.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/bodyexapmbel.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/continertextfiled.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class Example extends StatefulWidget {
   final UserEntitymodel userEntitymodel;

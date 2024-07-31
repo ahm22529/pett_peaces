@@ -17,7 +17,7 @@ class ImageSlider extends StatelessWidget {
         // Enable infinite scroll
         enableInfiniteScroll: true,
         // Enable scroll physics for better user interaction
-        scrollPhysics: BouncingScrollPhysics(),
+        scrollPhysics: const BouncingScrollPhysics(),
       ),
       items: img.map((i) {
         return Builder(

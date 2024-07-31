@@ -8,9 +8,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/store/domain/repo.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/allplatform.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/titelappbar.dart';
-
+import 'package:pett_peaces/fetures/store/prention/view/widget/all_platform.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart';
 class Store extends StatefulWidget {
   const Store({super.key, required this.pro, required this.userEntitymodel});
   final List<ProducEntity> pro;

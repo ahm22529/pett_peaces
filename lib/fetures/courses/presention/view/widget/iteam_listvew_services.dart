@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/infocourses.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/info_courses.dart';
 
 class Couresesiteamlistviw extends StatelessWidget {
   const Couresesiteamlistviw({

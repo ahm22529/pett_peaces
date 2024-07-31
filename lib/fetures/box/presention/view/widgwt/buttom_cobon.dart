@@ -13,13 +13,12 @@ class Buttomcobaon extends StatelessWidget {
           borderRadius: BorderRadius.circular(6),
           color: const Color(0xffF78E32)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 17.0, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 17.0, vertical: 10),
         child: Center(
           child: Text(
             "تطبيق",
-            style: AppStyles.styleRegular14(context)
-                .copyWith(color: Colors.white),
+            style:
+                AppStyles.styleRegular14(context).copyWith(color: Colors.white),
           ),
         ),
       ),

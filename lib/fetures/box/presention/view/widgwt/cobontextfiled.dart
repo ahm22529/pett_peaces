@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/customtextfiledstor.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/custom_text_filed_stor.dart';
 
 class cobontextfiled extends StatelessWidget {
   const cobontextfiled({
     super.key,
-    required this.name, this.onChanged,
+    required this.name,
+    this.onChanged,
   });
   final String name;
 
@@ -25,8 +26,8 @@ class cobontextfiled extends StatelessWidget {
           children: [
             SizedBox(width: 8),
             Expanded(
-              child: customtextfiledstore(
-                onChanged:onChanged ,
+              child: Customtextfiledstore(
+                onChanged: onChanged,
                 name: name,
                 textEditingController: TextEditingController(),
               ),

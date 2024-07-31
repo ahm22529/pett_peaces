@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updae
 import 'package:pett_peaces/fetures/changepassword/preention/view/widget/newfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/eidget/passswordsingup.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 
 class BodyChangePassword extends StatefulWidget {
   const BodyChangePassword({Key? key}) : super(key: key);

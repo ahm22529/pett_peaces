@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/fea
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 
-import 'package:pett_peaces/fetures/store/prention/view/widget/continertextfiled.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class TitelappbarExam extends StatefulWidget {
   const TitelappbarExam({
@@ -59,7 +59,7 @@ class _TitelappbarDoctoreState extends State<TitelappbarExam> {
     return Row(
       children: [
         Expanded(
-          child: continertextfiled(
+          child: Continertextfiled(
             name: widget.name,
             textEditingController: textEditingController,
           ),
