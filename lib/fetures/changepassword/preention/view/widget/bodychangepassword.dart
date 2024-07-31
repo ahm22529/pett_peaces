@@ -1,14 +1,11 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updaepass_cubit.dart';
-import 'package:pett_peaces/fetures/changepassword/preention/view/widget/newfiled.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 
 class BodyChangePassword extends StatefulWidget {
   const BodyChangePassword({Key? key}) : super(key: key);
@@ -30,6 +27,9 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
         if (state is Updaepasssucess) {
           buildErrorBar(context, "تم تغير كلمه المرور بنجاح ");
         }
+        if (state is Updaepassfaulier) {
+          return buildErrorBar(context, "كلمه المرور السابقه خاطئه");
+        }
       },
       child: SingleChildScrollView(
         child: Padding(
@@ -38,18 +38,18 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Text(
                   "كلمة المرور الحالية",
                   style: AppStyles.styleMedium18(context),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 PasswordFiled(
                   onSaved: (v) {
                     old = v ?? '';
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 PasswordFieldNew(
                   globalKey: globalKey,
                   onSaved1: (String? v) {
@@ -59,7 +59,7 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
                     confirm = v ?? '';
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     Custombuttom(

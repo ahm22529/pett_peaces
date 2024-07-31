@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class titelsub extends StatelessWidget {
-  const titelsub({
+class Titelsub extends StatelessWidget {
+  const Titelsub({
     super.key,
     required this.titel,
     required this.subtitel,

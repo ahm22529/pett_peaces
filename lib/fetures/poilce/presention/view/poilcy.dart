@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/aboutus/presention/view/aboutus.dart';
 import 'package:pett_peaces/fetures/poilce/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/poilce/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/poilce/presention/manger/cubit/policy_cubit.dart';

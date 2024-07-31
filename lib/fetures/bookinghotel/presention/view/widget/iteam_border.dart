@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/chartertic.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/chooseservices.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/headeriteam.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/entity/booking_eneity.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/chartertic.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/choose_services.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/header_iteam.dart';
 
-class iteamorder extends StatelessWidget {
-  const iteamorder({
+class Iteamorder extends StatelessWidget {
+  const Iteamorder({
     super.key,
     required this.bookingEneity,
   });
@@ -21,13 +21,13 @@ class iteamorder extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            headeriteam(
+            Headeriteam(
               bookingEneity: bookingEneity,
             ),
             const SizedBox(
               height: 20,
             ),
-            chartertics(
+            Chartertics(
               bookingEneity: bookingEneity,
             ),
             const SizedBox(

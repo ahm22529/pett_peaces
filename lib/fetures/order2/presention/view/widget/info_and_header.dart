@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/titelandsub.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/titel_and_sub.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
 
@@ -55,15 +55,15 @@ class Infoorder extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        titelsub(
+        Titelsub(
           titel: 'طريقة الدفع',
           subtitel: 'عند الاستلام',
         ),
-        titelsub(
+        Titelsub(
           subtitel: '7',
           titel: 'عدد المنتجات',
         ),
-        titelsub(
+        Titelsub(
           subtitel: 'السعر',
           titel: '250\$',
         )

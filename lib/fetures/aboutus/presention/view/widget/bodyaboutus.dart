@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/aboutus/data/model/informationcontantinfo.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/widget/informationcontact.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/widget/socialiconrow.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/information_contact.dart';
 import 'package:pett_peaces/fetures/poilce/presention/manger/cubit/policy_cubit.dart';
 
 class Bodyaboutus extends StatefulWidget {
@@ -48,15 +49,17 @@ class _BodyaboutusState extends State<Bodyaboutus> {
                 ),
                 const SizedBox(height: 36),
                 informationcontactff(lis: lis),
-                SizedBox(
+                const SizedBox(
                   height: 38,
                 ),
                 SocialIconsRow(),
               ],
             ),
           );
+        } else if (state is Policyfauiler) {
+          return const Center(child: CustomWidgetfauier());
         } else {
-          return Center(child: CircularProgressIndicator());
+          return const Loadwidgwt();
         }
       },
     );

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/iteamchooseservices.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/iteam_choose_services.dart';
 
 class ChooseServices extends StatelessWidget {
   const ChooseServices({
-    Key? key,
+    super.key,
     required this.services,
-  }) : super(key: key);
+  });
 
   final List services;
 
@@ -13,8 +13,8 @@ class ChooseServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: List.generate(services.length, (index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 2.5),
+        return const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 2.5),
           child: ItemChooseService(
             titel: '',
           ),

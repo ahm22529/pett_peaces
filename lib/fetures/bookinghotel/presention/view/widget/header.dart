@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/bookinghotel/data/headermodel.dart';
 import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/buttom_order.dart';
 
-class HeaderBookting extends StatefulWidget {
+class HeaderBooktingHo extends StatefulWidget {
   final ValueChanged<int> onTabChanged; // Callback to update selected index
 
-  const HeaderBookting({super.key, required this.onTabChanged});
+  const HeaderBooktingHo({super.key, required this.onTabChanged});
 
   @override
   // ignore: library_private_types_in_public_api
   _HeaderBooktingState createState() => _HeaderBooktingState();
 }
 
-class _HeaderBooktingState extends State<HeaderBookting> {
+class _HeaderBooktingState extends State<HeaderBooktingHo> {
   List<Headermodel> lis = [
     Headermodel(
-        text: "في الإنتظار", Color1: Colors.black, Color2: Colors.black),
-    Headermodel(
-        text: "تم استلامها", Color1: Colors.black, Color2: Colors.black),
+        text: " قيد المراجعه", Color1: Colors.black, Color2: Colors.black),
+    Headermodel(text: " نشطه", Color1: Colors.black, Color2: Colors.black),
+    Headermodel(text: "  منتهيه", Color1: Colors.black, Color2: Colors.black),
   ];
   int selindex = 0;
 

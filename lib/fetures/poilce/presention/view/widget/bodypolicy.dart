@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/poilce/presention/manger/cubit/policy_cubit.dart';
 
 class BodyPolicy extends StatefulWidget {
@@ -34,8 +36,10 @@ class _BodyPolicyState extends State<BodyPolicy> {
               style: AppStyles.styleMedium16(context),
             ),
           );
+        } else if (state is Policyfauiler) {
+          return CustomWidgetfauier();
         } else {
-          return Center(child: CircularProgressIndicator());
+          return Loadwidgwt();
         }
       },
     );

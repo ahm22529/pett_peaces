@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-
-import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/fetachproductdetailk/fetech_product_details_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/customcard.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_detailes.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/summary.dart';
-
 class BodyDetails extends StatefulWidget {
   const BodyDetails({
     super.key,
@@ -64,7 +61,7 @@ class _BodyDetailsState extends State<BodyDetails> {
                         ? MediaQuery.of(context).size.height * .4
                         : MediaQuery.of(context).size.height * .46,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: CustomCard(
                         producEntity: state.producEntity,
                         userEntitymodel: widget.userEntitymodel,

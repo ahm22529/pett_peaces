@@ -1,4 +1,4 @@
-import 'package:pett_peaces/fetures/order/domain/entity/llist_booking_entity.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/entity/llist_booking_entity.dart';
 
 import 'data.dart';
 

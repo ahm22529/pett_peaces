@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/entity/booking_eneity.dart';
 
-class headeriteam extends StatelessWidget {
-  const headeriteam({
+class Headeriteam extends StatelessWidget {
+  const Headeriteam({
     super.key,
     required this.bookingEneity,
   });
@@ -12,12 +12,12 @@ class headeriteam extends StatelessWidget {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       RichText(
         text: TextSpan(
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 16.0,
           ),
           children: [
-            TextSpan(
+            const TextSpan(
               text: 'رقم الطلب: ',
               style: TextStyle(
                 color: Colors.black,
@@ -26,7 +26,7 @@ class headeriteam extends StatelessWidget {
             ),
             TextSpan(
               text: bookingEneity.numberoforder,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.orange,
               ),
             ),

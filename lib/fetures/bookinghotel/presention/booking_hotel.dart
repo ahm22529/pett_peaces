@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/order/data/headermodel.dart';
-import 'package:pett_peaces/fetures/order/data/repo/repoimp.dart';
-import 'package:pett_peaces/fetures/order/domain/repo/bookingrepo.dart';
-import 'package:pett_peaces/fetures/order/presention/manager/cubit/pending_cubit.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/bodybook.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/header.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/iteamchooseservices.dart';
+import 'package:pett_peaces/fetures/bookinghotel/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/repo/bookingrepo.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/manager/cubit/pending_cubit.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/body_book.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Order extends StatefulWidget {
+  final UserEntitymodel userEntitymodel;
+
+  const Order({super.key, required this.userEntitymodel});
   @override
   State<Order> createState() => _OrderState();
 }
@@ -32,7 +33,9 @@ class _OrderState extends State<Order> {
           ),
           centerTitle: true,
         ),
-        body: bodybook(),
+        body: bodybook(
+          userEntitymodelb: widget.userEntitymodel,
+        ),
       ),
     );
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
-import 'package:pett_peaces/fetures/order/presention/view/widget/titelandsub.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/entity/booking_eneity.dart';
+import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/titel_and_sub.dart';
 
-class chartertics extends StatelessWidget {
-  const chartertics({
+class Chartertics extends StatelessWidget {
+  const Chartertics({
     super.key,
     required this.bookingEneity,
   });
@@ -13,15 +13,15 @@ class chartertics extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        titelsub(
+        Titelsub(
           titel: 'الحيوان المختار',
-          subtitel: bookingEneity.price ?? "",
+          subtitel: bookingEneity.price,
         ),
-        titelsub(
+        Titelsub(
           titel: 'تاريخ الحجز من',
           subtitel: bookingEneity.statrdate,
         ),
-        titelsub(
+        Titelsub(
           subtitel: bookingEneity.enddate,
           titel: 'إلي',
         )

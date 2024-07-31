@@ -30,7 +30,7 @@ class _ChangepasswordState extends State<Changepassword> {
           ),
           centerTitle: true,
         ),
-        body: BodyChangePassword(),
+        body: const BodyChangePassword(),
       ),
     );
   }

@@ -1,5 +1,5 @@
-import 'package:pett_peaces/fetures/order/domain/entity/booking_eneity.dart';
-import 'package:pett_peaces/fetures/order/domain/entity/llist_booking_entity.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/entity/booking_eneity.dart';
+import 'package:pett_peaces/fetures/bookinghotel/domain/entity/llist_booking_entity.dart';
 
 import 'datum.dart';
 import 'links.dart';
