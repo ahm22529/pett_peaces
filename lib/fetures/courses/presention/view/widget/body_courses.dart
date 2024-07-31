@@ -20,7 +20,7 @@ class BodyCourses extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: header(
+            child: Header(
               video: courseseEntity.videoo,
               image: courseseEntity.imag,
             ),

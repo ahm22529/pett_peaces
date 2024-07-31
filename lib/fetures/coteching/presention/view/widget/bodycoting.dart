@@ -7,7 +7,7 @@ import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/account/presention/view/widget/textcontiner.dart';
 import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchig/fetachingallcout_cubit.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/gridviewdoctor.dart';
-import 'package:pett_peaces/fetures/doctor/presention/view/widget/titelappbar.dart';
+import 'package:pett_peaces/fetures/doctor/presention/view/widget/titel_appbar.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyCoating extends StatefulWidget {

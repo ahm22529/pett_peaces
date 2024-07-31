@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/doctor/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/doctor/domain/repo/doctorerepo.dart';
 import 'package:pett_peaces/fetures/doctor/presention/manager/cubit/fetchdoctor_cubit.dart';
-import 'package:pett_peaces/fetures/doctor/presention/view/widget/bodyDoctor.dart';
+import 'package:pett_peaces/fetures/doctor/presention/view/widget/body_doctor.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Doctor extends StatefulWidget {

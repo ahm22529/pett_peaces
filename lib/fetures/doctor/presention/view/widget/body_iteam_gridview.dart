@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
-import 'package:pett_peaces/fetures/doctor/presention/view/widget/infodoctor.dart';
-import 'package:pett_peaces/fetures/doctor/presention/view/widget/iteamgridview.dart';
+import 'package:pett_peaces/fetures/doctor/presention/view/widget/info_doctor.dart';
 
 class BodyContinerDoctor extends StatelessWidget {
   const BodyContinerDoctor({

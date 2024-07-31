@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
-import 'package:pett_peaces/fetures/doctor/domain/entity/doctor_entity.dart';
-import 'package:pett_peaces/fetures/doctor/presention/view/widget/bodyiteamgridview.dart';
+import 'package:pett_peaces/fetures/doctor/presention/view/widget/body_iteam_gridview.dart';
 
 class IteamGridViewDoctor extends StatelessWidget {
   const IteamGridViewDoctor({
