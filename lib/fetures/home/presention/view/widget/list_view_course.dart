@@ -3,8 +3,8 @@ import 'package:pett_peaces/fetures/courses/presention/view/courses.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/info_courses.dart';
 
-class listviewCourses extends StatelessWidget {
-  const listviewCourses({
+class ListviewCourses extends StatelessWidget {
+  const ListviewCourses({
     super.key,
     required this.cours,
   });

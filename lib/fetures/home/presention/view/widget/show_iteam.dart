@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/active_iteam.dart';
 
-class showIteam extends StatelessWidget {
+class ShowIteam extends StatelessWidget {
   final bool active;
   final String img, text;
 
-  const showIteam({
+  const ShowIteam({
     super.key,
     required this.active,
     required this.img,

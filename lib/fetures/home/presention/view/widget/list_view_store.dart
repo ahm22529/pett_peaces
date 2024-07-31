@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/core/utiles/widget/iteam_store.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
 
-class gridviewstore extends StatelessWidget {
-  const gridviewstore({
+class Gridviewstore extends StatelessWidget {
+  const Gridviewstore({
     super.key,
     required this.producEntity,
     required this.userEntitymodel,

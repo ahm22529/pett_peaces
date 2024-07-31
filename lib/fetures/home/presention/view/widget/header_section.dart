@@ -5,7 +5,8 @@ class Headersection extends StatelessWidget {
   const Headersection({
     super.key,
     required this.titel1,
-    required this.titel2, this.onTap,
+    required this.titel2,
+    this.onTap,
   });
   final String titel1, titel2;
   final void Function()? onTap;
@@ -19,8 +20,8 @@ class Headersection extends StatelessWidget {
           style: AppStyles.styleMedium18(context)
               .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
         ),
-        GestureDetector(
-          onTap:onTap ,
+        TextButton(
+          onPressed: onTap,
           child: Text(
             titel2,
             style: AppStyles.styleMedium18(context).copyWith(

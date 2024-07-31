@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/courselist.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
@@ -24,7 +25,6 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     BlocProvider.of<HomeCubit>(context)
         .getdata(endpoint: "home", token: widget.userEntitymodel.token);
@@ -57,7 +57,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     const SizedBox(
                       height: 40,
                     ),
-                    const gridviewservices(),
+                    Gridviewservices(
+                      userEntitymodel: widget.userEntitymodel,
+                    ),
                     const SizedBox(
                       height: 32,
                     ),
@@ -66,14 +68,21 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           state.homeEntity.anmilesEntity == null ? false : true,
                       child: Column(
                         children: [
-                          const Headersection(
+                          Headersection(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (builder) => Myanmiles(
+                                          userEntitymodel:
+                                              widget.userEntitymodel,
+                                        ))),
                             titel1: 'حيواناتي',
                             titel2: 'عرض المزيد',
                           ),
                           const SizedBox(
                             height: 20,
                           ),
-                          anmileshome(
+                          Anmileshome(
                             anmiles: state.homeEntity.anmilesEntity!,
                             userEntitymodel: widget.userEntitymodel,
                           ),
@@ -96,7 +105,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     const SizedBox(
                       height: 20,
                     ),
-                    gridviewstore(
+                    Gridviewstore(
                       producEntity: state.homeEntity.product,
                       userEntitymodel: widget.userEntitymodel,
                     ),
@@ -111,14 +120,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (builder) => Courselist())),
+                              builder: (builder) => const Courselist())),
                       titel1: 'كورسات تعليمية',
                       titel2: 'عرض المزيد',
                     ),
                     const SizedBox(
                       height: 23,
                     ),
-                    listviewCourses(
+                    ListviewCourses(
                       cours: state.homeEntity.cou,
                     ),
                     const SizedBox(
@@ -132,7 +141,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         } else if (state is Homefailuer) {
           return const CustomWidgetfauier();
         } else {
-          return const Center(child:  CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

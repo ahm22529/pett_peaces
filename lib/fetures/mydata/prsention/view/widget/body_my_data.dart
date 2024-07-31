@@ -42,6 +42,9 @@ class _BodyMyDataState extends State<BodyMyData> {
         if (state is Updatesucess) {
           buildErrorBar(context, "تم تحذيث البيانات بنجاح");
         }
+        if (state is Updatefauiler) {
+          buildErrorBar(context, "   حدث خطا يرجي اعاده المحاوله");
+        }
       },
       child: SingleChildScrollView(
         child: Padding(

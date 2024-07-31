@@ -6,8 +6,8 @@ import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/myaddacount.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class anmileshome extends StatelessWidget {
-  const anmileshome({
+class Anmileshome extends StatelessWidget {
+  const Anmileshome({
     super.key,
     required this.anmiles,
     required this.userEntitymodel,
@@ -35,7 +35,7 @@ class anmileshome extends StatelessWidget {
                       builder: (builder) => MyAccountAdd(
                             userEntitymodel: userEntitymodel,
                           ))),
-              child: iteamadd()),
+              child: Iteamadd()),
         )
       ],
     );

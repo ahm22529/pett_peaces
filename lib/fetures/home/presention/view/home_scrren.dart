@@ -90,7 +90,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: BlocListener<HomeCubit, HomeState>(
           listener: (context, state) {
-            // TODO: implement listener
             if (state is HomeSucess) {
               setState(() {
                 product = state.homeEntity.product;

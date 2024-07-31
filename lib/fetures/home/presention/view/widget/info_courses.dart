@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
-class infocourses extends StatelessWidget {
-  const infocourses({
+
+class Infocourses extends StatelessWidget {
+  const Infocourses({
     super.key,
     required this.Co,
   });
@@ -86,19 +87,19 @@ class bodycontinercourses extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                infocourses(
+                Infocourses(
                   Co: courseseEntity.type,
                 ),
                 const SizedBox(
                   width: 5,
                 ),
-                infocourses(
+                Infocourses(
                   Co: courseseEntity.day.toString(),
                 ),
                 const SizedBox(
                   width: 5,
                 ),
-                infocourses(
+                Infocourses(
                   Co: courseseEntity.priceof,
                 ),
               ],

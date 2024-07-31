@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/sellerandbuy.dart';
+import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/courselist.dart';
+import 'package:pett_peaces/fetures/doctor/presention/view/doctor.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/exapmel.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/category_services.dart';
-
+import 'package:pett_peaces/fetures/hotels/presention/view/hotel.dart';
+import 'package:pett_peaces/fetures/mating/prsention/view/all_anmiles_mating.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 class CustomGridViewHome extends StatefulWidget {
+  final UserEntitymodel userEntitymodel;
   const CustomGridViewHome({
     super.key,
+    required this.userEntitymodel,
   });
 
   @override
@@ -12,7 +23,42 @@ class CustomGridViewHome extends StatefulWidget {
 }
 
 class _CustomGridViewHomeState extends State<CustomGridViewHome> {
+  late List nav;
+  
   int selectedindex = -1;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final List nav = [
+          Hotel(
+            userEntitymodel:widget. userEntitymodel,
+          ),
+          Doctor(
+            userEntitymodel:widget. userEntitymodel,
+          ),
+          Cotching(
+            userEntitymodel: widget.userEntitymodel,
+          ),
+          AllAnmilesMating(
+            userEntitymodel:widget. userEntitymodel,
+          ),
+          Myanmiles(
+            userEntitymodel:widget. userEntitymodel,
+          ),
+          Store(
+            pro: [],
+            userEntitymodel:widget. userEntitymodel,
+          ),
+          SellerAndBuyer(
+            userEntitymodel: widget.userEntitymodel,
+          ),
+          const Courselist(),
+          Example(
+            userEntitymodel:widget. userEntitymodel,
+          )
+        ];
+  }
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -48,11 +94,14 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
               selectedindex = index;
             });
           },
-          child: CategoryButtonhome(
-            backgroundColor:
-                selectedindex == index ? Color(0xffF78E32) : Color(0xffF78E32),
-            text: services[index]['text'] as String,
-            imagePath: services[index]['imagePath'] as String,
+          child: GestureDetector(
+            onTap: () => Navigator.push(context,MaterialPageRoute(builder: (builder)=>nav[index])),
+            child: CategoryButtonhome(
+              backgroundColor:
+                  selectedindex == index ? Color(0xffF78E32) : Color(0xffF78E32),
+              text: services[index]['text'] as String,
+              imagePath: services[index]['imagePath'] as String,
+            ),
           ),
         );
       },

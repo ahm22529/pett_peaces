@@ -1,17 +1,16 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
-
-class iteamadd extends StatefulWidget {
-  const iteamadd({
+class Iteamadd extends StatefulWidget {
+  const Iteamadd({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<iteamadd> createState() => _IteamChangeState();
+  State<Iteamadd> createState() => _IteamChangeState();
 }
 
-class _IteamChangeState extends State<iteamadd> {
+class _IteamChangeState extends State<Iteamadd> {
   @override
   Widget build(BuildContext context) {
     return Padding(

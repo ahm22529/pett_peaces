@@ -37,21 +37,21 @@ class Couresesiteamlistviw extends StatelessWidget {
             children: [
               Expanded(
                 flex: 5,
-                child: infocourses(
+                child: Infocourses(
                   Co: courseseEntity.type,
                 ),
               ),
               const SizedBox(width: 5),
               Expanded(
                 flex: 1,
-                child: infocourses(
+                child: Infocourses(
                   Co: courseseEntity.day.toString(),
                 ),
               ),
               const SizedBox(width: 5),
               Expanded(
                 flex: 2,
-                child: infocourses(
+                child: Infocourses(
                   Co: courseseEntity.priceof,
                 ),
               ),
