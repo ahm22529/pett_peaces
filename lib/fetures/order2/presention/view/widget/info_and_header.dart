@@ -3,8 +3,8 @@ import 'package:pett_peaces/fetures/order/presention/view/widget/titelandsub.dar
 
 import '../../../../../core/utiles/sttyel.dart';
 
-class headerordersection extends StatelessWidget {
-  const headerordersection({
+class Headerordersection extends StatelessWidget {
+  const Headerordersection({
     super.key,
   });
 
@@ -45,8 +45,8 @@ class headerordersection extends StatelessWidget {
   }
 }
 
-class infoorder extends StatelessWidget {
-  const infoorder({
+class Infoorder extends StatelessWidget {
+  const Infoorder({
     super.key,
   });
 

@@ -8,6 +8,7 @@ class HeaderBookting extends StatefulWidget {
   const HeaderBookting({super.key, required this.onTabChanged});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HeaderBooktingState createState() => _HeaderBooktingState();
 }
 
@@ -24,12 +25,11 @@ class _HeaderBooktingState extends State<HeaderBookting> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        color: Color(0xffF78E32).withOpacity(.2),
+        color: const Color(0xffF78E32).withOpacity(.2),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: lis.asMap().entries.map((entry) {
             int idx = entry.key;
-            Headermodel model = entry.value;
             return Expanded(
               child: GestureDetector(
                 onTap: () {
@@ -40,8 +40,8 @@ class _HeaderBooktingState extends State<HeaderBookting> {
                 },
                 child: ButtomOrder(
                   color: selindex == idx
-                      ? Color(0xffF78E32)
-                      : Color(0xffF78E32).withOpacity(.1),
+                      ? const Color(0xffF78E32)
+                      : const Color(0xffF78E32).withOpacity(.1),
                   text: lis[idx].text,
                   colortext: selindex == idx ? Colors.white : Colors.black,
                 ),

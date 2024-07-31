@@ -28,6 +28,7 @@ class _FromupdateState extends State<Fromupdate> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "    الأسم بالكامل      ",

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/order2/presention/manager/cubit/order_cubit.dart';
-import 'package:pett_peaces/fetures/order2/presention/view/widget/buttomshowdetails.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/widget/header.dart';
-import 'package:pett_peaces/fetures/order2/presention/view/widget/infoandheader.dart';
+import 'package:pett_peaces/fetures/order2/presention/view/widget/iteam_bookting.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyBookting extends StatefulWidget {
@@ -65,43 +65,17 @@ class _BodyBooktingState extends State<BodyBookting> {
                       padding: const EdgeInsets.only(bottom: 20.0),
                       child: ItemBooktin(
                         userEntitymodel: widget.userEntitymodel,
+                        orderEntity: state.listOrderEntity.order[index],
                       ),
                     ),
                   ),
                 );
               } else {
-                return CircularProgressIndicator();
+                return const Loadwidgwt();
               }
             },
           )
         ],
-      ),
-    );
-  }
-}
-
-class ItemBooktin extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
-
-  const ItemBooktin({super.key, required this.userEntitymodel});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24),
-        child: Column(
-          children: [
-            const headerordersection(),
-            const SizedBox(height: 20),
-            const infoorder(),
-            buttomshowdetails(userEntitymodel: userEntitymodel),
-          ],
-        ),
       ),
     );
   }

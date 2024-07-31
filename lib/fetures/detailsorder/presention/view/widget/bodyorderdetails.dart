@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/detailsorder/presention/view/orderdetails.dart';
 import 'package:pett_peaces/fetures/detailsorder/presention/view/widget/iteamdetails.dart';
+import 'package:pett_peaces/fetures/order2/domain/entity/order_entity.dart';
+import 'package:pett_peaces/fetures/order2/presention/view/widget/iteam_order.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/grid_view.dart';
 
@@ -8,8 +9,9 @@ import '../../../../../core/utiles/sttyel.dart';
 
 class BodyorderDetails extends StatelessWidget {
   final UserEntitymodel userEntitymodel;
+  final OrderEntity orderEntityn;
 
-  BodyorderDetails({super.key, required this.userEntitymodel});
+  BodyorderDetails({super.key, required this.userEntitymodel, required this.orderEntityn});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,7 +35,8 @@ class BodyorderDetails extends StatelessWidget {
             height: 16,
           ),
           Expanded(
-              child: CustomGridViewstore(
+              child: IteamOrder(
+            products: orderEntityn.prod,
             userEntitymodel: userEntitymodel,
           ))
         ],
