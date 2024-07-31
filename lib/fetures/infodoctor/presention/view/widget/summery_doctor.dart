@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/doctorimage.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/nameddocotorecontact.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/doctor_image.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/named_docotore_contact.dart';
 
 class SummaryDoctor extends StatelessWidget {
   final DoctorEntitydetails coatch;
@@ -11,13 +11,14 @@ class SummaryDoctor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        docotorimage(
+        Docotorimage(
           coatch: coatch,
         ),
-        SizedBox(
+        // igno,re: prefer_const_constructors
+        const SizedBox(
           width: 16,
         ),
-        namedoctoreandcontact(
+        Namedoctoreandcontact(
           coatch: coatch,
         )
       ],

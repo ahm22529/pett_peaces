@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
 import 'package:pett_peaces/fetures/doctor/presention/manager/cubit/fetchdoctor_cubit.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/widget/iteam_grid_view.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/infodoctor.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/info_doctor.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class CustomGridViewDoctor extends StatefulWidget {
   final UserEntitymodel userEntitymodel;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chatdetails.dart';
 
-class contact extends StatelessWidget {
-  const contact({
+class Contact extends StatelessWidget {
+  const Contact({
     super.key,
   });
 

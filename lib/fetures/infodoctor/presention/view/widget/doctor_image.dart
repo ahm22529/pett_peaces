@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
 
-class docotorimage extends StatelessWidget {
-  const docotorimage({
+class Docotorimage extends StatelessWidget {
+  const Docotorimage({
     super.key,
     required this.coatch,
   });

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/googelmaps.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/informationcontact.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/summerydoctor.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/information_contact.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/summery_doctor.dart';
 
 import '../../../../../core/utiles/widget/customappbar.dart';
 

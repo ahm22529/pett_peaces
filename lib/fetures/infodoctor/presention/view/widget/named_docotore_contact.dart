@@ -3,8 +3,8 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/contact.dart';
 
-class namedoctoreandcontact extends StatelessWidget {
-  const namedoctoreandcontact({
+class Namedoctoreandcontact extends StatelessWidget {
+  const Namedoctoreandcontact({
     super.key,
     required this.coatch,
   });
@@ -26,7 +26,7 @@ class namedoctoreandcontact extends StatelessWidget {
         SizedBox(
           height: 50,
         ),
-        contact()
+        Contact()
       ],
     );
   }

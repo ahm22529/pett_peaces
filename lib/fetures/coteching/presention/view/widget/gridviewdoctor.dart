@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchi
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/iteamgridview.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/widget/iteam_grid_view.dart';
 
-import 'package:pett_peaces/fetures/infodoctor/presention/view/infodoctor.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/info_doctor.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class gridviewco extends StatefulWidget {

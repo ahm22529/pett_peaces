@@ -3,8 +3,8 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 import 'package:pett_peaces/fetures/hotels/data/model/hotelresponse/hotelresponse.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/googelmaps.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/emailandphone.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/googe_lmaps.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/emailand_phone.dart';
 
 class ThreeTabBarExample extends StatefulWidget {
   const ThreeTabBarExample({super.key, required this.hotelEntity});
@@ -169,7 +169,7 @@ class Informationaboutus extends StatelessWidget {
           titel: hotelEntity.ser[0].phonr,
           imagee: "Asset/image/call.png",
         ),
-        const googelmapsContiner()
+        const GoogelmapsContiner()
       ],
     );
   }

@@ -4,7 +4,7 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/aboutus/data/model/informationcontantinfo.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/widget/informationcontact.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/widget/socialiconrow.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/informationcontact.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/information_contact.dart';
 import 'package:pett_peaces/fetures/poilce/presention/manger/cubit/policy_cubit.dart';
 
 class Bodyaboutus extends StatefulWidget {

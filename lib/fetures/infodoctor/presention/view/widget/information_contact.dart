@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/emailandphone.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/emailand_phone.dart';
 
 class informationcontact extends StatelessWidget {
   const informationcontact({
@@ -15,7 +15,7 @@ class informationcontact extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
         Text(
@@ -23,13 +23,13 @@ class informationcontact extends StatelessWidget {
           style: AppStyles.styleMedium16(context)
               .copyWith(color: Colors.black, fontWeight: FontWeight.w500),
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
         HtmlWidget(
           coatch.dec,
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
         emailandphone(

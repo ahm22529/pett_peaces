@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/doctor/domain/entity/doctor-details_entity.dart';
 
-import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/bodyinformationdoctor.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/body_information_doctor.dart';
 
 class IformationDoctore extends StatelessWidget {
   final DoctorEntitydetails coatch;
