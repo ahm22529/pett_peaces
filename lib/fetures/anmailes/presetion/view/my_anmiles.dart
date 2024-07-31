@@ -4,9 +4,9 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.dart';
 
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/platformui.dart';
+
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/platform_ui.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Myanmiles extends StatefulWidget {

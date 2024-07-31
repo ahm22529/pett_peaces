@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 
-class iteamlistviewami extends StatelessWidget {
-  const iteamlistviewami(
+class Iteamlistviewami extends StatelessWidget {
+  const Iteamlistviewami(
       {super.key, required this.widget, required this.animel});
   final Widget widget;
   final AnmilesEntity animel;

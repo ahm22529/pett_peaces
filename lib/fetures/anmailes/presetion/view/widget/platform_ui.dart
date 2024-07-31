@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/adaptiveui.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/bodyanmiles.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/tabletui.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/body_anmiles.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/tablet_ui.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class PlatformuiMyanmiles extends StatefulWidget {

@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/enitiy/anmiles_det.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam_listview.dart';
 import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/continertextfiledcontry.dart';
 
 class Anmmalesmeacc extends StatelessWidget {
   const Anmmalesmeacc(
@@ -22,8 +18,8 @@ class Anmmalesmeacc extends StatelessWidget {
         itemCount: listAnmileEntity.anmiles.length,
         itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 8.0),
-              child: iteamlistviewami(
-                widget: buttomanmandmating(
+              child: Iteamlistviewami(
+                widget: Buttomanmandmating(
                   text: 'تعديل البيانات',
                   image: "Asset/image/edit-rectangle.png",
                   color: Color(0xff9C4900),

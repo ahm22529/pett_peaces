@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam_listview.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/Add_remove/add_or_remove_cubit.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/getmating/get_mating_cubit.dart';
+
 class BodyMating extends StatefulWidget {
   const BodyMating({super.key});
 
@@ -36,7 +37,7 @@ class _BodyMatingState extends State<BodyMating> {
               itemBuilder: (context, index) => Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20.0, vertical: 4),
-                  child: iteamlistviewami(
+                  child: Iteamlistviewami(
                     widget: BlocListener<AddOrRemoveCubit, AddOrRemoveState>(
                       listener: (context, state) {
                         // TODO: implement listener
@@ -44,7 +45,7 @@ class _BodyMatingState extends State<BodyMating> {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(state.errmas)));
                       },
-                      child: buttomanmandmating(
+                      child: Buttomanmandmating(
                         text: "الغاء العرض",
                         image: "Asset/image/remove-circle.png",
                         color: Colors.red,

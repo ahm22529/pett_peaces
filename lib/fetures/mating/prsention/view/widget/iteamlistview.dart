@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/butom.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteamlistview.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam_listview.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/Add_remove/add_or_remove_cubit.dart';
 
@@ -37,8 +37,8 @@ class Iteamlistviewm extends StatelessWidget {
           child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
-              child: iteamlistviewami(
-                widget: buttomanmandmating(
+              child: Iteamlistviewami(
+                widget: Buttomanmandmating(
                   text: "الغاء العرض",
                   image: "Asset/image/remove-circle.png",
                   color: Colors.red,

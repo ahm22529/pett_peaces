@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 
-class buttomanmandmating extends StatelessWidget {
-  const buttomanmandmating({
+class Buttomanmandmating extends StatelessWidget {
+  const Buttomanmandmating({
     super.key,
     required this.text,
     required this.image,
@@ -24,7 +23,7 @@ class buttomanmandmating extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 29.0, vertical: 5),
           child: Center(
-            child: bodycontiner(image: image, text: text),
+            child: Bodycontiner(image: image, text: text),
           ),
         ),
       ),
@@ -32,8 +31,8 @@ class buttomanmandmating extends StatelessWidget {
   }
 }
 
-class bodycontiner extends StatelessWidget {
-  const bodycontiner({
+class Bodycontiner extends StatelessWidget {
+  const Bodycontiner({
     super.key,
     required this.image,
     required this.text,
@@ -48,7 +47,7 @@ class bodycontiner extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(image),
-        SizedBox(
+        const SizedBox(
           width: 8,
         ),
         Text(

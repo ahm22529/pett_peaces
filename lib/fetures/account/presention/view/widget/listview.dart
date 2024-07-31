@@ -4,7 +4,7 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/aboutus.dart';
 import 'package:pett_peaces/fetures/account/data/model/modelaction.dart';
 import 'package:pett_peaces/fetures/account/presention/view/widget/headerandspace.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/my_anmiles.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/changelang.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/view/changepassword.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/contactwithpices.dart';

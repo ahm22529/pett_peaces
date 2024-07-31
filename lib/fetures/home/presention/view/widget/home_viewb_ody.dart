@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
+import 'package:pett_peaces/fetures/anmailes/presetion/view/my_anmiles.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';

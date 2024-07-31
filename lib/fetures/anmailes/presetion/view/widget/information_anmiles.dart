@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 
-class informationanmiles extends StatelessWidget {
-  const informationanmiles({super.key, required this.widget});
+class Informationanmiles extends StatelessWidget {
+  const Informationanmiles({super.key, required this.widget});
   final Widget widget;
   @override
   Widget build(BuildContext context) {
