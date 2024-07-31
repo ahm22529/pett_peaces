@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
 import 'package:pett_peaces/core/utiles/widget/iteam_store.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
+
+import 'no_iteam.dart';
 
 class CustomGridViewstore extends StatefulWidget {
   const CustomGridViewstore({super.key, required this.userEntitymodel});
@@ -64,9 +68,12 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
       },
       builder: (context, state) {
         if (state is FectchProductfailuer) {
-          return Center(child: Text(state.errmass));
+          return const CustomWidgetfauier();
         }
         if (state is FectchProductsucess || isLoadingMore) {
+          if (products.isEmpty) {
+            return NoIteam();
+          }
           return GridView.builder(
             controller: _scrollController,
             itemCount: products.length,
@@ -110,8 +117,10 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
             },
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return const Loadwidgwt();
       },
     );
   }
 }
+
+
