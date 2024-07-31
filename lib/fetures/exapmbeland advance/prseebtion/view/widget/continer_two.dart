@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/hatag.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteamcontiner.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteam_continer.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
 
-class informationcontiner extends StatelessWidget {
-  const informationcontiner({
+class Informationcontiner extends StatelessWidget {
+  const Informationcontiner({
     super.key,
     required this.examel,
   });

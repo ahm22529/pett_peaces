@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/continertwo.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/imagecontiner.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/continer_two.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/image_continer.dart';
 
 class BodyProfileAdvance extends StatelessWidget {
   final ExambelEnitydetails examel;
@@ -13,11 +13,11 @@ class BodyProfileAdvance extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         // ال,خلفية العلوية مع الصورة
-        imageconter(
+        Imageconter(
           examel: examel,
         ),
         // الص,ندوق الأبيض الرئيسي
-        informationcontiner(
+        Informationcontiner(
           examel: examel,
         ),
         Positioned(

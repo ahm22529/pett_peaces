@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/cubit/tag_cubit.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/hatag.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteamcontiner.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteam_continer.dart';
 
 class HeaderAndBody extends StatelessWidget {
   const HeaderAndBody({

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/bodyexapmbel.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body_exapmbel.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/usermodel.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 

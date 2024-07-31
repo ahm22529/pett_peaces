@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/bodyhastag.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body_hastag.dart';
 
 class Hastag extends StatelessWidget {
   final ExambelEnitydetails examel;

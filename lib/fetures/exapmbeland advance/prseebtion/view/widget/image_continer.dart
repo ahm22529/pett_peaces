@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 
-class imageconter extends StatelessWidget {
-  const imageconter({
+class Imageconter extends StatelessWidget {
+  const Imageconter({
     super.key,
     required this.examel,
   });

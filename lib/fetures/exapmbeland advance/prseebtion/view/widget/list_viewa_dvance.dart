@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/examel_entity.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/profileadvace.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/headerandbody.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/profilea_dvace.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/header_and_body.dart';
 import 'package:intl/intl.dart';
 
 class ListViewAdvanced extends StatelessWidget {

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/examel_entity.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/listviewadvance.dart';
 
 class BodyHatage extends StatelessWidget {
   const BodyHatage({
@@ -9,9 +7,9 @@ class BodyHatage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Column(children: [
             SizedBox(
               height: 24,

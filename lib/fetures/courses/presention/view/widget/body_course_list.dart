@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/courses/presention/manger/fetachcourses/coursecubit_cubit.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/courses.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/iteam_listvew_services.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/no_iteam.dart';
 
 class BodyListCourses extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
@@ -18,7 +21,6 @@ class _BodyListCoursesState extends State<BodyListCourses> {
   int currentPage = 1;
   bool isLoadingMore = false;
   List courses = [];
-
   @override
   void initState() {
     super.initState();
@@ -66,15 +68,18 @@ class _BodyListCoursesState extends State<BodyListCourses> {
       },
       builder: (context, state) {
         if (state is Coursecubitfauiler) {
-          return Center(child: Text(state.errmass));
+          return const CustomWidgetfauier();
         }
         if (state is Coursecubitsucess || isLoadingMore) {
+          if (courses.isEmpty) {
+            return const NoIteam();
+          }
           return ListView.builder(
             controller: _scrollController,
             itemCount: courses.length + (isLoadingMore ? 1 : 0),
             itemBuilder: (context, index) {
               if (index == courses.length) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
               return Padding(
                 padding:
@@ -110,7 +115,7 @@ class _BodyListCoursesState extends State<BodyListCourses> {
             },
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return const Loadwidgwt();
       },
     );
   }
