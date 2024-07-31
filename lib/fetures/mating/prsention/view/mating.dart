@@ -6,10 +6,11 @@ import 'package:pett_peaces/fetures/mating/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/Add_remove/add_or_remove_cubit.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/getmating/get_mating_cubit.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/bodymatching.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Mating extends StatefulWidget {
-  const Mating({super.key});
-
+  const Mating({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
   @override
   State<Mating> createState() => _MatingState();
 }
@@ -39,7 +40,9 @@ class _MatingState extends State<Mating> {
           ),
           centerTitle: true,
         ),
-        body: const BodyMating(),
+        body:  BodyMating(
+          userEntitymodel: widget.userEntitymodel,
+        ),
       ),
     );
   }

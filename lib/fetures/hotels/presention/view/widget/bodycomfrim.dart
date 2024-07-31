@@ -120,7 +120,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
           const SizedBox(height: 73),
           const customAppbar(name: 'تاكيد الحجز'),
           const SizedBox(height: 32),
-          dateofbook(
+          Dateofbook(
             textEditingController1: startDateController,
             textEditingController2: endDateController,
             onTap1: () async {
@@ -192,7 +192,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
               var service = widget.hotelEntity.ser[0].ser[index];
               return Padding(
                 padding: const EdgeInsets.only(bottom: 0.0),
-                child: checkchoose(
+                child: Checkchoose(
                   titel: service.servacename,
                   titel2: service.pric,
                   serviceId: service.idd,
@@ -219,7 +219,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
           const SizedBox(height: 20),
           Container(
             color: Colors.white,
-            child: butomcomfrim(onPressed: onConfirmPressed),
+            child: Butomcomfrim(onPressed: onConfirmPressed),
           ),
           BlocListener<BookCubit, BookState>(
             listener: (context, state) {

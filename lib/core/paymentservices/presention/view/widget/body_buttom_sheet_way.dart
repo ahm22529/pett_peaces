@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/check/presention/view/check.dart';
 import 'package:pett_peaces/core/paymentservices/presention/manager/cubit/checkout_cubit.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/iteam_way.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
@@ -9,9 +8,10 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class BodyBottomSheetOfWay extends StatelessWidget {
   const BodyBottomSheetOfWay({
     super.key,
-    required this.userEntitymodel,
+    required this.userEntitymodel, required this.endpoint,
   });
   final UserEntitymodel userEntitymodel;
+  final String endpoint;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,7 +29,7 @@ class BodyBottomSheetOfWay extends StatelessWidget {
         CreditCardWidget(
           onTap: () {
             BlocProvider.of<CheckoutCubit>(context).getcheckout(
-                endpoint: "courses/1/checkout",
+                endpoint:endpoint,
                 token: userEntitymodel.token,
                 data: {"payment_type": "card"});
           },

@@ -25,10 +25,11 @@ class ShowImage extends StatelessWidget {
           // عرض الصور الأولى
           return GestureDetector(
             onTap: () {
-              _showImageDialog(context, hotelEntity![index]['image']);
+              _showImageDialog(context, hotelEntity![index]);
             },
-            child:
-                Image.network(hotelEntity![index]['image'], fit: BoxFit.cover),
+            child: SizedBox(
+                child: Image.network(hotelEntity![index].image,
+                    fit: BoxFit.cover)),
           );
         } else {
           // عنصر خاص بعرض الصورة الأخيرة مع عدد الصور الزائدة
@@ -40,7 +41,7 @@ class ShowImage extends StatelessWidget {
               fit: StackFit.expand,
               children: [
                 Image.network(
-                  hotelEntity![index]['image'],
+                  hotelEntity![index].image,
                   fit: BoxFit.cover,
                   color: Colors.black.withOpacity(0.5),
                   colorBlendMode: BlendMode.darken,
@@ -87,7 +88,7 @@ class ShowImage extends StatelessWidget {
               children: remainingImages.map((image) {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: Image.network(image['image'], fit: BoxFit.cover),
+                  child: Image.network(image.image, fit: BoxFit.cover),
                 );
               }).toList(),
             ),

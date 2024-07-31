@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepicker.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepickertextfiled.dart';
 
-class dateofbook extends StatefulWidget {
-  const dateofbook({
+class Dateofbook extends StatefulWidget {
+  const Dateofbook({
     super.key,
     required this.textEditingController1,
     required this.textEditingController2,
@@ -15,10 +15,10 @@ class dateofbook extends StatefulWidget {
   final void Function()? onTap2;
 
   @override
-  State<dateofbook> createState() => _dateofbookState();
+  State<Dateofbook> createState() => _DateofbookState();
 }
 
-class _dateofbookState extends State<dateofbook> {
+class _DateofbookState extends State<Dateofbook> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,6 +33,7 @@ class _dateofbookState extends State<dateofbook> {
             text: 'تاريخ الحجز من',
           ),
         ),
+        // ignore: prefer_const_constructors
         SizedBox(
           width: 20,
         ),

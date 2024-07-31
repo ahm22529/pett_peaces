@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class show extends StatelessWidget {
+class ShowImage extends StatelessWidget {
   final List? hotelEntity;
 
-  show({super.key, required this.hotelEntity});
+  ShowImage({super.key, required this.hotelEntity});
 
   @override
   Widget build(BuildContext context) {

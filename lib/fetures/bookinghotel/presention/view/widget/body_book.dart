@@ -9,22 +9,21 @@ import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/header.d
 import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/iteam_border.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class bodybook extends StatefulWidget {
+class BodyBook extends StatefulWidget {
   final UserEntitymodel userEntitymodelb;
-  const bodybook({
+  const BodyBook({
     super.key,
     required this.userEntitymodelb,
   });
 
   @override
-  State<bodybook> createState() => _bodybookState();
+  State<BodyBook> createState() => _BodyBookState();
 }
 
-class _bodybookState extends State<bodybook> {
+class _BodyBookState extends State<BodyBook> {
   int selectedTabIndex = 0;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     BlocProvider.of<PendingCubit>(context).getdata(
         endpoint: "hotel/reservations/my-reservations/pending",
@@ -68,9 +67,7 @@ class _bodybookState extends State<bodybook> {
             height: 20,
           ),
           BlocConsumer<PendingCubit, PendingState>(
-            listener: (context, state) {
-              // TODO: implement listener
-            },
+            listener: (context, state) {},
             builder: (context, state) {
               if (state is Pendingsucess) {
                 return Expanded(

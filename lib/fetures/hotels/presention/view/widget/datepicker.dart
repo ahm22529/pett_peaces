@@ -22,7 +22,7 @@ class datepic extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         widget,

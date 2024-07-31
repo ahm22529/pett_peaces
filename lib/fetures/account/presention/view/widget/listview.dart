@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/function/imagePicker.dart';
-import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/aboutus.dart';
 import 'package:pett_peaces/fetures/account/data/model/modelaction.dart';
 import 'package:pett_peaces/fetures/account/presention/view/widget/headerandspace.dart';
@@ -10,15 +8,12 @@ import 'package:pett_peaces/fetures/changepassword/preention/view/changepassword
 import 'package:pett_peaces/fetures/contactus/prsention/view/contactwithpices.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/login.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/mating.dart';
-import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
-import 'package:pett_peaces/fetures/mydata/prsention/view/mydata.dart';
 import 'package:pett_peaces/fetures/bookinghotel/presention/booking_hotel.dart';
 import 'package:pett_peaces/fetures/order2/presention/view/bookting.dart';
 import 'package:pett_peaces/fetures/poilce/presention/view/poilcy.dart';
 import 'package:pett_peaces/fetures/resonbuy/presention/view/resonbuy.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/subscribtion/presention/view/subsurbtion.dart';
-
 import '../../../../deletaccount/showdilog.dart';
 
 class Iteamconter extends StatefulWidget {
@@ -49,11 +44,9 @@ class _IteamconterState extends State<Iteamconter> {
   late List<Widget> nav;
   @override
   void initState() {
-    // TODO: implement initState
-
     nav = [
       Myanmiles(userEntitymodel: widget.userEntitymodel),
-      Mating(),
+      Mating(userEntitymodel: widget.userEntitymodel,),
       Bookting(
         userEntitymodel: UserEntitymodel(
             email: "",
@@ -80,47 +73,44 @@ class _IteamconterState extends State<Iteamconter> {
       LoginView(),
     ];
   }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SafeArea(
-        child: Column(
-          children: lis.asMap().entries.map((entry) {
-            int index = entry.key;
-            ModelActino modelAction = entry.value;
-
-            return GestureDetector(
-              onTap: () {
-                if (index == 9) {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return CustomDialog(); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
-                    },
-                  );
-                } else if (index < nav.length - 1) {
-                  // -1 لأنه تحقق بالفعل من index < nav.length في الفقرة السابقة
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => nav[index]),
-                  );
-                } else if (index == nav.length - 1) {
-                  // عندما يكون index آخر عنصر في nav
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => nav[index]),
-                  );
-                }
-              },
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-                child: spaceadHeader(modelActino: modelAction),
-              ),
-            );
-          }).toList(),
-        ),
+    return SafeArea(
+      child: Column(
+        children: lis.asMap().entries.map((entry) {
+          int index = entry.key;
+          ModelActino modelAction = entry.value;
+    
+          return GestureDetector(
+            onTap: () {
+              if (index == 9) {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const CustomDialog(); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
+                  },
+                );
+              } else if (index < nav.length - 1) {
+                // -1 لأنه تحقق بالفعل من index < nav.length في الفقرة السابقة
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => nav[index]),
+                );
+              } else if (index == nav.length - 1) {
+                // عندما يكون index آخر عنصر في nav
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => nav[index]),
+                );
+              }
+            },
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+              child: spaceadHeader(modelActino: modelAction),
+            ),
+          );
+        }).toList(),
       ),
     );
   }

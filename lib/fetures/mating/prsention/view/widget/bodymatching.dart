@@ -5,9 +5,11 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/iteam_listvie
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/Add_remove/add_or_remove_cubit.dart';
 import 'package:pett_peaces/fetures/mating/prsention/manager/getmating/get_mating_cubit.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyMating extends StatefulWidget {
-  const BodyMating({super.key});
+  const BodyMating({super.key, required this.userEntitymodel});
+  final UserEntitymodel userEntitymodel;
 
   @override
   State<BodyMating> createState() => _BodyMatingState();
@@ -16,19 +18,18 @@ class BodyMating extends StatefulWidget {
 class _BodyMatingState extends State<BodyMating> {
   @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     BlocProvider.of<GetMatingCubit>(context).getMating(
         endpoint: "animal-mating/my-animals",
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjY2MTU5LCJleHAiOjE3MjIyNzA5NTksIm5iZiI6MTcyMTY2NjE1OSwianRpIjoiZUJodjZtQ2dFV2UyY0xnUSIsInN1YiI6IjEwOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.99iC7a6BaYfnVCcCvll3dLteePiKdN3_de0zeO4vATA");
+        token: widget.userEntitymodel.token);
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<GetMatingCubit, GetMatingState>(
       listener: (context, state) {
-        // TODO: implement listener
+       
       },
       builder: (context, state) {
         if (state is GetMatingsucess) {
@@ -40,10 +41,11 @@ class _BodyMatingState extends State<BodyMating> {
                   child: Iteamlistviewami(
                     widget: BlocListener<AddOrRemoveCubit, AddOrRemoveState>(
                       listener: (context, state) {
-                        // TODO: implement listener
-                        if (state is AddOrRemovesucess)
+                       
+                        if (state is AddOrRemovesucess) {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(state.errmas)));
+                        }
                       },
                       child: Buttomanmandmating(
                         text: "الغاء العرض",

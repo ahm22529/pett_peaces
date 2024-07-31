@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/paymentservices/presention/view/widget/wayof_pay.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/box/presention/view/widgwt/body_box.dart';
-import 'package:pett_peaces/core/paymentservices/presention/manager/cubit/checkout_cubit.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-
 class BotttomPay extends StatelessWidget {
   const BotttomPay({
     super.key,
@@ -17,19 +14,16 @@ class BotttomPay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        BlocListener<CheckoutCubit, CheckoutState>(
-          listener: (context, state) {
-            if (state is Checkoutsucess) {}
-          },
-          child: Custombuttom(
-              titel: "إدفع",
-              onPressed: () {
-                BlocProvider.of<CheckoutCubit>(context).getcheckout(
-                    endpoint: "cart/checkout",
-                    token: userEntitymodel.token,
-                    data: {"payment_type": "card", "coupon_code": ""});
-              }),
-        )
+        Custombuttom(
+            titel: "إدفع",
+            onPressed: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) => Wayofpay(
+                        userEntitymodel: userEntitymodel,
+                        endpoint: 'cart/checkout',
+                      ));
+            })
       ],
     );
   }

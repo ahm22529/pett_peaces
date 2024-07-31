@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/hotels/presention/view/widget/comfrimbook.dart';
 
-class butomcomfrim extends StatelessWidget {
-  const butomcomfrim({
+class Butomcomfrim extends StatelessWidget {
+  const Butomcomfrim({
     super.key,
     required this.onPressed,
   });

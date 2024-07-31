@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class price extends StatelessWidget {
-  const price({
+class Price extends StatelessWidget {
+  const Price({
     super.key,
     required this.isactive,
     required this.titel,

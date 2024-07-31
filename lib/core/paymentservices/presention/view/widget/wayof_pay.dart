@@ -8,8 +8,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Wayofpay extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
-
-  const Wayofpay({super.key, required this.userEntitymodel});
+  final String endpoint;
+  const Wayofpay({super.key, required this.userEntitymodel, required this.endpoint});
   @override
   State<Wayofpay> createState() => _WayofpayState();
 }
@@ -28,9 +28,11 @@ class _WayofpayState extends State<Wayofpay> {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         ),
-        child:  Padding(
-          padding:const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-          child: BodyBottomSheetOfWay(userEntitymodel: widget.userEntitymodel,),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+          child: BodyBottomSheetOfWay(
+            userEntitymodel: widget.userEntitymodel, endpoint: widget.endpoint,
+          ),
         ),
       ),
     );

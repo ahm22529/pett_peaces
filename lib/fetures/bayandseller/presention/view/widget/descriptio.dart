@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/show_Image.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/widget/show_Image.dart';
 
 class Description extends StatelessWidget {
   const Description({

@@ -10,15 +10,15 @@ import 'package:pett_peaces/fetures/hotels/presention/manager/cubit/book_cubit.d
 
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/bodycomfrim.dart';
 
-class comfrimbook extends StatefulWidget {
+class Comfrimbook extends StatefulWidget {
   final HotelEntity hotelEntity;
 
-  const comfrimbook({super.key, required this.hotelEntity});
+  const Comfrimbook({super.key, required this.hotelEntity});
   @override
-  State<comfrimbook> createState() => _comfrimbookState();
+  State<Comfrimbook> createState() => _ComfrimbookState();
 }
 
-class _comfrimbookState extends State<comfrimbook> {
+class _ComfrimbookState extends State<Comfrimbook> {
   Hotelrep hotelrep = HotelRepImp();
   AnmilesRepo anmilesRepo = AnimelsRepoImp();
   @override

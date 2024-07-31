@@ -18,7 +18,7 @@ class Custombuttomcours extends StatelessWidget {
         showModalBottomSheet(
             context: context,
             builder: (context) => Wayofpay(
-                  userEntitymodel: userEntitymodel,
+                  userEntitymodel: userEntitymodel, endpoint:  "courses/1/checkout",
                 ));
       },
       style: TextButton.styleFrom(

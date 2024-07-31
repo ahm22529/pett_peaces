@@ -12,6 +12,7 @@ class DatePickerField extends StatefulWidget {
   final void Function()? onTap;
 
   @override
+  // ignore: library_private_types_in_public_api
   _DatePickerFieldState createState() => _DatePickerFieldState();
 }
 
@@ -25,7 +26,7 @@ class _DatePickerFieldState extends State<DatePickerField> {
         suffixIcon: Image.asset(widget.Imag),
         fillColor: const Color(0xffFFFFFF),
         filled: true,
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
         ),
         contentPadding:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/show_Image.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/widget/show_Image.dart';
 import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart';
 
 class DecriptionMating extends StatelessWidget {

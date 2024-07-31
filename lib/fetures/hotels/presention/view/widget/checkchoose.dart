@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/prices.dart';
 
-class checkchoose extends StatefulWidget {
-  const checkchoose({
+class Checkchoose extends StatefulWidget {
+  const Checkchoose({
     super.key,
     required this.titel,
     required this.titel2,
@@ -18,10 +18,10 @@ class checkchoose extends StatefulWidget {
   final ValueChanged<int> onremove;
 
   @override
-  State<checkchoose> createState() => _checkchooseState();
+  State<Checkchoose> createState() => _CheckchooseState();
 }
 
-class _checkchooseState extends State<checkchoose> {
+class _CheckchooseState extends State<Checkchoose> {
   bool isactive = false;
 
   @override
@@ -52,7 +52,7 @@ class _checkchooseState extends State<checkchoose> {
           color: Color(0xff00070D).withOpacity(.8),
         ),
       ),
-      trailing: price(
+      trailing: Price(
         isactive: isactive,
         titel: widget.titel2,
       ),
