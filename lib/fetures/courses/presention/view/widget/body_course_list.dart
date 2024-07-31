@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/fetures/courses/presention/manger.dart/fetachcourses/coursecubit_cubit.dart';
+import 'package:pett_peaces/fetures/courses/presention/manger/fetachcourses/coursecubit_cubit.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/courses.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/iteam_listvew_services.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyListCourses extends StatefulWidget {
-  const BodyListCourses({super.key});
+  final UserEntitymodel userEntitymodel;
+  const BodyListCourses({super.key, required this.userEntitymodel});
 
   @override
   State<BodyListCourses> createState() => _BodyListCoursesState();
@@ -93,8 +95,9 @@ class _BodyListCoursesState extends State<BodyListCourses> {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (builder) => coursesiteam(
+                        builder: (builder) => Coursesiteam(
                           courseseEntity: courses[index],
+                          userEntitymodel: widget.userEntitymodel,
                         ),
                       ),
                     ),

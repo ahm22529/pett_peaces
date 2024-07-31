@@ -9,8 +9,5 @@ abstract class CourseRepo {
   Future<Either<Failure, CoursesEntityList>> getcoursedata(
       {required String ndpoint, required String token});
 
-  Future<Either<Failure, String>> checkout(
-      {required String ndpoint,
-      required String token,
-      required Map<String, dynamic> data});
+
 }

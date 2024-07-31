@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/widget/bodycontinerofiteamway.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/widget/body_continer_of_iteam_way.dart';
 
 class CreditCardWidget extends StatelessWidget {
   final String text1, image;

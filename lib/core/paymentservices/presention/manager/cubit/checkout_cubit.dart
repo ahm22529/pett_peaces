@@ -2,15 +2,12 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pett_peaces/fetures/courses/domain/entity/checkout_enity.dart';
-import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
-import 'package:pett_peaces/fetures/restpassword/domain/entity/checkentity.dart';
-
+import 'package:pett_peaces/core/paymentservices/domain/repo.dart';
 part 'checkout_state.dart';
 
 class CheckoutCubit extends Cubit<CheckoutState> {
   CheckoutCubit(this.courseRepo) : super(CheckoutInitial());
-  CourseRepo courseRepo;
+  CheckoutRepo courseRepo;
   void getcheckout(
       {required String endpoint,
       required String token,

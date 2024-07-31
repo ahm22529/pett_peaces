@@ -1,4 +1,4 @@
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/descriptio.dart';
+
 
 class CourseseEntity {
   final String nameof;

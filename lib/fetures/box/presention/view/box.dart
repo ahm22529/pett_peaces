@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/box/presention/manager/cubit/getbox_cubit.da
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/body_box.dart';
 import 'package:pett_peaces/fetures/courses/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
-import 'package:pett_peaces/fetures/courses/presention/manger.dart/cubit/checkout_cubit.dart';
+import 'package:pett_peaces/core/paymentservices/presention/manager/cubit/checkout_cubit.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Box extends StatefulWidget {
@@ -30,9 +30,7 @@ class _BoxState extends State<Box> {
         BlocProvider(
           create: (context) => GetboxCubit(boxrepo),
         ),
-        BlocProvider(
-          create: (context) => CheckoutCubit(courseRepo),
-        )
+       
       ],
       child: Scaffold(
         body: Bodybox(

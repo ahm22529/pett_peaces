@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/myanmiles.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/courselist.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_course.dart';
@@ -120,7 +120,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (builder) => const Courselist())),
+                              builder: (builder) =>  Courselist(userEntitymodel: widget.userEntitymodel,))),
                       titel1: 'كورسات تعليمية',
                       titel2: 'عرض المزيد',
                     ),
@@ -128,7 +128,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       height: 23,
                     ),
                     ListviewCourses(
-                      cours: state.homeEntity.cou,
+                      cours: state.homeEntity.cou, userEntitymodel: widget.userEntitymodel,
                     ),
                     const SizedBox(
                       height: 56,

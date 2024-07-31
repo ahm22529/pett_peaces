@@ -27,21 +27,5 @@ class CorseRepoImp extends CourseRepo {
     }
   }
 
-  @override
-  Future<Either<Failure, String>> checkout(
-      {required String ndpoint,
-      required String token,
-      required Map<String, dynamic> data}) async {
-    try {
-      var result =
-          await requestServices.post(data, ndpoint, token, "contentType");
-
-      CheckoutResponse checkoutResponse = CheckoutResponse.fromJson(result);
-      final String re = checkoutResponse.data.urlPayment;
-
-      return right(re);
-    } on Exception catch (e) {
-      return left(ServFailure(e.toString()));
-    }
-  }
+ 
 }

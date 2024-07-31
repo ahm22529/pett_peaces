@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/foter.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/widget/gridview.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/widget/grid_view.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/head.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/widget/location.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
-import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyCourses extends StatelessWidget {
   final CourseseEntity courseseEntity;
-
-  const BodyCourses({super.key, required this.courseseEntity});
+  final UserEntitymodel userEntitymodel;
+  const BodyCourses(
+      {super.key, required this.courseseEntity, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -48,7 +49,9 @@ class BodyCourses extends StatelessWidget {
                   const SizedBox(
                     height: 22,
                   ),
-                  const CustomGridViewcourses(),
+                  CustomGridViewcourses(
+                    courseseEntity: courseseEntity,
+                  ),
                 ],
               ),
             ),
@@ -57,10 +60,13 @@ class BodyCourses extends StatelessWidget {
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 030),
-              child: Text(
-                "صور إضافية (24)",
-                style: AppStyles.styleMedium18(context)
-                    .copyWith(color: Colors.black, fontWeight: FontWeight.w600),
+              child: GestureDetector(
+                onTap: () => print(courseseEntity.otherimg[0]),
+                child: Text(
+                  "صور إضافية (24)",
+                  style: AppStyles.styleMedium18(context).copyWith(
+                      color: Colors.black, fontWeight: FontWeight.w600),
+                ),
               ),
             ),
           ),
@@ -68,7 +74,7 @@ class BodyCourses extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: show(
-                hotelEntity: [],
+                hotelEntity: courseseEntity.otherimg,
               ),
             ),
           ),
@@ -83,6 +89,7 @@ class BodyCourses extends StatelessWidget {
                 padding: EdgeInsets.all(20.0),
                 child: foter(
                   courseseEntity: courseseEntity,
+                  userEntitymodel: userEntitymodel,
                 ),
               ),
             ),

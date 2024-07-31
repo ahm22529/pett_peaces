@@ -1,32 +1,30 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/courses/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
-import 'package:pett_peaces/fetures/courses/presention/manger.dart/cubit/checkout_cubit.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/widget/bodycourses.dart';
+import 'package:pett_peaces/core/paymentservices/presention/manager/cubit/checkout_cubit.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/widget/body_courses.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class coursesiteam extends StatefulWidget {
+class Coursesiteam extends StatefulWidget {
   final CourseseEntity courseseEntity;
-
-  const coursesiteam({super.key, required this.courseseEntity});
+  final UserEntitymodel userEntitymodel;
+  const Coursesiteam({super.key, required this.courseseEntity, required this.userEntitymodel});
 
   @override
-  State<coursesiteam> createState() => _coursesiteamState();
+  State<Coursesiteam> createState() => _CoursesiteamState();
 }
 
-class _coursesiteamState extends State<coursesiteam> {
+class _CoursesiteamState extends State<Coursesiteam> {
   CourseRepo courseRepo = CorseRepoImp();
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CheckoutCubit(courseRepo),
-      child: Scaffold(
-        body: BodyCourses(
-          courseseEntity: widget.courseseEntity,
-        ),
+    return Scaffold(
+      body: BodyCourses(
+        courseseEntity: widget.courseseEntity,
+        userEntitymodel: widget.userEntitymodel,
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/widget/videoplay.dart';
-import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
+import 'package:pett_peaces/fetures/courses/presention/view/widget/video_play.dart';
 
 class header extends StatelessWidget {
   const header({

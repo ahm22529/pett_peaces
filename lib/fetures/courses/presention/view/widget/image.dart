@@ -8,8 +8,8 @@ class show extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (hotelEntity == null || hotelEntity!.isEmpty) {
-      return Center(
-        child: Text('مفيش صور متاحة'),
+      return const Center(
+        child: SizedBox(),
       );
     }
 
@@ -26,10 +26,11 @@ class show extends StatelessWidget {
         if (index < 3) {
           // عرض الصور الأولى
           return GestureDetector(
-              onTap: () {
-                _showImageDialog(context, hotelEntity![index]['image']);
-              },
-              child: hotelEntity![index]);
+            onTap: () {
+              _showImageDialog(context, hotelEntity![index]['image']);
+            },
+            child: Image.network(hotelEntity![index].image, fit: BoxFit.cover),
+          );
         } else {
           // عنصر خاص بعرض الصورة الأخيرة مع عدد الصور الزائدة
           return GestureDetector(
@@ -84,7 +85,7 @@ class show extends StatelessWidget {
               children: remainingImages.map((image) {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: Image.asset(image, fit: BoxFit.cover),
+                  child: Image.network(image['image'], fit: BoxFit.cover),
                 );
               }).toList(),
             ),

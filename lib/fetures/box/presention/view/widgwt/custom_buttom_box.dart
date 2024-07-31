@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/body_box.dart';
-import 'package:pett_peaces/fetures/courses/presention/manger.dart/cubit/checkout_cubit.dart';
+import 'package:pett_peaces/core/paymentservices/presention/manager/cubit/checkout_cubit.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BotttomPay extends StatelessWidget {
