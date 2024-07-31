@@ -27,7 +27,7 @@ class _BodyRestPasswordState extends State<BodyVarifyEmail> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child:
-              customdivider(color: const Color(0xffD9D9D966).withOpacity(.5)),
+              customdivider(color: const Color(0xffd9d9d966).withOpacity(.5)),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),

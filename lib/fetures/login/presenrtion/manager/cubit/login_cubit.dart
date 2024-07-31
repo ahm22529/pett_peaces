@@ -10,7 +10,7 @@ class LoginCubit extends Cubit<LoginState> {
   LoginRepo loginRepo;
   void Login(Map<String, dynamic> input, String endpoint) async {
     emit(LoginLoading());
-    final result = await loginRepo.Login(input: input, endponit: endpoint);
+    final result = await loginRepo.singIn(input: input, endponit: endpoint);
 
     result.fold(
       (failure) => emit(LoginFailure(message: failure.errmas)),

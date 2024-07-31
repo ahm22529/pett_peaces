@@ -17,7 +17,7 @@ import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 
-import 'package:pett_peaces/fetures/splash/presention/view/splashview.dart';
+import 'package:pett_peaces/fetures/splash/presention/view/splash_view.dart';
 import 'generated/l10n.dart';
 
 void main() {

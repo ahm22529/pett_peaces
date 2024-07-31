@@ -4,7 +4,7 @@ import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updaepass_cubit.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/password_text_filed.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
 
 class BodyChangePassword extends StatefulWidget {

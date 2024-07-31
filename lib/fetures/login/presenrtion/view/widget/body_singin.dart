@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/home/data/model/loginuserimodel/loginusermodel.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/create.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/form.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/singinbuttom.dart';
-
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/create_new_account.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/form_singin.dart';
 class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});
 
@@ -26,7 +22,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(

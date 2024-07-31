@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/login/data/repo/repoimple.dart';
 import 'package:pett_peaces/fetures/login/domain/repo.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/manager/cubit/login_cubit.dart';
 
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/body_login_bloc_consuimer.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/body_singin_bloc_consuimer.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

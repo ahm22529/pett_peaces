@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cub
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/bodycontactwith.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/customdialog.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
 
 class Contactwithpices extends StatefulWidget {
   @override

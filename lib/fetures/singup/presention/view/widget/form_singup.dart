@@ -2,13 +2,13 @@ import 'package:country_code_text_field/phone_number.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/textfiledinput.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/text_filed_input.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
 import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/accceptreules.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/buttomsingup.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/continertextfiledcontry.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/acccept_reules.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/buttom_singup.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/continer_textfiled_contry.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/varifte_email.dart';
 
@@ -123,7 +123,7 @@ class _FormSingupState extends State<FormSingup> {
           const SizedBox(height: 20),
           BlocListener<SignupCubit, SignupState>(
             listener: (context, state) {
-              // TODO: implement listener
+            
               if (state is SignupSuccess) {
                 Navigator.push(
                     context,

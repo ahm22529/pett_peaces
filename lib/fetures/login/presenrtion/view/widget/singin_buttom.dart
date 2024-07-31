@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/login/data/model/userinputdatalogin.dart';
+import 'package:pett_peaces/fetures/login/data/model/user_input_data_login.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/manager/cubit/login_cubit.dart';
 
 class SinginButtom extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/password_text_filed.dart';
 
 class formnewspassword extends StatelessWidget {
   const formnewspassword({

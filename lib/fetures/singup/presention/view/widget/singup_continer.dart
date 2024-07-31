@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/bodysingup.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/body_singup.dart';
 
-// ignore: camel_case_types
-class singupcontiner extends StatelessWidget {
-  const singupcontiner({
+class Singupcontiner extends StatelessWidget {
+  const Singupcontiner({
     super.key,
   });
 

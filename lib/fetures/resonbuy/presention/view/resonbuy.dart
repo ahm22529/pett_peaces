@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/continerbuttom.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
 import 'package:pett_peaces/fetures/resonbuy/presention/view/widget/bodyresonbay.dart';
 import 'package:pett_peaces/fetures/resonbuy/presention/view/widget/customtextfiledreson.dart';
 

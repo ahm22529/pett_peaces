@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
 import 'package:pett_peaces/fetures/mydata/prsention/view/manager/cubit/update_cubit.dart';
 import 'package:pett_peaces/fetures/mydata/prsention/view/widget/disapel_textfiled.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/countryphonetextfiled.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/country_phone_textfiled.dart';
 
 class Fromupdate extends StatefulWidget {
   final UserEntitymodel userEntitymodel;

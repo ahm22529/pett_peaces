@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/background.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/imagedog.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/singupcontiner.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/image_dog.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/singup_continer.dart';
+
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({
     super.key,
@@ -34,7 +34,7 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
                 hig: MediaQuery.of(context).size.height * .21,
                 bo: -10,
               ),
-              widget2: singupcontiner(),
+              widget2: const Singupcontiner(),
             ));
       },
     );

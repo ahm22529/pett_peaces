@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/splash/presention/view/widget/custombuttomsplah.dart';
+import 'package:pett_peaces/fetures/splash/presention/view/widget/custom_buttom_splah.dart';
 
 class BodySplahView extends StatelessWidget {
   const BodySplahView({super.key});

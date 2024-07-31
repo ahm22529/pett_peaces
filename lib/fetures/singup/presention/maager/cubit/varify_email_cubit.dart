@@ -15,7 +15,7 @@ class VarifyEmailCubit extends Cubit<VarifyEmailState> {
       required String token}) async {
     emit(VarifyEmailLoading());
     final result =
-        await authRepo.Varify(token: token, input: input, endpoint: endpoint);
+        await authRepo.varifyEmail(token: token, input: input, endpoint: endpoint);
     result.fold(
       (failure) => emit(VarifyEmailFailure(message: failure.errmas)),
       (userEntity) => emit(VarifyEmailSuccess(userEntity: userEntity)),

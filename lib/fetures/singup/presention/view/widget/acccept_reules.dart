@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/customcheckbox.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/custom_check_box.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/rules.dart';
 
 class AcceptsReuls extends StatefulWidget {

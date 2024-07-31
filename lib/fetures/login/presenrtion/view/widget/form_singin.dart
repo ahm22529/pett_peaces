@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:pett_peaces/fetures/login/data/model/userinputdatalogin.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/customtextfiled.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/forgetpass.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/headereadsiz.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/passwordtextfiled.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/singinbuttom.dart';
+import 'package:pett_peaces/fetures/login/data/model/user_input_data_login.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/forget_pass.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/headere_and_size.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/password_text_filed.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/singin_buttom.dart';
 
 class Customformdiled extends StatefulWidget {
   const Customformdiled({
@@ -30,7 +30,7 @@ class _CustomformdiledState extends State<Customformdiled> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HeaderAndSize(
-            widget: TextFieldWithShadow(
+            widget: Textformfiledemail(
               onSaved: (v) {
                 setState(() {
                   email = v!;

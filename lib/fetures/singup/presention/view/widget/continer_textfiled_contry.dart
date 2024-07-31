@@ -1,6 +1,6 @@
 import 'package:country_code_text_field/phone_number.dart';
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/countryphonetextfiled.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/country_phone_textfiled.dart';
 class ContinerTextFiled extends StatelessWidget {
   const ContinerTextFiled({
     super.key,

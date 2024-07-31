@@ -1,15 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:pett_peaces/core/apiservices/apiservices.dart';
-import 'package:pett_peaces/core/error/customexpection.dart';
 import 'package:pett_peaces/core/error/error.dart';
-import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/usermodel.dart';
-import 'package:pett_peaces/fetures/singup/data/model/sing_up_response/data.dart';
-import 'package:pett_peaces/fetures/singup/data/model/sing_up_response/sing_up_response.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/domain/repo/repo.dart';
-
 class Siguprepoimp extends SingupRepo {
   RequestServices requestservices = RequestServices(Dio());
 
@@ -23,9 +18,9 @@ class Siguprepoimp extends SingupRepo {
         Usermodel userModel = Usermodel.fromapi(result);
         return right(userModel);
       } else {
-        return left(ServFailure('هيكل الرد غير متوقع'));
+        return left(ServFailure(""));
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       return left(ServFailure.formdioerr(e));
     } catch (e) {
       return left(ServFailure(e.toString()));
@@ -33,7 +28,7 @@ class Siguprepoimp extends SingupRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitymodel>> Varify(
+  Future<Either<Failure, UserEntitymodel>> varifyEmail(
       {required String token,
       required Map<String, dynamic> input,
       required String endpoint}) async {
@@ -44,9 +39,9 @@ class Siguprepoimp extends SingupRepo {
         Usermodel userModel = Usermodel.fromapi(result);
         return right(userModel);
       } else {
-        return left(ServFailure('هيكل الرد غير متوقع'));
+        return left(ServFailure(""));
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       return left(ServFailure.formdioerr(e));
     } catch (e) {
       return left(ServFailure(e.toString()));
@@ -54,8 +49,8 @@ class Siguprepoimp extends SingupRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitymodel>> send({required String endpoint}) {
-    // TODO: implement send
+  Future<Either<Failure, UserEntitymodel>> sendOpt({required String endpoint}) {
+   
     throw UnimplementedError();
   }
 }

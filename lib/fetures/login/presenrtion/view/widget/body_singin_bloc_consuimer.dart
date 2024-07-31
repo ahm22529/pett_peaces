@@ -7,9 +7,10 @@ import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/widget/customprogresshub.dart';
 import 'package:pett_peaces/fetures/home/presention/view/home_scrren.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/manager/cubit/login_cubit.dart';
-import 'package:pett_peaces/fetures/login/presenrtion/view/widget/body_login.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/widget/body_singin.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/background.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/imagedog.dart';
+import 'package:pett_peaces/fetures/singup/presention/view/widget/image_dog.dart';
+
 
 class SigninViewBodyBlocConsumer extends StatelessWidget {
   const SigninViewBodyBlocConsumer({
@@ -44,7 +45,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
                 hig: MediaQuery.of(context).size.height * .31,
                 bo: -15,
               ),
-              widget2: LoginWidget(),
+              widget2: const LoginWidget(),
             ));
       },
     );

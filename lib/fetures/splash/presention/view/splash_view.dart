@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombackground.dart';
-import 'package:pett_peaces/fetures/splash/presention/view/widget/bodysplahview.dart';
+import 'package:pett_peaces/fetures/splash/presention/view/widget/body_splah_view.dart';
 
 class Splashview extends StatelessWidget {
   const Splashview({super.key});
