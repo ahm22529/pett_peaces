@@ -1,21 +1,20 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/sellerdetails.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/bodyseller.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/seller_details.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/body_seller.dart';
 
-class bodysellerandbuyer extends StatefulWidget {
-  const bodysellerandbuyer({
+class Bodysellerandbuyer extends StatefulWidget {
+  const Bodysellerandbuyer({
     super.key,
   });
 
   @override
-  State<bodysellerandbuyer> createState() => _bodysellerandbuyerState();
+  State<Bodysellerandbuyer> createState() => _BodysellerandbuyerState();
 }
 
-class _bodysellerandbuyerState extends State<bodysellerandbuyer> {
+class _BodysellerandbuyerState extends State<Bodysellerandbuyer> {
   final ScrollController _scrollController = ScrollController();
   int currentPage = 1;
   bool isLoadingMore = false;
@@ -72,13 +71,12 @@ class _bodysellerandbuyerState extends State<bodysellerandbuyer> {
             isLoadingMore = false;
             // دمج العناصر الجديدة مع العناصر القديمة
             products = state.listSelEnity.sell;
-            print("products.length");
           });
         }
       },
       builder: (context, state) {
         if (state is Selfauiler) {
-          return Center(child: Text(state.errmass));
+          return CustomWidgetfauier();
         }
         if (state is Selsucess || isLoadingMore || state is Selsucessserch) {
           return GridView.builder(

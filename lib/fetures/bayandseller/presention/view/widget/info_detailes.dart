@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/iteaminfo.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/iteam_info.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 
-class infoa extends StatelessWidget {
+class Infoa extends StatelessWidget {
   final AnmilesEntity anmilesEntity;
 
-  const infoa({super.key, required this.anmilesEntity});
+  const Infoa({super.key, required this.anmilesEntity});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,17 +18,17 @@ class infoa extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          iteaminfo(
+          Iteaminfo(
             text1: anmilesEntity.namee,
             text2: 'الأسم',
           ),
           SizedBox(height: 8),
-          iteaminfo(
+          Iteaminfo(
             text1: anmilesEntity.agee.toString(),
             text2: 'العمر',
           ),
           SizedBox(height: 8),
-          iteaminfo(
+          Iteaminfo(
             text1: anmilesEntity.gendere,
             text2: 'النوع',
           ),

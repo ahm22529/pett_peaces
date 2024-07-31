@@ -2,15 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/fetures/bayandseller/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/repo/buyandsell_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
 
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/gridview.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/grid_view.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/search.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart';
 
 class SellerAndBuyer extends StatefulWidget {
   const SellerAndBuyer({super.key, required this.userEntitymodel});
@@ -39,7 +37,7 @@ class _SellerAndBuyerState extends State<SellerAndBuyer> {
             userEntitymodel: widget.userEntitymodel,
           ),
         ),
-        body: const bodysellerandbuyer(),
+        body: const Bodysellerandbuyer(),
       ),
     );
   }

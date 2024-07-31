@@ -11,7 +11,7 @@ import 'package:pett_peaces/fetures/se3rviecs/presention/view/widget/catagrorybu
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
-import '../../../../bayandseller/presention/view/sellerandbuy.dart';
+import '../../../../bayandseller/presention/view/sellerand_buy.dart';
 
 class CustomGridViewServ extends StatelessWidget {
   const CustomGridViewServ({

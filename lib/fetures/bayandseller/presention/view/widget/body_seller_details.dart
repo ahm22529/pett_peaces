@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/descriptio.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/infodetailes.dart';
-import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/info_detailes.dart';
 
 class Bodysellerandbuyerdetails extends StatelessWidget {
   final SelEntity selEntity;
@@ -29,7 +27,7 @@ class Bodysellerandbuyerdetails extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              description(
+              Description(
                 anmilesEntity: selEntity,
               ),
             ],
@@ -44,7 +42,7 @@ class Bodysellerandbuyerdetails extends StatelessWidget {
           Positioned(
             top: MediaQuery.of(context).size.height * .08,
             right: 5,
-            child: infoa(
+            child: Infoa(
               anmilesEntity: selEntity.anmilesEntity,
             ),
           ),

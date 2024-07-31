@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class iteaminfo extends StatelessWidget {
-  const iteaminfo({
+class Iteaminfo extends StatelessWidget {
+  const Iteaminfo({
     super.key,
     required this.text1,
     required this.text2,

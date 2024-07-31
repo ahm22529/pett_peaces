@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/infodetailes.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/info_detailes.dart';
 import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/widget/decription_mating.dart';
+
 class BodyMatingDetails extends StatelessWidget {
   final AllMatingEntity selEntity;
 
@@ -41,7 +42,7 @@ class BodyMatingDetails extends StatelessWidget {
           Positioned(
             top: MediaQuery.of(context).size.height * .08,
             right: 5,
-            child: infoa(
+            child: Infoa(
               anmilesEntity: selEntity.anmilesEntity,
             ),
           ),

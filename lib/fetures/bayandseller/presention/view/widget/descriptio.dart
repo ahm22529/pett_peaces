@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/anmailes/domin/enitiy/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/show_Image.dart';
-import 'package:pett_peaces/fetures/courses/presention/view/widget/image.dart';
 
-class description extends StatelessWidget {
-  const description({
+class Description extends StatelessWidget {
+  const Description({
     super.key,
     required this.anmilesEntity,
   });
@@ -59,11 +56,6 @@ class description extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          IconButton(
-              onPressed: () {
-                print(anmilesEntity.anmilesEntity.otherimage[1]['image']);
-              },
-              icon: Icon(Icons.abc)),
           ShowImage(
             hotelEntity: anmilesEntity.anmilesEntity.otherimage,
           ),

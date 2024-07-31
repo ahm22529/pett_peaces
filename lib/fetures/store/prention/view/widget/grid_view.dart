@@ -6,7 +6,6 @@ import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
-
 import 'no_iteam.dart';
 
 class CustomGridViewstore extends StatefulWidget {
@@ -72,7 +71,7 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
         }
         if (state is FectchProductsucess || isLoadingMore) {
           if (products.isEmpty) {
-            return NoIteam();
+            return const NoIteam();
           }
           return GridView.builder(
             controller: _scrollController,
@@ -122,5 +121,3 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
     );
   }
 }
-
-

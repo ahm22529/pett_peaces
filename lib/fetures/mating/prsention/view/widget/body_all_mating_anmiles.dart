@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/imageanmiles.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/image_anmiles.dart';
 
 import 'package:pett_peaces/fetures/mating/domain/entity/all_mating_entity.dart';
 
@@ -25,7 +25,7 @@ class BodyAllMatingAnmiles extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: imageanmiles(
+                child: Imageanmiles(
                   img: selEntity.anmilesEntity.imagee,
                 ), // Assuming this widget fills available height
               ),
@@ -49,7 +49,8 @@ class BodyAllMatingAnmiles extends StatelessWidget {
                 color: const Color(0xff000000).withOpacity(.1),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   selEntity.anmilesEntity.des,
                   style: AppStyles.styleRegular14(context).copyWith(

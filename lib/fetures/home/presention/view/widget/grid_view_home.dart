@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/my_anmiles.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/sellerandbuy.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/sellerand_buy.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/cotacting.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 import 'package:pett_peaces/fetures/doctor/presention/view/doctor.dart';

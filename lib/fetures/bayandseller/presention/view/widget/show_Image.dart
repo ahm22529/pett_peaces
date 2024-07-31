@@ -8,9 +8,7 @@ class ShowImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (hotelEntity == null || hotelEntity!.isEmpty) {
-      return Center(
-        child: Text('مفيش صور متاحة'),
-      );
+      return SizedBox();
     }
 
     return GridView.builder(

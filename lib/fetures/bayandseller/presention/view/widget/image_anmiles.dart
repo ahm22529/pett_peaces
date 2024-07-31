@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class imageanmiles extends StatelessWidget {
-  const imageanmiles({
+class Imageanmiles extends StatelessWidget {
+  const Imageanmiles({
     super.key,
     required this.img,
   });

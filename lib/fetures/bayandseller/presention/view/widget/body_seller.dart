@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/imageanmiles.dart';
-import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/informationanmiles.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/image_anmiles.dart';
+import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/information_anmiles.dart';
 
 class BodySeller extends StatelessWidget {
   const BodySeller({
@@ -14,20 +14,20 @@ class BodySeller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Stack(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: imageanmiles(
+                child: Imageanmiles(
                   img: selEntity.anmilesEntity.imagee,
                 ), // Assuming this widget fills available height
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: informatonanmiles(
+                padding: const EdgeInsets.all(8.0),
+                child: Informatonanmiles(
                   anmilesEntity: selEntity,
                 ),
               ),
@@ -40,17 +40,18 @@ class BodySeller extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                 ),
-                color: Color(0xff000000).withOpacity(.1),
+                color: const Color(0xff000000).withOpacity(.1),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   selEntity.pricee.toString(),
                   style: AppStyles.styleRegular14(context).copyWith(
-                    color: Color(0xffF78E32),
+                    color: const Color(0xffF78E32),
                     fontWeight: FontWeight.w600,
                   ),
                 ),

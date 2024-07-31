@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 
-class bottomdetails extends StatelessWidget {
-  const bottomdetails({
+class Bottomdetails extends StatelessWidget {
+  const Bottomdetails({
     super.key,
   });
 

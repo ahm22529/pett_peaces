@@ -17,16 +17,9 @@ class Store extends StatefulWidget {
   @override
   State<Store> createState() => _StoreState();
 }
-
 class _StoreState extends State<Store> {
   final StoreRepo storeRepo = StoreRepoImp();
   final Boxrepo boxrepo = BoxRepoImp();
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

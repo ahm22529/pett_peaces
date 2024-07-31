@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/anmailes/domin/enitiy/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 
-class informatonanmiles extends StatelessWidget {
-  const informatonanmiles({
+class Informatonanmiles extends StatelessWidget {
+  const Informatonanmiles({
     super.key,
     required this.anmilesEntity,
   });
