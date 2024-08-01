@@ -10,7 +10,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class Coursesiteam extends StatefulWidget {
   final CourseseEntity courseseEntity;
   final UserEntitymodel userEntitymodel;
-  const Coursesiteam({super.key, required this.courseseEntity, required this.userEntitymodel});
+  const Coursesiteam(
+      {super.key, required this.courseseEntity, required this.userEntitymodel});
 
   @override
   State<Coursesiteam> createState() => _CoursesiteamState();

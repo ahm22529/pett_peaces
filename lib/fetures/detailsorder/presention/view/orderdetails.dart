@@ -8,7 +8,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class OrderDetails extends StatelessWidget {
   final UserEntitymodel userEntitymodel;
   final OrderEntity orderEntity;
-  const OrderDetails({super.key, required this.userEntitymodel, required this.orderEntity});
+  const OrderDetails(
+      {super.key, required this.userEntitymodel, required this.orderEntity});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

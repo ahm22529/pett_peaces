@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/function/imagePicker.dart';
+import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entity.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chatbubels.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chatbulesforfrind.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/foterdetails.dart';
 
 class Bodysetailsmassage extends StatefulWidget {
+  final ChatDetailsEntity chatDetailsEntity;
+
+  const Bodysetailsmassage({super.key, required this.chatDetailsEntity});
   @override
   State<Bodysetailsmassage> createState() => _BodysetailsmassageState();
 }
@@ -19,7 +22,8 @@ class _BodysetailsmassageState extends State<Bodysetailsmassage> {
           child: ListView.builder(
             reverse: true,
             controller: _controller,
-            itemCount: 10, // Number of messages for example
+            itemCount: widget.chatDetailsEntity.massage
+                .length, // Number of messages for example
             itemBuilder: (context, index) {
               DateTime now = DateTime.now();
               String formattedTime =

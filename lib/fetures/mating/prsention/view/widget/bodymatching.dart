@@ -18,7 +18,6 @@ class BodyMating extends StatefulWidget {
 class _BodyMatingState extends State<BodyMating> {
   @override
   void initState() {
-   
     super.initState();
     BlocProvider.of<GetMatingCubit>(context).getMating(
         endpoint: "animal-mating/my-animals",
@@ -28,9 +27,7 @@ class _BodyMatingState extends State<BodyMating> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<GetMatingCubit, GetMatingState>(
-      listener: (context, state) {
-       
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         if (state is GetMatingsucess) {
           return ListView.builder(
@@ -41,7 +38,6 @@ class _BodyMatingState extends State<BodyMating> {
                   child: Iteamlistviewami(
                     widget: BlocListener<AddOrRemoveCubit, AddOrRemoveState>(
                       listener: (context, state) {
-                       
                         if (state is AddOrRemovesucess) {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(state.errmas)));

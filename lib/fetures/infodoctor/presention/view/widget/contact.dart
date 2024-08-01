@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/chatdetails/presention/chatdetails.dart';
+import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
 
 class Contact extends StatelessWidget {
   const Contact({
@@ -12,8 +12,12 @@ class Contact extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (builder) => Chatdetails())),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (builder) => const Chatdetails(
+                          Userid: 1, name: '', image: '',
+                        ))),
             child: Image.asset("Asset/image/chatdoc.png")),
         const SizedBox(
           width: 8,

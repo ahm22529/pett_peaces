@@ -5,6 +5,7 @@ import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubi
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/add_miuns.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+
 class Countiteam extends StatefulWidget {
   final String prices;
   final UserEntitymodel userEntitymodel;

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class Titelappbarsell extends StatefulWidget {

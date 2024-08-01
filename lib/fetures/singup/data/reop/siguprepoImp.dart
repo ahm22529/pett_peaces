@@ -5,6 +5,7 @@ import 'package:pett_peaces/core/error/error.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/usermodel.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/domain/repo/repo.dart';
+
 class Siguprepoimp extends SingupRepo {
   RequestServices requestservices = RequestServices(Dio());
 
@@ -50,7 +51,6 @@ class Siguprepoimp extends SingupRepo {
 
   @override
   Future<Either<Failure, UserEntitymodel>> sendOpt({required String endpoint}) {
-   
     throw UnimplementedError();
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/entity/sel_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/body_seller_details.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/buttom_detailes.dart';
+
 class Sellerdetails extends StatelessWidget {
   final SelEntity anmiles;
 

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/doctor/presention/manager/cubit/fetchdoctor_cubit.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
+
 class TitelappbarDoctore extends StatefulWidget {
   const TitelappbarDoctore({
     super.key,

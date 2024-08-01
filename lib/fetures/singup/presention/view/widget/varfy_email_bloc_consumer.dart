@@ -6,7 +6,6 @@ import 'package:pett_peaces/fetures/singup/presention/maager/cubit/varify_email_
 import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/body_varify_email.dart';
 
-
 class VarfyEmailBlocConsumer extends StatelessWidget {
   const VarfyEmailBlocConsumer({
     super.key,

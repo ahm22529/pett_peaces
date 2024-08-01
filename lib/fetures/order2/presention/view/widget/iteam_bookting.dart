@@ -7,7 +7,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class ItemBooktin extends StatelessWidget {
   final UserEntitymodel userEntitymodel;
   final OrderEntity orderEntity;
-  const ItemBooktin({super.key, required this.userEntitymodel, required this.orderEntity});
+  const ItemBooktin(
+      {super.key, required this.userEntitymodel, required this.orderEntity});
 
   @override
   Widget build(BuildContext context) {

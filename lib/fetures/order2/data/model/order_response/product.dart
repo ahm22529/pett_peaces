@@ -2,7 +2,7 @@ import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
 import 'other_image.dart';
 
-class Product extends ProducEntity{
+class Product extends ProducEntity {
   int? id;
   String? name;
   String? image;
@@ -21,7 +21,18 @@ class Product extends ProducEntity{
     this.oldPrice,
     this.shortDescription,
     this.details,
-  }):super(id:id ,nameof: name??"",prices:price??"" ,pro:[] ,shortdescription:shortDescription??"" ,oherimage: otherImages??[],oldprice:oldPrice??'' ,qan:0 ,volum: details??"",img:image??"" ,detai: details??"");
+  }) : super(
+            id: id,
+            nameof: name ?? "",
+            prices: price ?? "",
+            pro: [],
+            shortdescription: shortDescription ?? "",
+            oherimage: otherImages ?? [],
+            oldprice: oldPrice ?? '',
+            qan: 0,
+            volum: details ?? "",
+            img: image ?? "",
+            detai: details ?? "");
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json['id'] as int?,

@@ -10,6 +10,7 @@ import 'package:pett_peaces/fetures/store/domain/repo.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/all_platform.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart';
+
 class Store extends StatefulWidget {
   const Store({super.key, required this.pro, required this.userEntitymodel});
   final List<ProducEntity> pro;
@@ -17,6 +18,7 @@ class Store extends StatefulWidget {
   @override
   State<Store> createState() => _StoreState();
 }
+
 class _StoreState extends State<Store> {
   final StoreRepo storeRepo = StoreRepoImp();
   final Boxrepo boxrepo = BoxRepoImp();

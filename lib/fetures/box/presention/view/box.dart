@@ -29,7 +29,6 @@ class _BoxState extends State<Box> {
         BlocProvider(
           create: (context) => GetboxCubit(boxrepo),
         ),
-       
       ],
       child: Scaffold(
         body: Bodybox(

@@ -6,6 +6,7 @@ import 'package:pett_peaces/fetures/store/prention/manager/fetachproductdetailk/
 import 'package:pett_peaces/fetures/store/prention/view/widget/customcard.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_detailes.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/summary.dart';
+
 class BodyDetails extends StatefulWidget {
   const BodyDetails({
     super.key,

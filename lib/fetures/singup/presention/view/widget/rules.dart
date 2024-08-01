@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+
 class Rules extends StatelessWidget {
   const Rules({
     super.key,

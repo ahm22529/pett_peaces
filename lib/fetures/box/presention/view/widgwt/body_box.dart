@@ -7,6 +7,7 @@ import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/cubit/getbox_cubit.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/contant_body_box.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+
 class Bodybox extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
   const Bodybox({super.key, required this.userEntitymodel});
@@ -14,6 +15,7 @@ class Bodybox extends StatefulWidget {
   @override
   State<Bodybox> createState() => _BodyboxState();
 }
+
 class _BodyboxState extends State<Bodybox> {
   @override
   void initState() {

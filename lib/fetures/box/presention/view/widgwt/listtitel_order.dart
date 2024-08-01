@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/iteam_box.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+
 class Listiteamorder extends StatefulWidget {
   const Listiteamorder(
-      {Key? key, required this.iteam, required this.userEntitymodel, required this.onRemoveItem});
+      {Key? key,
+      required this.iteam,
+      required this.userEntitymodel,
+      required this.onRemoveItem});
   final List iteam;
   final UserEntitymodel userEntitymodel;
   final void Function(ProducEntity) onRemoveItem;
@@ -22,8 +26,6 @@ class _ListiteamorderState extends State<Listiteamorder> {
     iteam = widget.iteam;
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -36,7 +38,7 @@ class _ListiteamorderState extends State<Listiteamorder> {
             IteamBox(
               producEntity: widget.iteam[index].products,
               userEntitymodel: widget.userEntitymodel,
-              onRemoveItem:widget.onRemoveItem,
+              onRemoveItem: widget.onRemoveItem,
               count: widget.iteam[index].qounte,
             ),
             if (index < iteam.length - 1)

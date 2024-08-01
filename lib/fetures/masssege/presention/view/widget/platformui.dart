@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/adaptiveui.dart';
 
-import 'package:pett_peaces/fetures/masssege/presention/view/widget/bodymasssage.dart';
+import 'package:pett_peaces/fetures/masssege/presention/view/widget/body_masssage.dart';
 
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/tabletui.dart';
 

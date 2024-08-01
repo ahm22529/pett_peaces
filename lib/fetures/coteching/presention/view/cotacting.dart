@@ -5,6 +5,7 @@ import 'package:pett_peaces/fetures/coteching/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/coteching/presention/manager/featchallcotchig/fetachingallcout_cubit.dart';
 import 'package:pett_peaces/fetures/coteching/presention/view/widget/bodycoting.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+
 class Cotching extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
 

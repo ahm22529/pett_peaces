@@ -21,7 +21,7 @@ class Bodyofheader extends StatelessWidget {
         height: 8,
       ),
       Text(
-        examel.titel ,
+        examel.titel,
         style: AppStyles.styleRegular14(context).copyWith(
             fontWeight: FontWeight.w600, color: Colors.black, fontSize: 14),
       ),

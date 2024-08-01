@@ -40,7 +40,7 @@ class _MatingState extends State<Mating> {
           ),
           centerTitle: true,
         ),
-        body:  BodyMating(
+        body: BodyMating(
           userEntitymodel: widget.userEntitymodel,
         ),
       ),

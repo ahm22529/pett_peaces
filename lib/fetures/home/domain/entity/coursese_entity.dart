@@ -1,5 +1,3 @@
-
-
 class CourseseEntity {
   final String nameof;
   final String type;

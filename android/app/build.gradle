@@ -1,8 +1,9 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
+     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
+
 }
 
 def localProperties = new Properties()
@@ -53,6 +54,11 @@ android {
         }
     }
 }
+dependencies {
+    // Replace x.y.z with a specific SDK version number. For example, 4.3.2
+    implementation 'io.agora.rtc:full-sdk:4.3.2'
+}
+
 
 flutter {
     source = "../.."

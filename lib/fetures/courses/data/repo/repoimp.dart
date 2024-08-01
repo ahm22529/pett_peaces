@@ -26,6 +26,4 @@ class CorseRepoImp extends CourseRepo {
       return left(ServFailure(e.toString()));
     }
   }
-
- 
 }

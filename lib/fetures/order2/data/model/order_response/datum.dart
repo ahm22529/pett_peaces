@@ -2,7 +2,7 @@ import 'package:pett_peaces/fetures/order2/domain/entity/order_entity.dart';
 
 import 'item.dart';
 
-class Datum extends OrderEntity{
+class Datum extends OrderEntity {
   int? id;
   String? orderNum;
   String? total;
@@ -19,7 +19,13 @@ class Datum extends OrderEntity{
     this.itemCount,
     this.items,
     this.createdAt,
-  }):super(idd: id!,revnamber: orderNum??"",price:total??"" ,waypay: paymentType??"",date: createdAt!,prod: []);
+  }) : super(
+            idd: id!,
+            revnamber: orderNum ?? "",
+            price: total ?? "",
+            waypay: paymentType ?? "",
+            date: createdAt!,
+            prod: []);
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json['id'] as int?,

@@ -4,8 +4,7 @@ import 'package:pett_peaces/fetures/box/data/model/infodetailesModel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobon_iteam.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class Detailesorder
- extends StatefulWidget {
+class Detailesorder extends StatefulWidget {
   const Detailesorder({
     super.key,
     required this.count,

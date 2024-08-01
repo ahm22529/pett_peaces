@@ -27,7 +27,7 @@ class ButtomSingup extends StatelessWidget {
               onPressed: () async {
                 if (globalKey.currentState!.validate() && accept == true) {
                   globalKey.currentState!.save();
-                 
+
                   await context
                       .read<SignupCubit>()
                       .createUserWithEmailAndPassword(

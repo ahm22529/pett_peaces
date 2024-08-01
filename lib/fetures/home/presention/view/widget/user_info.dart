@@ -29,7 +29,8 @@ class UserInfoCard extends StatelessWidget {
             ),
             Text(
               userEntitymodel.name,
-              style: AppStyles.styleRegular14(context).copyWith(fontWeight: FontWeight.w600),
+              style: AppStyles.styleRegular14(context)
+                  .copyWith(fontWeight: FontWeight.w600),
               textAlign: TextAlign.right,
             ),
           ],

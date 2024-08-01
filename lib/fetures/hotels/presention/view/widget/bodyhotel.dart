@@ -18,7 +18,6 @@ class BodyHotel extends StatefulWidget {
 class _BodyHotelState extends State<BodyHotel> {
   @override
   void initState() {
-
     super.initState();
 
     BlocProvider.of<HotelCubit>(context).getdata(
@@ -30,9 +29,7 @@ class _BodyHotelState extends State<BodyHotel> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HotelCubit, HotelState>(
-      listener: (context, state) {
-      
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         if (state is Hotelsucess) {
           return SafeArea(

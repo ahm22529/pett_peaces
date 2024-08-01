@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/chatdetails/presention/chatdetails.dart';
-import 'package:pett_peaces/fetures/masssege/presention/view/widget/bodymasssage.dart';
+import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
+import 'package:pett_peaces/fetures/masssege/presention/view/widget/body_masssage.dart';
 
 class Tabletmassui extends StatefulWidget {
   @override
@@ -28,7 +28,11 @@ class _TabletmassuiState extends State<Tabletmassui> {
         Expanded(
           flex: 5,
           child: selectedIndex != null
-              ? Chatdetails()
+              ? Chatdetails(
+                  Userid: 1,
+                  name: '',
+                  image: '',
+                )
               : Container(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

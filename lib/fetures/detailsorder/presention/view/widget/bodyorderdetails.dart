@@ -11,7 +11,8 @@ class BodyorderDetails extends StatelessWidget {
   final UserEntitymodel userEntitymodel;
   final OrderEntity orderEntityn;
 
-  BodyorderDetails({super.key, required this.userEntitymodel, required this.orderEntityn});
+  BodyorderDetails(
+      {super.key, required this.userEntitymodel, required this.orderEntityn});
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -46,7 +46,9 @@ class _IteamconterState extends State<Iteamconter> {
   void initState() {
     nav = [
       Myanmiles(userEntitymodel: widget.userEntitymodel),
-      Mating(userEntitymodel: widget.userEntitymodel,),
+      Mating(
+        userEntitymodel: widget.userEntitymodel,
+      ),
       Bookting(
         userEntitymodel: UserEntitymodel(
             email: "",
@@ -73,6 +75,7 @@ class _IteamconterState extends State<Iteamconter> {
       LoginView(),
     ];
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -80,7 +83,7 @@ class _IteamconterState extends State<Iteamconter> {
         children: lis.asMap().entries.map((entry) {
           int index = entry.key;
           ModelActino modelAction = entry.value;
-    
+
           return GestureDetector(
             onTap: () {
               if (index == 9) {

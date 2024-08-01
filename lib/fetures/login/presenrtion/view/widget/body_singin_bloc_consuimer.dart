@@ -11,7 +11,6 @@ import 'package:pett_peaces/fetures/login/presenrtion/view/widget/body_singin.da
 import 'package:pett_peaces/fetures/singup/presention/view/widget/background.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/image_dog.dart';
 
-
 class SigninViewBodyBlocConsumer extends StatelessWidget {
   const SigninViewBodyBlocConsumer({
     super.key,

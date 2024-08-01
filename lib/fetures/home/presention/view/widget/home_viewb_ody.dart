@@ -120,7 +120,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (builder) =>  Courselist(userEntitymodel: widget.userEntitymodel,))),
+                              builder: (builder) => Courselist(
+                                    userEntitymodel: widget.userEntitymodel,
+                                  ))),
                       titel1: 'كورسات تعليمية',
                       titel2: 'عرض المزيد',
                     ),
@@ -128,7 +130,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       height: 23,
                     ),
                     ListviewCourses(
-                      cours: state.homeEntity.cou, userEntitymodel: widget.userEntitymodel,
+                      cours: state.homeEntity.cou,
+                      userEntitymodel: widget.userEntitymodel,
                     ),
                     const SizedBox(
                       height: 56,

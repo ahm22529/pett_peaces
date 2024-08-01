@@ -8,7 +8,8 @@ class OrderResponse extends ListOrderEntity {
   Data? data;
   String? message;
 
-  OrderResponse({this.status, this.statusCode, this.data, this.message}):super(order: data?.data??[]);
+  OrderResponse({this.status, this.statusCode, this.data, this.message})
+      : super(order: data?.data ?? []);
 
   factory OrderResponse.fromJson(Map<String, dynamic> json) => OrderResponse(
         status: json['status'] as bool?,

@@ -8,7 +8,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class BodyBottomSheetOfWay extends StatelessWidget {
   const BodyBottomSheetOfWay({
     super.key,
-    required this.userEntitymodel, required this.endpoint,
+    required this.userEntitymodel,
+    required this.endpoint,
   });
   final UserEntitymodel userEntitymodel;
   final String endpoint;
@@ -29,7 +30,7 @@ class BodyBottomSheetOfWay extends StatelessWidget {
         CreditCardWidget(
           onTap: () {
             BlocProvider.of<CheckoutCubit>(context).getcheckout(
-                endpoint:endpoint,
+                endpoint: endpoint,
                 token: userEntitymodel.token,
                 data: {"payment_type": "card"});
           },

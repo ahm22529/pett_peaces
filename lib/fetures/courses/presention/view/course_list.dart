@@ -32,7 +32,7 @@ class _CourselistState extends State<Courselist> {
               fetchPredictions: () {},
               textEditingController: TextEditingController()),
         ),
-        body:  BodyListCourses(
+        body: BodyListCourses(
           userEntitymodel: widget.userEntitymodel,
         ),
       ),

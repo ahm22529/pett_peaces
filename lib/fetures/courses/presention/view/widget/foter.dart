@@ -8,7 +8,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class foter extends StatelessWidget {
   const foter({
     super.key,
-    required this.courseseEntity, required this.userEntitymodel,
+    required this.courseseEntity,
+    required this.userEntitymodel,
   });
   final CourseseEntity courseseEntity;
   final UserEntitymodel userEntitymodel;

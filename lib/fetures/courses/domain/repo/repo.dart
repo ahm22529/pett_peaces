@@ -8,6 +8,4 @@ import 'package:pett_peaces/fetures/restpassword/domain/entity/checkentity.dart'
 abstract class CourseRepo {
   Future<Either<Failure, CoursesEntityList>> getcoursedata(
       {required String ndpoint, required String token});
-
-
 }

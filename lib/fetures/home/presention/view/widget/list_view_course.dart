@@ -7,7 +7,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class ListviewCourses extends StatelessWidget {
   const ListviewCourses({
     super.key,
-    required this.cours, required this.userEntitymodel,
+    required this.cours,
+    required this.userEntitymodel,
   });
   final List<CourseseEntity> cours;
   final UserEntitymodel userEntitymodel;
@@ -37,7 +38,8 @@ class ListviewCourses extends StatelessWidget {
                                         startdate: cours[index].startdate,
                                         videoo: cours[index].videoo,
                                         locatione: cours[index].locatione,
-                                        des: cours[index].des), userEntitymodel: userEntitymodel,
+                                        des: cours[index].des),
+                                    userEntitymodel: userEntitymodel,
                                   ))),
                       child: Courses(
                         courseseEntity: cours[index],

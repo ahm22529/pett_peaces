@@ -6,7 +6,10 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 class Custombuttomcours extends StatelessWidget {
   const Custombuttomcours(
-      {super.key, required this.titel, required this.onPressed, required this.userEntitymodel});
+      {super.key,
+      required this.titel,
+      required this.onPressed,
+      required this.userEntitymodel});
   final String titel;
   final UserEntitymodel userEntitymodel;
   final void Function()? onPressed;
@@ -18,7 +21,8 @@ class Custombuttomcours extends StatelessWidget {
         showModalBottomSheet(
             context: context,
             builder: (context) => Wayofpay(
-                  userEntitymodel: userEntitymodel, endpoint:  "courses/1/checkout",
+                  userEntitymodel: userEntitymodel,
+                  endpoint: "courses/1/checkout",
                 ));
       },
       style: TextButton.styleFrom(

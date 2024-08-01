@@ -9,7 +9,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class Wayofpay extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
   final String endpoint;
-  const Wayofpay({super.key, required this.userEntitymodel, required this.endpoint});
+  const Wayofpay(
+      {super.key, required this.userEntitymodel, required this.endpoint});
   @override
   State<Wayofpay> createState() => _WayofpayState();
 }
@@ -31,7 +32,8 @@ class _WayofpayState extends State<Wayofpay> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
           child: BodyBottomSheetOfWay(
-            userEntitymodel: widget.userEntitymodel, endpoint: widget.endpoint,
+            userEntitymodel: widget.userEntitymodel,
+            endpoint: widget.endpoint,
           ),
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:pett_peaces/fetures/courses/presention/view/widget/show_Image.da
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/information_about_us.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/services_hotel.dart';
+
 class ThreeTabBarExample extends StatefulWidget {
   const ThreeTabBarExample({super.key, required this.hotelEntity});
   final HotelEntity hotelEntity;
@@ -34,10 +35,10 @@ class _ThreeTabBarExampleState extends State<ThreeTabBarExample>
         automaticallyImplyLeading: false,
         bottom: TabBar(
           controller: _tabController,
-          tabs:const [
-             Tab(text: "معلومات عننا"),
-             Tab(text: "خدماتنا"),
-             Tab(text: "المعرض"),
+          tabs: const [
+            Tab(text: "معلومات عننا"),
+            Tab(text: "خدماتنا"),
+            Tab(text: "المعرض"),
           ],
         ),
       ),
@@ -58,5 +59,3 @@ class _ThreeTabBarExampleState extends State<ThreeTabBarExample>
     );
   }
 }
-
-

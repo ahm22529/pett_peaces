@@ -1,8 +1,8 @@
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 
 class OrderEntity {
-  final String revnamber, waypay,price;
-  final int  idd;
+  final String revnamber, waypay, price;
+  final int idd;
   List<ProducEntity> prod;
   DateTime date;
 

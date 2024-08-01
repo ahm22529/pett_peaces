@@ -7,7 +7,8 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class buttomshowdetails extends StatelessWidget {
   const buttomshowdetails({
     super.key,
-    required this.userEntitymodel, required this.orderEntity,
+    required this.userEntitymodel,
+    required this.orderEntity,
   });
   final UserEntitymodel userEntitymodel;
   final OrderEntity orderEntity;

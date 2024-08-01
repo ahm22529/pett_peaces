@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/presention/view/widget/continer_textf
 import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/varifte_email.dart';
 
-class FormSingup extends StatefulWidget { 
+class FormSingup extends StatefulWidget {
   @override
   State<FormSingup> createState() => _FormSingupState();
 }
@@ -24,7 +24,7 @@ class _FormSingupState extends State<FormSingup> {
       comfrimpass = "",
       phone = "",
       code = "";
-       bool isTermsAccepted = false;
+  bool isTermsAccepted = false;
 
   final GlobalKey<FormState> _globalKey = GlobalKey();
 
@@ -33,89 +33,89 @@ class _FormSingupState extends State<FormSingup> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
 
-   @override
+  @override
   Widget build(BuildContext context) {
-  return  Form(
-              key: _globalKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "    الأسم بالكامل      ",
-                    style: AppStyles.styleMedium16(context).copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  TextFilkedOther(onSaved: (v) {
-                    name = v!;
-                  }),
-                  const SizedBox(height: 16),
-                  Text(
-                    "    البريد الإلكتروني      ",
-                    style: AppStyles.styleMedium16(context).copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Textformfiledemail(
-                    onSaved: (v) {
-                      email = v!;
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    "    الهاتف       ",
-                    style: AppStyles.styleMedium16(context).copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  ContinerTextFiled(
-                    onSaved: (PhoneNumber? s) {
-                      setState(() {
-                        phone = s!.number.toString();
-                        code = s.countryCode.toString();
-                      });
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    "    كلمة المرور      ",
-                    style: AppStyles.styleMedium16(context).copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  PasswordFieldvaild(
-                    controller: _passwordController,
-                    onSaved: (v) {
-                      pass = v!;
-                    },
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    "   تأكيد كلمة المرور      ",
-                    style: AppStyles.styleMedium16(context).copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  PasswordFieldvaild(
-                    controller: _confirmPasswordController,
-                    isConfirm: true,
-                    passwordController: _passwordController,
-                    onSaved: (v) {
-                      comfrimpass = v!;
-                    },
-                  ),
-                  const SizedBox(height: 8),
-                   AcceptsReuls(onChanged: (value) {
+    return Form(
+      key: _globalKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "    الأسم بالكامل      ",
+            style: AppStyles.styleMedium16(context).copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16),
+          TextFilkedOther(onSaved: (v) {
+            name = v!;
+          }),
+          const SizedBox(height: 16),
+          Text(
+            "    البريد الإلكتروني      ",
+            style: AppStyles.styleMedium16(context).copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Textformfiledemail(
+            onSaved: (v) {
+              email = v!;
+            },
+          ),
+          const SizedBox(height: 16),
+          Text(
+            "    الهاتف       ",
+            style: AppStyles.styleMedium16(context).copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16),
+          ContinerTextFiled(
+            onSaved: (PhoneNumber? s) {
+              setState(() {
+                phone = s!.number.toString();
+                code = s.countryCode.toString();
+              });
+            },
+          ),
+          const SizedBox(height: 16),
+          Text(
+            "    كلمة المرور      ",
+            style: AppStyles.styleMedium16(context).copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16),
+          PasswordFieldvaild(
+            controller: _passwordController,
+            onSaved: (v) {
+              pass = v!;
+            },
+          ),
+          const SizedBox(height: 8),
+          Text(
+            "   تأكيد كلمة المرور      ",
+            style: AppStyles.styleMedium16(context).copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16),
+          PasswordFieldvaild(
+            controller: _confirmPasswordController,
+            isConfirm: true,
+            passwordController: _passwordController,
+            onSaved: (v) {
+              comfrimpass = v!;
+            },
+          ),
+          const SizedBox(height: 8),
+          AcceptsReuls(onChanged: (value) {
             setState(() {
               isTermsAccepted = value;
             });
@@ -123,7 +123,6 @@ class _FormSingupState extends State<FormSingup> {
           const SizedBox(height: 20),
           BlocListener<SignupCubit, SignupState>(
             listener: (context, state) {
-            
               if (state is SignupSuccess) {
                 Navigator.push(
                     context,
@@ -148,8 +147,8 @@ class _FormSingupState extends State<FormSingup> {
             ),
           ),
           const SizedBox(height: 20),
-                ],
-              ),
-            );
+        ],
+      ),
+    );
   }
 }
