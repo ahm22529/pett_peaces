@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:pett_peaces/core/apiservices/apiservices.dart';
@@ -17,6 +19,19 @@ class MassageDetailsRepooImp extends MassageDetailsRepo {
       final res = await requestServices.getRequest(
           endPoint: endpoint, token: token, id: id);
       return right(Chatdetailsresponse.fromJson(res));
+    } on Exception catch (e) {
+      return left(ServFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> sendMassage(
+      {required String endppoint,
+      required String token,
+      required Map<String, dynamic> data}) async {
+    try {
+      await requestServices.post(data, endppoint, token, "");
+      return right(Void);
     } on Exception catch (e) {
       return left(ServFailure(e.toString()));
     }

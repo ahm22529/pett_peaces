@@ -18,6 +18,10 @@ class Infocourses extends StatelessWidget {
         child: FittedBox(
           child: Row(
             children: [
+              Image.asset("Asset/image/honey.png"),
+              SizedBox(
+                width: 5,
+              ),
               Text(
                 Co,
                 style: AppStyles.styleMedium16(context)

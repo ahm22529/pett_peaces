@@ -3,7 +3,9 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 class appbardetails extends StatelessWidget {
   const appbardetails({
-    super.key, required this.img, required this.name,
+    super.key,
+    required this.img,
+    required this.name,
   });
   final String img, name;
   @override
@@ -29,13 +31,13 @@ class appbardetails extends StatelessWidget {
                     Icons.arrow_back,
                     color: Colors.white,
                   )),
-               CircleAvatar(
+              CircleAvatar(
                 radius: 25,
                 backgroundImage: NetworkImage(img),
               ),
               const SizedBox(width: 5),
               Text(
-               name,
+                name,
                 style: AppStyles.styleMedium16(context).copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,

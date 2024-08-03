@@ -20,9 +20,15 @@ class BodyCourses extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Header(
-              video: courseseEntity.videoo,
-              image: courseseEntity.imag,
+            child: Container(
+              decoration: const BoxDecoration(
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(33))),
+              height: MediaQuery.of(context).size.height * .3,
+              child: Header(
+                video: courseseEntity.videoo,
+                image: courseseEntity.imag,
+              ),
             ),
           ),
           SliverToBoxAdapter(
@@ -63,7 +69,7 @@ class BodyCourses extends StatelessWidget {
               child: GestureDetector(
                 onTap: () => print(courseseEntity.otherimg[0]),
                 child: Text(
-                  "صور إضافية (24)",
+                  "صور إضافية (${courseseEntity.otherimg.length})",
                   style: AppStyles.styleMedium18(context).copyWith(
                       color: Colors.black, fontWeight: FontWeight.w600),
                 ),

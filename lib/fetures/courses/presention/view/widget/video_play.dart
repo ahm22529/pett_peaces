@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlay extends StatefulWidget {
-  const VideoPlay({super.key, required this.video});
+  const VideoPlay({
+    super.key,
+    required this.video,
+    required this.onPlayPause, // دالة رد نداء
+  });
+
   final String video;
+  final VoidCallback onPlayPause; // دالة رد نداء
 
   @override
-  _VideoPlayState createState() => _VideoPlayState();
+  VideoPlayState createState() => VideoPlayState();
 }
 
-class _VideoPlayState extends State<VideoPlay> {
+class VideoPlayState extends State<VideoPlay> {
   late VideoPlayerController _controller;
   bool _isPlaying = false;
 
@@ -36,36 +42,59 @@ class _VideoPlayState extends State<VideoPlay> {
       } else {
         _controller.play();
       }
+      _isPlaying = !_isPlaying;
+      widget.onPlayPause(); // استدعاء دالة رد النداء
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        _controller.value.isInitialized
-            ? AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              )
-            : Container(
-                color: Colors.black,
-                child: Center(
-                  child: CircularProgressIndicator(),
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return Scaffold(
+      body: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.center,
+        children: [
+          _controller.value.isInitialized
+              ? GestureDetector(
+                  onTap: _togglePlayPause,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(70),
+                    ),
+                    child: SizedBox(
+                      height: screenHeight,
+                      width: screenWidth,
+                      child: VideoPlayer(_controller),
+                    ),
+                  ),
+                )
+              : Container(
+                  color: Colors.black,
+                  width: screenWidth,
+                  height: screenHeight,
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+          // مكان عرض صورة الـ Play
+          if (_controller.value.isInitialized)
+            Positioned(
+              right: 8,
+              bottom: -20,
+              child: GestureDetector(
+                onTap: _togglePlayPause,
+                child: Image.asset(
+                  _isPlaying
+                      ? "Asset/image/play.png" // صورة وقف
+                      : "Asset/image/play.png", // صورة تشغيل
                 ),
               ),
-        _controller.value.isInitialized
-            ? IconButton(
-                icon: Icon(
-                  _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-                  color: Colors.white,
-                  size: 50,
-                ),
-                onPressed: _togglePlayPause,
-              )
-            : Container(), // Empty container while video is loading
-      ],
+            ),
+        ],
+      ),
     );
   }
 }

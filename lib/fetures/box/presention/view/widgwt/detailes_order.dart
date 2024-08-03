@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/buildrow.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/box/data/model/infodetailesModel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/cobon_iteam.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
@@ -60,21 +61,22 @@ class _DetailesorderState extends State<Detailesorder> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xffFFFFFF),
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          const BoxShadow(
-            color: Color(0x40000000), // Color #000000 with 25% opacity
-            blurRadius: 8,
-            spreadRadius: 1,
-            offset: Offset(0, 2), // changes position of shadow
-          ),
-        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              "اضف كوبون الخصم ",
+              style: AppStyles.stylesemi20(context)
+                  .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             cobeniteam(
               userEntitymodel: widget.userEntitymodel,
             ),

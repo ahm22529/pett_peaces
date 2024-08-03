@@ -32,7 +32,7 @@ class Locationser extends StatelessWidget {
         SizedBox(
             height: MediaQuery.of(context).size.width <= SizeConfig.tablet
                 ? MediaQuery.of(context).size.height * .8
-                : MediaQuery.of(context).size.height * .5,
+                : MediaQuery.of(context).size.height * .3,
             child: ThreeTabBarExample(
               hotelEntity: hotelEntity,
             )),

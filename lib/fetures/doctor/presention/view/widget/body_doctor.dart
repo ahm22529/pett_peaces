@@ -25,7 +25,7 @@ class _BodyDocoterState extends State<BodyDocoter> {
   Widget build(BuildContext context) {
     {
       return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 73),
+        padding: const EdgeInsets.only(right: 20.0, left: 0, top: 73),
         child: Column(
           children: [
             const customAppbar(name: "الاطباء"),

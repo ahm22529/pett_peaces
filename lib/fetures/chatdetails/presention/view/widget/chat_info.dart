@@ -19,6 +19,8 @@ class ChatPage extends StatelessWidget {
             name: name,
           ),
         ),
-        body: Text("data"));
+        body: CustomPusher(
+         channel: '',
+        ));
   }
 }

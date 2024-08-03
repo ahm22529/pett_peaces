@@ -5,4 +5,9 @@ import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entit
 abstract class MassageDetailsRepo {
   Future<Either<Failure, ChatDetailsEntity>> getmassage(
       {required String endpoint, required String token, required String id});
+
+  Future<Either<Failure, void>> sendMassage(
+      {required String endppoint,
+      required String token,
+      required Map<String, dynamic> data});
 }

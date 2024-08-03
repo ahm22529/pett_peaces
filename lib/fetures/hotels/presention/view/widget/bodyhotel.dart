@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/hotel/hotel_cubit.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/buttomcomfrim.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/comfrimbook.dart';
@@ -11,11 +14,14 @@ class BodyHotel extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
 
   const BodyHotel({super.key, required this.userEntitymodel});
+
   @override
   State<BodyHotel> createState() => _BodyHotelState();
 }
 
 class _BodyHotelState extends State<BodyHotel> {
+  List<AnmilesEntity> anmiles = [];
+
   @override
   void initState() {
     super.initState();
@@ -24,6 +30,9 @@ class _BodyHotelState extends State<BodyHotel> {
       endpoint: "hotel",
       token: widget.userEntitymodel.token,
     );
+
+    BlocProvider.of<FetachMyAnmilesCubit>(context)
+        .getanmiles(token: widget.userEntitymodel.token, endpoint: "animals/");
   }
 
   @override
@@ -38,8 +47,14 @@ class _BodyHotelState extends State<BodyHotel> {
                 CustomScrollView(
                   slivers: [
                     SliverToBoxAdapter(
-                      child: Headerhotel(
-                        hotelEntity: state.hotelresponse,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(33))),
+                        height: MediaQuery.of(context).size.height * .3,
+                        child: Headerhotel(
+                          hotelEntity: state.hotelresponse,
+                        ),
                       ),
                     ),
                     SliverToBoxAdapter(
@@ -62,18 +77,32 @@ class _BodyHotelState extends State<BodyHotel> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 0.0, vertical: 0.0),
                     child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        color: const Color.fromRGBO(255, 255, 255, 1),
+                      width: MediaQuery.of(context).size.width,
+                      color: const Color.fromRGBO(255, 255, 255, 1),
+                      child: BlocListener<FetachMyAnmilesCubit,
+                          FetachMyAnmilesState>(
+                        listener: (context, state) {
+                          if (state is FetachMyAnmsucesss) {
+                            setState(() {
+                              anmiles = state.lis.anmiles;
+                            });
+                          }
+                        },
                         child: Butomcomfrim(
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (builder) => Comfrimbook(
-                                          hotelEntity: state.hotelresponse,
-                                        )));
+                              context,
+                              MaterialPageRoute(
+                                builder: (builder) => Comfrimbook(
+                                  hotelEntity: state.hotelresponse,
+                                  anmiles: anmiles,
+                                ),
+                              ),
+                            );
                           },
-                        )),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],

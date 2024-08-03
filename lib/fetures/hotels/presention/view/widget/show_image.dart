@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ShowImage extends StatelessWidget {
-  final List? hotelEntity;
+  final List<Map<String, dynamic>>? hotelEntity;
 
   ShowImage({super.key, required this.hotelEntity});
 
@@ -29,7 +30,16 @@ class ShowImage extends StatelessWidget {
             onTap: () {
               _showImageDialog(context, hotelEntity![index]['image']);
             },
-            child: Image.network(hotelEntity![index].image, fit: BoxFit.cover),
+            child: CachedNetworkImage(
+              imageUrl: hotelEntity![index]['image'],
+              fit: BoxFit.cover,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              errorWidget: (context, url, error) => const Center(
+                child: Icon(Icons.error, color: Colors.red),
+              ),
+            ),
           );
         } else {
           return GestureDetector(
@@ -65,7 +75,16 @@ class ShowImage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          child: Image.network(imagePath),
+          child: CachedNetworkImage(
+            imageUrl: imagePath,
+            fit: BoxFit.cover,
+            placeholder: (context, url) => const Center(
+              child: CircularProgressIndicator(),
+            ),
+            errorWidget: (context, url, error) => const Center(
+              child: Icon(Icons.error, color: Colors.red),
+            ),
+          ),
         );
       },
     );
@@ -81,10 +100,21 @@ class ShowImage extends StatelessWidget {
         return Dialog(
           child: SingleChildScrollView(
             child: Column(
-              children: remainingImages.map((image) {
+              children: remainingImages.map((imageData) {
+                final imageUrl =
+                    imageData['image']; // تأكد من أن لديك المفتاح الصحيح
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: Image.network(image, fit: BoxFit.cover),
+                  child: CachedNetworkImage(
+                    imageUrl: imageUrl,
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(Icons.error, color: Colors.red),
+                    ),
+                  ),
                 );
               }).toList(),
             ),

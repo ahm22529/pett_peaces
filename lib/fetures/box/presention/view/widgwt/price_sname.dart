@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
+import 'package:pett_peaces/fetures/box/presention/manager/cubit/getbox_cubit.dart';
 
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/count_iteam.dart';
 import 'package:pett_peaces/fetures/box/presention/view/widgwt/information_iteam.dart';
@@ -43,6 +44,8 @@ class _pricevulemnameState extends State<pricevulemname> {
                     endpoint: "cart/remove",
                     data: {"product_id": widget.producEntity.id});
                 widget.onRemoveItem(widget.producEntity);
+                BlocProvider.of<GetboxCubit>(context).getBox(
+                    endpoint: "cart/show", token: widget.userEntitymodel.token);
               },
             ),
           ],

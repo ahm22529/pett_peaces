@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/fetures/singup/data/reop/siguprepoImp.dart';
+import 'package:pett_peaces/fetures/singup/data/reop/sigup_repo_Imp.dart';
 import 'package:pett_peaces/fetures/singup/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 

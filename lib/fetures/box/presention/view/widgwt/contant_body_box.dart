@@ -35,6 +35,7 @@ class _ContantBodyBoxState extends State<ContantBodyBox> {
     if (peoduct.isEmpty) {
       return Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("Asset/image/Natural farm products in a kraft bag.png"),
@@ -54,23 +55,38 @@ class _ContantBodyBoxState extends State<ContantBodyBox> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Listiteamorder(
               iteam: peoduct,
               userEntitymodel: widget.userEntitymodel,
               onRemoveItem: _removeItem,
             ),
-            Divider(
-              height: 48,
-              color: const Color(0xffd9d9d980).withOpacity(.5),
-            ),
+            Divider(height: 48, color: Color(0xffD9D9D9)),
             Detailesorder(
-              count: widget.boxEntity.count.toString(),
+              count: widget.boxEntity.product.length.toString(),
               total: widget.boxEntity.total.toString(),
               taxpr: widget.boxEntity.dis.toString(),
               userEntitymodel: widget.userEntitymodel,
             ),
             const SizedBox(
+              height: 20,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "اذا تم دفع ببطاقه الامتنان سوف يتم خصم 2% كضريبه اضافيه",
+                  style: AppStyles.styleRegular14(context)
+                      .copyWith(color: Colors.red, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            SizedBox(
               height: 20,
             ),
             BotttomPay(

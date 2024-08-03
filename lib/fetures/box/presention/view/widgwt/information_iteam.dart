@@ -16,11 +16,12 @@ class Informtionorderiteam extends StatelessWidget {
         Text(
           box.nameof,
           style: AppStyles.styleMedium18(context)
-              .copyWith(fontWeight: FontWeight.w600),
+              .copyWith(fontWeight: FontWeight.bold),
         ),
         Text(
           box.shortdescription,
-          style: AppStyles.styleMedium12(context),
+          style: AppStyles.styleMedium12(context)
+              .copyWith(fontWeight: FontWeight.w800),
         ),
       ],
     );

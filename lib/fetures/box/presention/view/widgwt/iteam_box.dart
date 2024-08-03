@@ -9,18 +9,22 @@ class IteamBox extends StatefulWidget {
   final UserEntitymodel userEntitymodel;
   final int count;
   final void Function(ProducEntity) onRemoveItem;
-  const IteamBox(
-      {super.key,
-      required this.producEntity,
-      required this.userEntitymodel,
-      required this.onRemoveItem,
-      required this.count});
+
+  const IteamBox({
+    super.key,
+    required this.producEntity,
+    required this.userEntitymodel,
+    required this.onRemoveItem,
+    required this.count,
+  });
+
   @override
   State<IteamBox> createState() => _IteamBoxState();
 }
 
 class _IteamBoxState extends State<IteamBox> {
   int numberofiteam = 1;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,11 +34,39 @@ class _IteamBoxState extends State<IteamBox> {
           Container(
             height: MediaQuery.of(context).size.height * .12,
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(12)),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 17.0, vertical: 14),
-              child: Image.network(widget.producEntity.img),
+              child: Image.network(
+                widget.producEntity.img,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  } else {
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                (loadingProgress.expectedTotalBytes ?? 1)
+                            : null,
+                      ),
+                    );
+                  }
+                },
+                errorBuilder: (context, error, stackTrace) {
+                  return Center(
+                    child: Icon(
+                      Icons.error,
+                      color: Colors.red,
+                      size: 30.0,
+                    ),
+                  );
+                },
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(
@@ -47,7 +79,7 @@ class _IteamBoxState extends State<IteamBox> {
               onRemoveItem: widget.onRemoveItem,
               count: widget.count,
             ),
-          )
+          ),
         ],
       ),
     );

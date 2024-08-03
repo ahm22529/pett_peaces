@@ -70,8 +70,8 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // عدد الأعمدة
         mainAxisSpacing: 5, // التباعد الرأسي
-        crossAxisSpacing: 3, // التباعد الأفقي
-        childAspectRatio: 2.6 / 4.9, // نسبة العرض إلى الارتفاع
+        crossAxisSpacing: 20, // التباعد الأفقي
+        childAspectRatio: 2.6 / 10, // نسبة العرض إلى الارتفاع
       ),
       itemBuilder: (BuildContext context, int index) {
         final services = [

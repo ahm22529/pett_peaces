@@ -22,7 +22,7 @@ class Datum extends FreinedChatEntity {
   }) : super(
             chatid: id ?? 1,
             imagesender: user?.image ?? "",
-            userid: user?.id??0,
+            userid: user?.id ?? 0,
             lastmassage: lastMessage?.message ?? "",
             date: createdAt!,
             isshow: unreadMessages ?? false,

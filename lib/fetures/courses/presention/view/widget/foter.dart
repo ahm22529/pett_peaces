@@ -15,24 +15,31 @@ class foter extends StatelessWidget {
   final UserEntitymodel userEntitymodel;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Custombuttomcours(
-          titel: 'طلب إشتراك',
-          onPressed: () {},
-          userEntitymodel: userEntitymodel,
-        ),
-        const SizedBox(
-          width: 48,
-        ),
-        const SizedBox(
-          width: 8,
-        ),
-        Spacer(),
-        priceanddiscount(
-          courseseEntity: courseseEntity,
-        ),
-      ],
-    );
+    return courseseEntity.isactive
+        ? Row(
+            children: [
+              Custombuttomcours(
+                titel: 'طلب إشتراك',
+                onPressed: () {},
+                userEntitymodel: userEntitymodel,
+              ),
+              const SizedBox(
+                width: 48,
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              Spacer(),
+              priceanddiscount(
+                courseseEntity: courseseEntity,
+              ),
+            ],
+          )
+        : Center(
+            child: Text(
+              "انت مشترك ف هذا الكورس",
+              style: AppStyles.styleMedium18(context),
+            ),
+          );
   }
 }

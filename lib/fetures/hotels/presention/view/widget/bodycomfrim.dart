@@ -4,6 +4,7 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/cubit/book_cubit.dart';
@@ -14,9 +15,10 @@ import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepicker.dar
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/droptextfiled.dart';
 
 class Bodycomfrimbook extends StatefulWidget {
+ final List<AnmilesEntity> anmiles;
   const Bodycomfrimbook({
     super.key,
-    required this.hotelEntity,
+    required this.hotelEntity, required this.anmiles,
   });
 
   final HotelEntity hotelEntity;
@@ -27,6 +29,7 @@ class Bodycomfrimbook extends StatefulWidget {
 
 class _BodycomfrimbookState extends State<Bodycomfrimbook> {
   late List titel;
+
   Animal? selectedValue;
   final TextEditingController animalController = TextEditingController();
   String startdate = '';
@@ -39,15 +42,6 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
   final TextEditingController daysController = TextEditingController();
 
   @override
-  void initState() {
-    super.initState();
-    titel = widget.hotelEntity.ser[0].ser;
-    BlocProvider.of<FetachMyAnmilesCubit>(context).getanmiles(
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIxNjY2MTU5LCJleHAiOjE3MjIyNzA5NTksIm5iZiI6MTcyMTY2NjE1OSwianRpIjoiZUJodjZtQ2dFV2UyY0xnUSIsInN1YiI6IjEwOSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.99iC7a6BaYfnVCcCvll3dLteePiKdN3_de0zeO4vATA",
-        endpoint: "animals/");
-  }
-
   void selectService(int serviceId) {
     setState(() {
       selectedServiceIds.add(serviceId);
@@ -157,12 +151,9 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
             },
           ),
           const SizedBox(height: 16),
-          BlocBuilder<FetachMyAnmilesCubit, FetachMyAnmilesState>(
-            builder: (context, state) {
-              if (state is FetachMyAnmsucesss) {
-                return datepic(
+         datepic(
                   widget: DropdownFieldbook(
-                    options: state.lis.anmiles
+                    options: widget.anmiles
                         .map((e) => Animal(id: e.idd, name: e.namee))
                         .toList(),
                     controller: animalController,
@@ -172,12 +163,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
                     },
                   ),
                   text: "اختر الحيوان",
-                );
-              } else {
-                return const SizedBox(height: 20);
-              }
-            },
-          ),
+                ),
           const SizedBox(height: 16),
           Text(
             "الخدمات",

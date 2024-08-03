@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
+
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
+import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/hotels/data/repo/hotel_rep_imp.dart';
 import 'package:pett_peaces/fetures/hotels/domain/entity/aboutus_entity.dart';
 import 'package:pett_peaces/fetures/hotels/domain/repo/hotelrep.dart';
 import 'package:pett_peaces/fetures/hotels/presention/manager/cubit/book_cubit.dart';
 
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/bodycomfrim.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Comfrimbook extends StatefulWidget {
   final HotelEntity hotelEntity;
 
-  const Comfrimbook({super.key, required this.hotelEntity});
+  final List<AnmilesEntity> anmiles;
+  const Comfrimbook({
+    super.key, required this.hotelEntity, required this.anmiles,
+   
+  });
   @override
   State<Comfrimbook> createState() => _ComfrimbookState();
 }
@@ -24,7 +31,7 @@ class _ComfrimbookState extends State<Comfrimbook> {
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
+   
   }
 
   @override
@@ -46,6 +53,7 @@ class _ComfrimbookState extends State<Comfrimbook> {
           builder: (context, state) {
             return Bodycomfrimbook(
               hotelEntity: widget.hotelEntity,
+              anmiles:widget.anmiles ,
             );
           },
         ),

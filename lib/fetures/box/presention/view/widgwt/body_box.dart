@@ -21,7 +21,7 @@ class _BodyboxState extends State<Bodybox> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    BlocProvider.of<GetboxCubit>(context)
+     BlocProvider.of<GetboxCubit>(context)
         .getBox(endpoint: "cart/show", token: widget.userEntitymodel.token);
   }
 

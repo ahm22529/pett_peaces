@@ -5,13 +5,15 @@ import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 
 import 'package:pett_peaces/fetures/doctor/presention/view/doctor.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/exapmel.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/category_services.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/hotel.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/all_anmiles_mating.dart';
-import 'package:pett_peaces/fetures/se3rviecs/presention/view/widget/catagrorybuttom.dart';
+
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 import '../../../../bayandseller/presention/view/sellerand_buy.dart';
+import 'catagrorybuttom.dart';
 
 class CustomGridViewServ extends StatelessWidget {
   const CustomGridViewServ({
@@ -22,12 +24,14 @@ class CustomGridViewServ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      shrinkWrap: !false,
+      physics: NeverScrollableScrollPhysics(),
       itemCount: 9,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // عدد الأعمدة
-        mainAxisSpacing: 10, // التباعد الرأسي
+        mainAxisSpacing: 20, // التباعد الرأسي
         crossAxisSpacing: 14, // التباعد الأفقي
-        childAspectRatio: 7.5 / 2, // نسبة العرض إلى الارتفاع
+        childAspectRatio: 18 / 5, // نسبة العرض إلى الارتفاع
       ),
       itemBuilder: (BuildContext context, int index) {
         final List nav = [

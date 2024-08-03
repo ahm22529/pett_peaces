@@ -18,33 +18,43 @@ class CategoryButtonhome extends StatelessWidget {
         color: backgroundColor,
         borderRadius: BorderRadius.circular(5),
       ),
-      child: FittedBox(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Image.asset(
-                  imagePath,
-                ),
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned(
+              right: 0,
+              top: -25,
+              child: Image.asset(
+                imagePath,
+                height: 80,
+                width: 80,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 0),
-                child: Text(
-                  text,
-                  style: const TextStyle(
-                    fontFamily: 'Changa',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18,
-                    color: Colors.white,
-                    height: 1.4,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    text,
+                    style: const TextStyle(
+                      fontFamily: 'Changa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15,
+                      color: Colors.white,
+                      height: 1.4,
+                    ),
                   ),
                 ),
-              )
-            ],
-          ),
+              ],
+            )
+          ],
         ),
       ),
     );

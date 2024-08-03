@@ -42,7 +42,7 @@ class _ListiteamorderState extends State<Listiteamorder> {
               count: widget.iteam[index].qounte,
             ),
             if (index < iteam.length - 1)
-              Divider(height: 25, color: Color(0xffD9D9D980).withOpacity(.5)),
+              Divider(height: 25, color: Color(0xffD9D9D9).withOpacity(.5)),
           ],
         );
       },

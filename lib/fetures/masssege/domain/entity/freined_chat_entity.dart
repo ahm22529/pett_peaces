@@ -3,8 +3,7 @@ class FreinedChatEntity {
 
   final bool isshow;
   final DateTime date;
-  final int chatid,userid;
-
+  final int chatid, userid;
 
   FreinedChatEntity(
       {required this.imagesender,

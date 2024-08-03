@@ -44,8 +44,8 @@ class _CountiteamState extends State<Countiteam> {
       children: [
         Text(
           totalPrice.toString(),
-          style: AppStyles.styleMedium18(context)
-              .copyWith(color: const Color(0xffF78E32)),
+          style: AppStyles.styleMedium18(context).copyWith(
+              color: const Color(0xffF78E32), fontWeight: FontWeight.bold),
         ),
         const Spacer(),
         GestureDetector(
@@ -61,6 +61,7 @@ class _CountiteamState extends State<Countiteam> {
           },
           child: const AddMiuns(
             iconData: Icons.add,
+            active: true,
           ),
         ),
         const SizedBox(width: 5),
@@ -79,8 +80,9 @@ class _CountiteamState extends State<Countiteam> {
               }
             });
           },
-          child: const AddMiuns(
+          child: AddMiuns(
             iconData: Icons.remove,
+            active: numb != 1,
           ),
         ),
       ],

@@ -4,7 +4,8 @@ class MassageEntity {
   final DateTime date;
 
   MassageEntity(
-      {required this.idd,required this.massage, required this.date, required this.attachc});
+      {required this.idd,
+      required this.massage,
+      required this.date,
+      required this.attachc});
 }
-
-

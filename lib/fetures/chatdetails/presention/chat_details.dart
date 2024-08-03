@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/chatdetails/data/repo/massage_details_repo_imp.dart';
 import 'package:pett_peaces/fetures/chatdetails/domain/repo/massage_details_repo.dart';
-import 'package:pett_peaces/fetures/chatdetails/presention/manager/cubit/chatdetails_cubit.dart';
+import 'package:pett_peaces/fetures/chatdetails/presention/manager/cubit/send_cubit.dart';
+import 'package:pett_peaces/fetures/chatdetails/presention/manager/fetachalllchatcubit/chatdetails_cubit.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chat_info.dart';
 
 class Chatdetails extends StatefulWidget {
@@ -22,8 +23,15 @@ class _ChatdetailsState extends State<Chatdetails> {
   MassageDetailsRepo mass = MassageDetailsRepooImp();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ChatdetailsCubit(mass: mass),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ChatdetailsCubit(mass: mass),
+        ),
+        BlocProvider(
+          create: (context) => SendCubit(mass: mass),
+        )
+      ],
       child: Scaffold(
         body: BodyChatdetails(
           Userid: widget.Userid,

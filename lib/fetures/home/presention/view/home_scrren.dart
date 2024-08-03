@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/home/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/home_viewb_ody.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/massage.dart';
-import 'package:pett_peaces/fetures/se3rviecs/presention/view/services.dart';
+import 'package:pett_peaces/fetures/serviecs/presention/view/services.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 

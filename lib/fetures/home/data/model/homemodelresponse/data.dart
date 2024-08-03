@@ -12,7 +12,7 @@ class Data extends HomeEntity {
 
   Data({this.courses, this.myAnimal, this.products, this.banners})
       : super(
-            anmilesEntity: myAnimal!,
+            anmilesEntity: myAnimal,
             product: products ?? [],
             paners: banners ?? [],
             cou: courses ?? []);

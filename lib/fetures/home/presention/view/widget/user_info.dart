@@ -23,14 +23,17 @@ class UserInfoCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              userEntitymodel.email,
-              style: AppStyles.styleMedium12(context),
+              userEntitymodel.name,
+              style: AppStyles.styleMedium12(context).copyWith(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
               textAlign: TextAlign.right,
             ),
             Text(
-              userEntitymodel.name,
+              userEntitymodel.email,
               style: AppStyles.styleRegular14(context)
-                  .copyWith(fontWeight: FontWeight.w600),
+                  .copyWith(fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
           ],

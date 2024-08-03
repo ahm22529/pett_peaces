@@ -31,6 +31,7 @@ class _BoxState extends State<Box> {
         ),
       ],
       child: Scaffold(
+        backgroundColor: Color(0xffFDFDFD),
         body: Bodybox(
           userEntitymodel: widget.userEntitymodel,
         ),

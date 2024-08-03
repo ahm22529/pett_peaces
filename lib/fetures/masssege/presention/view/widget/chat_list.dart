@@ -7,7 +7,7 @@ class ChatList extends StatelessWidget {
   final ScrollController scrollController;
   final List chats;
   final bool isLoadingMore;
- 
+
   final Function(int) onItemSelected;
 
   const ChatList({
@@ -15,7 +15,7 @@ class ChatList extends StatelessWidget {
     required this.scrollController,
     required this.chats,
     required this.isLoadingMore,
-    required this.onItemSelected, 
+    required this.onItemSelected,
   });
 
   @override

@@ -17,7 +17,11 @@ class Datum extends MassageEntity {
     this.attach,
     this.createdAt,
     this.updatedAt,
-  }):super(idd: id??0,massage:message??""  ,date:createdAt! ,attachc: attach??"") ;
+  }) : super(
+            idd: id ?? 0,
+            massage: message ?? "",
+            date: createdAt!,
+            attachc: attach ?? "");
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json['id'] as int?,

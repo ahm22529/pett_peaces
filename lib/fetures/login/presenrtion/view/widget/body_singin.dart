@@ -28,15 +28,17 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
               Text(
                 "مرحبا بك ",
-                style: AppStyles.stylesmedium32(context),
+                style: AppStyles.stylesmedium32(context)
+                    .copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 8,
               ),
               Text(
                 " أهلا بك في Petty Peace قم بتسجيل الدخول الآن ",
-                style: AppStyles.styleRegular14(context)
-                    .copyWith(color: const Color(0xff8A8A8A)),
+                style: AppStyles.styleRegular14(context).copyWith(
+                    color: const Color(0xff8A8A8A),
+                    fontWeight: FontWeight.w600),
               ),
               const SizedBox(
                 height: 20,

@@ -1,26 +1,15 @@
-import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entity.dart';
-
 import 'data.dart';
 
-class Chatdetailsresponse extends ChatDetailsEntity {
+class SendChatResponse {
   bool? status;
   int? statusCode;
   Data? data;
   String? message;
 
-  Chatdetailsresponse({
-    this.status,
-    this.statusCode,
-    this.data,
-    this.message,
-  }) : super(
-            massage: data?.massage ?? [],
-            channel: data?.channel ?? "",
-            tokrn: data?.tokrn ?? "",
-            idd: data?.idd ?? 0);
+  SendChatResponse({this.status, this.statusCode, this.data, this.message});
 
-  factory Chatdetailsresponse.fromJson(Map<String, dynamic> json) {
-    return Chatdetailsresponse(
+  factory SendChatResponse.fromJson(Map<String, dynamic> json) {
+    return SendChatResponse(
       status: json['status'] as bool?,
       statusCode: json['status_code'] as int?,
       data: json['data'] == null

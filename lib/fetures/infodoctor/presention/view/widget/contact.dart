@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/viedo_call.dart';
 
 class Contact extends StatelessWidget {
   const Contact({
@@ -16,7 +17,9 @@ class Contact extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (builder) => const Chatdetails(
-                          Userid: 1, name: '', image: '',
+                          Userid: 1,
+                          name: '',
+                          image: '',
                         ))),
             child: Image.asset("Asset/image/chatdoc.png")),
         const SizedBox(
@@ -26,7 +29,10 @@ class Contact extends StatelessWidget {
         const SizedBox(
           width: 8,
         ),
-        Image.asset("Asset/image/videocalldoc.png"),
+        GestureDetector(
+           // onTap: () => Navigator.push(
+            //    context, MaterialPageRoute(builder: (builder) => ViedoCall())),
+            child: Image.asset("Asset/image/videocalldoc.png")),
       ],
     );
   }
