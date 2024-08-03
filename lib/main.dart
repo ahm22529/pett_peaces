@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:pett_peaces/constant.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
@@ -16,7 +17,9 @@ import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cub
 import 'package:pett_peaces/fetures/splash/presention/view/splash_view.dart';
 import 'generated/l10n.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     DevicePreview(
       enabled: false,

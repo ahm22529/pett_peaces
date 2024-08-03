@@ -30,8 +30,11 @@ class Contact extends StatelessWidget {
           width: 8,
         ),
         GestureDetector(
-           // onTap: () => Navigator.push(
-            //    context, MaterialPageRoute(builder: (builder) => ViedoCall())),
+            onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AgoraVideoCallWidget()),
+                ),
             child: Image.asset("Asset/image/videocalldoc.png")),
       ],
     );
