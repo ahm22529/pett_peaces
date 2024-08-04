@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Mating extends StatefulWidget {
   const Mating({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<Mating> createState() => _MatingState();
 }

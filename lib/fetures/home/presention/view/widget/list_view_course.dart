@@ -11,7 +11,7 @@ class ListviewCourses extends StatelessWidget {
     required this.userEntitymodel,
   });
   final List<CourseseEntity> cours;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(

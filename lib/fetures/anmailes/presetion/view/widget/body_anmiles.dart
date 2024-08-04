@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/myaddacount.
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyAnmiles extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const BodyAnmiles({super.key, required this.userEntitymodel});
   @override

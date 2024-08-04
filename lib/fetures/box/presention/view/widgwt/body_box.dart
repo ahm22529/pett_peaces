@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/box/presention/view/widgwt/contant_body_box.
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bodybox extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const Bodybox({super.key, required this.userEntitymodel});
 
   @override
@@ -21,7 +21,7 @@ class _BodyboxState extends State<Bodybox> {
   void initState() {
     // TODO: implement initState
     super.initState();
-     BlocProvider.of<GetboxCubit>(context)
+    BlocProvider.of<GetboxCubit>(context)
         .getBox(endpoint: "cart/show", token: widget.userEntitymodel.token);
   }
 

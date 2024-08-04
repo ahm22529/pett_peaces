@@ -3,11 +3,13 @@ import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entit
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chatbubels.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chatbulesforfrind.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/foterdetails.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bodysetailsmassage extends StatefulWidget {
   final ChatDetailsEntity chatDetailsEntity;
-
-  const Bodysetailsmassage({super.key, required this.chatDetailsEntity});
+  final UserEntity userEntity;
+  const Bodysetailsmassage(
+      {super.key, required this.chatDetailsEntity, required this.userEntity});
   @override
   State<Bodysetailsmassage> createState() => _BodysetailsmassageState();
 }
@@ -25,17 +27,18 @@ class _BodysetailsmassageState extends State<Bodysetailsmassage> {
             itemCount: widget.chatDetailsEntity.massage
                 .length, // Number of messages for example
             itemBuilder: (context, index) {
-              DateTime now = DateTime.now();
+              DateTime now = widget.chatDetailsEntity.massage[index].date;
+              ;
               String formattedTime =
                   "${now.hour}:${now.minute}:${now.second}"; // Time format
 
-              return index % 2 == 0
+              return widget.userEntity.id == widget.chatDetailsEntity.idd
                   ? ChatBubble(
-                      message: 'Message from user $index',
+                      message: widget.chatDetailsEntity.massage[index].massage,
                       time: formattedTime,
                     )
                   : ChatBubbleForFriend(
-                      message: 'Message from friend $index',
+                      message: widget.chatDetailsEntity.massage[index].massage,
                       time: formattedTime,
                     );
             },

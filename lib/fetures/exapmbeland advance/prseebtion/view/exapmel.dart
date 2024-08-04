@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Example extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Example({super.key, required this.userEntitymodel});
   @override

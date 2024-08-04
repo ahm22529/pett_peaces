@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Services extends StatelessWidget {
   const Services({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Padding(

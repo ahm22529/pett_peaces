@@ -14,7 +14,7 @@ class Detailesorder extends StatefulWidget {
     required this.userEntitymodel,
   });
   final String count, total, taxpr;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<Detailesorder> createState() => _DetailesorderState();
 }

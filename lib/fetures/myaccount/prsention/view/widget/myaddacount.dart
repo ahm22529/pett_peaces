@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class MyAccountAdd extends StatelessWidget {
   final AnmilesRepo _anmilesRepo = AnimelsRepoImp();
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   MyAccountAdd({super.key, required this.userEntitymodel});
   @override

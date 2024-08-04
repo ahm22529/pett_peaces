@@ -11,7 +11,7 @@ import 'package:pett_peaces/fetures/hotels/presention/view/widget/location_serv.
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyHotel extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const BodyHotel({super.key, required this.userEntitymodel});
 

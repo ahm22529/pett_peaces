@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Gridviewco extends StatefulWidget {
   const Gridviewco({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<Gridviewco> createState() => _CustomGridViewstoreState();
 }

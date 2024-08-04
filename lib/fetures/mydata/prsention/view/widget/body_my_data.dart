@@ -11,7 +11,7 @@ import 'package:pett_peaces/fetures/mydata/prsention/view/widget/form_update_dat
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyMyData extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const BodyMyData({super.key, required this.userEntitymodel});
 

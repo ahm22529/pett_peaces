@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class LoginrepoImp extends LoginRepo {
   RequestServices requestServices = RequestServices(Dio());
   @override
-  Future<Either<Failure, UserEntitymodel>> singIn(
+  Future<Either<Failure, UserEntity>> singIn(
       {required Map<String, dynamic> input, required String endponit}) async {
     try {
       dynamic result = await requestServices.post(input, endponit, "", "");

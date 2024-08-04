@@ -4,11 +4,17 @@ import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/masssege/presention/manager/cubit/massage_cubit.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/body_masssage.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/chat_list.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ListviewFrined extends StatefulWidget {
-  const ListviewFrined({super.key, required this.widget});
+  const ListviewFrined(
+      {super.key,
+      required this.widget,
+      required this.token,
+      required this.userEntity});
   final BodyMassege widget;
-
+  final String token;
+  final UserEntity userEntity;
   @override
   State<ListviewFrined> createState() => _ListviewFrinedState();
 }
@@ -28,9 +34,7 @@ class _ListviewFrinedState extends State<ListviewFrined> {
 
   void _loadData() {
     context.read<MassageCubit>().getalluser(
-        endpoint: "chat/list?page=$currentPage",
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyNDk0MTA0LCJleHAiOjE3MjMwOTg5MDQsIm5iZiI6MTcyMjQ5NDEwNCwianRpIjoiVmRHVFJPMWs1VVBvaXdLUiIsInN1YiI6IjEyNSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.1zfERtwmUMRWJ8YePF9W6RCFDhb89X9CKva4SqaGVUU");
+        endpoint: "chat/list?page=$currentPage", token: widget.token);
   }
 
   void _onScroll() {
@@ -69,6 +73,8 @@ class _ListviewFrinedState extends State<ListviewFrined> {
             chats: chats,
             isLoadingMore: isLoadingMore,
             onItemSelected: widget.widget.onItemSelected,
+            token: widget.token,
+            userEntity: widget.userEntity,
           );
         } else {
           return Loadwidgwt();

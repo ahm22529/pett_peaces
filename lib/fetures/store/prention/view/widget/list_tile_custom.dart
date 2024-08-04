@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ListtileCustomcard extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const ListtileCustomcard({
     super.key,
     required this.producEntity,

@@ -6,7 +6,7 @@ import 'package:pett_peaces/fetures/order2/domain/entity/order_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class OrderDetails extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final OrderEntity orderEntity;
   const OrderDetails(
       {super.key, required this.userEntitymodel, required this.orderEntity});

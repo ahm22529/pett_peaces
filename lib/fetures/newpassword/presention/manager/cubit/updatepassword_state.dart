@@ -8,7 +8,7 @@ final class UpdatepasswordInitial extends UpdatepasswordState {}
 final class UpdatepasswordLoading extends UpdatepasswordState {}
 
 final class UpdatepasswordSuccess extends UpdatepasswordState {
-  final UserEntitymodel userEntity;
+  final UserEntity userEntity;
 
   UpdatepasswordSuccess({required this.userEntity});
 }

@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Courselist extends StatefulWidget {
   const Courselist({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<Courselist> createState() => _CourselistState();
 }

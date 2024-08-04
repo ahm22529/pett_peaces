@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/grid_view.dart';
 class Mobileui extends StatelessWidget {
   final List<ProducEntity> pro;
   const Mobileui({super.key, required this.pro, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Padding(

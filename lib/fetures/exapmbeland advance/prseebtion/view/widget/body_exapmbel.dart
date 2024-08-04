@@ -14,7 +14,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/no_iteam.dart';
 
 class BodyExample extends StatefulWidget {
   const BodyExample({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<BodyExample> createState() => _BodyExampleState();
 }

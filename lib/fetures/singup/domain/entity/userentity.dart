@@ -1,8 +1,8 @@
-class UserEntitymodel {
+class UserEntity {
   final String id, type, name, phone, email, image, token, massage;
   final bool is_plan_subscribe, email_verified_at;
 
-  UserEntitymodel(
+  UserEntity(
       {required this.massage,
       required this.id,
       required this.type,

@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/courses/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Box extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const Box({super.key, required this.userEntitymodel});
   @override
   State<Box> createState() => _BoxState();

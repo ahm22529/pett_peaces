@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/chat_iteam.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/iteammassege.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ChatList extends StatelessWidget {
   final ScrollController scrollController;
   final List chats;
   final bool isLoadingMore;
-
+  final String token;
   final Function(int) onItemSelected;
+  final UserEntity userEntity;
 
   const ChatList({
     super.key,
@@ -16,6 +18,8 @@ class ChatList extends StatelessWidget {
     required this.chats,
     required this.isLoadingMore,
     required this.onItemSelected,
+    required this.token,
+    required this.userEntity,
   });
 
   @override
@@ -33,6 +37,8 @@ class ChatList extends StatelessWidget {
             chat: chats[index],
             onItemSelected: onItemSelected,
             userid: chats[index].userid,
+            token: token,
+            userEntity: userEntity,
           );
         },
       ),

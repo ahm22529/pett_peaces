@@ -9,7 +9,7 @@ class BodyStore extends StatelessWidget {
   const BodyStore(
       {super.key, required this.product, required this.userEntitymodel});
   final List<ProducEntity> product;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Row(

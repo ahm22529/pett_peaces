@@ -13,7 +13,7 @@ import 'package:pett_peaces/fetures/myaccount/prsention/view/widget/submit_butto
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyMyAdd extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const BodyMyAdd({super.key, required this.userEntitymodel});
   @override

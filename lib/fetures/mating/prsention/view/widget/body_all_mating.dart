@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyAllMating extends StatefulWidget {
   const BodyAllMating({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<BodyAllMating> createState() => _CustomGridViewstoreState();
 }

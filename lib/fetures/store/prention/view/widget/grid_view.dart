@@ -10,7 +10,7 @@ import 'no_iteam.dart';
 
 class CustomGridViewstore extends StatefulWidget {
   const CustomGridViewstore({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<CustomGridViewstore> createState() => _CustomGridViewstoreState();
 }

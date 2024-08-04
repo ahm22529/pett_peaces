@@ -12,7 +12,7 @@ class HeaderWidget extends StatelessWidget {
   final VoidCallback toggleEditingMode;
   final String text1;
   final String text2;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final VoidCallback toggleCancelingMode;
   final String id;
   final void Function()? onTap;

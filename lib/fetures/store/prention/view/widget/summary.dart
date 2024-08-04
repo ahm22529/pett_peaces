@@ -10,7 +10,7 @@ class Summary extends StatelessWidget {
     required this.userEntitymodel,
   });
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Container(

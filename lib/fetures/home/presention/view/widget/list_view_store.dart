@@ -10,7 +10,7 @@ class Gridviewstore extends StatelessWidget {
     required this.userEntitymodel,
   });
   final List producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(

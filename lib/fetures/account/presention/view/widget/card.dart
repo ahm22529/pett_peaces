@@ -4,7 +4,7 @@ import 'package:pett_peaces/fetures/mydata/prsention/view/mydata.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Cardd extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Cardd({super.key, required this.userEntitymodel});
   @override

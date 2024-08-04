@@ -10,7 +10,7 @@ class buttomshowdetails extends StatelessWidget {
     required this.userEntitymodel,
     required this.orderEntity,
   });
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final OrderEntity orderEntity;
   @override
   Widget build(BuildContext context) {

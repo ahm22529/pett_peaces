@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/anmailes/presetion/view/widget/tablet_ui.dar
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class PlatformuiMyanmiles extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const PlatformuiMyanmiles({super.key, required this.userEntitymodel});
   @override

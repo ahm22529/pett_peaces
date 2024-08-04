@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/iteammassege.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ChatItem extends StatelessWidget {
   final int index;
 
   final dynamic chat;
+  final String token;
   final Function(int) onItemSelected;
+  final UserEntity userEntity;
   final int userid;
   const ChatItem({
     super.key,
@@ -14,6 +17,8 @@ class ChatItem extends StatelessWidget {
     required this.chat,
     required this.onItemSelected,
     required this.userid,
+    required this.token,
+    required this.userEntity,
   });
 
   @override
@@ -31,6 +36,12 @@ class ChatItem extends StatelessWidget {
                   Userid: userid,
                   name: chat.imagesender,
                   image: chat.name,
+                  token: token,
+                  chanel: chat.chanel,
+                  chatid: chat.chatid.toString(),
+                  userid: chat.userid.toString(),
+                  token5: userEntity.token,
+                  userEntity: userEntity,
                 ),
               ),
             );

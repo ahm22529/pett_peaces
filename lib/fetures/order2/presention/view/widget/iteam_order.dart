@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
 
 class IteamOrder extends StatelessWidget {
   final products;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const IteamOrder({super.key, this.products, required this.userEntitymodel});
   @override

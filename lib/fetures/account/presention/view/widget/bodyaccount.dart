@@ -6,7 +6,7 @@ import 'package:pett_peaces/fetures/account/presention/view/widget/textcontiner.
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyAccount extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const BodyAccount({super.key, required this.userEntitymodel});
   @override

@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/iteam_bo
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyBook extends StatefulWidget {
-  final UserEntitymodel userEntitymodelb;
+  final UserEntity userEntitymodelb;
   const BodyBook({
     super.key,
     required this.userEntitymodelb,

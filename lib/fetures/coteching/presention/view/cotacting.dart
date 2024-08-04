@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/coteching/presention/view/widget/bodycoting.
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Cotching extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Cotching({super.key, required this.userEntitymodel});
   @override

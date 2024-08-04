@@ -14,7 +14,7 @@ class Titelappbarsell extends StatefulWidget {
     required this.userEntitymodel,
   });
   final String name;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<Titelappbarsell> createState() => _TitelappbarDoctoreState();
 }

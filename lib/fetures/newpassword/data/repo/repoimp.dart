@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class UpdatePassWordImp extends UpdateRepo {
   RequestServices requestServices = RequestServices(Dio());
   @override
-  Future<Either<Failure, UserEntitymodel>> updatepass(
+  Future<Either<Failure, UserEntity>> updatepass(
       Map<String, dynamic> input, endpoint) async {
     try {
       dynamic result = await requestServices.post(input, endpoint, "", "");

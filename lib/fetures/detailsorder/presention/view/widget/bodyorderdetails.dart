@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/grid_view.dart';
 import '../../../../../core/utiles/sttyel.dart';
 
 class BodyorderDetails extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final OrderEntity orderEntityn;
 
   BodyorderDetails(

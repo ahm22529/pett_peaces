@@ -14,7 +14,7 @@ class BodyContiner extends StatelessWidget {
     required this.userEntitymodel,
   });
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -64,13 +64,13 @@ class BodyContiner extends StatelessWidget {
 
 class Suggetionproduct extends StatelessWidget {
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const Suggetionproduct(
       {super.key, required this.producEntity, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: producEntity.pro.length == 0 ? false : true,
+      visible: true,
       child: Column(
         children: [
           const SizedBox(
@@ -90,6 +90,11 @@ class Suggetionproduct extends StatelessWidget {
                 producEntity: producEntity.pro,
                 userEntitymodel: userEntitymodel,
               )),
+          IconButton(
+              onPressed: () {
+                print(producEntity.pro.length);
+              },
+              icon: Icon(Icons.abc)),
           const SizedBox(
             height: 30,
           ),

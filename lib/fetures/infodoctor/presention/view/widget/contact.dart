@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
 import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/viedo_call.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Contact extends StatelessWidget {
   const Contact({
@@ -16,10 +17,26 @@ class Contact extends StatelessWidget {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (builder) => const Chatdetails(
+                    builder: (builder) => Chatdetails(
                           Userid: 1,
                           name: '',
                           image: '',
+                          token: '',
+                          chanel: '',
+                          chatid: '',
+                          userid: '',
+                          token5: '',
+                          userEntity: UserEntity(
+                              massage: '',
+                              id: '',
+                              type: '',
+                              name: '',
+                              phone: '',
+                              email: '',
+                              image: '',
+                              token: '',
+                              is_plan_subscribe: false,
+                              email_verified_at: false),
                         ))),
             child: Image.asset("Asset/image/chatdoc.png")),
         const SizedBox(
@@ -29,13 +46,7 @@ class Contact extends StatelessWidget {
         const SizedBox(
           width: 8,
         ),
-        GestureDetector(
-            onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => AgoraVideoCallWidget()),
-                ),
-            child: Image.asset("Asset/image/videocalldoc.png")),
+        GestureDetector(child: Image.asset("Asset/image/videocalldoc.png")),
       ],
     );
   }

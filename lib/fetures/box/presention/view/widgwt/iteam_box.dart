@@ -6,7 +6,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class IteamBox extends StatefulWidget {
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final int count;
   final void Function(ProducEntity) onRemoveItem;
 

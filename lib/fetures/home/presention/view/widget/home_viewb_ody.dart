@@ -6,18 +6,20 @@ import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/grid_view_home.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_course.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/grid_view_services.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/header_section.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_store.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/silder.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/user_info.dart';
+import 'package:pett_peaces/fetures/serviecs/presention/view/services.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   // ignore: library_private_types_in_public_api
   _HomeViewBodyState createState() => _HomeViewBodyState();
@@ -61,7 +63,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       userEntitymodel: widget.userEntitymodel,
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 25,
                     ),
                     Visibility(
                       visible: false,

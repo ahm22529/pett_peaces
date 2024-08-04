@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class MydataRepoImp extends MydataRepo {
   RequestServices requestServices = RequestServices(Dio());
   @override
-  Future<Either<Failure, UserEntitymodel>> updateData(
+  Future<Either<Failure, UserEntity>> updateData(
       {required String token,
       required String endpoint,
       required FormData form}) async {

@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/mobile_ui.dart';
 
 class Allplatform extends StatelessWidget {
   final List<ProducEntity> pro;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const Allplatform(
       {super.key, required this.pro, required this.userEntitymodel});
   @override

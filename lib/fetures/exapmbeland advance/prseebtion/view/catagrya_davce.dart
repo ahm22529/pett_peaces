@@ -8,7 +8,7 @@ class Catagryadavce extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BodyExample(
-        userEntitymodel: UserEntitymodel(
+        userEntitymodel: UserEntity(
             massage: '',
             id: '',
             type: '',

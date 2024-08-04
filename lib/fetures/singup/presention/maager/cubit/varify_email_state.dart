@@ -8,7 +8,7 @@ final class VarifyEmailInitial extends VarifyEmailState {}
 final class VarifyEmailLoading extends VarifyEmailState {}
 
 final class VarifyEmailSuccess extends VarifyEmailState {
-  final UserEntitymodel userEntity;
+  final UserEntity userEntity;
 
   VarifyEmailSuccess({required this.userEntity});
 }

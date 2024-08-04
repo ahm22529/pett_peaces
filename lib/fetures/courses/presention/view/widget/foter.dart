@@ -12,7 +12,7 @@ class foter extends StatelessWidget {
     required this.userEntitymodel,
   });
   final CourseseEntity courseseEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return courseseEntity.isactive

@@ -8,7 +8,7 @@ final class UpdateInitial extends UpdateState {}
 final class Updateload extends UpdateState {}
 
 final class Updatesucess extends UpdateState {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   Updatesucess({required this.userEntitymodel});
 }

@@ -11,7 +11,7 @@ class Anmileshome extends StatelessWidget {
     required this.anmiles,
     required this.userEntitymodel,
   });
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final AnmilesEntity anmiles;
   @override
   Widget build(BuildContext context) {

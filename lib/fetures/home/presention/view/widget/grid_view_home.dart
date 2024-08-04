@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 class CustomGridViewHome extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const CustomGridViewHome({
     super.key,
     required this.userEntitymodel,
@@ -65,11 +65,10 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
-      shrinkWrap: true,
       itemCount: 9,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // عدد الأعمدة
-        mainAxisSpacing: 5, // التباعد الرأسي
+        mainAxisSpacing: 10, // التباعد الرأسي
         crossAxisSpacing: 20, // التباعد الأفقي
         childAspectRatio: 2.6 / 10, // نسبة العرض إلى الارتفاع
       ),

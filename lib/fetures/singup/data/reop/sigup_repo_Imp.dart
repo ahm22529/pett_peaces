@@ -10,7 +10,7 @@ class Siguprepoimp extends SingupRepo {
   RequestServices requestservices = RequestServices(Dio());
 
   @override
-  Future<Either<Failure, UserEntitymodel>> createmail(
+  Future<Either<Failure, UserEntity>> createmail(
       {required Map<String, dynamic> sin, required String endpoinrt}) async {
     try {
       dynamic result = await requestservices.post(sin, endpoinrt, "", "");
@@ -29,7 +29,7 @@ class Siguprepoimp extends SingupRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitymodel>> varifyEmail(
+  Future<Either<Failure, UserEntity>> varifyEmail(
       {required String token,
       required Map<String, dynamic> input,
       required String endpoint}) async {
@@ -50,7 +50,7 @@ class Siguprepoimp extends SingupRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntitymodel>> sendOpt({required String endpoint}) {
+  Future<Either<Failure, UserEntity>> sendOpt({required String endpoint}) {
     throw UnimplementedError();
   }
 }

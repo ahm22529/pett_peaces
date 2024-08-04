@@ -10,7 +10,7 @@ class Listiteamorder extends StatefulWidget {
       required this.userEntitymodel,
       required this.onRemoveItem});
   final List iteam;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final void Function(ProducEntity) onRemoveItem;
 
   @override

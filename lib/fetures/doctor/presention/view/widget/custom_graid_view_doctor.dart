@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/infodoctor/presention/view/info_doctor.dart'
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class CustomGridViewDoctor extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const CustomGridViewDoctor({super.key, required this.userEntitymodel});
   @override
   State<CustomGridViewDoctor> createState() => _CustomGridViewstoreState();

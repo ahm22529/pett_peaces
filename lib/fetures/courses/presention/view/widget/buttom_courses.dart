@@ -11,7 +11,7 @@ class Custombuttomcours extends StatelessWidget {
       required this.onPressed,
       required this.userEntitymodel});
   final String titel;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final void Function()? onPressed;
 
   @override

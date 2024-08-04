@@ -11,7 +11,7 @@ class cobeniteam extends StatefulWidget {
     super.key,
     required this.userEntitymodel,
   });
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<cobeniteam> createState() => _cobeniteamState();
 }

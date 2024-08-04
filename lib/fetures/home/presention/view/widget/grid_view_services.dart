@@ -7,7 +7,7 @@ class Gridviewservices extends StatelessWidget {
     super.key,
     required this.userEntitymodel,
   });
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(

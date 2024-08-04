@@ -9,7 +9,7 @@ class orderdetails extends StatelessWidget {
     Key? key,
     required this.userEntitymodel,
   }) : super(key: key);
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Container(

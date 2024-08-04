@@ -12,7 +12,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class SellerAndBuyer extends StatefulWidget {
   const SellerAndBuyer({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<SellerAndBuyer> createState() => _SellerAndBuyerState();
 }

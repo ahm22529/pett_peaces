@@ -1,10 +1,10 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:pett_peaces/constant.dart';
+import 'package:pett_peaces/core/utiles/fcmservices/fire_base_massing.dart';
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/addanmiles/add_amiles_cubit.dart';
@@ -15,10 +15,12 @@ import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 import 'package:pett_peaces/fetures/splash/presention/view/splash_view.dart';
-import 'generated/l10n.dart';
+import 'package:pett_peaces/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  NotificationService.initialize();
 
   runApp(
     DevicePreview(
@@ -55,7 +57,6 @@ class _MyAppState extends State<MyApp> {
         )
       ],
       child: MaterialApp(
-        useInheritedMediaQuery: true,
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: fontfamily),

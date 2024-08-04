@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/body_masssage.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Tabletmassui extends StatefulWidget {
+  final String token;
+  final UserEntity userEntity;
+  const Tabletmassui(
+      {super.key, required this.token, required this.userEntity});
   @override
   _TabletmassuiState createState() => _TabletmassuiState();
 }
@@ -11,6 +16,7 @@ class Tabletmassui extends StatefulWidget {
 class _TabletmassuiState extends State<Tabletmassui> {
   int? selectedIndex;
 
+  _TabletmassuiState();
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,6 +29,8 @@ class _TabletmassuiState extends State<Tabletmassui> {
                 selectedIndex = index;
               });
             },
+            token: widget.token,
+            userEntity: widget.userEntity,
           ),
         ),
         Expanded(
@@ -32,6 +40,12 @@ class _TabletmassuiState extends State<Tabletmassui> {
                   Userid: 1,
                   name: '',
                   image: '',
+                  token: '',
+                  chanel: '',
+                  chatid: '',
+                  userid: '',
+                  token5: '',
+                  userEntity: widget.userEntity,
                 )
               : Container(
                   child: Column(

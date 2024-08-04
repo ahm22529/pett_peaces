@@ -10,7 +10,7 @@ import 'package:pett_peaces/fetures/mydata/prsention/view/widget/body_my_data.da
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Mydata extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Mydata({super.key, required this.userEntitymodel});
 

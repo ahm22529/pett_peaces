@@ -17,7 +17,7 @@ class pricevulemname extends StatefulWidget {
     required this.count,
   });
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final int count;
   final void Function(ProducEntity) onRemoveItem;
 

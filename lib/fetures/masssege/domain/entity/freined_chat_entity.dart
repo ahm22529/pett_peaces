@@ -1,5 +1,5 @@
 class FreinedChatEntity {
-  final String imagesender, lastmassage, name;
+  final String imagesender, lastmassage, name, rectoken, chanel;
 
   final bool isshow;
   final DateTime date;
@@ -7,6 +7,8 @@ class FreinedChatEntity {
 
   FreinedChatEntity(
       {required this.imagesender,
+      required this.chanel,
+      required this.rectoken,
       required this.lastmassage,
       required this.userid,
       required this.date,

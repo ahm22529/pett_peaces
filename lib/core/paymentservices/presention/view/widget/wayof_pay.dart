@@ -7,7 +7,7 @@ import 'package:pett_peaces/core/paymentservices/presention/view/widget/body_but
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Wayofpay extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final String endpoint;
   const Wayofpay(
       {super.key, required this.userEntitymodel, required this.endpoint});

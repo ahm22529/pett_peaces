@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/list_view_frined.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class BodyMassege extends StatefulWidget {
   final ValueChanged<int> onItemSelected;
-
-  BodyMassege({required this.onItemSelected});
+  final String token;
+  final UserEntity userEntity;
+  BodyMassege(
+      {required this.onItemSelected,
+      required this.token,
+      required this.userEntity});
 
   @override
   State<BodyMassege> createState() => _BodyMassegeState();
@@ -36,7 +41,11 @@ class _BodyMassegeState extends State<BodyMassege> {
             textEditingController: TextEditingController(),
           ),
         ),
-        ListviewFrined(widget: widget),
+        ListviewFrined(
+          widget: widget,
+          token: widget.token,
+          userEntity: widget.userEntity,
+        ),
       ],
     );
   }

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/viedo_call.dart';
+import 'package:pett_peaces/fetures/infodoctor/presention/view/widget/voic_call.dart';
 
 class appbardetails extends StatelessWidget {
   const appbardetails({
     super.key,
     required this.img,
     required this.name,
+    required this.chael,
+    required this.token,
   });
-  final String img, name;
+  final String img, name, chael, token;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -48,9 +52,20 @@ class appbardetails extends StatelessWidget {
         ),
       ),
       actions: [
-        Padding(
-          padding: const EdgeInsets.only(top: 15),
-          child: Image.asset("Asset/image/videocall.png"),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const AgoraVideoCallWidget(
+                      token:
+                          "007eJxTYKhOvG/nqm6v2mwaWrE/2+yoXt3BqYv/f3n87vc9s0cnFWsUGJJM0kySjFNNLExMjUxMTM0tjVPTUo3NjIyNzEyMTI3Tvj1dm9YQyMgQHxfAxMgAgSA+C0NJanEJAwMAoe0g6A==",
+                      channel: "test",
+                    )),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: Image.asset("Asset/image/videocall.png"),
+          ),
         ),
         const SizedBox(width: 8),
         Padding(

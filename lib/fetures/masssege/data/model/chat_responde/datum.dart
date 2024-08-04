@@ -21,6 +21,8 @@ class Datum extends FreinedChatEntity {
     this.agora,
   }) : super(
             chatid: id ?? 1,
+            chanel: agora?.channel ?? "",
+            rectoken: agora?.rtcToken ?? "",
             imagesender: user?.image ?? "",
             userid: user?.id ?? 0,
             lastmassage: lastMessage?.message ?? "",

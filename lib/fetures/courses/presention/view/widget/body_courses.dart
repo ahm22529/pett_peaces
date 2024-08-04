@@ -11,7 +11,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyCourses extends StatelessWidget {
   final CourseseEntity courseseEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const BodyCourses(
       {super.key, required this.courseseEntity, required this.userEntitymodel});
   @override

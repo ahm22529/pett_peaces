@@ -4,6 +4,10 @@ import 'package:pett_peaces/core/utiles/agoraservices/App_ifo.dart';
 import 'package:pett_peaces/core/utiles/agoraservices/agora.dart'; // Adjust import path if needed
 
 class AgoraVideoCallWidget extends StatefulWidget {
+  final String token, channel;
+
+  const AgoraVideoCallWidget(
+      {super.key, required this.token, required this.channel});
   @override
   _AgoraVideoCallWidgetState createState() => _AgoraVideoCallWidgetState();
 }
@@ -24,7 +28,7 @@ class _AgoraVideoCallWidgetState extends State<AgoraVideoCallWidget> {
   }
 
   Future<void> _initAgora() async {
-    await _agoraServices.initAgora();
+    await _agoraServices.initAgora(widget.token, widget.channel);
   }
 
   void _onLocalUserJoined() {
@@ -68,8 +72,7 @@ class _AgoraVideoCallWidgetState extends State<AgoraVideoCallWidget> {
                     controller: VideoViewController.remote(
                       rtcEngine: _agoraServices.engine,
                       canvas: VideoCanvas(uid: _remoteUid),
-                      connection:
-                          RtcConnection(channelId: AgoraManager.channelName),
+                      connection: RtcConnection(channelId: widget.channel),
                     ),
                   )
                 : Icon(

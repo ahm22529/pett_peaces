@@ -18,8 +18,9 @@ class Comfrimbook extends StatefulWidget {
 
   final List<AnmilesEntity> anmiles;
   const Comfrimbook({
-    super.key, required this.hotelEntity, required this.anmiles,
-   
+    super.key,
+    required this.hotelEntity,
+    required this.anmiles,
   });
   @override
   State<Comfrimbook> createState() => _ComfrimbookState();
@@ -31,7 +32,6 @@ class _ComfrimbookState extends State<Comfrimbook> {
   @override
   void initState() {
     // TODO: implement initState
-   
   }
 
   @override
@@ -53,7 +53,7 @@ class _ComfrimbookState extends State<Comfrimbook> {
           builder: (context, state) {
             return Bodycomfrimbook(
               hotelEntity: widget.hotelEntity,
-              anmiles:widget.anmiles ,
+              anmiles: widget.anmiles,
             );
           },
         ),

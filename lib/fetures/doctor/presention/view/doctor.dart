@@ -7,7 +7,7 @@ import 'package:pett_peaces/fetures/doctor/presention/view/widget/body_doctor.da
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Doctor extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Doctor({super.key, required this.userEntitymodel});
   @override

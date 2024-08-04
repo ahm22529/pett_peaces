@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/no_iteam.dart';
 
 class BodyListCourses extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const BodyListCourses({super.key, required this.userEntitymodel});
 
   @override

@@ -15,7 +15,7 @@ class TitelappbarExam extends StatefulWidget {
     required this.userEntitymodel,
   });
   final String name;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<TitelappbarExam> createState() => _TitelappbarDoctoreState();
 }

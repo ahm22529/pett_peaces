@@ -9,7 +9,7 @@ class BotttomPay extends StatelessWidget {
     required this.userEntitymodel,
   });
 
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   @override
   Widget build(BuildContext context) {

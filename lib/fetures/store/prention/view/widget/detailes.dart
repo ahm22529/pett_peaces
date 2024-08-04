@@ -11,7 +11,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/body_details.dart
 
 class DetailesView extends StatelessWidget {
   StoreRepo storeRepo = StoreRepoImp();
-  final UserEntitymodel userEntitymode;
+  final UserEntity userEntitymode;
   final ProducEntity producEntity;
   DetailesView(
       {super.key, required this.userEntitymode, required this.producEntity});

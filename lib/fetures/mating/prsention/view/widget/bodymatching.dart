@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyMating extends StatefulWidget {
   const BodyMating({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   @override
   State<BodyMating> createState() => _BodyMatingState();

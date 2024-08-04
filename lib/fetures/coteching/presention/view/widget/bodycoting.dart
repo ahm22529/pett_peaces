@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/coteching/presention/view/widget/gridviewdoc
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyCoating extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const BodyCoating({super.key, required this.userEntitymodel});
   @override

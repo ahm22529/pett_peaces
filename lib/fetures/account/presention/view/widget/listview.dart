@@ -17,7 +17,7 @@ import 'package:pett_peaces/fetures/subscribtion/presention/view/subsurbtion.dar
 import '../../../../deletaccount/showdilog.dart';
 
 class Iteamconter extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const Iteamconter({Key? key, required this.userEntitymodel})
       : super(key: key);
 
@@ -50,7 +50,7 @@ class _IteamconterState extends State<Iteamconter> {
         userEntitymodel: widget.userEntitymodel,
       ),
       Bookting(
-        userEntitymodel: UserEntitymodel(
+        userEntitymodel: UserEntity(
             email: "",
             massage: '',
             id: '',

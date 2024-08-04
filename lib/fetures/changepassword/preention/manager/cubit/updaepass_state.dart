@@ -8,7 +8,7 @@ final class UpdaepassInitial extends UpdaepassState {}
 final class Updaepassload extends UpdaepassState {}
 
 final class Updaepasssucess extends UpdaepassState {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   Updaepasssucess({required this.userEntitymodel});
 }

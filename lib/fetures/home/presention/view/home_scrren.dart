@@ -16,7 +16,7 @@ import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -109,7 +109,10 @@ class _HomeScreenState extends State<HomeScreen> {
               Services(
                 userEntitymodel: widget.userEntitymodel,
               ),
-              const Massage(),
+              Massage(
+                userEntity: widget.userEntitymodel,
+                token: widget.userEntitymodel.token,
+              ),
               // الصفحة الجديدة
               Acountff(
                 userEntitymodel: widget.userEntitymodel,

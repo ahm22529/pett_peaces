@@ -12,7 +12,7 @@ class AgoraServices {
 
   RtcEngine get engine => _engine; // Getter for RtcEngine
 
-  Future<void> initAgora() async {
+  Future<void> initAgora(o, chaael) async {
     try {
       await [Permission.microphone, Permission.camera].request();
 
@@ -42,8 +42,8 @@ class AgoraServices {
       await _engine.enableVideo();
       await _engine.startPreview();
       await _engine.joinChannel(
-        token: AgoraManager.token,
-        channelId: AgoraManager.channelName,
+        token: o,
+        channelId: chaael,
         options: const ChannelMediaOptions(
           autoSubscribeVideo: true,
           autoSubscribeAudio: true,

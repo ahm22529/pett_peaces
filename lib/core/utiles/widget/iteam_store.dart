@@ -15,7 +15,7 @@ class IteamStore extends StatelessWidget {
       required this.userEntitymodel});
   final void Function()? onTap;
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class bodyiteamstore extends StatelessWidget {
     required this.userEntitymodel,
   });
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -94,7 +94,7 @@ class bodyiteamstore extends StatelessWidget {
 }
 
 class infoiteamstore extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const infoiteamstore({
     super.key,

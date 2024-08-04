@@ -13,7 +13,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/country_phone_textfiled.dart';
 
 class Fromupdate extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final File? file;
 
   const Fromupdate(

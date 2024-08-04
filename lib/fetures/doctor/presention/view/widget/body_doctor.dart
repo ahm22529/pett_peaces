@@ -6,7 +6,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyDocoter extends StatefulWidget {
   const BodyDocoter({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<BodyDocoter> createState() => _BodyDocoterState();
 }

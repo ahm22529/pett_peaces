@@ -8,7 +8,7 @@ class AddMiuns extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color:active? const Color(0xffF78E32):Colors.grey,
+        color: active ? const Color(0xffF78E32) : Colors.grey,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Padding(

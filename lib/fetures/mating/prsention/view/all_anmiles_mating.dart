@@ -18,7 +18,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart
 
 class AllAnmilesMating extends StatefulWidget {
   const AllAnmilesMating({super.key, required this.userEntitymodel});
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<AllAnmilesMating> createState() => _SellerAndBuyerState();
 }

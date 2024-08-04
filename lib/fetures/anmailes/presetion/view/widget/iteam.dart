@@ -11,7 +11,7 @@ class Anmmalesmeacc extends StatelessWidget {
       required this.listAnmileEntity,
       required this.userEntitymodel});
   final ListAnmileEntity listAnmileEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

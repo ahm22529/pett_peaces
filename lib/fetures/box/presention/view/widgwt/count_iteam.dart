@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Countiteam extends StatefulWidget {
   final String prices;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final ProducEntity producEntity;
   final int count;
   const Countiteam({

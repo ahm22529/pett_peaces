@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/list_tile_custom.
 
 class CustomCard extends StatelessWidget {
   final ProducEntity producEntity;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   const CustomCard(
       {super.key, required this.producEntity, required this.userEntitymodel});
 

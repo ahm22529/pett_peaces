@@ -6,7 +6,7 @@ import 'package:pett_peaces/fetures/myaccount/prsention/view/myaccount.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Tabletui extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Tabletui({super.key, required this.userEntitymodel});
   @override

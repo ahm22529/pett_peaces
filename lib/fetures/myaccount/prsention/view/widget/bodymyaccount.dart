@@ -24,7 +24,7 @@ class Bodymyaccount extends StatefulWidget {
       required this.anmilesEntityn,
       required this.userEntitymodell});
   final AnmilesEntity anmilesEntityn;
-  final UserEntitymodel userEntitymodell;
+  final UserEntity userEntitymodell;
   @override
   _MyAccountAddState createState() => _MyAccountAddState();
 }

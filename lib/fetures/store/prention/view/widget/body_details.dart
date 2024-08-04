@@ -13,7 +13,7 @@ class BodyDetails extends StatefulWidget {
     required this.userEntitymodel,
     required this.producEntity,
   });
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final ProducEntity producEntity;
   @override
   State<BodyDetails> createState() => _BodyDetailsState();

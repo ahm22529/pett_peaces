@@ -11,7 +11,7 @@ class BodyBottomSheetOfWay extends StatelessWidget {
     required this.userEntitymodel,
     required this.endpoint,
   });
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final String endpoint;
   @override
   Widget build(BuildContext context) {

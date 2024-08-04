@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/bookinghotel/presention/view/widget/body_boo
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Order extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Order({super.key, required this.userEntitymodel});
   @override

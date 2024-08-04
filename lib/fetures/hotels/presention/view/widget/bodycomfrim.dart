@@ -15,10 +15,11 @@ import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepicker.dar
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/droptextfiled.dart';
 
 class Bodycomfrimbook extends StatefulWidget {
- final List<AnmilesEntity> anmiles;
+  final List<AnmilesEntity> anmiles;
   const Bodycomfrimbook({
     super.key,
-    required this.hotelEntity, required this.anmiles,
+    required this.hotelEntity,
+    required this.anmiles,
   });
 
   final HotelEntity hotelEntity;
@@ -151,19 +152,19 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
             },
           ),
           const SizedBox(height: 16),
-         datepic(
-                  widget: DropdownFieldbook(
-                    options: widget.anmiles
-                        .map((e) => Animal(id: e.idd, name: e.namee))
-                        .toList(),
-                    controller: animalController,
-                    onSelected: (Animal? value) {
-                      selectedValue = value;
-                      animalController.text = value!.name;
-                    },
-                  ),
-                  text: "اختر الحيوان",
-                ),
+          datepic(
+            widget: DropdownFieldbook(
+              options: widget.anmiles
+                  .map((e) => Animal(id: e.idd, name: e.namee))
+                  .toList(),
+              controller: animalController,
+              onSelected: (Animal? value) {
+                selectedValue = value;
+                animalController.text = value!.name;
+              },
+            ),
+            text: "اختر الحيوان",
+          ),
           const SizedBox(height: 16),
           Text(
             "الخدمات",

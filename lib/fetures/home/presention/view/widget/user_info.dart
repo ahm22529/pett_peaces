@@ -5,7 +5,7 @@ import 'package:pett_peaces/fetures/notifaction/presention/notifaction.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class UserInfoCard extends StatelessWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const UserInfoCard({super.key, required this.userEntitymodel});
   @override
@@ -52,7 +52,11 @@ class UserInfoCard extends StatelessWidget {
         ),
         GestureDetector(
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (builder) => Notifactin())),
+                context,
+                MaterialPageRoute(
+                    builder: (builder) => Notifactin(
+                          userEntitymodel: userEntitymodel,
+                        ))),
             child: Image.asset("Asset/image/Frame 1000004230.png")),
       ],
     );

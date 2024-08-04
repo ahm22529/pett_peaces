@@ -14,7 +14,7 @@ import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart
 class Store extends StatefulWidget {
   const Store({super.key, required this.pro, required this.userEntitymodel});
   final List<ProducEntity> pro;
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   @override
   State<Store> createState() => _StoreState();
 }

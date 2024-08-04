@@ -8,7 +8,7 @@ import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ContantBodyBox extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
   final BoxEntity boxEntity;
 
   const ContantBodyBox(

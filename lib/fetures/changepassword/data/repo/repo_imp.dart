@@ -11,7 +11,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class ChangRepoImp extends ChangepassRepo {
   RequestServices requestServices = RequestServices(Dio());
   @override
-  Future<Either<Failure, UserEntitymodel>> updatePass(
+  Future<Either<Failure, UserEntity>> updatePass(
       {required String endpoint,
       required String token,
       required Map<String, dynamic> data}) async {

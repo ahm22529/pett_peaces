@@ -2,7 +2,7 @@ import 'package:pett_peaces/fetures/singup/data/model/sing_up_response/data.dart
 import 'package:pett_peaces/fetures/singup/data/model/sing_up_response/sing_up_response.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-class Usermodel extends UserEntitymodel {
+class Usermodel extends UserEntity {
   Usermodel({
     required super.massage,
     required super.id,

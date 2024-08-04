@@ -9,7 +9,7 @@ import 'package:pett_peaces/fetures/order2/presention/view/widget/bodybook.dart'
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bookting extends StatefulWidget {
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 
   const Bookting({super.key, required this.userEntitymodel});
 

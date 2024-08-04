@@ -13,7 +13,7 @@ class Acountff extends StatefulWidget {
 
   @override
   State<Acountff> createState() => _AcountffState();
-  final UserEntitymodel userEntitymodel;
+  final UserEntity userEntitymodel;
 }
 
 class _AcountffState extends State<Acountff> {
