@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:pett_peaces/core/error/error.dart';
 import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entity.dart';
 
@@ -9,5 +10,5 @@ abstract class MassageDetailsRepo {
   Future<Either<Failure, void>> sendMassage(
       {required String endppoint,
       required String token,
-      required Map<String, dynamic> data});
+      required FormData data});
 }

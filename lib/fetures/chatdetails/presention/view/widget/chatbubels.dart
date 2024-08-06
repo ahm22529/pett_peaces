@@ -3,9 +3,11 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 class ChatBubble extends StatelessWidget {
   final String message;
+  final String img;
   final String time;
 
-  const ChatBubble({required this.message, required this.time});
+  const ChatBubble(
+      {required this.message, required this.time, required this.img});
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +35,20 @@ class ChatBubble extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Text(
-                message,
-                style: AppStyles.styleMedium16(context)
-                    .copyWith(color: Colors.black),
+              child: Column(
+                children: [
+                  img.isEmpty
+                      ? SizedBox()
+                      : Image.network(
+                          img,
+                          width: 200,
+                        ),
+                  Text(
+                    message,
+                    style: AppStyles.styleMedium16(context)
+                        .copyWith(color: Colors.black),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 4),

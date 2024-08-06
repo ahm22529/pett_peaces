@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/fetures/courses/data/repo/repoimp.dart';
@@ -26,11 +27,13 @@ class _CourselistState extends State<Courselist> {
       create: (context) => CoursecubitCubit(courseRepo),
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          title: Text(
+            "الكورسات ",
+            style: AppStyles.stylesemi20(context).copyWith(fontSize: 32),
+          ),
           backgroundColor: Colors.orange,
-          title: Appbarsearch(
-              name: "ابحث   عن الكورسات",
-              fetchPredictions: () {},
-              textEditingController: TextEditingController()),
         ),
         body: BodyListCourses(
           userEntitymodel: widget.userEntitymodel,

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/button_of_buttoms_heet.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/checked.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_buttom_sheet.dart';
 
 class Custommodelshhet extends StatefulWidget {
+  final List<DepartmentEntity> department;
+
+  const Custommodelshhet({super.key, required this.department});
   @override
   State<Custommodelshhet> createState() => _CustommodelshhetState();
 }
 
 class _CustommodelshhetState extends State<Custommodelshhet> {
-  List<String> titel = [
-    "أغذية كلاب",
-    "أغذية قطط",
-    "أغذية أرانب",
-  ];
-
   List<String> selectedItems = [];
 
   void handleCheckboxChange(bool isChecked, String item) {
@@ -47,10 +45,10 @@ class _CustommodelshhetState extends State<Custommodelshhet> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: titel.length,
+                itemCount: widget.department.length,
                 itemBuilder: (BuildContext context, int index) {
                   return CheckCorrect(
-                    titel: titel[index],
+                    titel: widget.department[index].namee,
                     onCheckboxChanged: handleCheckboxChange,
                   );
                 },

@@ -1,3 +1,4 @@
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
@@ -13,13 +14,16 @@ import 'package:pett_peaces/fetures/hotels/presention/view/widget/checkchoose.da
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/dateofbook.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/datepicker.dart';
 import 'package:pett_peaces/fetures/hotels/presention/view/widget/droptextfiled.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bodycomfrimbook extends StatefulWidget {
   final List<AnmilesEntity> anmiles;
+  final UserEntity uaer;
   const Bodycomfrimbook({
     super.key,
     required this.hotelEntity,
     required this.anmiles,
+    required this.uaer,
   });
 
   final HotelEntity hotelEntity;
@@ -32,7 +36,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
   late List titel;
 
   Animal? selectedValue;
-  final TextEditingController animalController = TextEditingController();
+  final SingleValueDropDownController sel = SingleValueDropDownController();
   String startdate = '';
   String enddate = '';
   List<int> selectedServiceIds = [];
@@ -98,7 +102,12 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
       );
       return;
     }
-
+    BlocProvider.of<BookCubit>(context).getdata(data: {
+      "services": selectedServiceIds.map((id) => {"service_id": id}).toList(),
+      "start_date": startdate,
+      "end_date": enddate,
+      "animal_id": selectedValue!.id.toString()
+    }, endpoint: "hotel/reservations", token: widget.uaer.token);
     print(enddate);
     print(
       selectedServiceIds.map((id) => {"service_id": id}).toList(),
@@ -128,7 +137,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
 
               if (pickedDate != null) {
                 setState(() {
-                  startDateController.text =
+                  endDateController.text =
                       pickedDate.toLocal().toString().split(' ')[0];
                   startdate = pickedDate.toLocal().toString().split(' ')[0];
                 });
@@ -144,7 +153,7 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
 
               if (pickedDate != null) {
                 setState(() {
-                  endDateController.text =
+                  startDateController.text =
                       pickedDate.toLocal().toString().split(' ')[0];
                   enddate = pickedDate.toLocal().toString().split(' ')[0];
                 });
@@ -157,10 +166,13 @@ class _BodycomfrimbookState extends State<Bodycomfrimbook> {
               options: widget.anmiles
                   .map((e) => Animal(id: e.idd, name: e.namee))
                   .toList(),
-              controller: animalController,
+              controller: sel,
               onSelected: (Animal? value) {
                 selectedValue = value;
-                animalController.text = value!.name;
+                sel.dropDownValue = DropDownValueModel(
+                  name: value?.name ?? '',
+                  value: value,
+                );
               },
             ),
             text: "اختر الحيوان",

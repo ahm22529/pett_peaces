@@ -6,7 +6,7 @@ import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dar
 
 class Anmmalesme extends StatelessWidget {
   const Anmmalesme({super.key, required this.anmilesEntity});
-  final AnmilesEntity anmilesEntity;
+  final AnmilesEntity? anmilesEntity;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +26,7 @@ class Anmmalesme extends StatelessWidget {
             children: [
               Expanded(
                 child: Image.network(
-                  anmilesEntity.imagee,
+                  anmilesEntity?.imagee ?? "",
                   height: MediaQuery.of(context).size.height * .2,
                   fit: BoxFit.cover,
                 ),
@@ -46,7 +46,7 @@ class Anmmalesme extends StatelessWidget {
 class informationanmiles extends StatelessWidget {
   const informationanmiles({super.key, required this.animel});
 
-  final AnmilesEntity animel;
+  final AnmilesEntity? animel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -57,14 +57,14 @@ class informationanmiles extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 0.0),
             child: InfoAnmales(
-              tt: animel.namee,
+              tt: animel?.namee ?? "",
             ),
           ),
           const SizedBox(
             height: 8,
           ),
           InfoAnmales(
-            tt: animel.des,
+            tt: animel?.des ?? "",
           ),
           const SizedBox(
             height: 16,
@@ -75,7 +75,7 @@ class informationanmiles extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: InfoAnmales1(
-                    tt: animel.gendere,
+                    tt: animel?.gendere ?? "",
                   ),
                 ),
                 const SizedBox(
@@ -84,7 +84,7 @@ class informationanmiles extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: InfoAnmales1(
-                    tt: animel.agee.toString(),
+                    tt: animel?.agee.toString() ?? "",
                   ),
                 )
               ],

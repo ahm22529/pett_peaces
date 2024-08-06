@@ -10,7 +10,7 @@ part 'chatdetails_state.dart';
 class ChatdetailsCubit extends Cubit<ChatdetailsState> {
   ChatdetailsCubit({required this.mass}) : super(ChatdetailsInitial());
   MassageDetailsRepo mass;
-  void getmassage(
+  Future<void> getmassage(
       {required String endpoint,
       required String token,
       required String id}) async {

@@ -28,7 +28,7 @@ class MassageDetailsRepooImp extends MassageDetailsRepo {
   Future<Either<Failure, void>> sendMassage(
       {required String endppoint,
       required String token,
-      required Map<String, dynamic> data}) async {
+      required FormData data}) async {
     try {
       await requestServices.post(data, endppoint, token, "");
       return right(Void);

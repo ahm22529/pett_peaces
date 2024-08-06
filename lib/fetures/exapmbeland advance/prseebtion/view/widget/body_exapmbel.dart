@@ -36,10 +36,8 @@ class _BodyExampleState extends State<BodyExample> {
 
   void _loadData() {
     context.read<ExambelcubitCubit>().getdata(
-          endpoint: "posts?page=$currentPage",
-          token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMjM2Njg5LCJleHAiOjE3MjI4NDE0ODksIm5iZiI6MTcyMjIzNjY4OSwianRpIjoiaXp3ZjFlUG5IS0JOV3Z6TiIsInN1YiI6IjEyMCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fkqOMsnicpLCx47OK-OuegkNLk_sQranHL8pFmrU6OI",
-        );
+        endpoint: "posts?page=$currentPage",
+        token: widget.userEntitymodel.token);
   }
 
   void _onScroll() {
@@ -100,7 +98,7 @@ class _BodyExampleState extends State<BodyExample> {
           BlocConsumer<ExambelcubitCubit, ExambelcubitState>(
             builder: (context, state) {
               if (state is Exambelcubitfauleer) {
-                return const CustomWidgetfauier();
+                return SliverToBoxAdapter(child: const CustomWidgetfauier());
               }
 
               if (state is Exambelcubitsucess ||

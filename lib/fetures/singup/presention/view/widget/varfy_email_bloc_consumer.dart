@@ -28,8 +28,10 @@ class VarfyEmailBlocConsumer extends StatelessWidget {
                       )));
         }
         if (state is VarifyEmailFailure) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(state.message.toString())));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(state.message.toString()),
+            backgroundColor: Colors.green,
+          ));
         }
       },
       builder: (context, state) {

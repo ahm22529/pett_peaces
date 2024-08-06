@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/seller_details.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/view/widget/body_seller.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Bodysellerandbuyer extends StatefulWidget {
+  final UserEntity userEntity;
   const Bodysellerandbuyer({
     super.key,
+    required this.userEntity,
   });
 
   @override
@@ -31,8 +35,7 @@ class _BodysellerandbuyerState extends State<Bodysellerandbuyer> {
   void _loadData() {
     context.read<SelCubit>().getAllSell(
       endpoint: "buy-sell-animal/all?page=$currentPage",
-      token:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMTU2MTY3LCJleHAiOjE3MjI3NjA5NjcsIm5iZiI6MTcyMjE1NjE2NywianRpIjoiU0ZwU0RlRnFUaEJHY0Q3aSIsInN1YiI6IjExNiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.jwLNZxYvQ4_oMPksJfqbLtUazH6Spw8eLuK68veYpQU",
+      token: widget.userEntity.token,
       data: {},
     );
   }
@@ -102,7 +105,7 @@ class _BodysellerandbuyerState extends State<Bodysellerandbuyer> {
             },
           );
         } else {
-          return CircularProgressIndicator();
+          return const Loadwidgwt();
         }
       },
     );

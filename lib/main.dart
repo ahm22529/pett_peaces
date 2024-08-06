@@ -11,6 +11,9 @@ import 'package:pett_peaces/fetures/anmailes/presetion/manager/addanmiles/add_am
 import 'package:pett_peaces/fetures/bayandseller/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/bayandseller/domain/repo/buyandsell_entity.dart';
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
+import 'package:pett_peaces/fetures/box/data/repo/repo_Imp.dart';
+import 'package:pett_peaces/fetures/box/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
 import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
@@ -42,6 +45,7 @@ class _MyAppState extends State<MyApp> {
   ContactusRepo contactusRepo = ContactusRepoimp();
   AnmilesRepo anmilesRepo = AnimelsRepoImp();
   Buyandsell buyandsell = SellRepoImp();
+  Boxrepo boxrepo = BoxRepoImp();
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -54,6 +58,9 @@ class _MyAppState extends State<MyApp> {
         ),
         BlocProvider(
           create: (context) => SelCubit(buyandsell),
+        ),
+        BlocProvider(
+          create: (context) => AddBoxCubit(boxrepo),
         )
       ],
       child: MaterialApp(

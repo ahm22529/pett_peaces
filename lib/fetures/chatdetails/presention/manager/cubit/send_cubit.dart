@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 import 'package:pett_peaces/fetures/chatdetails/domain/repo/massage_details_repo.dart';
 
@@ -11,7 +12,7 @@ class SendCubit extends Cubit<SendState> {
   void send(
       {required String endpoint,
       required String token,
-      required Map<String, dynamic> data}) async {
+      required FormData data}) async {
     emit(SendLoad());
     final res =
         await mass.sendMassage(endppoint: endpoint, token: token, data: data);

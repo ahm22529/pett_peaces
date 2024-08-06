@@ -37,7 +37,9 @@ class _SellerAndBuyerState extends State<SellerAndBuyer> {
             userEntitymodel: widget.userEntitymodel,
           ),
         ),
-        body: const Bodysellerandbuyer(),
+        body: Bodysellerandbuyer(
+          userEntity: widget.userEntitymodel,
+        ),
       ),
     );
   }

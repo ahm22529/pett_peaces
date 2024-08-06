@@ -59,7 +59,7 @@ class _BodyDetailsState extends State<BodyDetails> {
                 Positioned(
                     right: 20,
                     top: state.producEntity.pro.length <= 2
-                        ? MediaQuery.of(context).size.height * .4
+                        ? MediaQuery.of(context).size.height * .35
                         : MediaQuery.of(context).size.height * .46,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/appbar.dart';
-import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/body_details.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/stream_builder_massage.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
@@ -37,6 +36,7 @@ class ChatPage extends StatelessWidget {
           token: token5,
           userid: userid,
           userEntity: userEntity,
+          chatid: chatid,
         ));
   }
 }

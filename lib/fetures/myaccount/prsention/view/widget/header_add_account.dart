@@ -35,6 +35,8 @@ class HeaderWidget extends StatelessWidget {
       listener: (context, state) {
         // TODO: implement listener
         if (state is DeletAnmilessucess) {
+          BlocProvider.of<FetachMyAnmilesCubit>(context)
+              .getanmiles(token: userEntitymodel.token, endpoint: "/animals/");
           Navigator.pop(context);
           buildErrorBar(context, "تم الحذف بنجاح");
         }

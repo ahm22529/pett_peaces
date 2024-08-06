@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 
 import 'package:pett_peaces/fetures/anmailes/presetion/manager/fetechmyanmiles/fetach_my_anmiles_cubit.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
@@ -96,6 +97,7 @@ class _BodyHotelState extends State<BodyHotel> {
                                 builder: (builder) => Comfrimbook(
                                   hotelEntity: state.hotelresponse,
                                   anmiles: anmiles,
+                                  userEntity: widget.userEntitymodel,
                                 ),
                               ),
                             );
@@ -109,7 +111,7 @@ class _BodyHotelState extends State<BodyHotel> {
             ),
           );
         } else {
-          return const CircularProgressIndicator();
+          return Loadwidgwt();
         }
       },
     );

@@ -5,8 +5,12 @@ import 'package:pett_peaces/fetures/changepassword/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/changepassword/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updaepass_cubit.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/view/widget/bodychangepassword.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Changepassword extends StatefulWidget {
+  final UserEntity userEntity;
+
+  const Changepassword({super.key, required this.userEntity});
   @override
   State<Changepassword> createState() => _ChangepasswordState();
 }
@@ -30,7 +34,9 @@ class _ChangepasswordState extends State<Changepassword> {
           ),
           centerTitle: true,
         ),
-        body: const BodyChangePassword(),
+        body: BodyChangePassword(
+          userEntity: widget.userEntity,
+        ),
       ),
     );
   }

@@ -40,7 +40,7 @@ class InfoAnmales extends StatelessWidget {
           color: const Color(0xff101010).withOpacity(.2),
           borderRadius: BorderRadius.circular(8)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 9),
+        padding: const EdgeInsets.symmetric(horizontal: 65.0, vertical: 9),
         child: FittedBox(
           child: Text(
             tt,

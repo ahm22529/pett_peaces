@@ -12,7 +12,7 @@ class PusherConfig {
   String SECRET = "8eaba726896323dd319d";
   String API_CLUSTER = "eu";
 
-  Future<void> initPusher(onEvent, {channelName, roomId}) async {
+  Future<void> initPusher(onEvent, {channelName}) async {
     _pusher = PusherChannelsFlutter.getInstance();
 
     try {
@@ -33,10 +33,10 @@ class PusherConfig {
 
       try {
         await _pusher.subscribe(
-          channelName: "$channelName.$roomId",
+          channelName: "$channelName",
         );
 
-        log("trying to subscribe to :  $channelName.$roomId");
+        log("trying to subscribe to :  $channelName");
       } catch (e) {
         log(e.toString());
       }

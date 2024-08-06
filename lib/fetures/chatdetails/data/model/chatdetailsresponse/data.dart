@@ -9,7 +9,9 @@ class Data extends ChatDetailsEntity {
 
   Data({this.chatData, this.messages})
       : super(
+            lastpage: messages?.lastPage ?? 0,
             channel: chatData?.agora?.channel ?? "",
+            userid: chatData?.user?.id ?? 0,
             tokrn: chatData?.agora?.rtcToken ?? "",
             massage: messages?.data ?? [],
             idd: chatData?.id ?? 0);

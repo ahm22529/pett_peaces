@@ -15,12 +15,13 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class Comfrimbook extends StatefulWidget {
   final HotelEntity hotelEntity;
-
+  final UserEntity userEntity;
   final List<AnmilesEntity> anmiles;
   const Comfrimbook({
     super.key,
     required this.hotelEntity,
     required this.anmiles,
+    required this.userEntity,
   });
   @override
   State<Comfrimbook> createState() => _ComfrimbookState();
@@ -54,6 +55,7 @@ class _ComfrimbookState extends State<Comfrimbook> {
             return Bodycomfrimbook(
               hotelEntity: widget.hotelEntity,
               anmiles: widget.anmiles,
+              uaer: widget.userEntity,
             );
           },
         ),

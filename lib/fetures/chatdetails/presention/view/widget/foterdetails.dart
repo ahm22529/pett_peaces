@@ -1,26 +1,37 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/function/imagePicker.dart';
 
 class foterdetailsmassage extends StatefulWidget {
-  const foterdetailsmassage({super.key, required this.scrollController});
+  const foterdetailsmassage({
+    super.key,
+    required this.scrollController,
+    required this.onChanged,
+    required this.onPressed,
+    required this.textController,
+    required this.onAttachmentPicked,
+  });
+
   final ScrollController scrollController;
+  final TextEditingController textController;
+  final void Function(String)? onChanged;
+  final void Function()? onPressed;
+  final void Function(File) onAttachmentPicked;
 
   @override
   State<foterdetailsmassage> createState() => _foterdetailsmassageState();
 }
 
 class _foterdetailsmassageState extends State<foterdetailsmassage> {
-  final TextEditingController _textController = TextEditingController();
-
   final ImagePickerService imagePickerService = ImagePickerService();
-  void _sendMessage() {
-    // Implement sending message logic here
-    _textController.clear();
-    widget.scrollController.animateTo(
-      0,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeIn,
-    );
+
+  void _pickAttachment() async {
+    final file =
+        await imagePickerService.pickImages(); // Add your implementation here
+    if (file != null) {
+      widget.onAttachmentPicked(file[0]);
+    }
   }
 
   @override
@@ -29,14 +40,12 @@ class _foterdetailsmassageState extends State<foterdetailsmassage> {
       children: [
         IconButton(
           icon: Image.asset("Asset/image/Send.png"), // Send icon
-          onPressed: () {
-            // Implement send message logic here
-            _sendMessage();
-          },
+          onPressed: widget.onPressed,
         ),
         Expanded(
           child: TextField(
-            controller: _textController,
+            onChanged: widget.onChanged,
+            controller: widget.textController,
             decoration: InputDecoration(
               prefixIcon: Image.asset("Asset/image/emoj.png"),
               hintText: 'Send Message',
@@ -53,9 +62,6 @@ class _foterdetailsmassageState extends State<foterdetailsmassage> {
               ),
             ),
             textAlign: TextAlign.left,
-            onSubmitted: (data) {
-              _sendMessage();
-            },
           ),
         ),
         IconButton(
@@ -72,16 +78,15 @@ class _foterdetailsmassageState extends State<foterdetailsmassage> {
                         leading: Icon(Icons.camera_alt),
                         title: Text('Take a picture'),
                         onTap: () {
-                          // Add your logic to open the camera
-                          imagePickerService.openCamera();
+                          imagePickerService
+                              .openCamera(); // Handle camera opening
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.photo_library),
                         title: Text('Choose from gallery'),
                         onTap: () {
-                          // Add your logic to open the gallery
-                          imagePickerService.pickImages();
+                          _pickAttachment(); // Handle gallery opening
                         },
                       ),
                     ],

@@ -1,4 +1,5 @@
 import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entity.dart';
+import 'package:pett_peaces/fetures/masssege/presention/view/massage.dart';
 
 import 'data.dart';
 
@@ -14,6 +15,8 @@ class Chatdetailsresponse extends ChatDetailsEntity {
     this.data,
     this.message,
   }) : super(
+            lastpage: data?.lastpage ?? 0,
+            userid: data?.userid ?? 0,
             massage: data?.massage ?? [],
             channel: data?.channel ?? "",
             tokrn: data?.tokrn ?? "",

@@ -34,10 +34,9 @@ class _PasswordFieldvaildState extends State<PasswordFieldvaild> {
         if (widget.isConfirm && v != widget.passwordController!.text) {
           return "كلمات المرور غير متطابقة";
         }
-        bool hasUppercase = v.contains(RegExp(r'[A-Z]'));
-        bool hasLowercase = v.contains(RegExp(r'[a-z]'));
-        if (!hasUppercase || !hasLowercase) {
-          return "يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير";
+
+        if (v.length <= 7) {
+          return "يجب أن تحتوي كلمة المرور على 8 حروف ";
         }
         return null;
       },

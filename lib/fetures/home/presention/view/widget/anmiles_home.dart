@@ -12,17 +12,15 @@ class Anmileshome extends StatelessWidget {
     required this.userEntitymodel,
   });
   final UserEntity userEntitymodel;
-  final AnmilesEntity anmiles;
+  final AnmilesEntity? anmiles;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
-          flex: 9,
-          child: SizedBox(
-            child: Anmmalesme(
-              anmilesEntity: anmiles,
-            ),
+          flex: 7,
+          child: Anmmalesme(
+            anmilesEntity: anmiles,
           ),
         ),
         Expanded(

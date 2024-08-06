@@ -3,17 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/my_anmiles.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
-import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/grid_view_home.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_course.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/grid_view_services.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/header_section.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_store.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/silder.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/user_info.dart';
-import 'package:pett_peaces/fetures/serviecs/presention/view/services.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/store.dart';
 
@@ -66,7 +63,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       height: 25,
                     ),
                     Visibility(
-                      visible: false,
+                      visible: state.homeEntity.anmilesEntity != null,
                       child: Column(
                         children: [
                           Headersection(
@@ -84,16 +81,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             height: 20,
                           ),
                           Anmileshome(
-                            anmiles: AnmilesEntity(
-                                namee: '',
-                                otherimage: [],
-                                typee: '',
-                                des: '',
-                                agee: 0,
-                                gendere: '',
-                                idd: 0,
-                                imagee: '',
-                                predec: ''),
+                            anmiles: state.homeEntity?.anmilesEntity,
                             userEntitymodel: widget.userEntitymodel,
                           ),
                           const SizedBox(

@@ -4,10 +4,11 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/detailes.dart';
 
 class IteamOrder extends StatelessWidget {
-  final products;
+  final List products;
   final UserEntity userEntitymodel;
 
-  const IteamOrder({super.key, this.products, required this.userEntitymodel});
+  const IteamOrder(
+      {super.key, required this.products, required this.userEntitymodel});
   @override
   Widget build(BuildContext context) {
     return GridView.builder(

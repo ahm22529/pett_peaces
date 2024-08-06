@@ -25,7 +25,7 @@ class Datum extends OrderEntity {
             price: total ?? "",
             waypay: paymentType ?? "",
             date: createdAt!,
-            prod: []);
+            prod: items ?? []);
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json['id'] as int?,

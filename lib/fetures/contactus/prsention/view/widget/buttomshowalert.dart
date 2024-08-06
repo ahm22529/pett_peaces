@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/contactus/data/model/inputusermodel.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/customdialog.dart';
 
 class buttomshowalert extends StatelessWidget {
@@ -19,12 +21,13 @@ class buttomshowalert extends StatelessWidget {
           titel: "ارسال",
           onPressed: () {
             if (globalKey.currentState!.validate()) {
-              showDialog(
-                context: context,
-                builder: (builder) => CustomDialog(
-                  contactdata: contactdata,
-                ),
-              );
+              BlocProvider.of<ContactCubit>(context)
+                  .contact(endpoint: "contact-us", data: {
+                "comment": contactdata.contact,
+                "subject": contactdata.sub,
+                "email": contactdata.email,
+                "full_name": contactdata.name
+              });
             }
           },
         ),

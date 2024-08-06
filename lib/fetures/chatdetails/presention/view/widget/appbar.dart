@@ -56,10 +56,9 @@ class appbardetails extends StatelessWidget {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => const AgoraVideoCallWidget(
-                      token:
-                          "007eJxTYKhOvG/nqm6v2mwaWrE/2+yoXt3BqYv/f3n87vc9s0cnFWsUGJJM0kySjFNNLExMjUxMTM0tjVPTUo3NjIyNzEyMTI3Tvj1dm9YQyMgQHxfAxMgAgSA+C0NJanEJAwMAoe0g6A==",
-                      channel: "test",
+                builder: (context) => AgoraVideoCallWidget(
+                      token: token,
+                      channel: chael,
                     )),
           ),
           child: Padding(
@@ -68,9 +67,19 @@ class appbardetails extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 8),
-        Padding(
-          padding: const EdgeInsets.only(top: 15, left: 20),
-          child: Image.asset("Asset/image/callcha.png"),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => AgoraVoiceCallWidget(
+                      token: token,
+                      channel: chael,
+                    )),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 15, left: 20),
+            child: Image.asset("Asset/image/callcha.png"),
+          ),
         ),
       ],
     );

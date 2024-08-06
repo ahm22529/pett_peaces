@@ -1,13 +1,27 @@
+import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+
 import 'product.dart';
 
-class Item {
+class Item extends ProducEntity {
   int? id;
   int? price;
   int? qty;
   int? total;
   Product? product;
 
-  Item({this.id, this.price, this.qty, this.total, this.product});
+  Item({this.id, this.price, this.qty, this.total, this.product})
+      : super(
+            id: id,
+            detai: product?.detai ?? "",
+            img: product?.image ?? "",
+            oherimage: product?.oherimage ?? [],
+            oldprice: product?.oldPrice ?? "",
+            prices: price.toString() ?? "",
+            qan: qty,
+            nameof: product?.name ?? "",
+            volum: product?.oldPrice ?? "",
+            shortdescription: product?.shortDescription ?? "",
+            pro: product?.pro ?? []);
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
         id: json['id'] as int?,

@@ -12,65 +12,78 @@ class BodyAnmiles extends StatelessWidget {
   final UserEntity userEntitymodel;
 
   const BodyAnmiles({super.key, required this.userEntitymodel});
+
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<FetachMyAnmilesCubit, FetachMyAnmilesState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        if (state is FetachMyAnmsucesss) {
-          if (state.lis.anmiles.isEmpty) {
-            return Column(
-              children: [
-                Image.asset("Asset/image/Dog and cat lying on a pillow.png"),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text("لا يوجد حيوانات يرجي اضافه حيوانتك")
-              ],
-            );
-          }
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                Expanded(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+      child: Column(
+        children: [
+          Expanded(
+            child: BlocConsumer<FetachMyAnmilesCubit, FetachMyAnmilesState>(
+              listener: (context, state) {},
+              builder: (context, state) {
+                if (state is FetachMyAnmsucesss) {
+                  if (state.lis.anmiles.isEmpty) {
+                    return Column(
+                      children: [
+                        Image.asset(
+                            "Asset/image/Dog and cat lying on a pillow.png"),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text("لا يوجد حيوانات يرجى إضافة حيواناتك"),
+                      ],
+                    );
+                  }
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Anmmalesmeacc(
-                  listAnmileEntity: state.lis,
-                  userEntitymodel: userEntitymodel,
-                )),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (builder) => MyAccountAdd(
-                                userEntitymodel: userEntitymodel,
-                              ))),
-                  child: Buttomanmandmating(
-                    color: Colors.orange,
-                    text: 'إضافة حيوان جديد',
-                    image: 'Asset/image/jjjdjd.png',
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => MyAccountAdd(
-                                    userEntitymodel: userEntitymodel,
-                                  )));
-                    },
+                      listAnmileEntity: state.lis,
+                      userEntitymodel: userEntitymodel,
+                    ),
+                  );
+                } else if (state is FetachMyAnmilesfauiler) {
+                  return const CustomWidgetfauier();
+                } else {
+                  return const Loadwidgwt();
+                }
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (builder) => MyAccountAdd(
+                    userEntitymodel: userEntitymodel,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                )
-              ],
+              ),
+              child: Buttomanmandmating(
+                color: Colors.orange,
+                text: 'إضافة حيوان جديد',
+                image: 'Asset/image/jjjdjd.png',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (builder) => MyAccountAdd(
+                        userEntitymodel: userEntitymodel,
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
-          );
-        } else if (state is FetachMyAnmilesfauiler) {
-          return const CustomWidgetfauier();
-        } else {
-          return const Loadwidgwt();
-        }
-      },
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
     );
   }
 }

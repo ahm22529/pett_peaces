@@ -27,9 +27,7 @@ class ShowImage extends StatelessWidget {
         if (index < 3) {
           // عرض الصور الأولى
           return GestureDetector(
-            onTap: () {
-              _showImageDialog(context, hotelEntity![index]['image']);
-            },
+            onTap: () {},
             child: CachedNetworkImage(
               imageUrl: hotelEntity![index]['image'],
               fit: BoxFit.cover,
@@ -37,15 +35,14 @@ class ShowImage extends StatelessWidget {
                 child: CircularProgressIndicator(),
               ),
               errorWidget: (context, url, error) => const Center(
-                child: Icon(Icons.error, color: Colors.red),
+                child: Icon(Icons.warning_amber_rounded,
+                    color: Colors.red, size: 48.0),
               ),
             ),
           );
         } else {
           return GestureDetector(
-            onTap: () {
-              _showRemainingImagesDialog(context);
-            },
+            onTap: () {},
             child: Stack(
               fit: StackFit.expand,
               children: [
@@ -66,60 +63,6 @@ class ShowImage extends StatelessWidget {
             ),
           );
         }
-      },
-    );
-  }
-
-  void _showImageDialog(BuildContext context, String imagePath) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
-          child: CachedNetworkImage(
-            imageUrl: imagePath,
-            fit: BoxFit.cover,
-            placeholder: (context, url) => const Center(
-              child: CircularProgressIndicator(),
-            ),
-            errorWidget: (context, url, error) => const Center(
-              child: Icon(Icons.error, color: Colors.red),
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  void _showRemainingImagesDialog(BuildContext context) {
-    final remainingImages =
-        hotelEntity!.sublist(4); // الصور الباقية من الفهرس 4 فصاعدًا
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
-          child: SingleChildScrollView(
-            child: Column(
-              children: remainingImages.map((imageData) {
-                final imageUrl =
-                    imageData['image']; // تأكد من أن لديك المفتاح الصحيح
-                return Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUrl,
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) => const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                    errorWidget: (context, url, error) => const Center(
-                      child: Icon(Icons.error, color: Colors.red),
-                    ),
-                  ),
-                );
-              }).toList(),
-            ),
-          ),
-        );
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
 
 import 'package:pett_peaces/fetures/store/prention/view/widget/catogry_advance_butomsheet.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_buttom_sheet.dart';
@@ -13,7 +14,7 @@ class Bodycontinerofbuttomsheet extends StatelessWidget {
     required this.lis,
   });
 
-  final List lis;
+  final List<DepartmentEntity> lis;
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +27,20 @@ class Bodycontinerofbuttomsheet extends StatelessWidget {
         const SizedBox(
           height: 36,
         ),
-        const Catogry(
+        Catogry(
           titel1: 'الفئة',
           tiele2: 'طعام',
+          depart: lis,
         ),
         Divider(
           height: 24,
           color: const Color(0xff21235F).withOpacity(.25),
         ),
-        const Catogry(titel1: "التصنيف الفرعي", tiele2: "عرض الكل"),
+        Catogry(
+          titel1: "التصنيف الفرعي",
+          tiele2: "عرض الكل",
+          depart: lis,
+        ),
         const SizedBox(
           height: 24,
         ),

@@ -2,7 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
+import 'package:pett_peaces/fetures/store/prention/manager/cubit/department_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/buttom_sheet_advance.dart';
+import 'package:pett_peaces/fetures/store/prention/view/widget/button_ofa_dvance_sheet.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class Titelappbar extends StatefulWidget {
@@ -20,11 +24,14 @@ class Titelappbar extends StatefulWidget {
 class _TitelappbarState extends State<Titelappbar> {
   TextEditingController textEditingController = TextEditingController();
   Timer? debounce;
+  List<DepartmentEntity> lis = [];
 
   @override
   void initState() {
     super.initState();
     fetchPredictions();
+    BlocProvider.of<DepartmentCubit>(context).getDepaartment(
+        endpoint: "data/departments", token: widget.userEntitymodel.token);
   }
 
   void fetchPredictions() {
@@ -59,9 +66,25 @@ class _TitelappbarState extends State<Titelappbar> {
             textEditingController: textEditingController,
           ),
         ),
-        IconButton(
-          icon: Image.asset('Asset/image/filter.png'),
-          onPressed: () {},
+        BlocListener<DepartmentCubit, DepartmentState>(
+          listener: (context, state) {
+            // TODO: implement listener
+            if (state is DepartmentSucess) {
+              setState(() {
+                lis = state.alldDepartment.dep;
+              });
+            }
+          },
+          child: IconButton(
+            icon: Image.asset('Asset/image/filter.png'),
+            onPressed: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (builder) => CustomButtomShhetadvance(
+                        lis: lis,
+                      ));
+            },
+          ),
         ),
       ],
     );

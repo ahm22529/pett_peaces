@@ -16,7 +16,7 @@ class OrderDetails extends StatelessWidget {
       appBar: AppBar(
         leading: Image.asset("Asset/image/Back.png"),
         title: Text(
-          "سياسة الخصوصية",
+          " تفاصيل الطلب",
           style: AppStyles.styleRegular24(context)
               .copyWith(fontWeight: FontWeight.w500),
         ),

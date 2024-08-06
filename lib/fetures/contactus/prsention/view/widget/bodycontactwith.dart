@@ -1,15 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
-import 'package:pett_peaces/fetures/contactus/data/model/inputusermodel.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/buttomshowalert.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/view/widget/form_send.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
-
-import '../../../../../core/utiles/sttyel.dart';
 
 class BodyContactwithpices extends StatefulWidget {
   @override

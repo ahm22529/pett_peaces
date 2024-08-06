@@ -28,7 +28,9 @@ class _AgoraVideoCallWidgetState extends State<AgoraVideoCallWidget> {
   }
 
   Future<void> _initAgora() async {
-    await _agoraServices.initAgora(widget.token, widget.channel);
+    await _agoraServices.initAgora(
+        "007eJxTYDj+UCNy/zufr43rHU//XyUudePH2XkmHZOvbpstu934k0WlAkOSSZpJknGqiYWJqZGJiam5pXFqWqqxmZGxkZmJkalxmo72prSGQEYG5TdnWBgZIBDEZ2EoSS0uYWAAACLQIY0=",
+        "test");
   }
 
   void _onLocalUserJoined() {
@@ -50,9 +52,8 @@ class _AgoraVideoCallWidgetState extends State<AgoraVideoCallWidget> {
   }
 
   void _endCall() async {
-    await _agoraServices
-        .dispose(); // End the call by disposing of Agora resources
-    Navigator.pop(context); // Close the current screen
+    await _agoraServices.dispose();
+    Navigator.pop(context);
   }
 
   @override
@@ -72,7 +73,7 @@ class _AgoraVideoCallWidgetState extends State<AgoraVideoCallWidget> {
                     controller: VideoViewController.remote(
                       rtcEngine: _agoraServices.engine,
                       canvas: VideoCanvas(uid: _remoteUid),
-                      connection: RtcConnection(channelId: widget.channel),
+                      connection: RtcConnection(channelId: "test"),
                     ),
                   )
                 : Icon(
@@ -85,7 +86,7 @@ class _AgoraVideoCallWidgetState extends State<AgoraVideoCallWidget> {
             alignment: Alignment.topLeft,
             child: SizedBox(
               width: 200,
-              height: 250,
+              height: 180,
               child: Center(
                 child: _localUserJoined
                     ? AgoraVideoView(

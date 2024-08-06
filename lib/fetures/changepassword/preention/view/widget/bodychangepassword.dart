@@ -6,10 +6,12 @@ import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updaepass_cubit.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/password_text_filed.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyChangePassword extends StatefulWidget {
-  const BodyChangePassword({Key? key}) : super(key: key);
-
+  const BodyChangePassword({Key? key, required this.userEntity})
+      : super(key: key);
+  final UserEntity userEntity;
   @override
   State<BodyChangePassword> createState() => _BodyChangePasswordState();
 }
@@ -28,7 +30,7 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
           buildErrorBar(context, "تم تغير كلمه المرور بنجاح ");
         }
         if (state is Updaepassfaulier) {
-          return buildErrorBar(context, "كلمه المرور السابقه خاطئه");
+          return buildSucessbar(context, "كلمه المرور السابقه خاطئه");
         }
       },
       child: SingleChildScrollView(
@@ -68,8 +70,7 @@ class _BodyChangePasswordState extends State<BodyChangePassword> {
                         if (globalKey.currentState?.validate() ?? false) {
                           BlocProvider.of<UpdaepassCubit>(context).UpdaPass(
                               endpoint: "profile/update/password",
-                              token:
-                                  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMjM2Njg5LCJleHAiOjE3MjI4NDE0ODksIm5iZiI6MTcyMjIzNjY4OSwianRpIjoiaXp3ZjFlUG5IS0JOV3Z6TiIsInN1YiI6IjEyMCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fkqOMsnicpLCx47OK-OuegkNLk_sQranHL8pFmrU6OI",
+                              token: widget.userEntity.id,
                               data: {
                                 "old_password": old,
                                 "password": password,

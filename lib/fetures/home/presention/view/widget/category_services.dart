@@ -25,7 +25,7 @@ class CategoryButtonhome extends StatelessWidget {
           children: [
             Positioned(
               right: 0,
-              top: -30,
+              top: -20,
               child: Image.asset(
                 imagePath,
                 height: 80,

@@ -10,4 +10,6 @@ abstract class SingupRepo {
       required Map<String, dynamic> input,
       required String endpoint});
   Future<Either<Failure, UserEntity>> sendOpt({required String endpoint});
+  Future<Either<Failure, UserEntity>> resend(
+      {required String endpoint, required String token});
 }

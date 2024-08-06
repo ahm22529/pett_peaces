@@ -19,6 +19,7 @@ class Datum extends MassageEntity {
     this.updatedAt,
   }) : super(
             idd: id ?? 0,
+            userrid: userId ?? 0,
             massage: message ?? "",
             date: createdAt!,
             attachc: attach ?? "");

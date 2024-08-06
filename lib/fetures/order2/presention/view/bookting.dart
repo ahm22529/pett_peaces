@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/box/data/repo/repo_Imp.dart';
+import 'package:pett_peaces/fetures/box/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubit.dart';
 import 'package:pett_peaces/fetures/order2/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/order2/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/order2/presention/manager/cubit/order_cubit.dart';
@@ -19,10 +22,15 @@ class Bookting extends StatefulWidget {
 
 class _BooktingState extends State<Bookting> {
   Orderrepo orderrepo = Orderrepoimp();
+  Boxrepo boxrepo = BoxRepoImp();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => OrderCubit(orderrepo),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => OrderCubit(orderrepo),
+        ),
+      ],
       child: Scaffold(
         appBar: AppBar(
           leading: GestureDetector(

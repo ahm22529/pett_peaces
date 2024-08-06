@@ -47,6 +47,6 @@ class NotificationService {
     // Implement your API call to send the token to your server
     // Example:
     // final response = await http.post('your-server-endpoint', body: {'token': token});
-    print('Sending token to server: $token');
+    log('Sending token to server: $token');
   }
 }

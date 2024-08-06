@@ -11,15 +11,6 @@ class ClassifyIteam extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: lis.map((item) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-          child: Classify(
-            text: item,
-          ),
-        );
-      }).toList(),
-    );
+    return Row();
   }
 }

@@ -44,13 +44,8 @@ class DecriptionMating extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          IconButton(
-              onPressed: () {
-                print(anmilesEntity.anmilesEntity.otherimage[0]);
-              },
-              icon: const Icon(Icons.abc)),
           ShowImage(
-            hotelEntity: [],
+            hotelEntity: anmilesEntity.anmilesEntity.otherimage,
           ),
           const SizedBox(
             height: 16,

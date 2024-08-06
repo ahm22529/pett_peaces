@@ -24,9 +24,10 @@ class fristcontiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
+        color: Color(0xff),
         image: DecorationImage(
           image: AssetImage(
-              "Asset/image/psps.png"), // Replace with your image asset
+              "Asset/image/OPSEG70 2.png"), // Replace with your image asset
           fit: BoxFit.cover,
         ),
       ),

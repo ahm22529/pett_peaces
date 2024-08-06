@@ -53,4 +53,11 @@ class Siguprepoimp extends SingupRepo {
   Future<Either<Failure, UserEntity>> sendOpt({required String endpoint}) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> resend(
+      {required String endpoint, required String token}) {
+    // TODO: implement resend
+    throw UnimplementedError();
+  }
 }

@@ -66,7 +66,7 @@ class _IteamconterState extends State<Iteamconter> {
         userEntitymodel: widget.userEntitymodel,
       ),
       Subsurbtion(),
-      Changepassword(),
+      Changepassword(userEntity: widget.userEntitymodel),
       Changelang(),
       policy(),
       Aboutus(),

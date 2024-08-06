@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/agoraservices/agora.dart'; // Adjust import path if needed
+import 'package:pett_peaces/core/utiles/agoraservices/agora.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart'; // Adjust import path if needed
 
 class AgoraVoiceCallWidget extends StatefulWidget {
   final String token, channel;
@@ -27,7 +28,7 @@ class _AgoraVoiceCallWidgetState extends State<AgoraVoiceCallWidget> {
   }
 
   Future<void> _initAgora() async {
-    await _agoraServices.initAgora(widget.token, widget.channel);
+    await _agoraServices.initAgora("", "");
   }
 
   void _onLocalUserJoined() {
@@ -63,22 +64,43 @@ class _AgoraVoiceCallWidgetState extends State<AgoraVoiceCallWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Voice Call'),
+        title: const Text('Voice Call'),
         actions: [
           IconButton(
-            icon: Icon(Icons.call_end),
+            icon: const Icon(Icons.call_end),
             onPressed: _endCall,
           ),
         ],
       ),
       body: Center(
         child: _localUserJoined
-            ? Text(
+            ? const Text(
                 'You are in a call',
                 style: TextStyle(fontSize: 20),
               )
-            : CircularProgressIndicator(),
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 100,
+                    child: Text(
+                      "A",
+                      style: AppStyles.stylesmedium32(context)
+                          .copyWith(fontSize: 130),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "مكالمه مع كريم ",
+                    style: AppStyles.stylesemi20(context)
+                        .copyWith(color: Colors.black),
+                  )
+                ],
+              ),
       ),
     );
   }

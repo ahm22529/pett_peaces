@@ -21,4 +21,14 @@ class VarifyEmailCubit extends Cubit<VarifyEmailState> {
       (userEntity) => emit(VarifyEmailSuccess(userEntity: userEntity)),
     );
   }
+
+  Future<void> resendcode(
+      {required String endpoint, required String token}) async {
+    emit(VarifyEmailLoading());
+    final result = await authRepo.resend(endpoint: endpoint, token: token);
+    result.fold(
+      (failure) => emit(VarifyEmailFailure(message: failure.errmas)),
+      (userEntity) => emit(VarifyEmailSuccess(userEntity: userEntity)),
+    );
+  }
 }

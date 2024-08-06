@@ -7,6 +7,7 @@ import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/store/domain/repo.dart';
+import 'package:pett_peaces/fetures/store/prention/manager/cubit/department_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/all_platform.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/titela_ppbar.dart';
@@ -31,6 +32,9 @@ class _StoreState extends State<Store> {
         ),
         BlocProvider(
           create: (context) => AddBoxCubit(boxrepo),
+        ),
+        BlocProvider(
+          create: (context) => DepartmentCubit(storeRepo),
         )
       ],
       child: Scaffold(

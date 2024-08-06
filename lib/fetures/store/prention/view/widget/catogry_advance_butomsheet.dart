@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/buttom_shett.dart';
 
 class Catogry extends StatelessWidget {
-  const Catogry({Key? key, required this.titel1, required this.tiele2})
+  const Catogry(
+      {Key? key,
+      required this.titel1,
+      required this.tiele2,
+      required this.depart})
       : super(key: key);
   final String titel1, tiele2;
+  final List<DepartmentEntity> depart;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +37,9 @@ class Catogry extends StatelessWidget {
           onTap: () {
             showModalBottomSheet(
               context: context,
-              builder: (builder) => Custommodelshhet(),
+              builder: (builder) => Custommodelshhet(
+                department: depart,
+              ),
             );
           },
           child: SizedBox(

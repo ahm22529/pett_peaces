@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 import 'package:pett_peaces/fetures/bayandseller/presention/manager/cubit/sel_cubit.dart';
 
@@ -57,16 +58,16 @@ class _SellerAndBuyerState extends State<AllAnmilesMating> {
         )
       ],
       child: Scaffold(
-        backgroundColor: const Color(0xFFFDFDFD),
         appBar: AppBar(
-            backgroundColor: const Color(0xFFFFA44A),
-            elevation: 0,
-            automaticallyImplyLeading:
-                false, // hides the default leading widget on the AppBar
-            title: Titelappbar(
-              name: '',
-              userEntitymodel: widget.userEntitymodel,
-            )),
+          automaticallyImplyLeading: false,
+          title: Text(
+            "التزاوج ",
+            style: AppStyles.stylesemi20(context).copyWith(fontSize: 30),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.orange,
+        ),
+        backgroundColor: const Color(0xFFFDFDFD),
         body: BodyAllMating(
           userEntitymodel: widget.userEntitymodel,
         ),
