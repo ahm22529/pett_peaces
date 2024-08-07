@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/button_of_buttoms_heet.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/checked.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_buttom_sheet.dart';
 
@@ -39,8 +38,8 @@ class _CustommodelshhetState extends State<Custommodelshhet> {
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
         child: Column(
           children: [
-            Headerbottomsheet(
-              titel11: 'التصنيف الفرعي',
+            const Headerbottomsheet(
+              titel11: ' الفئه',
               titel2: 'الرجوع',
             ),
             Expanded(
@@ -54,7 +53,6 @@ class _CustommodelshhetState extends State<Custommodelshhet> {
                 },
               ),
             ),
-            Buttonofbuttomsheet(selectedItems: selectedItems)
           ],
         ),
       ),

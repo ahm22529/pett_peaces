@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/box/presention/view/box.dart';
 import 'package:pett_peaces/fetures/notifaction/presention/notifaction.dart';
@@ -51,12 +54,15 @@ class UserInfoCard extends StatelessWidget {
           width: 8,
         ),
         GestureDetector(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (builder) => Notifactin(
-                          userEntitymodel: userEntitymodel,
-                        ))),
+            onTap: () {
+             
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (builder) => Notifactin(
+                            userEntitymodel: userEntitymodel,
+                          )));
+            },
             child: Image.asset("Asset/image/Frame 1000004230.png")),
       ],
     );

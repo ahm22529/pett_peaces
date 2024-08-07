@@ -7,14 +7,18 @@ import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/featch/exambelcubit_cubit.dart';
+import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/appbar.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/list_viewa_dvance.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/search.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/no_iteam.dart';
 
 class BodyExample extends StatefulWidget {
-  const BodyExample({super.key, required this.userEntitymodel});
+  const BodyExample({Key? key, required this.userEntitymodel})
+      : super(key: key);
+
   final UserEntity userEntitymodel;
+
   @override
   State<BodyExample> createState() => _BodyExampleState();
 }
@@ -24,8 +28,10 @@ class _BodyExampleState extends State<BodyExample> {
   final ScrollController _scrollController = ScrollController();
   int currentPage = 1;
   bool isLoadingMore = false;
+  String titel = "الامثله والنصايح";
   List<ExambelEnitydetails> items = [];
   TextEditingController textEditingController = TextEditingController();
+  final GlobalKey _listViewKey = GlobalKey(); // تأكد من استخدام مفتاح فريد هنا
 
   @override
   void initState() {
@@ -52,6 +58,12 @@ class _BodyExampleState extends State<BodyExample> {
     }
   }
 
+  void updateTitel(String tag) {
+    setState(() {
+      titel = tag;
+    });
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -71,21 +83,38 @@ class _BodyExampleState extends State<BodyExample> {
                 const SizedBox(
                   height: 73,
                 ),
-                const customAppbar(
-                  name: 'الامثله والنصائح',
+                BlocListener<ExambelcubitCubit, ExambelcubitState>(
+                  listener: (context, state) {
+                    // TODO: implement listener
+
+                    if (state is Update) {
+                      setState(() {
+                        titel = state.tag;
+                      });
+                    }
+                  },
+                  child: AppbarExapmbe(
+                    onPressed: () {
+                      setState(() {
+                        currentPage = 1;
+                        items.clear(); // مسح العناصر السابقة عند التحديث
+                      });
+                      context.read<ExambelcubitCubit>().getdata(
+                          endpoint: "posts?page=$currentPage",
+                          token: widget.userEntitymodel.token);
+                      context
+                          .read<ExambelcubitCubit>()
+                          .updateheadertitel("الامثله والنصايح");
+                    },
+                    name: titel,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 TitelappbarExam(
                   name: 'ابحث عن الامثله والنصايح ',
                   userEntitymodel: widget.userEntitymodel,
-                ),
-              ],
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 24,
                 ),
               ],
             ),
@@ -98,16 +127,22 @@ class _BodyExampleState extends State<BodyExample> {
           BlocConsumer<ExambelcubitCubit, ExambelcubitState>(
             builder: (context, state) {
               if (state is Exambelcubitfauleer) {
-                return SliverToBoxAdapter(child: const CustomWidgetfauier());
+                return const SliverToBoxAdapter(child: CustomWidgetfauier());
               }
 
               if (state is Exambelcubitsucess ||
-                  state is Exambelcubitsucessserch) {
+                  state is Exambelcubitsucessserch ||
+                  state is Exambelcubitsucestag) {
                 if (items.isEmpty) {
-                  return NoIteam();
+                  return const NoIteam();
                 }
                 return ListViewAdvanced(
+                  key: _listViewKey, // استخدم مفتاح فريد هنا
                   entity: items,
+                  onPressed: () {
+                    updateTitel;
+                  },
+                  userEntity: widget.userEntitymodel,
                 );
               } else {
                 return const SliverToBoxAdapter(
@@ -117,19 +152,21 @@ class _BodyExampleState extends State<BodyExample> {
             },
             listener: (BuildContext context, ExambelcubitState state) {
               if (state is Exambelcubitsucess) {
-                items.addAll(state.ex.examel);
+                // تحقق مما إذا كانت العناصر موجودة بالفعل قبل الإضافة
+                final existingIds = items.map((item) => item.idd).toSet();
+                final newItems = state.ex.examel
+                    .where((item) => !existingIds.contains(item.idd))
+                    .toList();
+                items.addAll(newItems);
               }
               if (state is Exambelcubitsucessserch) {
                 items = state.ex.examel;
               }
+              if (state is Exambelcubitsucestag) {
+                items = state.ex.examel;
+              }
             },
           ),
-          if (isLoadingMore)
-            const SliverToBoxAdapter(
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            ),
         ],
       ),
     );

@@ -6,11 +6,17 @@ import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/profilea_dvace.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/header_and_body.dart';
 import 'package:intl/intl.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ListViewAdvanced extends StatelessWidget {
   final List<ExambelEnitydetails> entity;
-
-  const ListViewAdvanced({super.key, required this.entity});
+  final UserEntity userEntity;
+  final void Function() onPressed;
+  const ListViewAdvanced(
+      {super.key,
+      required this.entity,
+      required this.onPressed,
+      required this.userEntity});
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
@@ -24,6 +30,7 @@ class ListViewAdvanced extends StatelessWidget {
                         ))),
             child: ItemAdvanced(
               examel: entity[index],
+              onPressed: onPressed, userEntity: userEntity,
             )));
   }
 }
@@ -32,8 +39,11 @@ class ItemAdvanced extends StatelessWidget {
   const ItemAdvanced({
     super.key,
     required this.examel,
+    required this.onPressed, required this.userEntity,
   });
   final ExambelEnitydetails examel;
+  final void Function() onPressed;
+  final UserEntity userEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +61,8 @@ class ItemAdvanced extends StatelessWidget {
           SizedBox(height: 113, width: 89, child: Image.network(examel.imagee)),
           HeaderAndBody(
             examel: examel,
+            onPressed: onPressed,
+            userEntity: userEntity,
           ),
           Text(
             isToday

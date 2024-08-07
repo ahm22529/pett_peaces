@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/bodynewspassword.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/backgroundcontiner.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
-import 'package:pett_peaces/fetures/restpassword/presention/view/widget/enteremail.dart';
 
 class Shape extends StatelessWidget {
   const Shape({

@@ -54,7 +54,7 @@ class _ChatPusherState extends State<ChatPusher> {
 
   Future<void> fetchInitialMessages() async {
     await BlocProvider.of<ChatdetailsCubit>(context).getmassage(
-      endpoint: "chat/",
+      endpoint: "chat/${widget.chatid}?page=1",
       token: widget.token,
       id: widget.userid,
     );

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/home/presention/view/home_scrren.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/manager/cubit/updatepassword_cubit.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/buttomaccept.dart';
-import 'package:pett_peaces/fetures/newpassword/presention/view/widget/formnewspassword.dart';
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/passwordfilednew.dart';
-import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 
 class BodyNewsPassword extends StatefulWidget {
   const BodyNewsPassword({Key? key}) : super(key: key);
@@ -48,20 +47,32 @@ class _BodyNewsPasswordState extends State<BodyNewsPassword> {
               onSaved1: (String? v) {},
               onSaved2: (String? v) {},
             ),
-            buttomAccept(
-              onPressed: () {
-                if (globalKey.currentState!.validate()) {
-                  // يمكنك هنا تنفيذ الإجراءات بمجرد تحقق النموذج
-                  context
-                      .read<UpdatepasswordCubit>()
-                      .createUserWithEmailAndPassword({
-                    "email": "test200@gamil.com",
-                    "otp": "1234",
-                    "password": "12345678910",
-                    "password_confirmation": "12345678910"
-                  }, "forget-password/reset-password");
+            BlocListener<UpdatepasswordCubit, UpdatepasswordState>(
+              listener: (context, state) {
+                // TODO: implement listener
+                if (state is UpdatepasswordSuccess) {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) =>
+                              HomeScreen(userEntitymodel: state.userEntity)));
                 }
               },
+              child: buttomAccept(
+                onPressed: () {
+                  if (globalKey.currentState!.validate()) {
+                    // يمكنك هنا تنفيذ الإجراءات بمجرد تحقق النموذج
+                    context
+                        .read<UpdatepasswordCubit>()
+                        .createUserWithEmailAndPassword({
+                      "email": "test200@gamil.com",
+                      "otp": "1234",
+                      "password": "12345678910",
+                      "password_confirmation": "12345678910"
+                    }, "forget-password/reset-password");
+                  }
+                },
+              ),
             ),
             const SizedBox(
               height: 50,

@@ -1,9 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/domain/repo/repo.dart';
-
 part 'signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {

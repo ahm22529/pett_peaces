@@ -14,7 +14,11 @@ class forgepasss extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (builder) => enteremailb())),
+              context,
+              MaterialPageRoute(
+                  builder: (builder) => enteremailb(
+                        email: '',
+                      ))),
           child: Text(
             "نسيت كلمة المرور؟",
             style: AppStyles.styleRegular14(context)

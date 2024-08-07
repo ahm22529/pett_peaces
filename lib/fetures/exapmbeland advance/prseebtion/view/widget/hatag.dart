@@ -20,19 +20,7 @@ class Hastag extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * .23,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              decoration: BoxDecoration(
-                  color: Color(0xffFFE2C9),
-                  borderRadius: BorderRadius.circular(6)),
-              child: Text(
-                "طعام",
-                style: AppStyles.styleMedium16(context).copyWith(
-                    color: Color(0xffF78E32),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-            )
+           
           ],
         ),
       ),

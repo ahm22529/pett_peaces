@@ -2,14 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/manager/cubit/checkemail_cubit.dart';
 
 import 'package:pett_peaces/fetures/restpassword/presention/view/restpassword.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/buttomcomfrimrest.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
-import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
 
 class BodyEnteremail extends StatefulWidget {
   const BodyEnteremail({super.key});

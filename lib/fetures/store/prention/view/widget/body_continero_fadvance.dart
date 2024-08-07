@@ -29,7 +29,7 @@ class Bodycontinerofbuttomsheet extends StatelessWidget {
         ),
         Catogry(
           titel1: 'الفئة',
-          tiele2: 'طعام',
+          tiele2: 'عرض الكل ',
           depart: lis,
         ),
         Divider(

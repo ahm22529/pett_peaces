@@ -16,10 +16,13 @@ class Headerbottomsheet extends StatelessWidget {
           style: AppStyles.styleMedium18(context)
               .copyWith(fontWeight: FontWeight.w500),
         ),
-        Text(
-          titel2,
-          style: AppStyles.styleRegular14(context)
-              .copyWith(fontWeight: FontWeight.w500, color: Color(0xffF78E32)),
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Text(
+            titel2,
+            style: AppStyles.styleRegular14(context).copyWith(
+                fontWeight: FontWeight.w500, color: Color(0xffF78E32)),
+          ),
         )
       ],
     );

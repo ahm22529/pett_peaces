@@ -19,8 +19,21 @@ final class Exambelcubitsucessserch extends ExambelcubitState {
   Exambelcubitsucessserch({required this.ex});
 }
 
+final class Exambelcubitsucestag extends ExambelcubitState {
+  final ExamelEntity ex;
+
+  Exambelcubitsucestag({required this.ex});
+}
+
 final class Exambelcubitfauleer extends ExambelcubitState {
   final String errmas;
 
   Exambelcubitfauleer({required this.errmas});
+}
+
+
+final class Update extends ExambelcubitState {
+  final String tag;
+
+  Update({required this.tag});
 }
