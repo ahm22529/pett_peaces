@@ -5,7 +5,7 @@ class CategoryButtonhome extends StatelessWidget {
   final String text;
   final String imagePath;
 
-  CategoryButtonhome({
+  const CategoryButtonhome({super.key, 
     required this.backgroundColor,
     required this.text,
     required this.imagePath,
@@ -32,7 +32,7 @@ class CategoryButtonhome extends StatelessWidget {
                 width: 80,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Row(

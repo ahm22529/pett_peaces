@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_rep.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_repo_imp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/bodycontactwith.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/view/widget/body_contact_with.dart';
 
 class Contactwithpices extends StatefulWidget {
+  const Contactwithpices({super.key});
+
   @override
   State<Contactwithpices> createState() => _ContactwithpicesState();
 }

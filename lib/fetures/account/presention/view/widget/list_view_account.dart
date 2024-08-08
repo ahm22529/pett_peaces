@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/aboutus/presention/view/aboutus.dart';
 import 'package:pett_peaces/fetures/account/data/model/modelaction.dart';
-import 'package:pett_peaces/fetures/account/presention/view/widget/headerandspace.dart';
+import 'package:pett_peaces/fetures/account/presention/view/widget/header_and_space.dart';
 import 'package:pett_peaces/fetures/anmailes/presetion/view/my_anmiles.dart';
 import 'package:pett_peaces/fetures/changelaung/presention/view/changelang.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/view/changepassword.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/contactwithpices.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/view/contact_with_pices.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/login.dart';
 import 'package:pett_peaces/fetures/mating/prsention/view/mating.dart';
 import 'package:pett_peaces/fetures/bookinghotel/presention/booking_hotel.dart';
@@ -18,8 +18,7 @@ import '../../../../deletaccount/showdilog.dart';
 
 class Iteamconter extends StatefulWidget {
   final UserEntity userEntitymodel;
-  const Iteamconter({Key? key, required this.userEntitymodel})
-      : super(key: key);
+  const Iteamconter({super.key, required this.userEntitymodel});
 
   @override
   State<Iteamconter> createState() => _IteamconterState();
@@ -44,6 +43,7 @@ class _IteamconterState extends State<Iteamconter> {
   late List<Widget> nav;
   @override
   void initState() {
+    super.initState();
     nav = [
       Myanmiles(userEntitymodel: widget.userEntitymodel),
       Mating(
@@ -70,9 +70,11 @@ class _IteamconterState extends State<Iteamconter> {
       Changelang(),
       policy(),
       Aboutus(),
-      resonbay(),
+      DeletAccount(
+        userEntity: widget.userEntitymodel,
+      ),
       Contactwithpices(),
-      LoginView(),
+      const LoginView(),
     ];
   }
 
@@ -86,11 +88,13 @@ class _IteamconterState extends State<Iteamconter> {
 
           return GestureDetector(
             onTap: () {
-              if (index == 9) {
+              if (index == 10) {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return  CustomDialog(userEntity: widget.userEntitymodel,); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
+                    return CustomDialog(
+                      userEntity: widget.userEntitymodel,
+                    ); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
                   },
                 );
               } else if (index < nav.length - 1) {
@@ -110,7 +114,7 @@ class _IteamconterState extends State<Iteamconter> {
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
-              child: spaceadHeader(modelActino: modelAction),
+              child: SpaceadHeader(modelActino: modelAction),
             ),
           );
         }).toList(),

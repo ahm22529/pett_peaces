@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/services/localservices/manager/cubit/localdata_cubit.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/cubit/filter_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_buttom_sheet.dart';
@@ -20,8 +21,15 @@ class _CustommodelshhetState extends State<Custommodelshhet> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => FilterCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FilterCubit(),
+        ),
+        BlocProvider(
+          create: (context) => LocaldataCubit(),
+        ),
+      ],
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -62,6 +70,7 @@ class _CustommodelshhetState extends State<Custommodelshhet> {
                               department.namee,
                               _selectedDepartmentId ?? '',
                             );
+                           
                           });
                         },
                       ),
@@ -79,6 +88,7 @@ class _CustommodelshhetState extends State<Custommodelshhet> {
                             department.namee,
                             _selectedDepartmentId ?? '',
                           );
+                         
                         });
                       },
                     );

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/body.dart';
-import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/hatag.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/view/widget/iteam_continer.dart';
 
 import '../../../../../core/utiles/sttyel.dart';
@@ -69,16 +68,7 @@ class bodyofcontinertwo extends StatelessWidget {
                       child: CustomContainerButton(
                         titel: examel
                             .tag[index], // استخدم العنصر الحالي من القائمة
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Hastag(
-                                examel: examel,
-                              ),
-                            ),
-                          );
-                        },
+                        onPressed: () {},
                       ),
                     ),
                   );

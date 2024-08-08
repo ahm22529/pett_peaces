@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/anmiles_entity.dart';
-
 import 'package:pett_peaces/fetures/home/presention/view/widget/info_anmiles.dart';
 
 class Anmmalesme extends StatelessWidget {
   const Anmmalesme({super.key, required this.anmilesEntity});
   final AnmilesEntity? anmilesEntity;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,16 +24,43 @@ class Anmmalesme extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                child: Image.network(
-                  anmilesEntity?.imagee ?? "",
-                  height: MediaQuery.of(context).size.height * .2,
-                  fit: BoxFit.cover,
-                ),
+                child: anmilesEntity?.imagee != null &&
+                        anmilesEntity!.imagee.isNotEmpty
+                    ? Image.network(
+                        anmilesEntity!.imagee,
+                        height: MediaQuery.of(context).size.height * .2,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (BuildContext context, Widget child,
+                            ImageChunkEvent? loadingProgress) {
+                          if (loadingProgress == null) {
+                            return child;
+                          } else {
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes !=
+                                        null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        (loadingProgress.expectedTotalBytes ??
+                                            1)
+                                    : null,
+                              ),
+                            );
+                          }
+                        },
+                        errorBuilder: (BuildContext context, Object error,
+                            StackTrace? stackTrace) {
+                          return const Icon(
+                              Icons.error); // Placeholder for error
+                        },
+                      )
+                    : const Icon(Icons
+                        .image_not_supported), // Placeholder for empty or null URL
               ),
               Expanded(
-                  child: informationanmiles(
-                animel: anmilesEntity,
-              ))
+                child: informationanmiles(
+                  animel: anmilesEntity,
+                ),
+              ),
             ],
           ),
         ),

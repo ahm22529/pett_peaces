@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/account/data/model/modelaction.dart';
-import 'package:pett_peaces/fetures/account/presention/view/widget/iteamacount.dart';
+import 'package:pett_peaces/fetures/account/presention/view/widget/iteam_acount.dart';
 
-class spaceadHeader extends StatelessWidget {
-  const spaceadHeader({
+class SpaceadHeader extends StatelessWidget {
+  const SpaceadHeader({
     super.key,
     required this.modelActino,
   });
@@ -12,10 +12,10 @@ class spaceadHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
-        iteamaccount(
+        Iteamaccount(
           imaeg: modelActino.image,
           text: modelActino.text,
         ),

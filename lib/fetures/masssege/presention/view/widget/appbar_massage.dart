@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/fetures/doctor/presention/manager/cubit/fetchdoctor_cubit.dart';
 import 'package:pett_peaces/fetures/masssege/presention/manager/cubit/massage_cubit.dart';
+import 'package:pett_peaces/fetures/masssege/presention/view/widget/text_filed_search_shape.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
@@ -55,7 +55,7 @@ class _SearchUserState extends State<SearchUser> {
     return Row(
       children: [
         Expanded(
-          child: Continertextfiled(
+          child: MassageSearchShape(
             name: widget.name,
             textEditingController: textEditingController,
           ),

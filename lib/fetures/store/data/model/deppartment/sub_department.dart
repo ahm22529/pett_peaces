@@ -1,6 +1,7 @@
-import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
 
-class SubDepartment extends Subdepart {
+import 'package:pett_peaces/fetures/store/domain/entity/sub_depart_entity.dart';
+
+class SubDepartment extends SubdepartEntity {
   int? id;
   String? name;
 

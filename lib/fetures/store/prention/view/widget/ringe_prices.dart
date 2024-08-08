@@ -4,8 +4,10 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 class Ringeprices extends StatelessWidget {
   const Ringeprices({
     super.key,
+    required this.uppervule,
+    required this.lowervule,
   });
-
+  final String uppervule, lowervule;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +19,7 @@ class Ringeprices extends StatelessWidget {
               .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
         ),
         Text(
-          "0-2000\$",
+          "$lowervule-$uppervule\$",
           style: AppStyles.styleMedium16(context)
               .copyWith(color: Colors.black, fontWeight: FontWeight.w700),
         )

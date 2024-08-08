@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sizeconfig.dart';
 import 'package:pett_peaces/fetures/account/presention/view/widget/card.dart';
-import 'package:pett_peaces/fetures/account/presention/view/widget/listview.dart';
-import 'package:pett_peaces/fetures/account/presention/view/widget/textcontiner.dart';
+import 'package:pett_peaces/fetures/account/presention/view/widget/list_view_account.dart';
+import 'package:pett_peaces/fetures/account/presention/view/widget/text_continer.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class BodyAccount extends StatefulWidget {
@@ -25,8 +25,8 @@ class _BodyAccountState extends State<BodyAccount> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  textcontiner(),
-                  SizedBox(
+                  const TextContiner(),
+                  const SizedBox(
                     height: 32,
                   ),
                   Iteamconter(

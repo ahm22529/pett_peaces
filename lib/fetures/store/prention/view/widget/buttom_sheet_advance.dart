@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/services/localservices/manager/cubit/localdata_cubit.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
@@ -36,6 +37,9 @@ class _CustomButtomShhetadvanceState extends State<CustomButtomShhetadvance> {
         ),
         BlocProvider(
           create: (context) => FectchProductCubit(storeRepo),
+        ),
+        BlocProvider(
+          create: (context) => LocaldataCubit(),
         ),
       ],
       child: Container(

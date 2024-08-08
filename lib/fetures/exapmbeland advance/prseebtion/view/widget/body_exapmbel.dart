@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
-import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/core/utiles/widget/load_widget.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/domain/entity/exambel_details_enity.dart';
 import 'package:pett_peaces/fetures/exapmbeland%20advance/prseebtion/manager/featch/exambelcubit_cubit.dart';
@@ -14,8 +13,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/no_iteam.dart';
 
 class BodyExample extends StatefulWidget {
-  const BodyExample({Key? key, required this.userEntitymodel})
-      : super(key: key);
+  const BodyExample({super.key, required this.userEntitymodel});
 
   final UserEntity userEntitymodel;
 

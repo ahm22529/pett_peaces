@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class customAppbar extends StatelessWidget {
-  const customAppbar({
+class CustomAppbar extends StatelessWidget {
+  const CustomAppbar({
     super.key,
     required this.name,
   });
@@ -17,7 +17,8 @@ class customAppbar extends StatelessWidget {
         padding: const EdgeInsets.only(right: 40.0),
         child: Text(
           name,
-          style: AppStyles.stylesemi20(context).copyWith(color: Colors.black),
+          style: AppStyles.stylesemi20(context).copyWith(
+              color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold),
         ),
       ),
     );

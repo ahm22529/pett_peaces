@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/appbar_massage.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/list_view_frined.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
 
 class BodyMassege extends StatefulWidget {
   final ValueChanged<int> onItemSelected;
   final String token;
   final UserEntity userEntity;
-  BodyMassege(
+  const BodyMassege(
       {required this.onItemSelected,
       required this.token,
       required this.userEntity});
@@ -33,7 +31,7 @@ class _BodyMassegeState extends State<BodyMassege> {
         const SizedBox(
           height: 73,
         ),
-        const customAppbar(
+        const CustomAppbar(
           name: 'الرسايل',
         ),
         Padding(

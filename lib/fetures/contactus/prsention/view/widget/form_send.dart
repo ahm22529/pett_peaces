@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,8 +5,8 @@ import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/contactus/data/model/inputusermodel.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/buttomshowalert.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiledreson.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/view/widget/buttom_show_alert.dart';
+import 'package:pett_peaces/fetures/contactus/prsention/view/widget/textfiled_reson.dart';
 
 class Formsend extends StatefulWidget {
   const Formsend({super.key});
@@ -131,7 +130,7 @@ class _FormsendState extends State<Formsend> {
             const SizedBox(
               height: 32,
             ),
-            buttomshowalert(
+            Buttomshowalert(
               contactdata: Contactdata(
                   name: name, email: email, contact: comm, sub: sub),
               globalKey: globalKey,

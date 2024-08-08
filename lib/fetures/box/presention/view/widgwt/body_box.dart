@@ -33,7 +33,7 @@ class _BodyboxState extends State<Bodybox> {
           automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: const customAppbar(name: 'السله'),
+          title: const CustomAppbar(name: 'السله'),
         ),
         body: BlocConsumer<GetboxCubit, GetboxState>(
           listener: (context, state) {

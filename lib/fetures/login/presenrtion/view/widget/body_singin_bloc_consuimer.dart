@@ -6,7 +6,7 @@ import 'package:pett_peaces/core/utiles/authservices/manger/cubit/is_log_in_cubi
 
 
 import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
-import 'package:pett_peaces/core/utiles/localservices/manager/cubit/localdata_cubit.dart';
+import 'package:pett_peaces/core/utiles/services/localservices/manager/cubit/localdata_cubit.dart';
 
 
 import 'package:pett_peaces/core/utiles/widget/customprogresshub.dart';

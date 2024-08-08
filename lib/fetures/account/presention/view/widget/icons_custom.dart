@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class iconscustom extends StatelessWidget {
-  const iconscustom({
+class Iconscustom extends StatelessWidget {
+  const Iconscustom({
     super.key,
     required this.imaeg,
   });
@@ -16,7 +16,7 @@ class iconscustom extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(
           imaeg,
-          height: 20,
+          height: 30,
         ),
       ),
     );

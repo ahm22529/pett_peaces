@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:pett_peaces/core/apiservices/apiservices.dart';
 import 'package:pett_peaces/core/error/error.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_rep.dart';
 
 class ContactusRepoimp extends ContactusRepo {
   RequestServices requestServices = RequestServices(Dio());

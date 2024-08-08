@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
-class textcontiner extends StatelessWidget {
-  const textcontiner({
+class TextContiner extends StatelessWidget {
+  const TextContiner({
     super.key,
   });
 

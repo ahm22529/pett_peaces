@@ -15,4 +15,10 @@ final class Localdatasucessget extends LocaldataState {
   Localdatasucessget({required this.userEntity});
 }
 
+final class Localdatasucessgetdepart extends LocaldataState {
+  final SubdepartEntity subdepartEntity;
+
+  Localdatasucessgetdepart({required this.subdepartEntity});
+}
+
 final class Localdatasucessadd extends LocaldataState {}

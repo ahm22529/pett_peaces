@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/chatdetails/presention/chat_details.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/chat_iteam.dart';
-import 'package:pett_peaces/fetures/masssege/presention/view/widget/iteammassege.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 class ChatList extends StatelessWidget {
@@ -30,7 +28,7 @@ class ChatList extends StatelessWidget {
         itemCount: chats.length + (isLoadingMore ? 1 : 0),
         itemBuilder: (context, index) {
           if (index == chats.length) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
           return ChatItem(
             index: index,

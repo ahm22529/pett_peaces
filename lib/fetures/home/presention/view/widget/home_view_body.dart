@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
-import 'package:pett_peaces/fetures/anmailes/presetion/view/my_anmiles.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
-import 'package:pett_peaces/fetures/home/presention/view/widget/anmiles_home.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_course.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/grid_view_services.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/header_section.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_store.dart';
+import 'package:pett_peaces/fetures/home/presention/view/widget/my_anmiles_last_add.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/silder.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/user_info.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
@@ -62,34 +61,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     const SizedBox(
                       height: 25,
                     ),
-                    Visibility(
-                      visible: state.homeEntity.anmilesEntity != null,
-                      child: Column(
-                        children: [
-                          Headersection(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (builder) => Myanmiles(
-                                          userEntitymodel:
-                                              widget.userEntitymodel,
-                                        ))),
-                            titel1: 'حيواناتي',
-                            titel2: 'عرض المزيد',
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Anmileshome(
-                            anmiles: state.homeEntity?.anmilesEntity,
-                            userEntitymodel: widget.userEntitymodel,
-                          ),
-                          const SizedBox(
-                            height: 35,
-                          ),
-                        ],
-                      ),
-                    ),
+                    MyAnmilesLastAdd(widget: widget, anmiles: state.homeEntity.anmilesEntity,),
                     Headersection(
                       onTap: () => Navigator.push(
                           context,
@@ -148,3 +120,4 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
+

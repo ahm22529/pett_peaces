@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_rep.dart';
 
 part 'contact_state.dart';
 

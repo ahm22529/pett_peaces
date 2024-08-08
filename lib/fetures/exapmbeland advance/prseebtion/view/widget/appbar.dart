@@ -25,15 +25,16 @@ class AppbarExapmbe extends StatelessWidget {
               ),
             )
           : Container(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
               decoration: BoxDecoration(
-                  color: Color(0xffFFE2C9),
+                  color: const Color(0xffFFE2C9),
                   borderRadius: BorderRadius.circular(6)),
               child: Center(
                 child: Text(
                   "#$name",
                   style: AppStyles.styleMedium16(context).copyWith(
-                      color: Color(0xffF78E32),
+                      overflow: TextOverflow.ellipsis,
+                      color: const Color(0xffF78E32),
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
                 ),
@@ -41,7 +42,7 @@ class AppbarExapmbe extends StatelessWidget {
             ),
       trailing: IconButton(
           onPressed: onPressed,
-          icon: Icon(
+          icon: const Icon(
             Icons.replay_outlined,
             color: Colors.orange,
             weight: 40,

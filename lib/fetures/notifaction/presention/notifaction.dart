@@ -56,7 +56,7 @@ class _BodyNotifactionState extends State<BodyNotifaction> {
           SizedBox(
             height: 20,
           ),
-          customAppbar(name: "الاشعارات"),
+          CustomAppbar(name: "الاشعارات"),
           Expanded(child: BlocBuilder<GetnotifactionCubit, GetnotifactionState>(
             builder: (context, state) {
               if (state is GetnotifactionSucess) {

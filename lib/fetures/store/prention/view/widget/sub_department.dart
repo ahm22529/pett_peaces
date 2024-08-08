@@ -1,10 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pett_peaces/fetures/store/data/repo/repo_imp.dart';
+import 'package:pett_peaces/core/utiles/services/localservices/manager/cubit/localdata_cubit.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
-import 'package:pett_peaces/fetures/store/domain/repo.dart';
-import 'package:pett_peaces/fetures/store/prention/manager/cubit/filter_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/header_buttom_sheet.dart';
 
 class SubDepartmentSheet extends StatefulWidget {
@@ -19,12 +17,11 @@ class SubDepartmentSheet extends StatefulWidget {
 class _SubDepartmentSheetState extends State<SubDepartmentSheet> {
   List<String> _selectedDepartmentIds = [];
   List<String> _selectedDepartmentNames = [];
-  StoreRepo storeRepo = StoreRepoImp();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FilterCubit(),
+      create: (context) => LocaldataCubit(),
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -56,7 +53,7 @@ class _SubDepartmentSheetState extends State<SubDepartmentSheet> {
                             if (value == true) {
                               _selectedDepartmentIds
                                   .add(department.idd.toString());
-                              
+
                               if (!_selectedDepartmentNames
                                   .contains(department.namee)) {
                                 _selectedDepartmentNames.add(department.namee);
@@ -67,10 +64,9 @@ class _SubDepartmentSheetState extends State<SubDepartmentSheet> {
                               _selectedDepartmentNames.remove(department.namee);
                             }
                             log(_selectedDepartmentIds.toString());
-                            BlocProvider.of<FilterCubit>(context)
-                                .saveSubdepartment(
-                                    _selectedDepartmentIds.join(', '),
-                                    _selectedDepartmentNames.join(', '));
+                            BlocProvider.of<LocaldataCubit>(context)
+                                .addDepart(department);
+                            
                           });
                         },
                       ),
@@ -90,10 +86,8 @@ class _SubDepartmentSheetState extends State<SubDepartmentSheet> {
                             }
                           }
                           log(_selectedDepartmentIds.toString());
-                          BlocProvider.of<FilterCubit>(context)
-                              .saveSubdepartment(
-                                  _selectedDepartmentIds.join(', '),
-                                  _selectedDepartmentNames.join(', '));
+                          BlocProvider.of<LocaldataCubit>(context)
+                              .addDepart(department);
                         });
                       },
                     );

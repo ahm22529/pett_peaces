@@ -19,7 +19,7 @@ class _IteamMassageState extends State<IteamMassage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: widget.freinedChatEntity.isshow
+      color: !widget.freinedChatEntity.isshow
           ? Colors.white
           : const Color(0xffE6E6E6),
       child: Padding(

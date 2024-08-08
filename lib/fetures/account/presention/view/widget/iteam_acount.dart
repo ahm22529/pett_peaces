@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/account/presention/view/widget/iconscustom.dart';
+import 'package:pett_peaces/fetures/account/presention/view/widget/icons_custom.dart';
 
-class iteamaccount extends StatelessWidget {
-  const iteamaccount({
+class Iteamaccount extends StatelessWidget {
+  const Iteamaccount({
     super.key,
     required this.imaeg,
     required this.text,
@@ -13,7 +13,7 @@ class iteamaccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        iconscustom(imaeg: imaeg),
+        Iconscustom(imaeg: imaeg),
         const SizedBox(
           width: 9,
         ),
@@ -24,7 +24,7 @@ class iteamaccount extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        Spacer(),
+        const Spacer(),
         Container(
           color: Colors.white,
           child: Image.asset("Asset/image/mingcute_up-line.png"),

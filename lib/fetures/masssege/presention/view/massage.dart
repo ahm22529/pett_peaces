@@ -22,6 +22,7 @@ class _MassageState extends State<Massage> {
     return BlocProvider(
       create: (context) => MassageCubit(massageRepo: massageRepo),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Platformuimas(
           token: widget.token,
           userEntity: widget.userEntity,

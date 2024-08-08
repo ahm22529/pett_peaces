@@ -28,7 +28,7 @@ class _BodyDocoterState extends State<BodyDocoter> {
         padding: const EdgeInsets.only(right: 20.0, left: 0, top: 73),
         child: Column(
           children: [
-            const customAppbar(name: "الاطباء"),
+            const CustomAppbar(name: "الاطباء"),
             const SizedBox(height: 24),
             TitelappbarDoctore(
               name: 'ابحث عن الأطباء ',

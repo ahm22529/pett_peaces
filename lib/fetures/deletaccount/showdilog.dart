@@ -10,7 +10,18 @@ import 'package:pett_peaces/fetures/mydata/prsention/view/manager/cubit/update_c
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
 import 'package:pett_peaces/fetures/splash/presention/view/splash_view.dart';
-import 'package:pett_peaces/generated/l10n.dart';
+
+class DeletAccount extends StatelessWidget {
+  final UserEntity userEntity;
+
+  const DeletAccount({super.key, required this.userEntity});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:CustomDialog(userEntity:userEntity ,) ,
+    );
+  }
+}
 
 class CustomDialog extends StatelessWidget {
   const CustomDialog({super.key, required this.userEntity});

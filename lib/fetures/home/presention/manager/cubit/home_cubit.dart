@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/home_entity.dart';
-import 'package:pett_peaces/fetures/home/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/home/domain/repo/home_repo.dart';
 
 part 'home_state.dart';
 

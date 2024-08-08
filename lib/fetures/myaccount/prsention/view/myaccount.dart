@@ -14,7 +14,7 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 class Myaccount extends StatefulWidget {
   final AnmilesEntity anmilesEntity;
   final UserEntity userEntitymodel;
-
+  
   const Myaccount(
       {super.key, required this.anmilesEntity, required this.userEntitymodel});
   @override

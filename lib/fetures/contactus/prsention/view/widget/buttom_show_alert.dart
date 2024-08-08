@@ -3,10 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/contactus/data/model/inputusermodel.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
-import 'package:pett_peaces/fetures/contactus/prsention/view/widget/customdialog.dart';
 
-class buttomshowalert extends StatelessWidget {
-  const buttomshowalert({
+class Buttomshowalert extends StatelessWidget {
+  const Buttomshowalert({
     super.key,
     required this.contactdata,
     required this.globalKey,

@@ -5,6 +5,7 @@ import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
 class Infocourses extends StatelessWidget {
   const Infocourses({
     super.key,
+    // ignore: non_c,onstant_identifier_names
     required this.Co,
   });
   final String Co;
@@ -19,7 +20,7 @@ class Infocourses extends StatelessWidget {
           child: Row(
             children: [
               Image.asset("Asset/image/honey.png"),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text(

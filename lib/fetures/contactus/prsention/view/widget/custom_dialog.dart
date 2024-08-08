@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/contactus/data/model/inputusermodel.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_rep.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_repo_imp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 
 class CustomDialog extends StatefulWidget {

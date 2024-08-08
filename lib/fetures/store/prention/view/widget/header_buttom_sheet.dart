@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/services/localservices/manager/cubit/localdata_cubit.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 
 class Headerbottomsheet extends StatelessWidget {
@@ -17,7 +19,11 @@ class Headerbottomsheet extends StatelessWidget {
               .copyWith(fontWeight: FontWeight.w500),
         ),
         GestureDetector(
-          onTap: () => Navigator.pop(context),
+          onTap: () {
+            BlocProvider.of<LocaldataCubit>(context).getdepart();
+            
+            Navigator.pop(context);
+          },
           child: Text(
             titel2,
             style: AppStyles.styleRegular14(context).copyWith(

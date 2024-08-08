@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class Iteamadd extends StatefulWidget {
   const Iteamadd({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<Iteamadd> createState() => _IteamChangeState();

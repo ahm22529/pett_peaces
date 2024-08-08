@@ -36,7 +36,7 @@ class _BodyCoatingState extends State<BodyCoating> {
           SizedBox(
             height: MediaQuery.of(context).size.height * .07,
           ),
-          const customAppbar(
+          const CustomAppbar(
             name: 'المدربين',
           ),
           const SizedBox(

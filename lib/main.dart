@@ -6,8 +6,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:pett_peaces/constant.dart';
 
-import 'package:pett_peaces/core/utiles/fcmservices/fire_base_massing.dart';
-import 'package:pett_peaces/core/utiles/localservices/manager/cubit/localdata_cubit.dart';
+import 'package:pett_peaces/core/utiles/services/fcmservices/fire_base_massing.dart';
+import 'package:pett_peaces/core/utiles/services/localservices/manager/cubit/localdata_cubit.dart';
 
 import 'package:pett_peaces/fetures/anmailes/data/repo/repoimp.dart';
 import 'package:pett_peaces/fetures/anmailes/domin/repo/repo.dart';
@@ -21,12 +21,13 @@ import 'package:pett_peaces/fetures/box/presention/manager/addtobox/add_box_cubi
 import 'package:pett_peaces/fetures/changepassword/data/repo/repo_imp.dart';
 import 'package:pett_peaces/fetures/changepassword/domain/repo/repo.dart';
 import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updaepass_cubit.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repo.dart';
-import 'package:pett_peaces/fetures/contactus/data/repo/repoimp.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_rep.dart';
+import 'package:pett_peaces/fetures/contactus/data/repo/contact_repo_imp.dart';
 import 'package:pett_peaces/fetures/contactus/prsention/manger/cubit/contact_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/home_scrren.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/splash/presention/view/splash_view.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/sub_depart_entity.dart';
 import 'package:pett_peaces/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -35,9 +36,12 @@ void main() async {
   await Firebase.initializeApp();
   NotificationService.initialize();
   Hive.registerAdapter(UserEntityAdapter());
+  Hive.registerAdapter(SubdepartAdapter());
   await Hive.initFlutter();
 
   await Hive.openBox<UserEntity>(box);
+  await Hive.openBox<SubdepartEntity>(boxdepart);
+  
 
   runApp(
     DevicePreview(
