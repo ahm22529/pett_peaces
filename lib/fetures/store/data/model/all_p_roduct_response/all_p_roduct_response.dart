@@ -13,7 +13,7 @@ class AllPRoductResponse extends StoreEntity {
     this.statusCode,
     this.data,
     this.message,
-  }) : super(product: data?.data ?? [], lastpage: data?.meta?.lastPage ?? 1);
+  }) : super(product: data?.data ?? [], lastpage: data?.meta?.lastPage ?? 1,);
 
   factory AllPRoductResponse.fromJson(Map<String, dynamic> json) {
     return AllPRoductResponse(

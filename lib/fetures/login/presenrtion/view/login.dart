@@ -4,8 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/authservices/manger/cubit/is_log_in_cubit.dart';
 import 'package:pett_peaces/core/utiles/authservices/repo/auth_repo.dart';
 
-import 'package:pett_peaces/fetures/login/data/repo/repoimple.dart';
-import 'package:pett_peaces/fetures/login/domain/repo.dart';
+
+
+import 'package:pett_peaces/fetures/login/data/repo/log_in_repo_imp.dart';
+import 'package:pett_peaces/fetures/login/domain/log_in.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/manager/cubit/login_cubit.dart';
 
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/body_singin_bloc_consuimer.dart';

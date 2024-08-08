@@ -7,10 +7,11 @@ class Summary extends StatelessWidget {
   const Summary({
     super.key,
     required this.producEntity,
-    required this.userEntitymodel,
+    required this.userEntitymodel, required this.pro,
   });
   final ProducEntity producEntity;
   final UserEntity userEntitymodel;
+  final List<ProducEntity> pro;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,7 @@ class Summary extends StatelessWidget {
               topLeft: Radius.circular(30), topRight: Radius.circular(30))),
       child: BodyContiner(
         producEntity: producEntity,
-        userEntitymodel: userEntitymodel,
+        userEntitymodel: userEntitymodel, suggtion:pro,
       ),
     );
   }

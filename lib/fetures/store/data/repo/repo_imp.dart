@@ -7,6 +7,7 @@ import 'package:pett_peaces/fetures/store/data/model/all_p_roduct_response/all_p
 import 'package:pett_peaces/fetures/store/data/model/deppartment/product.dart';
 import 'package:pett_peaces/fetures/store/data/model/store_response/store_response.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/details_entity.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/store_entity.dart';
 import 'package:pett_peaces/fetures/store/domain/repo.dart';
 
@@ -32,7 +33,7 @@ class StoreRepoImp extends StoreRepo {
   }
 
   @override
-  Future<Either<Failure, ProducEntity>> getProduct(
+  Future<Either<Failure, DetailsPProductEntity>> getProduct(
       {required String endpoint,
       required String token,
       required String id}) async {
@@ -41,7 +42,7 @@ class StoreRepoImp extends StoreRepo {
           endPoint: endpoint, token: token, id: id);
 
       StoreResponse storeResponse = StoreResponse.fromJson(result);
-      ProducEntity productList = storeResponse.data?.product as ProducEntity;
+      DetailsPProductEntity productList = storeResponse;
       return right(productList);
     } on Exception catch (e) {
       return left(ServFailure(e.toString()));

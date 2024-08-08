@@ -47,4 +47,22 @@ class FectchProductCubit extends Cubit<FectchProductState> {
       (userEntity) => emit(FectchProductsucess(producEntity: userEntity)),
     );
   }
+
+  Future<void> filteer({
+    required String endpoint,
+    required String token,
+    required Map<String, dynamic> query, // البحث استناداً إلى استعلام
+  }) async {
+    emit(FectchProductLoad());
+    final result = await storeRepo.getAllProducts(
+      endpoint: endpoint,
+      token: token,
+      data: query, // إرسال استعلام البحث كبيانات
+    );
+    print("search $result");
+    result.fold(
+      (failure) => emit(FectchProductfailuer(errmass: failure.errmas)),
+      (userEntity) => emit(FectchFiltersucess(producEntity: userEntity)),
+    );
+  }
 }

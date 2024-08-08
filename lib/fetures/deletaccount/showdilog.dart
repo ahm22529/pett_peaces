@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
+import 'package:pett_peaces/fetures/changepassword/data/repo/repo_imp.dart';
+import 'package:pett_peaces/fetures/changepassword/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/changepassword/preention/manager/cubit/updaepass_cubit.dart';
+import 'package:pett_peaces/fetures/login/presenrtion/view/login.dart';
+import 'package:pett_peaces/fetures/mydata/prsention/view/manager/cubit/update_cubit.dart';
+import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/passswordsingup.dart';
+import 'package:pett_peaces/fetures/splash/presention/view/splash_view.dart';
+import 'package:pett_peaces/generated/l10n.dart';
 
 class CustomDialog extends StatelessWidget {
-  const CustomDialog({super.key});
-
+  const CustomDialog({super.key, required this.userEntity});
+  final UserEntity userEntity;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -20,7 +30,9 @@ class CustomDialog extends StatelessWidget {
                 AppStyles.styleMedium18(context).copyWith(color: Colors.black),
           ),
           SizedBox(height: 32),
-          twobuttom(),
+          twobuttom(
+            userEntity: userEntity,
+          ),
         ],
       ),
     );
@@ -28,14 +40,16 @@ class CustomDialog extends StatelessWidget {
 }
 
 class twobuttom extends StatelessWidget {
-  const twobuttom({super.key});
-
+  const twobuttom({super.key, required this.userEntity});
+  final UserEntity userEntity;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        iteamsend(),
+        iteamsend(
+          userEntity: userEntity,
+        ),
         buttomcancel(),
       ],
     );
@@ -73,8 +87,8 @@ class buttomcancel extends StatelessWidget {
 }
 
 class iteamsend extends StatelessWidget {
-  const iteamsend({super.key});
-
+  const iteamsend({super.key, required this.userEntity});
+  final UserEntity userEntity;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -94,7 +108,9 @@ class iteamsend extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) {
-                return ConfirmationDialog();
+                return ConfirmationDialog(
+                  userEntity: userEntity,
+                );
               },
             );
           },
@@ -110,21 +126,24 @@ class iteamsend extends StatelessWidget {
 }
 
 class ConfirmationDialog extends StatelessWidget {
-  const ConfirmationDialog({super.key});
-
+  const ConfirmationDialog({super.key, required this.userEntity});
+  final UserEntity userEntity;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(14),
       ),
-      content: ConfirmationDialogContent(),
+      content: ConfirmationDialogContent(
+        userEntity: userEntity,
+      ),
     );
   }
 }
 
 class ConfirmationDialogContent extends StatefulWidget {
-  const ConfirmationDialogContent({super.key});
+  final UserEntity userEntity;
+  const ConfirmationDialogContent({super.key, required this.userEntity});
 
   @override
   State<ConfirmationDialogContent> createState() =>
@@ -133,26 +152,52 @@ class ConfirmationDialogContent extends StatefulWidget {
 
 class _ConfirmationDialogContentState extends State<ConfirmationDialogContent> {
   String pass = '';
+  ChangepassRepo changepassRepo = ChangRepoImp();
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          "يرجى إدخال كلمه المرور :",
-          style: AppStyles.styleMedium18(context).copyWith(color: Colors.black),
-        ),
-        SizedBox(height: 16),
-        PasswordFieldvaild(onSaved: (s) {
-          setState(() {
-            pass = s!;
-          });
-        }),
-        SizedBox(height: 32),
-        Delbuttom(
-          onPressed: () {},
-        ),
-      ],
+    return BlocProvider(
+      create: (context) => UpdaepassCubit(changepassRepo),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            "يرجى إدخال كلمه المرور :",
+            style:
+                AppStyles.styleMedium18(context).copyWith(color: Colors.black),
+          ),
+          SizedBox(height: 16),
+          PasswordFieldvaild(onSaved: (s) {
+            setState(() {
+              pass = s!;
+            });
+          }),
+          SizedBox(height: 32),
+          BlocListener<UpdaepassCubit, UpdaepassState>(
+            listener: (context, state) {
+              // TODO: implement listener
+              if (state is Updatefauiler) {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (builder) => LoginView()));
+                buildSucessbar(context, "تاكد من كلمه المرور");
+              }
+              if (state is Updaepasssucess) {
+                buildErrorBar(context, "تم حذف الحساب ");
+              }
+            },
+            child: Delbuttom(
+              onPressed: () {
+                print(pass);
+                BlocProvider.of<UpdaepassCubit>(context).delet(
+                    endpoint: "profile/delete",
+                    token: widget.userEntity.token,
+                    data: {"password": pass});
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (builder) => Splashview()));
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

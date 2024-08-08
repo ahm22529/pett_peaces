@@ -8,10 +8,12 @@ import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/buttom_seller.dart';
 
 class BodyContiner extends StatelessWidget {
+  final List<ProducEntity> suggtion;
   const BodyContiner({
     super.key,
     required this.producEntity,
     required this.userEntitymodel,
+    required this.suggtion,
   });
   final ProducEntity producEntity;
   final UserEntity userEntitymodel;
@@ -50,6 +52,7 @@ class BodyContiner extends StatelessWidget {
         Suggetionproduct(
           producEntity: producEntity,
           userEntitymodel: userEntitymodel,
+          pro: suggtion,
         ),
         SizedBox(
           height: 20,
@@ -65,21 +68,29 @@ class BodyContiner extends StatelessWidget {
 class Suggetionproduct extends StatelessWidget {
   final ProducEntity producEntity;
   final UserEntity userEntitymodel;
+  final List<ProducEntity> pro;
   const Suggetionproduct(
-      {super.key, required this.producEntity, required this.userEntitymodel});
+      {super.key,
+      required this.producEntity,
+      required this.userEntitymodel,
+      required this.pro});
   @override
   Widget build(BuildContext context) {
     return Visibility(
       visible: true,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             height: 18,
           ),
-          Text(
-            "منتجات مقترحة",
-            style: AppStyles.styleMedium18(context)
-                .copyWith(fontWeight: FontWeight.w400),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              "منتجات مقترحة",
+              style: AppStyles.styleMedium18(context)
+                  .copyWith(fontWeight: FontWeight.w400),
+            ),
           ),
           const SizedBox(
             height: 16,
@@ -87,14 +98,9 @@ class Suggetionproduct extends StatelessWidget {
           SizedBox(
               height: MediaQuery.of(context).size.height * .26,
               child: Gridviewstore(
-                producEntity: producEntity.pro,
+                producEntity: pro,
                 userEntitymodel: userEntitymodel,
               )),
-          IconButton(
-              onPressed: () {
-                print(producEntity.pro.length);
-              },
-              icon: Icon(Icons.abc)),
           const SizedBox(
             height: 30,
           ),

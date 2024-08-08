@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/domain/entity/department_entity.dart';
-import 'package:pett_peaces/fetures/store/prention/manager/cubit/department_cubit.dart';
+import 'package:pett_peaces/fetures/store/prention/manager/department/department_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/manager/featchallproduct/fectch_product_cubit.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/buttom_sheet_advance.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/button_ofa_dvance_sheet.dart';
@@ -81,7 +81,7 @@ class _TitelappbarState extends State<Titelappbar> {
               showModalBottomSheet(
                   context: context,
                   builder: (builder) => CustomButtomShhetadvance(
-                        lis: lis,
+                        lis: lis, userEntity: widget.userEntitymodel,
                       ));
             },
           ),

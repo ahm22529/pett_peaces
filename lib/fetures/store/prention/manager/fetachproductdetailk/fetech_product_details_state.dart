@@ -8,7 +8,7 @@ final class FetechProductDetailsInitial extends FetechProductDetailsState {}
 final class FetechProductDetailsload extends FetechProductDetailsState {}
 
 final class FetechProductDetailssucess extends FetechProductDetailsState {
-  final ProducEntity producEntity;
+  final DetailsPProductEntity producEntity;
 
   FetechProductDetailssucess({required this.producEntity});
 }

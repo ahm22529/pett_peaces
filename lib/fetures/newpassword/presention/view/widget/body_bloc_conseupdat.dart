@@ -6,7 +6,8 @@ import 'package:pett_peaces/fetures/newpassword/presention/manager/cubit/updatep
 import 'package:pett_peaces/fetures/newpassword/presention/view/widget/shape.dart';
 
 class RestorAccount extends StatelessWidget {
-  const RestorAccount({super.key});
+  const RestorAccount({super.key, required this.email, required this.opt});
+  final String email,opt;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<UpdatepasswordCubit, UpdatepasswordState>(
@@ -19,7 +20,7 @@ class RestorAccount extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: state is UpdatepasswordLoading ? true : false,
-          child: Shape(),
+          child: Shape(email: email,optl: opt,),
         );
       },
     );

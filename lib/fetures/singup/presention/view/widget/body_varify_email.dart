@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
-import 'package:pett_peaces/fetures/restpassword/presention/view/widget/customdivider.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/custom_divider.dart';
 import 'package:pett_peaces/fetures/restpassword/presention/view/widget/opt.dart';
-import 'package:pett_peaces/fetures/restpassword/presention/view/widget/timedaown.dart';
-import 'package:pett_peaces/fetures/singup/presention/maager/cubit/varify_email_cubit.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/time_daown.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/varifaycuit/varify_email_cubit.dart';
 
 class BodyVarifyEmail extends StatefulWidget {
   const BodyVarifyEmail({super.key, required this.email, required this.token});
@@ -26,8 +25,8 @@ class _BodyRestPasswordState extends State<BodyVarifyEmail> {
         SizedBox(height: MediaQuery.of(context).size.height * .2),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child:
-              customdivider(color: const Color(0xffd9d9d966).withOpacity(.5)),
+          child: Customdivider(
+              color: const Color(0xffd9d9d966).withOpacity(.5)),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -68,12 +67,10 @@ class _BodyRestPasswordState extends State<BodyVarifyEmail> {
                       Custombuttom(
                         titel: 'إرسال',
                         onPressed: () {
-                          context
-                              .read<VarifyEmailCubit>()
-                              .createUserWithEmailAndPassword(
-                                  endpoint: "auth/verify-email",
-                                  token: widget.token,
-                                  input: {"code": code});
+                          context.read<VarifyEmailCubit>().varrifayemail(
+                              endpoint: "auth/verify-email",
+                              token: widget.token,
+                              input: {"code": code});
                         },
                       ),
                     ],

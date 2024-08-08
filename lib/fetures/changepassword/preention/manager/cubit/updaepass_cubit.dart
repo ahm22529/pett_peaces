@@ -21,4 +21,16 @@ class UpdaepassCubit extends Cubit<UpdaepassState> {
       (userEntity) => emit(Updaepasssucess(userEntitymodel: userEntity)),
     );
   }
+   void delet(
+      {required String endpoint,
+      required String token,
+      required Map<String, dynamic> data}) async {
+    emit(Updaepassload());
+    final res = await changepassRepo.updatePass(
+        endpoint: endpoint, token: token, data: data);
+    res.fold(
+      (failure) => emit(Updaepassfaulier(errma: failure.errmas)),
+      (userEntity) => emit(Deletstate(userEntitymodel: userEntity)),
+    );
+  }
 }

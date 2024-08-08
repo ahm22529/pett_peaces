@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custombuttom.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
-import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/sinupcubit/signup_cubit.dart';
 
 class ButtomSingup extends StatelessWidget {
   const ButtomSingup({
@@ -30,8 +30,7 @@ class ButtomSingup extends StatelessWidget {
 
                   await context
                       .read<SignupCubit>()
-                      .createUserWithEmailAndPassword(
-                          singupusermodel.toJson(), "auth/register");
+                      .createUser(singupusermodel.toJson(), "auth/register");
                 } else {}
               }),
         ],

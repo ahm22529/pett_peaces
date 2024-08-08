@@ -57,7 +57,6 @@ class CountryPhoneTextfiled extends StatelessWidget {
         if (value == null) {
           return 'هذا الرقم غير صحيح';
         }
-        // يمكنك إضافة تحقق إضافي هنا إذا لزم الأمر
         return null;
       },
     );

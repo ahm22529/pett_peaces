@@ -8,7 +8,7 @@ class Datum extends DepartmentEntity {
   List<SubDepartment>? subDepartments;
 
   Datum({this.id, this.name, this.subDepartments})
-      : super(idd: id ?? 0, namee: name ?? "",subdet: subDepartments??[]);
+      : super(idd: id ?? 0, namee: name ?? "", subdet: subDepartments ?? []);
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json['id'] as int?,

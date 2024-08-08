@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pett_peaces/fetures/chatdetails/domain/entity/chat_details_entity.dart';
 import 'package:pett_peaces/fetures/chatdetails/domain/entity/massage_entity.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chatbubels.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/chatbulesforfrind.dart';

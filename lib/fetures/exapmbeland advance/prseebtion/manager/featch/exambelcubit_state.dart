@@ -31,7 +31,6 @@ final class Exambelcubitfauleer extends ExambelcubitState {
   Exambelcubitfauleer({required this.errmas});
 }
 
-
 final class Update extends ExambelcubitState {
   final String tag;
 

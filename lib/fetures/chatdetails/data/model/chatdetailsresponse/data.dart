@@ -13,7 +13,7 @@ class Data extends ChatDetailsEntity {
             channel: chatData?.agora?.channel ?? "",
             userid: chatData?.user?.id ?? 0,
             tokrn: chatData?.agora?.rtcToken ?? "",
-            massage: messages?.data ?? [],
+            massage: messages!.data !,
             idd: chatData?.id ?? 0);
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(

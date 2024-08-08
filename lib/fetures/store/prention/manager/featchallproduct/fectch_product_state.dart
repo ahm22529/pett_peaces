@@ -13,8 +13,17 @@ final class FectchProductsucess extends FectchProductState {
   FectchProductsucess({required this.producEntity});
 }
 
+final class FectchFiltersucess extends FectchProductState {
+  final StoreEntity producEntity;
+
+  FectchFiltersucess({required this.producEntity});
+}
+
+
 final class FectchProductfailuer extends FectchProductState {
   final String errmass;
 
   FectchProductfailuer({required this.errmass});
 }
+
+

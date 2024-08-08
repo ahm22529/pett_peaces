@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pett_peaces/core/utiles/sttyel.dart';
-import 'package:pett_peaces/fetures/restpassword/presention/view/widget/enteremail.dart';
+import 'package:pett_peaces/fetures/restpassword/presention/view/widget/enter_email.dart';
 
 class forgepasss extends StatelessWidget {
   const forgepasss({
@@ -16,7 +16,7 @@ class forgepasss extends StatelessWidget {
           onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (builder) => enteremailb(
+                  builder: (builder) => const Enteremailb(
                         email: '',
                       ))),
           child: Text(

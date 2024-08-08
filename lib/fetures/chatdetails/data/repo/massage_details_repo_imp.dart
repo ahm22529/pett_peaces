@@ -18,6 +18,7 @@ class MassageDetailsRepooImp extends MassageDetailsRepo {
     try {
       final res = await requestServices.getRequest(
           endPoint: endpoint, token: token, id: id);
+
       return right(Chatdetailsresponse.fromJson(res));
     } on Exception catch (e) {
       return left(ServFailure(e.toString()));

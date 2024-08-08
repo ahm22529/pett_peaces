@@ -24,12 +24,12 @@ class Datum extends MassageEntity {
             date: createdAt!,
             attachc: attach ?? "");
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+    factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json['id'] as int?,
         chatId: json['chat_id'] as int?,
         userId: json['user_id'] as int?,
         message: json['message'] as String?,
-        attach: json['attach'] as String?,
+        attach: json['attach'] as dynamic,
         createdAt: json['created_at'] == null
             ? null
             : DateTime.parse(json['created_at'] as String),

@@ -29,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedIndex = index;
     });
   }
-  
 
   HomeRepo homeRepo = HomeRepoImp();
   Boxrepo boxrepo = BoxRepoImp();

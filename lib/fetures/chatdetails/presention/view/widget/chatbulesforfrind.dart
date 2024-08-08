@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ChatBubbleForFriend extends StatelessWidget {
   final String message;
   final String time;
-
+ 
   const ChatBubbleForFriend({required this.message, required this.time});
 
   @override
@@ -33,9 +33,14 @@ class ChatBubbleForFriend extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Text(
-                message,
-                style: const TextStyle(color: Colors.white),
+              child: Column(
+                children: [
+                  
+                  Text(
+                    message,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 4),

@@ -1,26 +1,17 @@
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/details_entity.dart';
 
 import 'data.dart';
 
-class StoreResponse extends ProducEntity {
+class StoreResponse extends DetailsPProductEntity {
   bool? status;
   int? statusCode;
   Data? data;
   String? message;
 
   StoreResponse({this.status, this.statusCode, this.data, this.message})
-      : super(
-            img: data?.img ?? "",
-            prices: data?.prices ?? "",
-            id: data?.id ?? 0,
-            nameof: data?.nameof ?? "",
-            volum: data?.volum ?? "",
-            oherimage: data?.oherimage ?? [],
-            oldprice: data?.oldprice ?? "",
-            detai: data?.detai ?? "",
-            shortdescription: data?.shortdescription ?? "",
-            qan: 0,
-            pro: data?.suggestedProducts ?? []);
+      : super(product: data?.product??ProducEntity(nameof: '', qan: 0, id: 0, prices: '', volum: '', img: '', detai: '', oherimage: [], oldprice: '', shortdescription: '', pro: []),suggtion: data?.suggestedProducts??[]
+                   );
 
   factory StoreResponse.fromJson(Map<String, dynamic> json) => StoreResponse(
         status: json['status'] as bool?,

@@ -18,18 +18,18 @@ class Usermodel extends UserEntity {
 
   factory Usermodel.fromapi(Map<String, dynamic> json) {
     SingUpResponse response = SingUpResponse.fromJson(json);
-    Data data = response.data!;
+    Data? data = response.data;
     return Usermodel(
       massage: response.message ?? '',
-      id: data.id.toString(),
-      type: data.type ?? '',
-      name: data.name ?? '',
-      phone: data.mobile ?? '',
-      email: data.email ?? '',
-      image: data.image ?? '',
-      token: data.token ?? '',
-      is_plan_subscribe: data.isPlanSubscribe ?? false,
-      email_verified_at: data.emailVerifiedAt ?? false,
+      id: data?.id.toString() ?? "",
+      type: data?.type ?? '',
+      name: data?.name ?? '',
+      phone: data?.mobile ?? '',
+      email: data?.email ?? '',
+      image: data?.image ?? '',
+      token: data?.token ?? '',
+      is_plan_subscribe: data?.isPlanSubscribe ?? false,
+      email_verified_at: data?.emailVerifiedAt ?? false,
     );
   }
 }

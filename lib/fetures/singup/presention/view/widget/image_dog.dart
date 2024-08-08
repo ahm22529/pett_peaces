@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class imagedog extends StatelessWidget {
-  const imagedog({
+class Imagedog extends StatelessWidget {
+  const Imagedog({
     super.key,
     required this.img,
     required this.hig,

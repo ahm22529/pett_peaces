@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CheckCorrect extends StatefulWidget {
-  const CheckCorrect(
-      {super.key, required this.titel, required this.onCheckboxChanged});
+  const CheckCorrect({super.key, required this.titel});
   final String titel;
-  final Function(bool, String) onCheckboxChanged;
 
   @override
   _CheckCorrectState createState() => _CheckCorrectState();
@@ -16,7 +14,6 @@ class _CheckCorrectState extends State<CheckCorrect> {
   void _onChanged(bool? newValue) {
     setState(() {
       _isChecked = newValue!;
-      widget.onCheckboxChanged(_isChecked, widget.titel);
     });
   }
 

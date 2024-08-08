@@ -5,6 +5,8 @@ sealed class IsLogInState {}
 
 final class IsLogInInitial extends IsLogInState {}
 
-final class IsLoging extends IsLogInState {}
+final class IsLoging extends IsLogInState {
+  
+}
 
 final class unLoging extends IsLogInState {}

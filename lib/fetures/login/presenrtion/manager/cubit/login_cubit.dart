@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pett_peaces/fetures/login/domain/repo.dart';
+import 'package:pett_peaces/fetures/login/domain/log_in.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
 part 'login_state.dart';

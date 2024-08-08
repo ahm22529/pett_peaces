@@ -90,7 +90,7 @@ class _IteamconterState extends State<Iteamconter> {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return const CustomDialog(); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
+                    return  CustomDialog(userEntity: widget.userEntitymodel,); // افترض أن CustomDialog هو عنصر تفاعلي يظهر كـ AlertDialog
                   },
                 );
               } else if (index < nav.length - 1) {

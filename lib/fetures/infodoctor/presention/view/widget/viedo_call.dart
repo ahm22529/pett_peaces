@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:pett_peaces/core/utiles/agoraservices/App_ifo.dart';
-import 'package:pett_peaces/core/utiles/agoraservices/agora.dart'; // Adjust import path if needed
+import 'package:pett_peaces/core/utiles/services/agoraservices/App_ifo.dart';
+import 'package:pett_peaces/core/utiles/services/agoraservices/agora.dart'; // Adjust import path if needed
 
 class AgoraVideoCallWidget extends StatefulWidget {
   final String token, channel;

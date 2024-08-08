@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-class TextFilkedOther extends StatelessWidget {
-  const TextFilkedOther({super.key, this.maxl, required this.onSaved});
-  final int? maxl;
-  final void Function(String?)? onSaved;
-  @override
-  Widget build(BuildContext context) {
-    return Textformfiledname(
-      maxline: 1,
-      onSaved: onSaved,
-    );
-  }
-}
-
 class Textformfiledname extends StatelessWidget {
   const Textformfiledname({
     super.key,

@@ -19,4 +19,6 @@ class MassageRepoImp extends MassageRepo {
       return left(ServFailure(e.toString()));
     }
   }
+  
+
 }

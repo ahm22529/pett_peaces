@@ -68,7 +68,7 @@ class Titel_List_tile extends StatelessWidget {
                 style: const TextStyle(
                   fontFamily: 'Changa',
                   fontWeight: FontWeight.w500,
-                  fontSize: 18,
+                  fontSize: 15,
                   color: Color(0xFF020202),
                   height: 1.4,
                 ),

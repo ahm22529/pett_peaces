@@ -4,7 +4,7 @@ import 'package:pett_peaces/core/apiservices/apiservices.dart';
 import 'package:pett_peaces/core/error/error.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/usermodel.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
-import 'package:pett_peaces/fetures/singup/domain/repo/repo.dart';
+import 'package:pett_peaces/fetures/singup/domain/repo/sing_up_repo.dart';
 
 class Siguprepoimp extends SingupRepo {
   RequestServices requestservices = RequestServices(Dio());

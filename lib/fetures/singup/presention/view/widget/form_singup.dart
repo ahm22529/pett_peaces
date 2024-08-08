@@ -5,7 +5,7 @@ import 'package:pett_peaces/core/utiles/sttyel.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/custom_text_filed_email.dart';
 import 'package:pett_peaces/fetures/login/presenrtion/view/widget/text_filed_input.dart';
 import 'package:pett_peaces/fetures/singup/data/model/inputusermodele/inputusermodel.dart';
-import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/sinupcubit/signup_cubit.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/acccept_reules.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/buttom_singup.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/continer_textfiled_contry.dart';
@@ -48,7 +48,7 @@ class _FormSingupState extends State<FormSingup> {
             ),
           ),
           const SizedBox(height: 16),
-          TextFilkedOther(onSaved: (v) {
+          Textformfiledname(onSaved: (v) {
             name = v!;
           }),
           const SizedBox(height: 16),

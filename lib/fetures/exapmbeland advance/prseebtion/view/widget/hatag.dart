@@ -20,7 +20,6 @@ class Hastag extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * .23,
             ),
-           
           ],
         ),
       ),

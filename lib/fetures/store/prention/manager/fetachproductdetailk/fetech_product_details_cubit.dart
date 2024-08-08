@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+import 'package:pett_peaces/fetures/store/domain/entity/details_entity.dart';
 import 'package:pett_peaces/fetures/store/domain/repo.dart';
 
 part 'fetech_product_details_state.dart';

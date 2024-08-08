@@ -13,8 +13,10 @@ class BodyDetails extends StatefulWidget {
     required this.userEntitymodel,
     required this.producEntity,
   });
+
   final UserEntity userEntitymodel;
   final ProducEntity producEntity;
+
   @override
   State<BodyDetails> createState() => _BodyDetailsState();
 }
@@ -34,48 +36,59 @@ class _BodyDetailsState extends State<BodyDetails> {
     return BlocBuilder<FetechProductDetailsCubit, FetechProductDetailsState>(
       builder: (context, state) {
         if (state is FetechProductDetailssucess) {
-          return SingleChildScrollView(
-            child: Stack(
-              children: [
-                Column(
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              final height = constraints.maxHeight;
+              final width = constraints.maxWidth;
+
+              return SingleChildScrollView(
+                child: Stack(
                   children: [
-                    SizedBox(
-                      child: Headerdetailes(
-                        producEntity: state.producEntity,
-                      ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          child: Headerdetailes(
+                            producEntity: state.producEntity.product,
+                          ),
+                        ),
+                        Summary(
+                          producEntity: state.producEntity.product,
+                          userEntitymodel: widget.userEntitymodel,
+                          pro: state.producEntity.suggtion,
+                        ),
+                      ],
                     ),
-                    Summary(
-                      producEntity: state.producEntity,
-                      userEntitymodel: widget.userEntitymodel,
+                    Positioned(
+                      top: state.producEntity.suggtion.length <= 2
+                          ? height * .37
+                          : height * .39,
+                      right: 5,
+                      child: Image.asset("Asset/image/pawprint 8.png"),
+                    ),
+                    Positioned(
+                      right: 20,
+                      top: state.producEntity.product.oherimage.length <= 2
+                          ? height * .42
+                          : height * .46,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: CustomCard(
+                          producEntity: state.producEntity.product,
+                          userEntitymodel: widget.userEntitymodel,
+                        ),
+                      ),
                     ),
                   ],
                 ),
-                Positioned(
-                    top: state.producEntity.pro.length <= 2
-                        ? MediaQuery.of(context).size.height * .37
-                        : MediaQuery.of(context).size.height * .39,
-                    right: 5,
-                    child: Image.asset("Asset/image/pawprint 8.png")),
-                Positioned(
-                    right: 20,
-                    top: state.producEntity.pro.length <= 2
-                        ? MediaQuery.of(context).size.height * .35
-                        : MediaQuery.of(context).size.height * .46,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: CustomCard(
-                        producEntity: state.producEntity,
-                        userEntitymodel: widget.userEntitymodel,
-                      ),
-                    ))
-              ],
-            ),
+              );
+            },
           );
         } else {
           return const Center(
-              child: CircularProgressIndicator(
-            color: Colors.orange,
-          ));
+            child: CircularProgressIndicator(
+              color: Colors.orange,
+            ),
+          );
         }
       },
     );

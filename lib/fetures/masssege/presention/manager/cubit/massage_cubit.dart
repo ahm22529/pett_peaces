@@ -20,13 +20,13 @@ class MassageCubit extends Cubit<MassageState> {
   }
 
   void searchAboutuser(
-      {required String endpoint, required String token}) async {
+      {required String endpoint, required String token,required String qury}) async {
     emit(MassageLoad());
     final resuilt =
-        await massageRepo.getAllFrined(token: token, endpoint: "$endpoint");
+        await massageRepo.getAllFrined(token: token, endpoint: "$endpoint$qury");
     resuilt.fold(
       (failure) => emit(MassageFauiler(errormassage: failure.errmas)),
-      (allchat) => emit(MassageSucess(allChat: allchat)),
+      (allchat) => emit(MassageSucessSearch(allChat: allchat)),
     );
   }
 }

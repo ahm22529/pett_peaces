@@ -26,10 +26,9 @@ class _HeaderdetailesState extends State<Headerdetailes> {
             ? widget.producEntity.oherimage[selindex - 1]
             : widget.producEntity.img;
 
-    // تحديد قائمة الصور، تأخذ أول عنصرين إذا كانت القائمة تحتوي على عناصر
-    List images = [widget.producEntity.img]..addAll(widget
-        .producEntity.oherimage
-        .take(widget.producEntity.oherimage.length > 1 ? 2 : 0));
+    // تحديد قائمة الصور، تأخذ الصورة الرئيسية وأول ثلاث صور من القائمة إذا كانت القائمة تحتوي على عناصر
+    List images = [widget.producEntity.img]
+      ..addAll(widget.producEntity.oherimage.take(3));
 
     return Container(
       decoration: const BoxDecoration(

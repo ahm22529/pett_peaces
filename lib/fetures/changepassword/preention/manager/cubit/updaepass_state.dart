@@ -13,6 +13,11 @@ final class Updaepasssucess extends UpdaepassState {
   Updaepasssucess({required this.userEntitymodel});
 }
 
+final class Deletstate extends UpdaepassState {
+  final UserEntity userEntitymodel;
+
+  Deletstate({required this.userEntitymodel});
+}
 final class Updaepassfaulier extends UpdaepassState {
   final String errma;
 

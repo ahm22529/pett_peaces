@@ -10,11 +10,10 @@ class LocaldatRepo {
 
   UserEntity getuser() {
     List<UserEntity>? notes;
-  
-      var notesBox = Hive.box<UserEntity>(box);
 
-      notes = notesBox.values.toList();
-      return notes[0];
-    
+    var notesBox = Hive.box<UserEntity>(box);
+
+    notes = notesBox.values.toList();
+    return notes[0];
   }
 }

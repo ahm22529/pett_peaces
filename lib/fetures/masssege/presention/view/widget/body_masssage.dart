@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pett_peaces/core/utiles/widget/appbar_serach.dart';
 import 'package:pett_peaces/core/utiles/widget/customappbar.dart';
+import 'package:pett_peaces/fetures/masssege/presention/view/widget/appbar_massage.dart';
 import 'package:pett_peaces/fetures/masssege/presention/view/widget/list_view_frined.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 import 'package:pett_peaces/fetures/store/prention/view/widget/continer_text_filed.dart';
@@ -36,9 +38,9 @@ class _BodyMassegeState extends State<BodyMassege> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
-          child: Continertextfiled(
-            name: "ابحث عن شخص",
-            textEditingController: TextEditingController(),
+          child: SearchUser(
+            name: "ابحث عن المستخدمين ",
+            userEntitymodel: widget.userEntity,
           ),
         ),
         ListviewFrined(

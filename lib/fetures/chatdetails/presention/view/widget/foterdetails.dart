@@ -27,6 +27,7 @@ class _foterdetailsmassageState extends State<foterdetailsmassage> {
   final ImagePickerService imagePickerService = ImagePickerService();
 
   void _pickAttachment() async {
+    Navigator.pop(context);
     final file =
         await imagePickerService.pickImages(); // Add your implementation here
     if (file != null) {

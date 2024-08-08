@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:pett_peaces/core/utiles/function/builderrorbar.dart';
 import 'package:pett_peaces/fetures/home/presention/view/home_scrren.dart';
-import 'package:pett_peaces/fetures/singup/presention/maager/cubit/varify_email_cubit.dart';
-import 'package:pett_peaces/fetures/singup/presention/maager/signup_cubit.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/varifaycuit/varify_email_cubit.dart';
+import 'package:pett_peaces/fetures/singup/presention/maager/sinupcubit/signup_cubit.dart';
 import 'package:pett_peaces/fetures/singup/presention/view/widget/body_varify_email.dart';
 
 class VarfyEmailBlocConsumer extends StatelessWidget {
@@ -18,8 +19,7 @@ class VarfyEmailBlocConsumer extends StatelessWidget {
     return BlocConsumer<VarifyEmailCubit, VarifyEmailState>(
       listener: (context, state) {
         if (state is VarifyEmailSuccess) {
-          ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.userEntity.massage.toString())));
+          buildErrorBar(context, state.userEntity.massage);
           Navigator.push(
               context,
               MaterialPageRoute(
@@ -28,10 +28,7 @@ class VarfyEmailBlocConsumer extends StatelessWidget {
                       )));
         }
         if (state is VarifyEmailFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(state.message.toString()),
-            backgroundColor: Colors.green,
-          ));
+          buildSucessbar(context, state.message);
         }
       },
       builder: (context, state) {

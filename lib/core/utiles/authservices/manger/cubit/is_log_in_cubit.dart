@@ -9,20 +9,14 @@ part 'is_log_in_state.dart';
 class IsLogInCubit extends Cubit<IsLogInState> {
   IsLogInCubit({required this.authRepository}) : super(IsLogInInitial());
   AuthRepository authRepository;
+  bool islog = false;
   void setLogin(bool isLoggedIn) async {
     await authRepository.setLoggedIn(isLoggedIn);
-    if (isLoggedIn) {
-   
-      emit(IsLoging());
-    } else {
-     
-      emit(unLoging());
-    }
   }
 
   Future<void> checkLoginStatus() async {
-    final isLoggedIn = await authRepository.isLoggedIn();
-    if (isLoggedIn) {
+    final islog = await authRepository.isLoggedIn();
+    if (islog) {
       log("message");
       emit(IsLoging());
     } else {

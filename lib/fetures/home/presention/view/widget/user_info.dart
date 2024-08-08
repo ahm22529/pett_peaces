@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import 'package:pett_peaces/core/utiles/sttyel.dart';
@@ -55,7 +53,6 @@ class UserInfoCard extends StatelessWidget {
         ),
         GestureDetector(
             onTap: () {
-             
               Navigator.push(
                   context,
                   MaterialPageRoute(

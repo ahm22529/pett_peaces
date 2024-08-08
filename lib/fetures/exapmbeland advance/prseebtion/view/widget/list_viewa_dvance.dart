@@ -30,7 +30,8 @@ class ListViewAdvanced extends StatelessWidget {
                         ))),
             child: ItemAdvanced(
               examel: entity[index],
-              onPressed: onPressed, userEntity: userEntity,
+              onPressed: onPressed,
+              userEntity: userEntity,
             )));
   }
 }
@@ -39,7 +40,8 @@ class ItemAdvanced extends StatelessWidget {
   const ItemAdvanced({
     super.key,
     required this.examel,
-    required this.onPressed, required this.userEntity,
+    required this.onPressed,
+    required this.userEntity,
   });
   final ExambelEnitydetails examel;
   final void Function() onPressed;

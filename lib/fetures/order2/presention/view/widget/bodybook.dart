@@ -22,9 +22,7 @@ class _BodyBooktingState extends State<BodyBookting> {
   void initState() {
     super.initState();
     BlocProvider.of<OrderCubit>(context).getdata(
-        endpoint: "my-orders/checkout",
-        token:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMzQ2NTg1LCJleHAiOjE3MjI5NTEzODUsIm5iZiI6MTcyMjM0NjU4NSwianRpIjoicHJwQlZIbngzYWNSeGVHZyIsInN1YiI6IjEyMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lYnKBGmPOSiuH3gnIYbMJ6fFgNKRjL7-lJ9J04B6xMk");
+        endpoint: "my-orders/checkout", token: widget.userEntitymodel.token);
   }
 
   void _handleTabChange(int index) {
@@ -34,14 +32,10 @@ class _BodyBooktingState extends State<BodyBookting> {
     if (index == 1) {
       // Load or display the empty list
       BlocProvider.of<OrderCubit>(context).getdata(
-          endpoint: "my-orders/delivered",
-          token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMzQ2NTg1LCJleHAiOjE3MjI5NTEzODUsIm5iZiI6MTcyMjM0NjU4NSwianRpIjoicHJwQlZIbngzYWNSeGVHZyIsInN1YiI6IjEyMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lYnKBGmPOSiuH3gnIYbMJ6fFgNKRjL7-lJ9J04B6xMk");
+          endpoint: "my-orders/delivered", token: widget.userEntitymodel.token);
     } else {
       BlocProvider.of<OrderCubit>(context).getdata(
-          endpoint: "my-orders/checkout",
-          token:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FuaW1hbHMuY29kZWVsbGEuY29tL2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNzIyMzQ2NTg1LCJleHAiOjE3MjI5NTEzODUsIm5iZiI6MTcyMjM0NjU4NSwianRpIjoicHJwQlZIbngzYWNSeGVHZyIsInN1YiI6IjEyMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.lYnKBGmPOSiuH3gnIYbMJ6fFgNKRjL7-lJ9J04B6xMk");
+          endpoint: "my-orders/checkout", token: widget.userEntitymodel.token);
     }
   }
 

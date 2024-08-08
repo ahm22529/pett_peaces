@@ -1,5 +1,6 @@
 import 'package:hive_flutter/adapters.dart';
- part 'userentity.g.dart';
+part 'userentity.g.dart';
+
 @HiveType(typeId: 1)
 class UserEntity {
   @HiveField(0)
@@ -20,7 +21,7 @@ class UserEntity {
   final String massage;
   @HiveField(8)
   final bool is_plan_subscribe;
-@HiveField(9)
+  @HiveField(9)
   final bool email_verified_at;
 
   UserEntity(

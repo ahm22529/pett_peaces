@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:pett_peaces/core/utiles/puserservices/pusher_services.dart';
+import 'package:pett_peaces/core/utiles/services/puserservices/pusher_services.dart';
 import 'package:pett_peaces/fetures/chatdetails/domain/entity/massage_entity.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/manager/cubit/send_cubit.dart';
 import 'package:pett_peaces/fetures/chatdetails/presention/view/widget/foterdetails.dart';
@@ -36,7 +36,8 @@ class _ChatPusherState extends State<ChatPusher> {
   ScrollController scrollController = ScrollController();
   final TextEditingController _messageController = TextEditingController();
   final List<MassageEntity> massage = [];
-
+  int currentpage = 1;
+  bool isLoadingMore = false;
   File? _attachment;
 
   @override
@@ -48,16 +49,20 @@ class _ChatPusherState extends State<ChatPusher> {
 
     scrollController.addListener(() {
       if (scrollController.position.atEdge &&
-          scrollController.position.pixels == 0) {}
+          scrollController.position.pixels == 0 &&
+          !isLoadingMore) {
+        setState(() {
+          isLoadingMore = true;
+          currentpage++;
+        });
+        fetchInitialMessages();
+      }
     });
   }
 
   Future<void> fetchInitialMessages() async {
     await BlocProvider.of<ChatdetailsCubit>(context).getmassage(
-      endpoint: "chat/${widget.chatid}?page=1",
-      token: widget.token,
-      id: widget.userid,
-    );
+        endpoint: "chat/131?page=$currentpage", token: widget.token, id: '');
   }
 
   Future<void> initPusher() async {
@@ -170,24 +175,21 @@ class _ChatPusherState extends State<ChatPusher> {
             Expanded(
               child: BlocConsumer<ChatdetailsCubit, ChatdetailsState>(
                 builder: (context, state) {
-                  if (state is ChatdetailsSucess) {
-                    return Bodysetailsmassage(
+                  return ModalProgressHUD(
+                    inAsyncCall: state is ChatdetailsLoad ? true : false,
+                    child: Bodysetailsmassage(
                       massage: massage.reversed.toList(), // عكس ترتيب الرسائل
                       usermodel: widget.userEntity,
                       scrollController: scrollController,
-                    );
-                  } else {
-                    return const Center(child: CircularProgressIndicator());
-                  }
+                    ),
+                  );
                 },
                 listener: (BuildContext context, ChatdetailsState state) {
                   if (state is ChatdetailsSucess) {
                     setState(() {
-                      massage.insertAll(
-                          0,
-                          state.detailsEntity
-                              .massage); // إضافة الرسائل في بداية القائمة
-                      _scrollToBottom();
+                      isLoadingMore = false;
+                      massage.addAll(state.detailsEntity
+                          .massage); // إضافة الرسائل في بداية القائمة
                     });
                   }
                 },
@@ -202,10 +204,27 @@ class _ChatPusherState extends State<ChatPusher> {
                   borderRadius: BorderRadius.circular(8.0),
                   color: Colors.black12,
                 ),
-                child: Image.file(
-                  _attachment!,
-                  height: 50,
-                  fit: BoxFit.cover,
+                child: Stack(
+                  children: [
+                    Image.file(
+                      _attachment!,
+                      height: 50,
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                        top: -10,
+                        right: -15,
+                        child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _attachment = null;
+                              });
+                            },
+                            icon: Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ))),
+                  ],
                 ),
               ),
             foterdetailsmassage(

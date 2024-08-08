@@ -1,4 +1,6 @@
+
 import 'package:pett_peaces/fetures/home/domain/entity/Produxt_entity.dart';
+
 
 class Product extends ProducEntity {
   int? id;
@@ -9,8 +11,10 @@ class Product extends ProducEntity {
   String? oldPrice;
   String? shortDescription;
   String? details;
+  List? sug;
 
   Product({
+    this.sug,
     this.id,
     this.name,
     this.image,
@@ -30,7 +34,7 @@ class Product extends ProducEntity {
             img: image ?? "",
             oldprice: oldPrice ?? "",
             qan: 0,
-            pro: []);
+            pro: sug ?? []);
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json['id'] as int?,

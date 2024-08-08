@@ -3,7 +3,8 @@ class DepartmentEntity {
   final String namee;
   final List<Subdepart> subdet;
 
-  DepartmentEntity({required this.idd, required this.namee,required this.subdet});
+  DepartmentEntity(
+      {required this.idd, required this.namee, required this.subdet});
 }
 
 class AlldDepartment {
@@ -13,7 +14,7 @@ class AlldDepartment {
 }
 
 class Subdepart {
-   final int idd;
+  final int idd;
   final String namee;
 
   Subdepart({required this.idd, required this.namee});

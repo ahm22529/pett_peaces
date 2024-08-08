@@ -30,10 +30,13 @@ class Iteamlistviewami extends StatelessWidget {
                 child: Container(
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(12)),
-                  child: Image.network(
-                    animel.imagee,
-                    fit: BoxFit.cover,
-                    height: MediaQuery.of(context).size.height * .25,
+                  child: SizedBox(
+                    width: 50,
+                    child: Image.network(
+                      animel.imagee,
+                      fit: BoxFit.cover,
+                      height: MediaQuery.of(context).size.height * .25,
+                    ),
                   ),
                 ),
               ),
@@ -86,7 +89,7 @@ class informationanmiles extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  flex: 1,
+                  flex: 3,
                   child: InfoAnmales1(
                     tt: animel.gendere,
                   ),
@@ -106,8 +109,10 @@ class informationanmiles extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          SizedBox(
-              width: MediaQuery.of(context).size.width * .43, child: widget),
+          FittedBox(
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width * .43, child: widget),
+          ),
           const SizedBox(
             height: 5,
           )
