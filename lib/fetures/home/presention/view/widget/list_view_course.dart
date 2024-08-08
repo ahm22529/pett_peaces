@@ -41,8 +41,11 @@ class ListviewCourses extends StatelessWidget {
                                         des: cours[index].des),
                                     userEntitymodel: userEntitymodel,
                                   ))),
-                      child: Courses(
-                        courseseEntity: cours[index],
+                      child: AspectRatio(
+                        aspectRatio: 3.75 / 2,
+                        child: Courses(
+                          courseseEntity: cours[index],
+                        ),
                       )),
                 )));
   }

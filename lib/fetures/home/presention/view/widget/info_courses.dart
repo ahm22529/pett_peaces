@@ -5,31 +5,33 @@ import 'package:pett_peaces/fetures/home/domain/entity/coursese_entity.dart';
 class Infocourses extends StatelessWidget {
   const Infocourses({
     super.key,
-    // ignore: non_c,onstant_identifier_names
     required this.Co,
   });
+
   final String Co;
+
   @override
   Widget build(BuildContext context) {
+    // تحديد عدد الحروف بناءً على طول النص
+    final int maxLength = Co.length >= 7 ? 5 : Co.length;
+    final String displayText = Co.substring(0, maxLength);
+
     return Container(
-      width: 50,
       color: const Color(0xff020202).withOpacity(.3),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: FittedBox(
-          child: Row(
-            children: [
-              Image.asset("Asset/image/honey.png"),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(
-                Co,
-                style: AppStyles.styleMedium16(context)
-                    .copyWith(fontSize: 12, color: Colors.white),
-              )
-            ],
-          ),
+        child: Row(
+          children: [
+            Image.asset("Asset/image/honey.png"),
+            const SizedBox(
+              width: 5,
+            ),
+            Text(
+              displayText,
+              style: AppStyles.styleMedium16(context)
+                  .copyWith(fontSize: 12, color: Colors.white),
+            )
+          ],
         ),
       ),
     );
@@ -74,14 +76,18 @@ class bodycontinercourses extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
+              width: MediaQuery.of(context).size.width,
               color: const Color(0xff020202).withOpacity(.3),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40.0, vertical: 7),
-                child: Text(
-                  courseseEntity.nameof,
-                  style: AppStyles.styleMedium16(context)
-                      .copyWith(color: Colors.white),
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 02.0),
+                  child: FittedBox(
+                    child: Text(
+                      courseseEntity.nameof,
+                      style: AppStyles.styleMedium16(context)
+                          .copyWith(color: Colors.white, fontSize: 24),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -90,24 +96,22 @@ class bodycontinercourses extends StatelessWidget {
             height: 60,
           ),
           Expanded(
-            child: Row(
-              children: [
-                Infocourses(
-                  Co: courseseEntity.type,
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Infocourses(
-                  Co: courseseEntity.day.toString(),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Infocourses(
-                  Co: courseseEntity.priceof,
-                ),
-              ],
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Infocourses(
+                    Co: courseseEntity.type,
+                  ),
+                  Infocourses(
+                    Co: courseseEntity.day.toString(),
+                  ),
+                  Infocourses(
+                    Co: courseseEntity.priceof,
+                  ),
+                ],
+              ),
             ),
           )
         ],
