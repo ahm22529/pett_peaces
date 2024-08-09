@@ -96,7 +96,7 @@ class Suggetionproduct extends StatelessWidget {
             height: 16,
           ),
           SizedBox(
-              height: MediaQuery.of(context).size.height * .26,
+              height: MediaQuery.of(context).size.height * .3,
               child: Gridviewstore(
                 producEntity: pro,
                 userEntitymodel: userEntitymodel,

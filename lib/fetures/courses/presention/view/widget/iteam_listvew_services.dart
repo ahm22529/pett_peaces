@@ -36,7 +36,7 @@ class Couresesiteamlistviw extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                flex: 5,
+                flex: 1,
                 child: Infocourses(
                   Co: courseseEntity.type,
                 ),
@@ -50,7 +50,7 @@ class Couresesiteamlistviw extends StatelessWidget {
               ),
               const SizedBox(width: 5),
               Expanded(
-                flex: 2,
+                flex: 1,
                 child: Infocourses(
                   Co: courseseEntity.priceof,
                 ),
