@@ -26,38 +26,39 @@ class _GridviewservicesState extends State<Gridviewservices> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+        height: 100,
         child: CustomGridViewHome(
-      userEntitymodel: widget.userEntitymodel,
-      nav: [
-        Hotel(
           userEntitymodel: widget.userEntitymodel,
-        ),
-        Doctor(
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        Cotching(
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        AllAnmilesMating(
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        Myanmiles(
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        Store(
-          pro: [],
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        SellerAndBuyer(
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        Courselist(
-          userEntitymodel: widget.userEntitymodel,
-        ),
-        Example(
-          userEntitymodel: widget.userEntitymodel,
-        )
-      ],
-    ));
+          nav: [
+            Hotel(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            Doctor(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            Cotching(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            AllAnmilesMating(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            Myanmiles(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            Store(
+              pro: [],
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            SellerAndBuyer(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            Courselist(
+              userEntitymodel: widget.userEntitymodel,
+            ),
+            Example(
+              userEntitymodel: widget.userEntitymodel,
+            )
+          ],
+        ));
   }
 }

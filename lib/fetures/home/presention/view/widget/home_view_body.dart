@@ -54,6 +54,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       ImageSlider(
                         img: state.homeEntity.paners,
                       ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Gridviewservices(
+                        userEntitymodel: widget.userEntitymodel,
+                      )
                     ],
                   ),
                 ),

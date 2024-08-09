@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/category_services.dart';
 import 'package:pett_peaces/fetures/singup/domain/entity/userentity.dart';
 
-
 class CustomGridViewHome extends StatefulWidget {
   final UserEntity userEntitymodel;
   const CustomGridViewHome({
     super.key,
-    required this.userEntitymodel, required this.nav,
+    required this.userEntitymodel,
+    required this.nav,
   });
   final List nav;
   @override
@@ -24,7 +24,9 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      clipBehavior: Clip.none,
       scrollDirection: Axis.horizontal,
+      shrinkWrap: !false,
       itemCount: 9,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // عدد الأعمدة
@@ -56,8 +58,8 @@ class _CustomGridViewHomeState extends State<CustomGridViewHome> {
             });
           },
           child: GestureDetector(
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (builder) =>widget. nav[index])),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (builder) => widget.nav[index])),
             child: CategoryButtonhome(
               backgroundColor: selectedindex == index
                   ? Color(0xffF78E32)
