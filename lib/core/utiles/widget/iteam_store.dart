@@ -21,25 +21,23 @@ class IteamStore extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: FittedBox(
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.black12, width: 1),
-            boxShadow: [
-              const BoxShadow(
-                color: Color(0x40000000), // Color #000000 with 25% opacity
-                blurRadius: 8,
-                spreadRadius: 2,
-                offset: Offset(0, 2), // changes position of shadow
-              ),
-            ],
-          ),
-          child: bodyiteamstore(
-            producEntity: producEntity,
-            userEntitymodel: userEntitymodel,
-          ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.black12, width: 1),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x40000000), // Color #000000 with 25% opacity
+              blurRadius: 8,
+              spreadRadius: 2,
+              offset: Offset(0, 2), // changes position of shadow
+            ),
+          ],
+        ),
+        child: bodyiteamstore(
+          producEntity: producEntity,
+          userEntitymodel: userEntitymodel,
         ),
       ),
     );
@@ -68,23 +66,22 @@ class bodyiteamstore extends StatelessWidget {
           const SizedBox(height: 10),
           Image.network(
             producEntity.img,
-            height: MediaQuery.of(context).size.height *
-                0.2, // Adjust the height as needed
-            width: MediaQuery.of(context).size.width *
-                0.5, // Adjust the width as needed
-            fit: BoxFit.cover, // Ensures the image covers the specified space
+            width: MediaQuery.of(context).size.width * .32,
+// Adjust the width as needed
+            fit: BoxFit.fill, // Ensures the image covers the specified space
           ),
-          const SizedBox(height: 10),
-          Container(
-            padding: const EdgeInsets.all(5.0),
-            width: MediaQuery.of(context).size.width * .55,
-            decoration: BoxDecoration(
-              color: const Color(0xffF78E32).withOpacity(.3),
-              borderRadius: BorderRadius.circular(9),
-            ),
-            child: infoiteamstore(
-              producEntity: producEntity,
-              userEntitymodel: userEntitymodel,
+          FittedBox(
+            child: Container(
+              height: MediaQuery.of(context).size.width * .15,
+              padding: const EdgeInsets.all(5.0),
+              decoration: BoxDecoration(
+                color: const Color(0xffF78E32).withOpacity(.1),
+                borderRadius: BorderRadius.circular(9),
+              ),
+              child: infoiteamstore(
+                producEntity: producEntity,
+                userEntitymodel: userEntitymodel,
+              ),
             ),
           ),
         ],
@@ -105,7 +102,7 @@ class infoiteamstore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(2.0),
+      padding: const EdgeInsets.only(left: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -115,9 +112,9 @@ class infoiteamstore extends StatelessWidget {
               Text(
                 "${producEntity.prices}\$",
                 style: const TextStyle(
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.bold,
                   color: Color(0xffF78E32),
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
               const Text(
@@ -129,6 +126,9 @@ class infoiteamstore extends StatelessWidget {
                 ),
               )
             ],
+          ),
+          const SizedBox(
+            width: 30,
           ),
           BlocListener<AddBoxCubit, AddBoxState>(
             listener: (context, state) {
@@ -144,7 +144,11 @@ class infoiteamstore extends StatelessWidget {
                       endpoint: "cart/add",
                       token: userEntitymodel.token);
                 },
-                icon: Image.asset("Asset/image/add.png")),
+                icon: Image.asset(
+                  "Asset/image/add.png",
+                  height: 25,
+                  width: 25,
+                )),
           )
         ],
       ),

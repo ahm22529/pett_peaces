@@ -81,9 +81,9 @@ class _CustomGridViewstoreState extends State<CustomGridViewstore> {
               crossAxisSpacing: 10,
               crossAxisCount: 2,
               childAspectRatio: MediaQuery.of(context).size.width <= 600
-                  ? .85
+                  ? .72
                   : MediaQuery.of(context).size.width >= 400
-                      ? 2.1
+                      ? 2.5
                       : 2.5,
             ),
             itemBuilder: (context, index) {

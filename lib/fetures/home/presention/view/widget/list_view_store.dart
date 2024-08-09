@@ -14,7 +14,7 @@ class Gridviewstore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: MediaQuery.of(context).size.height * .31,
+        height: MediaQuery.of(context).size.height * .3,
         child: ListView.builder(
             itemCount: producEntity.length,
             scrollDirection: Axis.horizontal,

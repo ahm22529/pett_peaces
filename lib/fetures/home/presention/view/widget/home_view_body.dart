@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pett_peaces/core/utiles/widget/custom_widget_fauiler.dart';
+import 'package:pett_peaces/core/utiles/widget/iteam_store.dart';
 import 'package:pett_peaces/fetures/courses/presention/view/course_list.dart';
 import 'package:pett_peaces/fetures/home/presention/manager/cubit/home_cubit.dart';
 import 'package:pett_peaces/fetures/home/presention/view/widget/list_view_course.dart';
@@ -37,78 +38,71 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         if (state is HomeSucess) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 17.0),
-            child: SingleChildScrollView(
-              child: SafeArea(
-                child: Column(
-                  children: [
-                    SafeArea(
-                      child: UserInfoCard(
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      SafeArea(
+                        child: UserInfoCard(
+                          userEntitymodel: widget.userEntitymodel,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      ImageSlider(
+                        img: state.homeEntity.paners,
+                      ),
+                    ],
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      Headersection(titel1: "المتجر", titel2: "عرض المزيد"),
+                      Gridviewstore(
+                        producEntity: state.homeEntity.product,
                         userEntitymodel: widget.userEntitymodel,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    ImageSlider(
-                      img: state.homeEntity.paners,
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Gridviewservices(
-                      userEntitymodel: widget.userEntitymodel,
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    MyAnmilesLastAdd(widget: widget, anmiles: state.homeEntity.anmilesEntity,),
-                    Headersection(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => Store(
-                                  pro: state.homeEntity.product,
-                                  userEntitymodel: widget.userEntitymodel))),
-                      titel1: ' المتجر',
-                      titel2: 'عرض المزيد',
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Gridviewstore(
-                      producEntity: state.homeEntity.product,
-                      userEntitymodel: widget.userEntitymodel,
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    Image.asset("Asset/image/Frame 1000004499.png"),
-                    const SizedBox(
-                      height: 32,
-                    ),
-                    Headersection(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => Courselist(
-                                    userEntitymodel: widget.userEntitymodel,
-                                  ))),
-                      titel1: 'كورسات تعليمية',
-                      titel2: 'عرض المزيد',
-                    ),
-                    const SizedBox(
-                      height: 23,
-                    ),
-                    ListviewCourses(
-                      cours: state.homeEntity.cou,
-                      userEntitymodel: widget.userEntitymodel,
-                    ),
-                    const SizedBox(
-                      height: 56,
-                    )
-                  ],
+                      MyAnmilesLastAdd(
+                        widget: widget,
+                        anmiles: state.homeEntity.anmilesEntity,
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      Image.asset("Asset/image/Frame 1000004499.png"),
+                      const SizedBox(
+                        height: 32,
+                      ),
+                      Headersection(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => Courselist(
+                                      userEntitymodel: widget.userEntitymodel,
+                                    ))),
+                        titel1: 'كورسات تعليمية',
+                        titel2: 'عرض المزيد',
+                      ),
+                      const SizedBox(
+                        height: 23,
+                      ),
+                      ListviewCourses(
+                        cours: state.homeEntity.cou,
+                        userEntitymodel: widget.userEntitymodel,
+                      ),
+                      const SizedBox(
+                        height: 56,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           );
         } else if (state is Homefailuer) {
@@ -120,4 +114,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-

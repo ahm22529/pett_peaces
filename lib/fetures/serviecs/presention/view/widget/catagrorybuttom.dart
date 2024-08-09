@@ -33,16 +33,21 @@ class CategoryButton extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: 55, // Adjust this value as needed
+              right: 46,
+              bottom: 9,
+              // Adjust this value as needed
               child: FittedBox(
-                child: Text(
-                  text,
-                  style: const TextStyle(
-                    fontFamily: 'Changa',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15,
-                    color: Colors.white,
-                    height: 1.4,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    text,
+                    style: const TextStyle(
+                      fontFamily: 'Changa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15,
+                      color: Colors.white,
+                      height: 1.4,
+                    ),
                   ),
                 ),
               ),

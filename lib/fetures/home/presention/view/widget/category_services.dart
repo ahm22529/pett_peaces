@@ -5,7 +5,8 @@ class CategoryButtonhome extends StatelessWidget {
   final String text;
   final String imagePath;
 
-  const CategoryButtonhome({super.key, 
+  const CategoryButtonhome({
+    super.key,
     required this.backgroundColor,
     required this.text,
     required this.imagePath,
@@ -28,27 +29,26 @@ class CategoryButtonhome extends StatelessWidget {
               top: -20,
               child: Image.asset(
                 imagePath,
-                height: 80,
-                width: 80,
+                height: 60,
               ),
-            ),
-            const SizedBox(
-              width: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    text,
-                    style: const TextStyle(
-                      fontFamily: 'Changa',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15,
-                      color: Colors.white,
-                      height: 1.4,
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      text,
+                      style: const TextStyle(
+                        fontFamily: 'Changa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                        color: Colors.white,
+                        height: 1.4,
+                      ),
                     ),
                   ),
                 ),
